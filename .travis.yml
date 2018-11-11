@@ -8,9 +8,7 @@ branches:
   - master
 
 before_install:
-- npm install -g hexo
-- npm install -g firebase-tools
-- npm install
+- npm install -g hexo & npm install -g firebase-tools & npm install
 
 before_script:
 - git config --global user.name 'Lee Boonstra'
