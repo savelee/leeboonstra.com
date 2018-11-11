@@ -6,7 +6,8 @@ branches:
   only:
   - master
 before_install:
-- npm install -g hexo & npm install -g firebase-tools & npm install
+  - npm install -g firebase-tools
+  - npm install -g hexo
 before_script:
 - git config --global user.name 'Lee Boonstra'
 - git config --global user.email 'me@leeboonstra.com'
