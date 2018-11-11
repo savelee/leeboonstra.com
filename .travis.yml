@@ -20,4 +20,4 @@ script:
 - hexo generate
 
 after_success:
-— firebase deploy — project $FIREBASE_PROJECT $FIREBASE_TOKEN.
+- firebase deploy — project $FIREBASE_PROJECT — token $FIREBASE_TOKEN.
