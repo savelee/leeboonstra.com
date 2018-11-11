@@ -31,7 +31,13 @@ git push -u origin master
 ## Travis CI
 
 1. https://www.travis-ci.com/
-1. Activate repository
 
+1. Activate access to Github repositorys
+
+1. Add the following Environment values:
+
+* FIREBASE_PROJECT
+* FIREBASE_TOKEN
+* DEPLOY_REPO
 
 
