@@ -17,5 +17,3 @@ before_script:
 script:
 - hexo generate
 
-after_success:
-- firebase deploy — project $FIREBASE_PROJECT — token $FIREBASE_TOKEN.
