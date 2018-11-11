@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: DevTricks
+subtitle: LeeBoonstra.com
+description: Sales engineer @ Google. Book author @ O'Reilly. JavaScript developer &amp; evangelist. Loves Ext JS, Node.js, GCP, Python, Cloud, GSuite and videogames.
+keywords: Googler, Ext JS engineer, Google Sales Engineer, Google Customer Engineer, Google Cloud, Sencha Sales Engineer, Google Cloud Customer Engineer, Cloud Architect, Devrel, Developer Relations, Chatbot expert, Actions on Google, Dialogflow expert, Google Cloud Sales, Sencha Trainer, Sencha Trainings, JavaScript Developer, JavaScript Programmer, Node JS Developer, Client-side code, Lead Developer, JavaScript Amsterdam, JavaScript Evangelist, Google Cloud, GCP, Google Assistant, Dialogflow Enterprise, Chatbots, Bots, Chat agents, HTML5 & CSS3, Sencha Touch, Mobile Apps, Enterprise Apps
+author: Lee Boonstra
+language: en
+timezone: Europe/Amsterdam
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://devtricks-45484.firebaseapp.com/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

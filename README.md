@@ -2,6 +2,10 @@
 
 ## Hexo
 
+Hexo is a site generator for Node.js.
+A fast, simple & powerful blog framework.
+https://hexo.io/
+
 ```
 npm install -g hexo
 hexo init
@@ -9,7 +13,29 @@ hexo generate
 hexo deploy
 ```
 
+### Create a new post
+
+`hexo new "My New Post"`
+
+### Run server
+
+`hexo server`
+
+### Generate static files
+
+`hexo generate`
+
+### Deploy to remote sites
+
+`hexo deploy`
+
+
 ## Firebase
+
+Firebase is a mobile and web application development platform by Google.
+We will use Firebase for static hosting.
+
+### Setup Firebase Hosting
 
 ```
 npm install -g firebase-tools
@@ -18,7 +44,12 @@ Firebase login:ci
 Firebase init (hosting; blog/public)
 ```
 
-## Github
+## Github & Travis CI
+
+We will need Github and Travis CI, to create a pipeline,
+to automatically build the site, when pushing files to Github.
+
+### Setup Github Repo
 
 ```
 git init
@@ -28,16 +59,10 @@ git remote add origin https://github.com/<myrepo>/<myrepo>.git
 git push -u origin master
 ```
 
-## Travis CI
+### Setup Travis CI
 
 1. https://www.travis-ci.com/
 
-1. Activate access to Github repositorys
+1. Activate access to Github repositories
 
-1. Add the following Environment values:
-
-* FIREBASE_PROJECT
-* FIREBASE_TOKEN
-* DEPLOY_REPO
-
-
+1. Add the FIREBASE_TOKEN environment variable to the Travis CLI settings page.
