@@ -6,6 +6,7 @@
     "version": "3.8.0"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "hexo": "^3.7.0",
     "hexo-beautify": "^1.0.2",
     "hexo-codepen": "^0.1.1",
@@ -16,13 +17,12 @@
     "hexo-generator-json-feed": "^1.0.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-migrator-wordpress": "^1.0.0",
+    "hexo-related-popular-posts": "^3.0.3",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-jade": "^0.4.1",
     "hexo-renderer-marked": "^0.3.2",
-    "hexo-renderer-sass": "^0.3.2",
+    "hexo-renderer-scss": "^1.2.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
-    "hexo-tag-bootstrap": "^0.1.2",
     "hexo-tag-fontawesome": "^1.0.0",
     "hexo-tag-owl": "^1.2.2",
     "hexo-uglify": "0.0.5"

@@ -1,0 +1,13 @@
+webpack:
+  entry: 'themes/skeleton/source/assets/js/main.js'
+  devtool: 'eval-source-map'
+
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+autoprefixer:
+  browsers:
+    - 'last 2 versions'
+  cascade: false

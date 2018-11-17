@@ -1,7 +1,14 @@
 ---
 title: Hello World
+categories:
+- JavaScript
+- Sencha
+- Ext JS
+
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Welcome to [Hexo](https://hexo.io/)! This is your very first post. 
+<!-- more -->
+Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
 ## Quick Start
 
@@ -36,3 +43,13 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+### Styleguide
+
+{% gist gist_id [filename] %}
+
+{% youtube video_id %}
+
+{% link text url [external] [title] %}
+
+{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
