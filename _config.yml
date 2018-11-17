@@ -28,6 +28,16 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
+#Header
+navbar_brand: false
+menu:
+  Home: index.html
+  About: about/
+  Speaking: speaking/
+  Writing: writing/
+  Contact: contact/
+rss: /atom.xml
+
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -73,7 +83,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: skeleton
+theme: ladysign
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -96,9 +106,3 @@ show_count: true
 
 # Miscellaneous
 google_analytics:
-
-node_sass:
-  debug: false
-  outputStyle: nested
-  precision: 5
-  sourceComments: false
