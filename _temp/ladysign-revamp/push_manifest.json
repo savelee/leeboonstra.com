@@ -1,0 +1,22 @@
+{
+    "/wp-content/themes/ladysign-revamp/assets/css/main.css": {
+        "type": "style",
+        "weight": 1
+    },
+    "/wp-content/themes/ladysign-revamp/assets/js/allscripts.js": {
+        "type": "script",
+        "weight": 1
+    },
+    "/wp-content/themes/ladysign-revamp/assets/img/profile2.jpg": {
+        "type": "image",
+        "weight": 1
+    },
+    "/wp-content/uploads/2015/07/leeboonstra-book.png;rel=preload": {
+        "type": "image",
+        "weight": 1
+    },
+    "/wp-content/uploads/2015/07/leeboonstra-speaker.png;rel=preload": {
+        "type": "image",
+        "weight": 1
+    }
+}

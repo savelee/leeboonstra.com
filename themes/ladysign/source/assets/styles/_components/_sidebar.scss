@@ -1,0 +1,22 @@
+#sidebar {
+    margin: 0 60px 0 30px;
+}
+
+.sidebar {
+    font-size: 13px;
+    line-height: 24px;
+
+    .headshot {
+        display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 100px;
+        overflow: hidden;
+    
+        img {
+            height: 100px;
+            width: 100px;       
+        }
+    }
+
+}

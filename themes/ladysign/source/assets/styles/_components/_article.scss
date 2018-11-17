@@ -1,0 +1,16 @@
+.article, 
+.related,
+.comments {
+    margin: 0 60px;
+
+    h1 {
+        font-family: BebasNeue;
+        font-size: 36px;
+        line-height: 26px;
+    }
+
+    .article-category {
+        display: inline;
+    }
+}
+

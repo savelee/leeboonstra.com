@@ -46,14 +46,14 @@
 </article>
 
 <% if (!index && post.excerpt && list_related_posts){ %>
-  <section id="related">
+  <section id="related" class="related">
     <h2>Related Posts</h2>
     <%- list_related_posts({maxCount: 10, orderBy: 'random'}) %>
   </section>
 <% } %>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
+<section id="comments" class="comments">
   <h2>Comments</h2>
   <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

@@ -9,6 +9,44 @@
 @import '_sections/sections';
 @import '_components/components';
 
-body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+@font-face{
+    font-family: Roboto;
+    font-style:normal;
+    font-weight:400;
+    src:url(../fonts/Roboto-Regular-webfont.eot);
+    src:url(../fonts/Roboto-Regular-webfont.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/Roboto-Regular-webfont.woff) format("woff"),
+        url(../fonts/Roboto-Regular-webfont.ttf) format("truetype"),
+        url(../fonts/Roboto-Regular-webfont.svg#Roboto) format("svg")
+}
+
+@font-face{
+    font-family: BebasNeue;
+    font-style:normal;
+    font-weight:400;
+    src:url(../fonts/bebasneue-webfont.eot);
+    src:url(../fonts/bebasneue-webfont.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/bebasneue-webfont.woff) format("woff"),
+        url(../fonts/bebasneue-webfont.ttf) format("truetype"),
+        url(../fonts/bebasneue-webfont.svg#Roboto) format("svg")
+}
+
+@font-face{
+    font-family: icomoon;
+    font-style:normal;
+    font-weight:400;
+    src:url(../fonts/icomoon.eot);
+    src:url(../fonts/icomoon.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/icomoon.woff) format("woff"),
+        url(../fonts/icomoon.ttf) format("truetype"),
+        url(../fonts/icomoon.svg#Roboto) format("svg")
+}
+
+body{
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
 }

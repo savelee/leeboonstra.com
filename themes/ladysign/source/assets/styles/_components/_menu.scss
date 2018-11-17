@@ -1,7 +1,5 @@
-.site-menu {
-	ul {
-		list-style: none;
-	}
+.navbar-nav {
+	list-style: none;
 
 	li {
 		display: inline-block;
@@ -11,4 +9,7 @@
 			font-size: 1.6rem;
 		}
 	}
+}
+.navbar-header {
+	float: left;
 }
