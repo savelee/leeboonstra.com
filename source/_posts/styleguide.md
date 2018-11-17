@@ -1,6 +1,6 @@
 ---
-title: Hello World
-desc: Hello Description
+title: Styleguide
+desc: Example Styleguide for Hexo
 categories:
 - JavaScript
 tags:
@@ -25,7 +25,7 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 ### Run server
 
 ``` bash
-$ hexo server
+$ hexo serve
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
@@ -48,10 +48,12 @@ More info: [Deployment](https://hexo.io/docs/deployment.html)
 
 ### Styleguide
 
-{% gist gist_id [filename] %}
+{% gist eb5ce9480b2f5586288df50a8c4ffdf4 %}
 
-{% youtube video_id %}
+{% youtube NH-bL6Bd7Tw %}
 
-{% link text url [external] [title] %}
+{% link https://www.youtube.com/watch?v=NH-bL6Bd7Tw [external] [Lee Boonstra] %}
 
-{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+![Lee Boonstra](/images/profile.jpg)
+
+{% img [fancybox] /images/profile.jpg [200] [100] [Lee Boonstra [Lee Boonstra profile]] %}
