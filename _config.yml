@@ -80,6 +80,23 @@ theme: skeleton
 deploy:
   type:
 
+# Content
+excerpt_link: Read More
+fancybox: false
+
+# Sidebar
+widgets:
+- category
+- archive
+- recent_posts
+
+# widget behavior
+archive_type: 'monthly'
+show_count: true
+
+# Miscellaneous
+google_analytics:
+
 node_sass:
   debug: false
   outputStyle: nested

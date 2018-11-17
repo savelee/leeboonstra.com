@@ -1,7 +1,9 @@
 ---
 title: Hello World
+desc: Hello Description
 categories:
 - JavaScript
+tags:
 - Sencha
 - Ext JS
 

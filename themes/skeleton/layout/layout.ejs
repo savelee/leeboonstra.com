@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,8 @@
   }
   %>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <title itemprop="name"><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <meta itemprop="creator" content="Lee Boonstra">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
@@ -46,6 +47,9 @@
   <![endif]-->
 
   <%- body %>
+
+  <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+
 
   &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
 

@@ -1,7 +1,9 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
+    <span class="hidden" itemprop="author">Lee Boonstra</span>
   </div>
   <div class="article-inner">
     <%- partial('post/gallery') %>
@@ -26,10 +28,36 @@
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
+
+<script type="application/ld+json">
+  { "@context": "http://schema.org", 
+  "@type": "BlogPosting",
+  "headline": <%- post.title %>,
+  "author": "Lee Boonstra", 
+  "genre": "technology", 
+  "datePublished": <%- post.date %>,
+  "dateCreated": <%- post.date %>,
+  "dateModified": <%- post.updated %>,
+  "description": <%=post.desc%>,
+  "articleBody": <%=post.desc%>,
+    "author": {
+      "@type": "Person",
+      "name": "Lee Boonstra"
+    }
+  }
+  </script>
+  
 </article>
 
+<% if (!index && list_related_posts){ %>
+  <section id="related">
+    <h2>Related Posts</h2>
+    <%- list_related_posts({maxCount: 10, orderBy: 'random'}) %>
+  </section>
+<% } %>
 <% if (!index && post.comments && config.disqus_shortname){ %>
 <section id="comments">
+  <h2>Comments</h2>
   <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
