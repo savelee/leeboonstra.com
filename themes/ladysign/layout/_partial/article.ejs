@@ -1,29 +1,25 @@
 
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-meta">
-    <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-    <%- partial('post/category') %>
-    <span class="hidden" itemprop="author">Lee Boonstra</span>
-  </div>
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %> row" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="article-inner">
     <%- partial('post/gallery') %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        Posted on <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+        in <%- partial('post/category') %>
+        <span class="hidden" itemprop="author">Lee Boonstra</span>
       </header>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-          </p>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+      <% if (theme.excerpt_link){ %>
+        <p class="article-more-link">
+          <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+        </p>
       <% } %>
-    </div>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
