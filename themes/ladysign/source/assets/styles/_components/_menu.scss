@@ -1,5 +1,10 @@
 .navbar-nav {
 	list-style: none;
+    font-family: Oswald, Impact;
+	text-transform: uppercase;
+	margin: 0 !important;
+	border: none;
+    padding-top: 1px;
 
 	li {
 		display: inline-block;
@@ -10,6 +15,17 @@
 		}
 	}
 }
+
+.navbar {
+	border-radius: 0 !important;
+	margin-bottom: 0;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 15px;
+}
+
 .navbar-header {
 	float: left;
 }

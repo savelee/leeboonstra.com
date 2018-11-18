@@ -27,6 +27,18 @@
         url(../fonts/bebasneue-webfont.svg#Roboto) format("svg")
 }
 
+
+@font-face{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight:400;
+    src:url(../fonts/oswald-regular-webfont.eot);
+    src:url(../fonts/oswald-regular-webfont?#iefix) format("embedded-opentype"),
+        url(../fonts/oswald-regular-webfont.woff) format("woff"),
+        url(../fonts/oswald-regular-webfont.ttf) format("truetype"),
+        url(../fonts/oswald-regular-webfont.svg#Roboto) format("svg")
+}
+
 @font-face{
     font-family: icomoon;
     font-style:normal;
@@ -46,13 +58,24 @@ body{
     min-height: 100vh;
 }
 
+h2,h3,h4 {
+    font-family: BebasNeue;
+    font-size: 26px;
+    line-height: 28px;
+}
+
 .hidden {
     display: none;
 }
 
 #sidebar {
-    margin-top: -80px;
+    margin-top: -10px;
+    margin-left: 30px;
     width: 240px;
+}
+
+.jumbotron {
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px){

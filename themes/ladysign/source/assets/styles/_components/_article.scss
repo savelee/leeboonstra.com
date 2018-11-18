@@ -1,7 +1,7 @@
 .article, 
 .related,
 .comments {
-    margin: 0 60px;
+    margin: 30px 60px;
 
     h1 {
         font-family: BebasNeue;
@@ -11,6 +11,11 @@
 
     .article-category {
         display: inline;
+    }
+
+    .article-header {
+        margin-bottom: 15px;
+        font-size: 12px;
     }
 }
 
