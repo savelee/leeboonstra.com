@@ -13,3 +13,20 @@
 .navbar-header {
 	float: left;
 }
+
+.nav-collapse {
+    will-change: max-height;
+    transition: max-height .5s ease-in;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.collapse {
+    display: none;
+}

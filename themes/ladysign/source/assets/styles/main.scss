@@ -1,10 +1,6 @@
 @import './_settings/settings';
 
-@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
-@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid';
-@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
-@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
-
+@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 @import '_sections/sections';
 @import '_components/components';
@@ -45,8 +41,26 @@
 body{
     font-family: Roboto;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .hidden {
     display: none;
+}
+
+#sidebar {
+    margin-top: -80px;
+    width: 240px;
+}
+
+@media (max-width: 768px){
+    .article, .related, .comments {
+        margin: 0 15px;
+    }
+
+    #sidebar {
+        display: none;
+    }
 }

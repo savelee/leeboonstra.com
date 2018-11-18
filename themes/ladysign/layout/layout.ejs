@@ -46,8 +46,9 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
           
+<div class="wrapper">
   <header>
-    <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <nav id="navbar" class="navbar navbar-inverse">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -75,29 +76,22 @@
           <%- search_form({button: '&#xF002;'}) %>
       </div>  
     </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="jumbotron">
-            <%- config.subtitle %>
+
+    <% if (url_for(page.path) == '/index.html'){ %> 
+      <div class="container-fluid">
+          <div class="row">
+            <div class="jumbotron">
+                <%- config.subtitle %>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+    <% } %>
+
   </header>
 
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col col-sm-9">
-              <main class="container-fluid">
-                  <%- body %>
-              </main>
-          </div>
-          <div class="col col-sm-3">
-            <aside id="sidebar">
-              <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-            </aside>
-          </div>
-        </div>
-  </div>
+  <main class="container-fluid content">
+      <%- body %>
+  </main>
   <footer>
     <div class="container">
       <div class="row">
@@ -127,7 +121,7 @@
       </div>
     </div>
   </footer>
-
+</div>
   <%- partial('_partial/scripts') %>
   <%- partial('_partial/google-analytics') %>
   
