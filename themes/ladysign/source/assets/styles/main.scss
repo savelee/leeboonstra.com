@@ -1,9 +1,11 @@
+@import './_settings/colors';
 @import './_settings/settings';
 
 @import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 
 @import '_sections/sections';
 @import '_components/components';
+
 
 @font-face{
     font-family: Roboto;
@@ -86,4 +88,10 @@ h2,h3,h4 {
     #sidebar {
         display: none;
     }
+}
+
+//colors
+
+.badge {
+    background-color: $badgecol !important;
 }

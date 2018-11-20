@@ -44,9 +44,11 @@
 
   <div class="col col-sm-3">
 
+    <% if (!index){ %>
       <aside id="sidebar" class="sidebar">
           <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
       </aside>
+    <% } %>
 
   </div>
 </article>

@@ -85,6 +85,11 @@
             </div>
           </div>
         </div>
+
+        <aside id="sidebarfront" class="sidebar">
+            <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        </aside>
+      
     <% } %>
 
   </header>
@@ -92,7 +97,7 @@
   <main class="container-fluid content">
       <%- body %>
   </main>
-  <footer>
+  <footer class="foot">
     <div class="container">
       <div class="row">
         <div class="col col-sm-4">
@@ -116,9 +121,11 @@
 
         </div> 
       </div>
-      <div class="row">
-          &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
-      </div>
+    </div>
+  </footer>
+  <footer class="bottom">
+    <div class="row">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
     </div>
   </footer>
 </div>

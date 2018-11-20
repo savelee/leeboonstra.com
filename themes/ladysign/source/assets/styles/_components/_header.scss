@@ -14,6 +14,29 @@
     top: 5px;
 }
 
+.container .jumbotron, 
+.container-fluid .jumbotron {
+    border-radius: 0;
+    padding: 50px 20px;
+
+    span {
+        font-size: 30px;
+        line-height: 45px;
+        display: inline-block;
+        padding: 0 8px;
+        margin-bottom: 5px;
+    }
+
+}
+
+//colors
+
 .jumbotron {
-    padding: 50px 20px
+    background-color: $headercol1;
+    border-bottom: 10px solid #222;
+    color: $white;
+
+    span {
+      background-color: darken($headercol1,10%);  
+    }
 }
