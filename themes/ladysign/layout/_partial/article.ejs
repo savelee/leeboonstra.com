@@ -2,14 +2,10 @@
     <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row frontarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="col col-sm-9 article-inner">
   <% } else { %>
-    <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="col col-sm-9 article-inner contentpage">
 
     <div class="addthis_sharing_toolbox"></div>
-    <% } %>
-
-    <% if (!index){ %>
-      <%- partial('post/nav') %>
     <% } %>
 
     <%- partial('post/gallery') %>
@@ -17,7 +13,7 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
         Posted on <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-        in <span class="badge badge-primary"><%- partial('post/category') %></span>
+        in <%- partial('post/category') %>
         <span class="hidden" itemprop="author">Lee Boonstra</span>
       </header>
     <% } %>
@@ -36,6 +32,10 @@
       <div class="addthis_sharing_toolbox"></div>
     <% } %>
   
+    <% if (!index){ %>
+      <%- partial('post/nav') %>
+    <% } %>
+
   </div>
 
 

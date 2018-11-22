@@ -31,10 +31,6 @@
     max-width: 900px;
 }
 
-.badge {
-    background-color: $badgecol !important;
-}
-
 #comments, #related {
     padding: 30px 0;
 }
@@ -43,77 +39,91 @@
     padding: 30px;
 }
 
+.badge {
+    margin-top: -2px;
+}
+
+.addthis_sharing_toolbox {
+    text-align: right;
+}
+
+#article-nav {
+    text-align: center;
+
+    li {
+        display: inline-block;
+        font-size: 25px;
+        width: 100px;
+    }
+}
+
+
 //articles
 article:nth-child(4n+1) {
-    background: linear-gradient(darken($col1,10%), $col1);
-    background: -moz-linear-gradient(darken($col1,10%), $col1);
-    background: -o-linear-gradient(darken($col1,10%), $col1);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,10%)));
-    background: -webkit-linear-gradient(darken($col1,10%), $col1);
+    background: linear-gradient(darken($col1,2%), $col1);
+    background: -moz-linear-gradient(darken($col1,2%), $col1);
+    background: -o-linear-gradient(darken($col1,2%), $col1);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,2%)));
+    background: -webkit-linear-gradient(darken($col1,2%), $col1);
     background-color: $col1;
-    border: 10px solid darken($col1,10%);
+    border: 10px solid darken($col1,2%);
     color: $white;
 
     a {
         color: $white;
     }
-    .badge {
-        a {
-            color: $white;
-        }
-    } 
 }
 
 .article:nth-child(4n+1):after {
-    border-color: $col1 transparent;
+    border-color: darken($col1,2%) transparent;
     border-style: solid;
     border-width: 20px 50px 0;
     left: 18%;
     position: relative;
     bottom: -60px;
-    z-index: -1;
+    z-index: 0;
 }
+
+.contentarticle:nth-child(4n+1):after {
+    bottom: -30px;
+}
+
 
 #related,
 article:nth-child(4n+2) {
-    background: linear-gradient(darken($col2,5%), $col2);
-    background: -moz-linear-gradient(darken($col2,5%), $col2);
-    background: -o-linear-gradient(darken($col2,5%), $col2);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, darken($col2,5%)));
-    background: -webkit-linear-gradient(darken($col2,5%), $col2);
+    background: linear-gradient(lighten($col2,2%), $col2);
+    background: -moz-linear-gradient(lighten($col2,2%), $col2);
+    background: -o-linear-gradient(lighten($col2,2%), $col2);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, lighten($col2,2%)));
+    background: -webkit-linear-gradient(lighten($col2,2%), $col2);
     background-color: $col2;
-    border: 10px solid darken($col2,5%);
+    border: 10px solid lighten($col2,2%);
     color: $white;
 
     a {
         color: $white;
     }
-    .badge {
-        a {
-            color: $white;
-        }
-    }
 }
 
 .article:nth-child(4n+2):after {
-    border-color: $col2 transparent;
+    border-color: lighten($col2,2%) transparent;
     border-style: solid;
     border-width: 20px 50px 0;
     left: 88%;
     position: relative;
     bottom: -60px;
-    z-index: -1;
+    z-index: 0;
 }
 
 #comments,
 article:nth-child(4n+3) {
-    background: linear-gradient(lighten($col3,20%), $col3);
-    background: -moz-linear-gradient(lighten($col3,20%), $col3);
-    background: -o-linear-gradient(lighten($col3,20%), $col3);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col3), color-stop(100%, lighten($col3,20%)));
-    background: -webkit-linear-gradient(lighten($col3,20%), $col3);
+    background: linear-gradient(lighten($col3,5%), $col3);
+    background: -moz-linear-gradient(lighten($col3,5%), $col3);
+    background: -o-linear-gradient(lighten($col3,5%), $col3);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col3), color-stop(100%, lighten($col3,5%)));
+    background: -webkit-linear-gradient(lighten($col3,5%), $col3);
     background-color: $col3;
-    border: 10px solid lighten($col3,20%);
+    border: 10px solid lighten($col3,5%);
     color: $black;
 
     a {
@@ -123,52 +133,41 @@ article:nth-child(4n+3) {
     .btn {
         color: $white;
     }
-
-    .badge {
-        a {
-            color: $white;
-        }
-    }
 }
 
 .article:nth-child(4n+3):after {
-    border-color: $col3 transparent;
+    border-color: lighten($col3,5%) transparent;
     border-style: solid;
     border-width: 20px 50px 0;
     left: 28%;
     position: relative;
     bottom: -60px;
-    z-index: -1;
+    z-index: 0;
 }
 
 article:nth-child(4n+4) {
-    background: linear-gradient(darken($col4,20%), $col4);
-    background: -moz-linear-gradient(darken($col4,20%), $col4);
-    background: -o-linear-gradient(darken($col4,20%), $col4);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col4), color-stop(100%, darken($col4,20%)));
-    background: -webkit-linear-gradient(darken($col4,20%), $col4);
+    background: linear-gradient(darken($col4,5%), $col4);
+    background: -moz-linear-gradient(darken($col4,5%), $col4);
+    background: -o-linear-gradient(darken($col4,5%), $col4);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col4), color-stop(100%, darken($col4,5%)));
+    background: -webkit-linear-gradient(darken($col4,5%), $col4);
     background-color: $col4;
-    border: 10px solid darken($col4,20%);
+    border: 10px solid darken($col4,5%);
     color: $white;
 
     a {
         color: $white;
     }
-    .badge {
-        a {
-            color: $white;
-        }
-    }
 }
 
 .article:nth-child(4n+4):after {
-    border-color: $col4 transparent;
+    border-color: darken($col4,5%) transparent;
     border-style: solid;
     border-width: 20px 50px 0;
     left: 48%;
     position: relative;
     bottom: -60px;
-    z-index: -1;
+    z-index: 0;
 }
 
 .article {
@@ -181,11 +180,10 @@ article:nth-child(4n+4) {
         a {
             color: $col1;
         }
-
-        .badge {
-            a {
-                color: $white;
-            }
-        }
     }
+}
+
+.badge {
+    background-color: $badgecol !important;
+    color: $white !important;
 }

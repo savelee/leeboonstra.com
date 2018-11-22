@@ -94,3 +94,63 @@ h2,h3,h4 {
         display: none;
     }
 }
+
+.icon-github:before {
+    content: "G";
+}
+.icon-linkedin:before {
+    content: "L";
+}
+.icon-twitter:before {
+    content: "T";
+}
+
+.badge:before {
+    content: "t";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    padding-right: 5px;
+}
+
+[class*=" icon-"], [class^=icon-] {
+    background: #005C7B;
+    border-radius: 35px;
+    color: #fff;
+    font-family: icomoon;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    padding: 10px;
+    speak: none;
+    text-transform: none;
+}
+
+.social {
+    right: 12px;
+    margin: 0;
+    padding: 0;
+    top: 65px;
+    z-index: 200;
+    position: absolute;
+
+    li {
+        float: left;
+        list-style: none;
+        margin-right: 5px;
+
+        a {
+            color: $white;
+        }
+        a:hover {
+            color: #f2f2f2;
+            text-decoration: none;
+        }
+
+        span {
+            display: none !important;
+        }
+    }
+
+}
