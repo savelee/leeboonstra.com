@@ -1,8 +1,6 @@
 .article, 
 .related,
 .comments {
-    padding: 30px 60px;
-
     h1 {
         font-family: BebasNeue;
         font-size: 36px;
@@ -19,43 +17,96 @@
     }
 }
 
+.article {
+    .article-inner {
+        padding: 30px;
+    }
+}
+
+.article-nav {
+    font-size: 10px;
+}
+
 .gist {
     max-width: 900px;
 }
 
+.badge {
+    background-color: $badgecol !important;
+}
+
+#comments, #related {
+    padding: 30px 0;
+}
+
+.frontarticle {
+    padding: 30px;
+}
+
 //articles
-
-article:nth-child(4n+2) {
-    background: linear-gradient(darken($col1,15%), $col1);
-    background: -moz-linear-gradient(darken($col1,15%), $col1);
-    background: -o-linear-gradient(darken($col1,15%), $col1);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,15%)));
-    background: -webkit-linear-gradient(darken($col1,15%), $col1);
+article:nth-child(4n+1) {
+    background: linear-gradient(darken($col1,10%), $col1);
+    background: -moz-linear-gradient(darken($col1,10%), $col1);
+    background: -o-linear-gradient(darken($col1,10%), $col1);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,10%)));
+    background: -webkit-linear-gradient(darken($col1,10%), $col1);
     background-color: $col1;
-    border: 10px solid darken($col1,15%);
+    border: 10px solid darken($col1,10%);
     color: $white;
 
     a {
-        color: $white;  
+        color: $white;
     }
+    .badge {
+        a {
+            color: $white;
+        }
+    } 
 }
 
-article:nth-child(4n+3) {
-    background: linear-gradient(darken($col2,8%), $col2);
-    background: -moz-linear-gradient(darken($col2,8%), $col2);
-    background: -o-linear-gradient(darken($col2,8%), $col2);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, darken($col2,8%)));
-    background: -webkit-linear-gradient(darken($col2,8%), $col2);
+.article:nth-child(4n+1):after {
+    border-color: $col1 transparent;
+    border-style: solid;
+    border-width: 20px 50px 0;
+    left: 18%;
+    position: relative;
+    bottom: -60px;
+    z-index: -1;
+}
+
+#related,
+article:nth-child(4n+2) {
+    background: linear-gradient(darken($col2,5%), $col2);
+    background: -moz-linear-gradient(darken($col2,5%), $col2);
+    background: -o-linear-gradient(darken($col2,5%), $col2);
+    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, darken($col2,5%)));
+    background: -webkit-linear-gradient(darken($col2,5%), $col2);
     background-color: $col2;
-    border: 10px solid darken($col2,8%);
+    border: 10px solid darken($col2,5%);
     color: $white;
 
     a {
-        color: $white;  
+        color: $white;
+    }
+    .badge {
+        a {
+            color: $white;
+        }
     }
 }
 
-article:nth-child(4n+4) {
+.article:nth-child(4n+2):after {
+    border-color: $col2 transparent;
+    border-style: solid;
+    border-width: 20px 50px 0;
+    left: 88%;
+    position: relative;
+    bottom: -60px;
+    z-index: -1;
+}
+
+#comments,
+article:nth-child(4n+3) {
     background: linear-gradient(lighten($col3,20%), $col3);
     background: -moz-linear-gradient(lighten($col3,20%), $col3);
     background: -o-linear-gradient(lighten($col3,20%), $col3);
@@ -66,16 +117,31 @@ article:nth-child(4n+4) {
     color: $black;
 
     a {
-        color: $black;  
+        color: $black;
     }
-    
-    .badge a,
-    .article-more-link a {
+
+    .btn {
         color: $white;
+    }
+
+    .badge {
+        a {
+            color: $white;
+        }
     }
 }
 
-article:nth-child(4n+1) {
+.article:nth-child(4n+3):after {
+    border-color: $col3 transparent;
+    border-style: solid;
+    border-width: 20px 50px 0;
+    left: 28%;
+    position: relative;
+    bottom: -60px;
+    z-index: -1;
+}
+
+article:nth-child(4n+4) {
     background: linear-gradient(darken($col4,20%), $col4);
     background: -moz-linear-gradient(darken($col4,20%), $col4);
     background: -o-linear-gradient(darken($col4,20%), $col4);
@@ -86,6 +152,40 @@ article:nth-child(4n+1) {
     color: $white;
 
     a {
-        color: $white;  
+        color: $white;
+    }
+    .badge {
+        a {
+            color: $white;
+        }
+    }
+}
+
+.article:nth-child(4n+4):after {
+    border-color: $col4 transparent;
+    border-style: solid;
+    border-width: 20px 50px 0;
+    left: 48%;
+    position: relative;
+    bottom: -60px;
+    z-index: -1;
+}
+
+.article {
+    .contentpage {
+        background: $white;
+        color: $black;
+        box-shadow: 0px 1px 5px $black;
+        -webkit-box-shadow: 0px 1px 5px $black;
+
+        a {
+            color: $col1;
+        }
+
+        .badge {
+            a {
+                color: $white;
+            }
+        }
     }
 }

@@ -17,7 +17,9 @@
 .container .jumbotron, 
 .container-fluid .jumbotron {
     border-radius: 0;
-    padding: 50px 20px;
+    border-bottom: 10px solid #222;
+    padding: 20px;
+    font-family: Mathlete;
 
     span {
         font-size: 30px;
@@ -33,7 +35,6 @@
 
 .jumbotron {
     background-color: $headercol1;
-    border-bottom: 10px solid #222;
     color: $white;
 
     span {
