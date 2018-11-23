@@ -1,17 +1,16 @@
 {
-	"lang": "en",
-    "dir": "ltr",
-	"name": "DevTricks - Dev Blog by Lee Boonstra",
 	"short_name": "DevTricks",
-    "description": "Lee Boonstra is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.",
-	"icons": [{
+	"name": "DevTricks - Dev Blog by Lee Boonstra",
+	"icons": [
+	  {
 		"src": "assets/images/profile.jpg",
-		"sizes": "400x400"
-	}],
-	"theme_color": "#000",
+		"type": "image/jpg",
+		"sizes": "192x192"
+	  }
+	],
+	"start_url": "/",
 	"background_color": "#8bd2f7",
 	"display": "standalone",
-	"orientation": "portrait",
-	"start_url": "https://devtricks-45484.firebaseapp.com",
-    "scope": "/"
-}
+	"scope": "/",
+	"theme_color": "#000"
+  }
