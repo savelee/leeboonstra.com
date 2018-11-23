@@ -1,0 +1,12 @@
+---
+title: Sencha Architect won't start / Sencha Themer won't build
+tags:
+  - Port error
+url: 1666.html
+id: 1666
+categories:
+  - Questions
+date: 2015-09-28 12:36:01
+---
+
+A weird error happened in my Sencha Themer. I wasn't able to start the Themer, because I couldn't make a Sencha build. This problem with Sencha Cmd probably actually also affected my Sencha Test, who couldn't create builds either. ###No available port starting at 1,842 The error shown in the logs was: ``` The following error occurred while executing this line: Error: BUILD FAILED com.sencha.exceptions.ExNotFound: No available port starting at 8,902 Total time: 1 second The following error occurred while executing this line:     at SenchaCmdError (/Applications/Sencha/Themer/Sencha Themer.app/Contents/Resources/app.asar/app/errors/SenchaCmdError.js:5:9)     at SenchaCmd.\_closeHandler (/Applications/Sencha/Themer/Sencha Themer.app/Contents/Resources/app.asar/app/lib/SenchaCmd.js:192:32)     at ChildProcess.g (events.js:286:16)     at emitTwo (events.js:106:13)     at ChildProcess.emit (events.js:191:7)     at maybeClose (internal/child\_process.js:850:16)     at Socket. (internal/child\_process.js:323:11)     at emitOne (events.js:96:13)     at Socket.emit (events.js:188:7)     at Pipe.\_handle.close \[as _onclose\] (net.js:492:12) ``` This problem even infected my Sencha Architect. With the release of 3.5.1 (which probably makes use of a newer Cmd version, and needs to make builds too), I wasn't able to start Sencha Architect. - My software would just freeze, and nothing would start or happen. After a lot of pain and headaches, we figured out how to solve the issue. We used this script, to make some tests with better logging: https://gist.github.com/savelee/61082f5ae084688bf9c479209346005f \*\*The real problem was that Sencha Cmd was unable to bind to localhost.\*\* What's causing these problems was my hosts file: */etc/hosts/* My local XAMPP server, modified the hosts file, and set 255.255.255.255 to localhost, but it should be \*broadcasthost\*: https://gist.github.com/savelee/f6e9ca1b94eb88a649e784bf9260ecb8 After editing my hosts file by running: \`sudo nano /etc/hosts\` and restarting my networking. I suddenly could run the test script, and Sencha Themer and Sencha Architect 3.5.1. Wow! A ticket to fix this in the future for other customers, will fix this as well: https://github.com/sencha/cmd/pull/496

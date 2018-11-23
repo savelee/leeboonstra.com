@@ -1,0 +1,13 @@
+---
+title: Does Ext JS 6 include a solution for push notifications?
+tags:
+  - push notifications
+url: 1668.html
+id: 1668
+categories:
+  - Ext JS 5 &amp; 6
+  - Questions
+date: 2015-09-28 12:38:03
+---
+
+With Sencha Ext JS 6, you can create mobile applications. We will provide all the tools and components you need to design your app, based on HTML5. However, we don't include a solution for Push notifications (to send messages to app users) within our framework because push notifications require access to native device APIs. For a mobile app based on HTML5 you will need to add an extra technology. There are various ways how you can solve this in an HTML5 app: (so what you will need, is an extra technology to wrap your web application in a native shell. You can do this with technologies like PhoneGap or Cordova. It basically wraps a native browser/webview around your app.) - \[http://phonegap.com/\](http://phonegap.com/) - \[https://cordova.apache.org/\](https://cordova.apache.org/) Once, the code is build with PhoneGap or Cordova, you can use their APIs to talk to native features, such as a camera or push notifications. PhoneGap and Cordova use the same technology. But PhoneGap is commercial, by Adobe. And Cordova is open source and Apache. Therefore, Cordova has probably the best choice of APIs and user plugins that you can use. See here: \[https://cordova.apache.org/plugins/?q=push\](https://cordova.apache.org/plugins/?q=push) I haven't worked with push notifications yet myself, but I did work with Cordova and plugins before. I wrote a guide here: \[http://www.devtricks.eu/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/\](http://www.devtricks.eu/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/) (it might be a bit outdated since I wrote it a while ago, but it probably will help you to get started...) Apart from the above story, there are also commercial solutions that have push notification back-ends/servers, with easy to implement scripts, to integrate push notifications in your apps. Such as: * \[https://www.pushwoosh.com/\](https://www.pushwoosh.com/) * \[https://pusher.com/\](https://www.pushwoosh.com/) And last but not least, I know that Google is looking into ways how you can integrate push notifications in web applications. This is all new stuff. It might be only working for Chrome yet. But it will be the future! \[https://developers.google.com/web/fundamentals/primers/?hl=en\](https://developers.google.com/web/fundamentals/primers/?hl=en)

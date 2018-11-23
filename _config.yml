@@ -35,7 +35,7 @@ menu:
   About: about/
   Speaking: speaking/
   Writing: writing/
-  Videos: videos/
+  Videos: /categories/Videos/
   Contact: contact/
 rss: /atom.xml
 

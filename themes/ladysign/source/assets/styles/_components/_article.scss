@@ -7,6 +7,24 @@
         line-height: 26px;
     }
 
+    img {
+        max-width: 800px;
+    }
+
+    .float-left {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .float-right {
+        float: right;
+        margin-left: 10px;
+    }
+
+    .border {
+        border: 2px solid $black;
+    }
+
     .article-category {
         display: inline;
     }
