@@ -14,36 +14,36 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const VERSION = '1';
+const VERSION = '2';
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  'index.html',
+  '/index.html',
   './', // Alias for index.html
-  'assets/styles/main.css',
-  'assets/js/main.js',
-  'assets/js/vendor/jquery-3.3.1.min.js',
-  'assets/js/vendor/modernizr-3.6.0.min.js',
-  "assets/fonts/Mathlete-Skinny-webfont.eot",
-  "assets/fonts/Mathlete-Skinny-webfont.svg",
-  "assets/fonts/Mathlete-Skinny-webfont.ttf",
-  "assets/fonts/Mathlete-Skinny-webfont.woff",
-  "assets/fonts/oswald-regular-webfont.eot",
-  "assets/fonts/oswald-regular-webfont.svg",
-  "assets/fonts/oswald-regular-webfont.ttf",
-  "assets/fonts/oswald-regular-webfont.woff",
-  "assets/fonts/Roboto-Regular-webfont.eot",
-  "assets/fonts/Roboto-Regular-webfont.svg",
-  "assets/fonts/Roboto-Regular-webfont.ttf",
-  "assets/fonts/Roboto-Regular-webfont.woff",
-  "assets/fonts/icomoon.eot",
-  "assets/fonts/icomoon.svg",
-  "assets/fonts/icomoon.ttf",
-  "assets/fonts/icomoon.woff",
-  "images/book.gif",
-  "images/profile.jpg"
+  '/assets/styles/main.css',
+  '/assets/js/main.js',
+  '/assets/js/vendor/jquery-3.3.1.min.js',
+  '/assets/js/vendor/modernizr-3.6.0.min.js',
+  "/assets/fonts/Mathlete-Skinny-webfont.eot",
+  "/assets/fonts/Mathlete-Skinny-webfont.svg",
+  "/assets/fonts/Mathlete-Skinny-webfont.ttf",
+  "/assets/fonts/Mathlete-Skinny-webfont.woff",
+  "/assets/fonts/oswald-regular-webfont.eot",
+  "/assets/fonts/oswald-regular-webfont.svg",
+  "/assets/fonts/oswald-regular-webfont.ttf",
+  "/assets/fonts/oswald-regular-webfont.woff",
+  "/assets/fonts/Roboto-Regular-webfont.eot",
+  "/assets/fonts/Roboto-Regular-webfont.svg",
+  "/assets/fonts/Roboto-Regular-webfont.ttf",
+  "/assets/fonts/Roboto-Regular-webfont.woff",
+  "/assets/fonts/icomoon.eot",
+  "/assets/fonts/icomoon.svg",
+  "/assets/fonts/icomoon.ttf",
+  "/assets/fonts/icomoon.woff",
+  "/images/book.gif",
+  "/images/profile.jpg"
 ];
 
 // The install handler takes care of precaching the resources we always need.
