@@ -66,7 +66,9 @@ article:nth-child(4n+1) {
     background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,2%)));
     background: -webkit-linear-gradient(darken($col1,2%), $col1);
     background-color: $col1;
-    border: 10px solid darken($col1,2%);
+    border-color: darken($col1,2%);
+    border-width: 10px;
+    border-style: solid;
     color: $white;
 
     a {
@@ -97,7 +99,9 @@ article:nth-child(4n+2) {
     background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, lighten($col2,2%)));
     background: -webkit-linear-gradient(lighten($col2,2%), $col2);
     background-color: $col2;
-    border: 10px solid lighten($col2,2%);
+    border-color: lighten($col2,2%);
+    border-width: 10px;
+    border-style: solid;
     color: $white;
 
     a {
@@ -123,7 +127,9 @@ article:nth-child(4n+3) {
     background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col3), color-stop(100%, lighten($col3,5%)));
     background: -webkit-linear-gradient(lighten($col3,5%), $col3);
     background-color: $col3;
-    border: 10px solid lighten($col3,5%);
+    border-color: lighten($col3,5%);
+    border-width: 10px;
+    border-style: solid;
     color: $black;
 
     a {
@@ -152,7 +158,9 @@ article:nth-child(4n+4) {
     background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col4), color-stop(100%, darken($col4,5%)));
     background: -webkit-linear-gradient(darken($col4,5%), $col4);
     background-color: $col4;
-    border: 10px solid darken($col4,5%);
+    border-color: darken($col4,5%);
+    border-width: 10px;
+    border-style: solid;
     color: $white;
 
     a {
@@ -184,6 +192,6 @@ article:nth-child(4n+4) {
 }
 
 .badge {
-    background-color: $badgecol !important;
+    background-color: #222 !important;
     color: $white !important;
 }

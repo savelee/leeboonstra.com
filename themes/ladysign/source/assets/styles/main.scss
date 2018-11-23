@@ -85,13 +85,57 @@ h2,h3,h4 {
     margin-bottom: 0;
 }
 
+.filler {
+    display: block;
+    background: #00BCD4;
+    height: 65px;
+}
+
+@media (min-width: 769px){
+    .navbar-toggler {
+        display: none;
+    } 
+}
+
 @media (max-width: 768px){
     .article, .related, .comments {
-        margin: 0 15px;
+     
     }
 
-    #sidebar {
+    #sidebar,
+    .jumbotron,
+    #sidebarfront {
         display: none;
+    }
+
+    .frontarticle {
+        padding: 0;
+        border-width: 1px !important;
+    }
+
+    .article:nth-child(4n+1):after,
+    .article:nth-child(4n+2):after,
+    .article:nth-child(4n+3):after,
+    .article:nth-child(4n+4):after
+    {
+        display: none;
+    }
+
+    .foot h4 {
+        margin-left: 20px;
+    }
+
+    footer.foot {
+        padding: 10px 0;
+    }
+
+    iframe,
+    img {
+        max-width: 200px;
+    }
+
+    .search-form {
+        position: relative;
     }
 }
 
@@ -99,10 +143,72 @@ h2,h3,h4 {
     content: "G";
 }
 .icon-linkedin:before {
-    content: "L";
+    content: "\69";
 }
 .icon-twitter:before {
-    content: "T";
+    content: "\e606";
+}
+.icon-rss:before {
+    content: "\ea9b";
+}
+.iconsearch:before {
+    content: "S";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconHome:before{
+    content: "H";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconContact:before{
+    content: "C";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconWriting:before {
+    content: "w";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconSpeaking:before{
+    content: "\e91e";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconVideos:before{
+    content: "\76";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+.iconAbout:before {
+    content: "\e971";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-right: 7px;
+}
+
+
+.search-form-input {
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+}
+.search-form-submit {
+    margin-top: -5px;
 }
 
 .badge:before {
@@ -131,8 +237,8 @@ h2,h3,h4 {
     right: 12px;
     margin: 0;
     padding: 0;
-    top: 65px;
-    z-index: 200;
+    top: 72px;
+    z-index: 2;
     position: absolute;
 
     li {
@@ -153,4 +259,15 @@ h2,h3,h4 {
         }
     }
 
+}
+
+.search-form-input {
+    background: #000;
+    color: $white;
+}
+
+.navbar-toggler {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
 }

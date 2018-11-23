@@ -48,33 +48,28 @@
           
 <div class="wrapper">
   <header>
-    <nav id="navbar" class="navbar navbar-inverse">
-      <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+  <div class="filler"></div>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top">
+      <button class="navbar-toggler btn btn primary" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-        <a class="navbar-brand" href="/" title="<%-config.title %>" rel="home">
-          <%- config.title %>
-        </a>
-      </div>
+      <a class="navbar-brand" href="/" title="<%-config.title %>"><%- config.title %></a>
         
-      <div role="navigation" class="nav-collapse in collapse">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+        
+        <ul class="nav navbar-nav">
+            <% for (var i in config.menu){ %>
+              <li><a class="icon<%= i %> <%= is_current(theme.menu[i]) ? 'active' : '' %>"
+                     href="<%- url_for(config.menu[i]) %>"><%= i %></a></li>
+            <% } %>
+        </ul>
 
-          <ul class="nav navbar-nav">
-              <% for (var i in config.menu){ %>
-                <li><a class="<%= is_current(theme.menu[i]) ? 'active' : '' %>"
-                       href="<%- url_for(config.menu[i]) %>"><%= i %></a></li>
-              <% } %>
-          </ul>
-          <% if (config.rss){ %>
-            <a id="nav-rss-link" class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"></a>
-          <% } %>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search...">
+          <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button>
+          <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com">
+        </form>
 
-          <%- search_form({button: '&#xF002;'}) %>
-      </div>  
     </nav>
 
     <% if (url_for(page.path) == '/index.html'){ %> 
@@ -87,8 +82,11 @@
                     <li><a href="http://github.com/savelee/" target="_blank" class="icon-github"><span>Github</span></a></li>
                     <li><a href="http://www.twitter.com/ladysign" target="_blank" class="icon-twitter"><span>Twitter</span></a></li>
                     <li><a href="http://nl.linkedin.com/in/leeboonstra/" target="_blank" class="icon-linkedin"><span>LinkedIn</span></a></li>
+                    <% if (config.rss){ %>
+                      <li><a id="nav-rss-link" class="icon-rss" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"></a></li>
+                    <% } %>
+                
                 </ul>
-
             </div>
           </div>
         </div>
@@ -100,6 +98,8 @@
     <% } %>
 
   </header>
+
+
 
   <main class="container-fluid content">
       <%- body %>

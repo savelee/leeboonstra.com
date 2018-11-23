@@ -8,6 +8,30 @@
     margin: 18px 0;
 }
 
+.navbar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    right: -5px;
+    height: 10px;
+    /* TODO Add browser prefixes */
+    background:
+      linear-gradient(
+        45deg, transparent 33.333%,
+        #222 33.333%, #222 66.667%,
+        transparent 66.667%
+      ),
+      linear-gradient(
+        -45deg, transparent 33.333%,
+        #222 33.333%, #222 66.667%,
+        transparent 66.667%
+      );
+      background-size: 10px 20px;
+      background-position: 0 -10px;
+  }
+
 .search-form {
     position: absolute;
     right: 5px;
