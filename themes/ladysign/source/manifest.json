@@ -3,7 +3,7 @@
 	"name": "DevTricks - Dev Blog by Lee Boonstra",
 	"icons": [
 	  {
-		"src": "images/profile.jpg",
+		"src": "/images/profile.jpg",
 		"type": "image/jpg",
 		"sizes": "400x400"
 	  }
