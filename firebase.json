@@ -6,7 +6,7 @@
       "**/node_modules/**"
     ],
     "headers": [ {
-      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "source" : "**/*.@(eot|otf|svg|ttf|ttc|woff|font.css)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
         "value" : "*"
@@ -15,7 +15,7 @@
       "source" : "**/*.@(jpg|jpeg|ttf|svg|woff|eot|ico|gif|js|png)",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=7200"
+        "value" : "max-age=31557600"
       } ]
     }, {
       "source" : "404.html",
