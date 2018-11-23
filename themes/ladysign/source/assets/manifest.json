@@ -12,6 +12,6 @@
 	"background_color": "#8bd2f7",
 	"display": "standalone",
 	"orientation": "portrait",
-	"start_url": "https://www.leeboonstra.com",
+	"start_url": "https://devtricks-45484.firebaseapp.com",
     "scope": "/"
 }

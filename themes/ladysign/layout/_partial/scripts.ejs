@@ -1,8 +1,18 @@
 <script type="text/javascript">
-if('serviceWorker'in navigator){
-   navigator.serviceWorker.register('assets/js/serviceworker.js').then(function(registration){}).catch(function(err){});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('assets/js/serviceworker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
 }
 </script>
+
+
 
 <%- js('assets/js/vendor/modernizr-3.6.0.min') %>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
