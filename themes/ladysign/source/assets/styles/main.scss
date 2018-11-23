@@ -136,6 +136,8 @@ h2,h3,h4 {
 
     .search-form {
         position: relative;
+        margin-left: 15px;
+        margin-bottom: 10px;
     }
 }
 
@@ -151,6 +153,15 @@ h2,h3,h4 {
 .icon-rss:before {
     content: "\ea9b";
 }
+.iconmenu:after {
+    content: "M";
+    font-family: icomoon;
+    speak: none;
+    text-transform: none;
+    margin-top: -10px;
+    font-size: 20px;
+}
+
 .iconsearch:before {
     content: "S";
     font-family: icomoon;
@@ -270,4 +281,8 @@ h2,h3,h4 {
     float: left;
     margin-top: 10px;
     margin-left: 10px;
+}
+.btn-dark {
+    background: $black;
+    padding: 0 5px;
 }

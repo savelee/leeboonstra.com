@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link type="img/ico" rel="shortcut icon" href="assets/favicon.ico">
   <%
   var title = page.title;
 
@@ -24,14 +29,13 @@
   <title itemprop="name"><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta itemprop="creator" content="Lee Boonstra">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="manifest" href="assets/manifest.json">
 
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
-  <% } %>
+
   <% if (config.highlight.enable){ %>
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
@@ -50,8 +54,8 @@
   <header>
   <div class="filler"></div>
   <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top">
-      <button class="navbar-toggler btn btn primary" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="iconmenu"></span>
       </button>
       <a class="navbar-brand" href="/" title="<%-config.title %>"><%- config.title %></a>
         
@@ -62,7 +66,14 @@
               <li><a class="icon<%= i %> <%= is_current(theme.menu[i]) ? 'active' : '' %>"
                      href="<%- url_for(config.menu[i]) %>"><%= i %></a></li>
             <% } %>
+
+            <li>
+                <%- partial('_widget/category') %>
+            </li>
         </ul>
+
+  
+
 
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search...">
