@@ -14,11 +14,27 @@ self.addEventListener('install', function(event) {
       // And add resources to it
       return cache.addAll([
         './',
+        'index.html',
         'assets/styles/main.css',
+        'favicon.ico',
+        'images/profile.jpg',
+        'images/book.gif',
         'assets/fonts/icomoon.eot',
         'assets/fonts/icomoon.svg',
         'assets/fonts/icomoon.ttf',
-        'assets/fonts/icomoon.woff'
+        'assets/fonts/icomoon.woff',
+        "assets/fonts/Mathlete-Skinny-webfont.eot",
+        "assets/fonts/Mathlete-Skinny-webfont.svg",
+        "assets/fonts/Mathlete-Skinny-webfont.ttf",
+        "assets/fonts/Mathlete-Skinny-webfont.woff",
+        "assets/fonts/oswald-regular-webfont.eot",
+        "assets/fonts/oswald-regular-webfont.svg",
+        "assets/fonts/oswald-regular-webfont.ttf",
+        "assets/fonts/oswald-regular-webfont.woff",
+        "assets/fonts/Roboto-Regular-webfont.eot",
+        "assets/fonts/Roboto-Regular-webfont.svg",
+        "assets/fonts/Roboto-Regular-webfont.ttf",
+        "assets/fonts/Roboto-Regular-webfont.woff"
       ]);
     })
   );
