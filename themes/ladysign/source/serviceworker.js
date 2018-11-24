@@ -58,24 +58,15 @@ self.addEventListener('install', function(event) {
   );
 });
 
-//the fetch event of a service worker is fired for
-//every single request the page makes. The fetch
-//event also allows you to serve alternate content
-//than what's actually requested. For example Offline content.
-//This Fetch event is simple, if the file is cached
-//return from cache, else return from server.
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    // Try the cache
-    caches.match(event.request).then(function(response) {
-      // Fall back to network
-      return response || fetch(event.request);
-    }).catch(function() {
-      // If both fail, show a generic fallback:
-      return caches.match('/offline.html');
-      // However, in reality you'd have many different
-      // fallbacks, depending on URL & headers.
-      // Eg, a fallback silhouette image for avatars.
+    caches.open(CACHE_NAME).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        return response || fetch(event.request).then(function(response) {
+          //cache.put(event.request, response.clone());
+          return response;
+        });
+      });
     })
   );
 });
