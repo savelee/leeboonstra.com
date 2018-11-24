@@ -16,6 +16,10 @@ if ('serviceWorker' in navigator) {
 <%- js('assets/js/vendor/jquery-3.3.1.min') %>
 <%- js('assets/js/vendor/popper.min') %>
 <%- js('assets/js/vendor/bootstrap.min') %>
+<%- js('assets/js/disqus-lazy-min') %>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4d8e001731dfa277"></script>
-    
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4d8e001731dfa277" async="async"></script>
+
+<script type="text/javascript">                
+  $.disqusLoader( '.disqus', { scriptUrl: '//leeboonstra-com.disqus.com/embed.js' });
+</script>

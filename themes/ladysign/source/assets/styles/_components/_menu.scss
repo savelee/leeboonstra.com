@@ -109,7 +109,9 @@
 
 @media (max-width: 768px) {
 	.navbar-brand {
-		font-size: 18px !important;
+		font-size: 20px !important;
+		line-height: 24px;
+		color: $white !important;
 	}
     .navbar-collapse {
 		background: $black;
@@ -135,7 +137,14 @@
         -webkit-transition: left 0.3s ease-in;
         -o-transition: left 0.3s ease-in;
         -moz-transition: left 0.3s ease-in;
-        transition: left 0.3s ease-in;
+		transition: left 0.3s ease-in;
+		
+		.categories {
+			li {
+				display: block;
+				padding: 0;
+			}
+		}
     }
 	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
 		max-height: 1000px;

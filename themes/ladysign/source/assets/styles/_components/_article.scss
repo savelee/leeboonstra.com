@@ -4,7 +4,7 @@
     h1 {
         font-family: BebasNeue;
         font-size: 36px;
-        line-height: 26px;
+        line-height: 32px;
     }
 
     img {
@@ -75,6 +75,20 @@
     }
 }
 
+#page-nav {
+    text-align: center;
+    padding: 30px;
+    font-family: Oswald, Impact;
+
+    span, a {
+        margin-right: 5px;
+        padding: 5px;
+    }
+    a {
+        font-weight: bold;
+    }
+}
+
 //articles
 article:nth-child(4n+1) {
     background: linear-gradient(darken($col1,2%), $col1);
@@ -136,7 +150,6 @@ article:nth-child(4n+2) {
     z-index: 0;
 }
 
-#comments,
 article:nth-child(4n+3) {
     background: linear-gradient(lighten($col3,5%), $col3);
     background: -moz-linear-gradient(lighten($col3,5%), $col3);
@@ -168,6 +181,7 @@ article:nth-child(4n+3) {
     z-index: 0;
 }
 
+#comments,
 article:nth-child(4n+4) {
     background: linear-gradient(darken($col4,5%), $col4);
     background: -moz-linear-gradient(darken($col4,5%), $col4);
@@ -211,4 +225,21 @@ article:nth-child(4n+4) {
 .badge {
     background-color: #222 !important;
     color: $white !important;
+}
+
+#page-nav {
+    background-color: $headercol1;
+    background-color: #00BCD4;
+    border-bottom: 4px solid #222;
+    border-top: 1px solid #222;
+    
+    span {
+        color: #f3f3f3;
+    }
+    a {
+        color: $white;
+    }
+    span, a {
+        background-color: darken($headercol1,10%); 
+    }
 }

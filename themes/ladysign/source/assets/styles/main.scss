@@ -26,9 +26,20 @@
     src:url(../fonts/bebasneue-webfont.eot?#iefix) format("embedded-opentype"),
         url(../fonts/bebasneue-webfont.woff) format("woff"),
         url(../fonts/bebasneue-webfont.ttf) format("truetype"),
-        url(../fonts/bebasneue-webfont.svg#Roboto) format("svg")
+        url(../fonts/bebasneue-webfont.svg#BebasNeue) format("svg")
 }
 
+
+@font-face{
+    font-family: consolas;
+    font-style:normal;
+    font-weight:400;
+    src:url(../fonts/consolas-webfont.eot);
+    src:url(../fonts/consolas-webfont.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/consolas-webfont.woff) format("woff"),
+        url(../fonts/consolas-webfont.ttf) format("truetype"),
+        url(../fonts/consolas-webfont.svg#consolas) format("svg")
+}
 
 @font-face{
     font-family: Oswald;
@@ -38,7 +49,7 @@
     src:url(../fonts/oswald-regular-webfont?#iefix) format("embedded-opentype"),
         url(../fonts/oswald-regular-webfont.woff) format("woff"),
         url(../fonts/oswald-regular-webfont.ttf) format("truetype"),
-        url(../fonts/oswald-regular-webfont.svg#Roboto) format("svg")
+        url(../fonts/oswald-regular-webfont.svg#Oswald) format("svg")
 }
 
 @font-face{
@@ -60,7 +71,7 @@
     src:url(../fonts/icomoon.eot?#iefix) format("embedded-opentype"),
         url(../fonts/icomoon.woff) format("woff"),
         url(../fonts/icomoon.ttf) format("truetype"),
-        url(../fonts/icomoon.svg#Roboto) format("svg")
+        url(../fonts/icomoon.svg#icomoon) format("svg")
 }
 
 body{

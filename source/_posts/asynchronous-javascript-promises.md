@@ -7,8 +7,8 @@ tags:
   - JavaScript
   - promises
   - ExtJS6
-categories:
   - Sencha
+categories:
   - Ext JS
 date: 2016-04-01 10:14:56
 ---

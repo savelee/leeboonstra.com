@@ -57,3 +57,7 @@ More info: [Deployment](https://hexo.io/docs/deployment.html)
 ![Lee Boonstra](/images/profile.jpg)
 
 {% img [fancybox] /images/profile.jpg [200] [100] [Lee Boonstra [Lee Boonstra profile]] %}
+
+``` javascript
+console.log("test")
+```

@@ -7,8 +7,8 @@
   <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="640">
-  <link type="img/ico" rel="shortcut icon" href="favicon.ico">
-  <%
+  <link type="img/ico" rel="shortcut icon" href="/favicon.ico">
+ <%
   var title = page.title;
 
   if (is_archive()){
@@ -29,20 +29,45 @@
   <title itemprop="name"><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta itemprop="creator" content="Lee Boonstra">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="manifest" href="manifest.json">
-
+ 
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
 
-  <% if (config.highlight.enable){ %>
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <% } %>
+  <link rel="preload" href="/assets/styles/main'" as="style">
 
-  <%- css('assets/styles/main') %>
+  <link rel="preload" href="/serviceworker.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
 
-  <!--<link rel="manifest" href="site.webmanifest">-->
+  <link rel="preload" href="/assets/fonts/icomoon.eot" as="font">
+  <link rel="preload" href="/assets/fonts/icomoon.ttf" as="font">
+  <link rel="preload" href="/assets/fonts/icomoon.svg" as="font">
+  <link rel="preload" href="/assets/fonts/icomoon.woff" as="font">
+  <link rel="preload" href="/assets/fonts/consolas-webfont.eot" as="font">
+  <link rel="preload" href="/assets/fonts/consolas-webfont.ttf" as="font">
+  <link rel="preload" href="/assets/fonts/consolas-webfont.svg" as="font">
+  <link rel="preload" href="/assets/fonts/consolas-webfont.woff" as="font">
+  <link rel="preload" href="/assets/fonts/Mathlete-Skinny-webfont.eot" as="font">
+  <link rel="preload" href="/assets/fonts/Mathlete-Skinny-webfont.ttf" as="font">
+  <link rel="preload" href="/assets/fonts/Mathlete-Skinny-webfont.svg" as="font">
+  <link rel="preload" href="/assets/fonts/Mathlete-Skinny-webfont.woff" as="font">
+  <link rel="preload" href="/assets/fonts/oswald-regular-webfont.eot" as="font">
+  <link rel="preload" href="/assets/fonts/oswald-regular-webfont.ttf" as="font">
+  <link rel="preload" href="/assets/fonts/oswald-regular-webfont.svg" as="font">
+  <link rel="preload" href="/assets/fonts/oswald-regular-webfont.woff" as="font">
+  <link rel="preload" href="/assets/fonts/Roboto-Regular-webfont.eot" as="font">
+  <link rel="preload" href="/assets/fonts/Roboto-Regular-webfont.ttf" as="font">
+  <link rel="preload" href="/assets/fonts/Roboto-Regular-webfont.svg" as="font">
+  <link rel="preload" href="/assets/fonts/Roboto-Regular-webfont.woff" as="font">
+
+  <link rel="manifest" href="/manifest.json">
+
+
 </head>
 
 <body>
@@ -119,9 +144,6 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-4">
-            <%- partial('_widget/recent_posts') %>
-        </div>
-        <div class="col col-sm-4">
             <%- partial('_widget/archive') %>
         </div>
         <div class="col col-sm-4">
@@ -138,6 +160,9 @@
             </ul>
 
         </div> 
+        <div class="col col-sm-4">
+            <%- partial('_widget/recent_posts') %>
+        </div>
       </div>
     </div>
   </footer>
