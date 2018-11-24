@@ -158,6 +158,7 @@ h2,h3,h4 {
 .icon-linkedin:before {
     content: "\69";
 }
+.twitter-share-button span:before,
 .icon-twitter:before {
     content: "\e606";
 }
@@ -233,12 +234,24 @@ h2,h3,h4 {
     margin-top: -5px;
 }
 
-.badge:before {
+.tag-link {
+    margin-right: 5px;
+}
+
+.tag-link:before {
     content: "t";
     font-family: icomoon;
     speak: none;
     text-transform: none;
     padding-right: 5px;
+}
+
+.twitter-share-button span:before {
+    font-family: icomoon;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    margin-right: 5px;
 }
 
 [class*=" icon-"], [class^=icon-] {

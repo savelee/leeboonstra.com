@@ -5,7 +5,16 @@
     <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="col col-sm-9 article-inner contentpage">
 
-    <div class="addthis_sharing_toolbox"></div>
+    <a class="twitter-share-button btn"
+      href="https://twitter.com/intent/tweet?text=I came across: <%= post.title %> via @ladysign"
+      data-size="large" target="_blank">
+    <span>Tweet this</span></a>
+
+    <a class="twitter-follow-button btn"
+      href="https://twitter.com/ladysign"
+      data-size="large">
+    Follow @ladysign</a>
+
     <% } %>
 
     <%- partial('post/gallery') %>
@@ -27,16 +36,25 @@
     <% } else { %>
       <%- post.content %>
     <% } %>
-  
-    <%- partial('post/tag') %>
 
-    <% if (!index){ %>
-      <div class="addthis_sharing_toolbox"></div>
-    <% } %>
-  
-    <% if (!index){ %>
-      <%- partial('post/nav') %>
-    <% } %>
+    <footer class="article-foot">
+      <%- partial('post/tag') %>
+
+      <% if (!index){ %>
+        <div class="bar">
+          <a class="twitter-share-button btn"
+          href="https://twitter.com/intent/tweet?text=I came across: <%= post.title %> - <%- config.url %><%- url_for(post.path) %> via @ladysign"
+          data-size="large" target="_blank">
+          <span>Tweet this</span></a>
+        </div>
+      <% } %>
+    
+      <% if (!index){ %>
+        <%- partial('post/nav') %>
+      <% } %>
+
+      
+    </footer>
 
   </div>
 

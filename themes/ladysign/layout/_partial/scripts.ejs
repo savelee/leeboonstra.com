@@ -18,7 +18,22 @@ if ('serviceWorker' in navigator) {
 <%- js('assets/js/vendor/bootstrap.min') %>
 <%- js('assets/js/disqus-lazy-min') %>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4d8e001731dfa277" async="async"></script>
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+  
+    return t;
+  }(document, "script", "twitter-wjs"));</script>
 
 <script type="text/javascript">                
   $.disqusLoader( '.disqus', { scriptUrl: '//leeboonstra-com.disqus.com/embed.js' });

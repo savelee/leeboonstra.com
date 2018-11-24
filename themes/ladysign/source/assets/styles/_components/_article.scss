@@ -33,6 +33,27 @@
         margin-bottom: 15px;
         font-size: 12px;
     }
+    
+    #article-nav li a {
+        background: #008fa1;
+        color: $white;
+        padding: 3px 10px;
+        display: inline-block;
+        font-family: Oswald, Impact;
+    }
+    #article-nav li a:hover {
+        text-decoration: none;
+        background: lighten(#008fa1, 5%);
+    }
+
+    .article-foot {
+        clear: both;
+
+        .bar {
+            display: block;
+            margin-top: 20px;
+        }
+    }
 }
 
 .article {
@@ -59,10 +80,6 @@
 
 .badge {
     margin-top: -2px;
-}
-
-.addthis_sharing_toolbox {
-    text-align: right;
 }
 
 #article-nav {
@@ -242,4 +259,20 @@ article:nth-child(4n+4) {
     span, a {
         background-color: darken($headercol1,10%); 
     }
+}
+
+.twitter-share-button {
+    background: #38A1F3;
+
+    font-family: BebasNeue;
+    font-size: 20px;
+    line-height: 22px;
+
+    span {
+        color: #fff;
+    }
+}
+
+.twitter-share-button:hover {
+    background: darken(#38A1F3, 5%);
 }
