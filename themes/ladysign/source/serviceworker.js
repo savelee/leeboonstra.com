@@ -2,6 +2,8 @@
 // this polyfill adds them.
 importScripts('cache-pf.js');
 
+var CACHE_NAME = "devtricks";
+
 // Here comes the install event!
 // This only happens once, when the browser sees this
 // version of the ServiceWorker for the first time.
