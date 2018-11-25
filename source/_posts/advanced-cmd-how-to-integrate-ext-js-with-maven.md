@@ -7,7 +7,7 @@ tags:
   - pom
   - Sencha
 categories:
-  - Ext JS
+  - Sencha CMD
 date: 2016-02-25 18:38:32
 ---
 
@@ -53,11 +53,12 @@ With the *exec-maven-plugin*, http://www.mojohaus.org/exec-maven-plugin/usage.ht
 
 ### Ant Task runner, with the Maven maven-antrun-plugin 
 
-With the *maven-antrun-plugin* https://maven.apache.org/plugins/maven-antrun-plugin/(https://maven.apache.org/plugins/maven-antrun-plugin/)), you can use Maven to run Apache Ant task. To make sure it recognizes the Sencha Ant command, you will need to have the **sencha.jar** somewhere on your machine. By default it’s located in the Cmd installation folder, but you could copy this over to your Maven environment/machine. Your **pom.xml** file, will look like this: https://gist.github.com/savelee/5d99a824d4df70c66fbe 
+With the *maven-antrun-plugin* https://maven.apache.org/plugins/maven-antrun-plugin/, you can use Maven to run Apache Ant task. To make sure it recognizes the Sencha Ant command, you will need to have the **sencha.jar** somewhere on your machine. By default it’s located in the Cmd installation folder, but you could copy this over to your Maven environment/machine. Your **pom.xml** file, will look like this: https://gist.github.com/savelee/5d99a824d4df70c66fbe 
 
 See also: https://github.com/savelee/maven-ant-sencha/blob/master/pom.xml for my complete solution. 
 
 Here are some handy resources:
+
 * https://maven.apache.org/ 
 * http://www.tutorialspoint.com/maven/maven_web_application.htm
 * http://www.mkyong.com/maven/how-to-create-a-web-application-project-with-maven/

@@ -7,6 +7,14 @@
         line-height: 32px;
     }
 
+    .badge a, header a, footer a {
+        text-decoration: none;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
     img {
         max-width: 100%;
     }

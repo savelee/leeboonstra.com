@@ -9,7 +9,7 @@ tags:
   - Sencha
   - Sencha CMD
 categories:
-  - Ext JS
+  - Sencha CMD
 date: 2016-02-21 18:06:24
 ---
 
@@ -39,7 +39,7 @@ Within this workspace you can generate Ext JS apps, from the *ext* folder: `cd e
 * http://docs.sencha.com/cmd/6.x/workspaces.html
 * http://docs.sencha.com/cmd/6.x/extjs/cmd_app.html 
 
-##Splitting builds 
+## Splitting builds 
 
 By default, a workspace only matters on your development machine. Once you make a build: `sencha app build` Sencha will copy all the used framework classes and all your self written Sencha classes to a build folder. For production, all scripts will be minified. Also the Sass themes will be compiled to production ready css, and copied together with the resources. This means, by default, all shared frameworks and code packages, will be duplicated in the production build, as they can run as stand-alones. For most users, this behavior is exactly what they want. However, there are reasons, why people want to “split” their builds, and host code packages or frameworks separated from their app code. Examples of such reasons are: 
 
