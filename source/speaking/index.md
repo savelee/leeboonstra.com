@@ -1,9 +1,10 @@
 ---
 title: Speaking
 date: 2015-07-06 20:45:21
+event: true
 ---
 
-<img src="/images/leeboonstra-speaker-500x351.png" class="float-right border" alt="Lee Speaking">
+<img src="/images/leeboonstra-speaker-500x351.png" width="400" class="float-right border" alt="Lee Speaking">
 
 Worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of my past sessions.
 
@@ -15,33 +16,132 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
 <p>&nbsp;</p>
 <hr>
 
+
 2018
 ----
 
 *   ### Google Cloud Summit Amsterdam
     
-     28 Nov 2018 | **Amsterdam** | [Website](https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html) | Keynote: AutoML Demo + Contact Center AI Breakout session
-    
-*   ### Klantenservice Federatie
+     28 Nov 2018 | **Zaandam** | [Website](https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html) | Keynote: AutoML Demo + Contact Center AI Breakout session
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Google Cloud Summit Amsterdam",
+        "url": "https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html",
+        "startDate": "28/11/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Taets Gallery",
+          "address": {
+            "addressLocality": "Zaandam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
+  
+*   ### KSF Jaarcongres 2018
     
     20 Nov 2018 | **Almere** | [Website](https://klantenservicefederatie.nl/) | Session about Contact Center AI
+     <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "KSF Jaarcongres 2018",
+        "url": "https://klantenservicefederatie.nl/",
+        "startDate": "20/11/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Kaf",
+          "address": {
+            "addressLocality": "Almere",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>  
 
 *   ### FrontMania Conference 
     
     16 Nov 2018 | **Utrecht** | [Website](https://frontmania.com/) | Keynote: Machine Learning for JavaScript developers
 
-*   ### GoDataFest 2018
-    
-    18 Oct 2018 | **Amsterdam** | [Website](https://www.godatafest.com/) | Learn about Dialogflow and the Google Assistant
+    <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "FrontMania Conference",
+        "url": "https://frontmania.com/",
+        "startDate": "16/11/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Rabobank",
+          "address": {
+            "addressLocality": "Utrecht",
+            "addressCountry": "NL"
+          }
+        }
+      }</script> 
     
 *   ### Chatathon
     
     28 Oct 2018 | **Brussel** | Chatbot hackathon - trainer
+
+     <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Chatbot Hackathon",
+        "startDate": "28/10/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Google Brussel",
+          "address": {
+            "addressLocality": "Brussel",
+            "addressCountry": "BE"
+          }
+        }
+      }</script>
+
+*   ### GoDataFest 2018
     
+    18 Oct 2018 | **Amsterdam** | [Website](https://www.godatafest.com/) | Learn about Dialogflow and the Google Assistant
+
+    <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "GoDataFest 2018",
+        "url": "https://www.godatafest.com/",
+        "startDate": "18/10/2018",
+        "location": {
+          "@type": "Place",
+          "name": "GoDataDriven",
+          "address": {
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
+
 *   ### Google Cloud Next
     
     11 Oct 2018 | **London** | Diversity at Google Panel
-    
+
+    <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Google Cloud Next 2018",
+        "startDate": "11/10/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Excel",
+          "address": {
+            "addressLocality": "London",
+            "addressCountry": "UK"
+          }
+        }
+      }</script>
+
 *   ### YSE Digital Now
     
     05 Oct 2018 | **Amsterdam** | Machine Learning at Google

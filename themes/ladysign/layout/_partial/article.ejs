@@ -21,8 +21,8 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
-        Posted on <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-        in <%- partial('post/category') %>
+        Posted on <%- partial('post/date', {class_name: 'article-date', date_format: 'MMM Do YYYY'}) %>
+        <%- partial('post/category') %>
         <span class="hidden" itemprop="author">Lee Boonstra</span>
       </header>
     <% } %>
@@ -36,6 +36,44 @@
     <% } else { %>
       <%- post.content %>
     <% } %>
+
+    <% if(page.youtube) {  %>
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "VideoObject",
+          "name": "<%= post.title %>",
+          "@id":  "https://www.youtube.com/embed/<%= page.youtube %>",
+          "datePublished": "<%- post.date %>",
+          "description" : "<%- post.title %>",
+          "thumbnailURL" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
+          "thumbnail" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
+          "uploadDate" : "<%- post.updated %>",
+          "author": {
+            "@type": "Person",
+            "name": "Lee Boonstra"
+          }
+        }
+    </script>
+    <% } %>
+
+    <script type="application/ld+json">
+      { "@context": "http://schema.org", 
+      "@type": "BlogPosting",
+      "headline": "<%- post.title %>",
+      "author": "Lee Boonstra", 
+      "genre": "technology", 
+      "datePublished": "<%- post.date %>",
+      "dateCreated": "<%- post.date %>",
+      "dateModified": "<%- post.updated %>",
+      "description": "<%=post.desc%>",
+      "articleBody": "<%=post.desc%>",
+        "author": {
+          "@type": "Person",
+          "name": "Lee Boonstra"
+        }
+      }
+      </script>
 
     <footer class="article-foot">
       <%- partial('post/tag') %>
@@ -57,26 +95,6 @@
     </footer>
 
   </div>
-
-
-
-<script type="application/ld+json">
-  { "@context": "http://schema.org", 
-  "@type": "BlogPosting",
-  "headline": <%- post.title %>,
-  "author": "Lee Boonstra", 
-  "genre": "technology", 
-  "datePublished": <%- post.date %>,
-  "dateCreated": <%- post.date %>,
-  "dateModified": <%- post.updated %>,
-  "description": <%=post.desc%>,
-  "articleBody": <%=post.desc%>,
-    "author": {
-      "@type": "Person",
-      "name": "Lee Boonstra"
-    }
-  }
-  </script>
 
   <div class="col col-sm-3">
 

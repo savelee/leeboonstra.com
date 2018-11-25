@@ -2,7 +2,7 @@
 title: Actions on Google for Google Cloud Functions
 description: Learn how to invoke the Google Assistant with Cloud Functions
 categories:
-  - Actions on Google
+  - Bots
 tags:
   - Actions on Google
   - Cloud Functions
