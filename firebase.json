@@ -17,13 +17,14 @@
         "key" : "Cache-Control",
         "value" : "max-age=31557600"
       } ]
-    }, {
+    }, 
+    {
       "source" : "404.html",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=300"
+        "value" : "max-age=3"
       } ]
-    } ]
+    }]
   }
 }
 
