@@ -1,25 +1,22 @@
 ---
 title: 'Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)'
+description: Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd
 tags:
   - Build native app
-  - cordova
-  - hypbrid app
-  - phonegap
+  - Cordova
+  - hybrid app
+  - Phonegap
   - Sencha Ant
   - Sencha Build
   - Sencha CMD
   - Sencha Touch
-url: 430.html
-id: 430
 categories:
-  - JavaScript
-  - Mobile
-  - Sencha
   - Sencha Touch
 date: 2014-04-21 10:52:47
 ---
 
 In this three-part Sencha Touch tutorial, you will build the _Do I need my Umbrella?_ app, a simple utility app that loads weather information from a web service — worldweatheronline.com. Based on weather codes, this app can predict if you need your umbrella or not.
+<!--more-->
 
 In this last part of the tutorial, we’ll talk about builds. You’ll use Sencha Cmd as well as PhoneGap/Cordova.
 
@@ -54,21 +51,21 @@ With Sencha Cmd, you can create production and test build packages. The producti
 
 The test package won’t contain this file. In the test build, the JavaScript and CSS files in the test package won’t be minified and therefore will be readable.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-1.png)
+![Weather App Tutorial](/images/weather-app-1-build.png)
 
 Let’s first create a production build of the Weather application. We’re not going to create a native build yet. In case you want to host the Weather App on your own server, you need to copy the production build folder over to your web server.
 
 On the command-line enter the following command to generate a production build:
 
-sencha app build production
+`sencha app build production`
 
 or
 
-sencha app build testing
+`sencha app build testing`
 
 Review the folder structure. This is the folder structure you can use on your web server, in case you decide to run the mobile application from an online URL.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-2.png)
+![Weather App Tutorial](/images/weather-app-2-files.png)
 
 Perhaps you noticed that the fonts are not copied into the build folder. We could copy this folder manually, or we could modify the build process. Let’s look into these options.
 
@@ -76,6 +73,7 @@ Sencha Cmd uses Apache Ant for the build processes. You can find all the interna
 
 If you want to modify the build process yourself, you can open the **build.xml** file in the root of your application folder and add the following Ant task to the end of the file:
 
+```XML
 <target name="-after-build">
     <target name="build"
             depends="init,-before-build,-build,-after-build"
@@ -92,6 +90,7 @@ If you want to modify the build process yourself, you can open the **build.xml**
       </fileset>
     </copy>
     <delete dir="${basedir}/${build.dir}">
+```
 
 Now build your application again:
 
@@ -107,6 +106,7 @@ Once you have a hybrid app, you can use device APIs, such as geolocation. The [g
 
 Open the following file with your editor: **app/utils/Functions.js** and inspect line 101:
 
+``` JavaScript
 Ext.device.Geolocation.getCurrentPosition({
    timeout: 5000,
    maximumAge: 10000,
@@ -120,6 +120,7 @@ Ext.device.Geolocation.getCurrentPosition({
       Ext.Msg.alert('Timeout', 'Can not retrieve position, please retry.');
    }
 });
+```
 
 The Sencha Touch class: `Ext.device.Geolocation()` provides access to the native Geolocation API when running on a device. There are three implementations of this API:
 
@@ -136,7 +137,7 @@ Before we will build the Do I need my umbrella (Dinmu) application, there are tw
 
 All set? That’s great. The only thing that’s left is building a native app with PhoneGap/Cordova.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-3.png)
+![Weather App Tutorial](/images/weather-app-3-styling2.png)
 
 ### Building a hybrid app
 
@@ -160,7 +161,7 @@ Building packages locally via the command-line requires an installation of XCode
 
 Building packages via PhoneGap build requires a (free) Adobe (PhoneGap Build) account: [https://build.phonegap.com/apps](https://build.phonegap.com/apps)
 
-Note: We will use PhoneGap Build in this tutorial. If you would rather use Cordova, you can use the same commands as you see in the tutorial, but replace the word **`phonegap`** with **`cordova`** on the command-line. ![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-4.png)
+Note: We will use PhoneGap Build in this tutorial. If you would rather use Cordova, you can use the same commands as you see in the tutorial, but replace the word **`phonegap`** with **`cordova`** on the command-line. ![Weather App Tutorial](/images/weather-app-4.png)
 
 #### Initialize a PhoneGap project
 
@@ -189,7 +190,7 @@ This generated the following structure/files:
 
 **MyApp/phonegap** contains the full PhoneGap file structure. If you used Cordova to initialize a project, the folder will be named **cordova**.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-5.png)
+![Weather App Tutorial](/images/weather-app-5.png)
 
 #### phonegap.local.properties
 
@@ -199,11 +200,13 @@ phonegap.platforms=ios android blackberry10 wp8
 
 When you run the phonegap `init` command, the property file also gives you settings for the Adobe PhoneGap remote packager. When you have a PhoneGap Build account, you can set up these additional settings:
 
+```
 phonegap.build.remote=true
 \# Username for PhoneGap Build
 phonegap.build.remote.username={username}
 \# Password for PhoneGap Build
 phonegap.build.remote.password={password}
+```
 
 When you leave the phonegap.build.remote property as false, you have to have one of the SDKs (XCode, Android Developer Tools, BlackBerry 10 SDK or Windows 8 Pro with Visual Studio) installed on your machine.
 
@@ -213,6 +216,7 @@ The default Cordova/PhoneGap **config.xml** file contains metadata about your ap
 
 We will change the app name, app description and author information:
 
+``` XML
 <name>Dinmu</name>
 <description>
     Do I need my Umbrella today?
@@ -220,23 +224,31 @@ We will change the app name, app description and author information:
 <author email="myemail@addres.com" href="http://www.mydomain.com">
     Your name
 </author>
+```
 
 The next step is to enable the Geolocation plugin at startup, to retrieve the location via the device:
 
+``` XML
 <preference name="EnableLocation" value="true"></preference>
+```
 
 Disable fullscreen mode, to show the status bar (battery indicator and time):
 
+``` XML
 <preference name="fullscreen" value="false"></preference>
+```
 
 Let’s make sure the application supports connections to external urls. The weather application will connect to [http://www.worldweatheronline.com](http://www.worldweatheronline.com). Therefore, we need to give access to either this URL or all external URLs. We can use the wildcard to allow all external connections:
 
+``` XML
 <access origin="*"></access>
+```
 
 The last thing we’ll modify are the paths to the icons and loading images. By default Sencha Touch generated iOS icons and splash images. They can be found in the **MyApp/resources** folder.
 
 When building apps for iPhones with retina displays (iPhone 5+), it’s important that you provide the correct splash screens with the required screen sizes. If not, your viewport may be resized incorrectly. For this example, we’ll stick to the PhoneGap splash screens. Feel free to replace them with your own splash screens.
 
+``` XML
 <icon src="icon.png"></icon>
 <icon src="resources/icons/Icon.png"></icon>
 <icon gap:platform="ios" height="57" src="resources/icons/Icon.png" width="57"></icon> 
@@ -248,6 +260,7 @@ When building apps for iPhones with retina displays (iPhone 5+), it’s importan
 <gap:splash gap:platform="ios" height="960" src="res/screen/ios/screen-iphone-portrait-2x.png" width="640"></gap:splash>
 <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768"></gap:splash>
 <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024"></gap:splash>
+```
 
 For more information about possible settings in config.xml, check the [PhoneGap documentation.](http://docs.phonegap.com/en/3.3.0/)
 
@@ -255,7 +268,7 @@ For more information about possible settings in config.xml, check the [PhoneGap 
 
 After initializing your application with PhoneGap or Cordova, it’s time to create a native build. Run the following command from the command-line:
 
-sencha app build -run native
+`sencha app build -run native`
 
 Note: The -run argument makes sure your app will be loaded in an emulator that’s installed on your machine. Again, Mac OS X users might need to prefix with sudo to get administrative rights.
 
@@ -282,7 +295,7 @@ When you build for iOS, you might run into a build error because you need to cod
 
 If you’re building the app locally, (PhoneGap remote=false or with Cordova), you can open: **platforms/ios/Dinmu.xcodeproj** from the **phonegap** or **cordova** folder, and maintain the build settings to code sign the application. Your developer identity should be in the _Code signing identity_ list. If not, you probably need to go through the whole native provisioning process again.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131218-weather-app-p3/weather-app-6.png)
+![Weather App Tutorial](/images/weather-app-6.png)
 
 Make sure your phone is hooked up to your Mac OS X, and build and run in XCode.
 

@@ -1,24 +1,18 @@
 ---
 title: 'Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)'
+description: Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd
 tags:
-  - Hands-on Sencha Touch
-  - Lee Boonstra
-  - O'Reilly
-  - Sencha
   - Sencha CMD
   - Sencha Touch
-  - utility app
-  - weather app
-url: 415.html
-id: 415
+  - Utility app
+  - Weather app
 categories:
-  - JavaScript
-  - Sencha
   - Sencha Touch
 date: 2014-04-07 10:42:51
 ---
 
 _Welcome at this series of blog posts: How to create a utility app with Sencha Touch and Sencha Cmd. Originally I wrote this tutorial for [.NET magazine](http://www.creativebloq.com/net-magazine) and afterwards I modified it for the [Sencha Blog Site](http://www.sencha.com/blog/). Since I think it's a good set of articles and you might have missed it. I will also post the 3 parts of the tutorial here, every week. Enjoy!_
+<!--more-->
 
 In this three-part Sencha Touch tutorial, you will build the Do I need my Umbrella app, a simple utility app that loads weather information from a web service — worldweatheronline.com. Based on weather codes, this app can predict if you need your umbrella or not.
 
@@ -54,7 +48,7 @@ This will start your built-in Jetty web server. You need your CLI window open to
 
 Test your generated Sencha Touch app. Open your modern browser (such as Google Chrome or Safari) and run: [http://localhost/dinmu](http://localhost/dinmu). You should see the Sencha demo app interface with a bottom tab panel and two demo slides:
 
-![Weather App](https://cdn.sencha.com/img/20131107-weather-app/weather-app-1.png)
+![Weather App](/images/weather-app-1.png)
 
 ### The Data Package
 
@@ -73,10 +67,13 @@ identifier: 'uuid',
 
 The logic for these unique IDs are in a Sencha class that we need to “import” into our app. We can use a **requires** for that, this requires the class **Ext.data.identifier.Uuid**.
 
-requires: \['Ext.data.identifier.Uuid'\],
+``` JavaScript
+requires: ['Ext.data.identifier.Uuid']
+```
 
 The next step is to create some **validations** for our model. After the **fields** array, create a **validations** array. The array contains validation objects to validate whether the data for these fields is present:
 
+``` JavaScript
 validations: \[{
     type: 'presence',
     field: 'city',
@@ -86,15 +83,18 @@ validations: \[{
     field: 'country',
     message: "Please provide a country."
 }\],
+```
 
 Since we want to save the local settings data to the device, the last step is to add a client proxy.
 
 We will use **localstorage**. The localstorage proxy will make sure that all the data persists into the browser localstorage. Define the **proxy** object directly after the **validations** array:
 
+``` JavaScript
 proxy: {
     type: 'localstorage',
     id: 'weathersettings'
 }
+```
 
 ### The View Components
 
@@ -110,34 +110,39 @@ Let’s remove more default components. We won’t need the demo video, so let�
 
 The first item object (container by default) has only the **html** property. This can be set to a placeholder text: **Settings Form** so you can code this later. The second item object has a property **itemId: ‘mainview’** and a **cls** property (for styling) set to the value: **textview**. Also add a **direction** property, which will set the direction of the Carousel to ‘**vertical**’.
 
+``` JavaScript
 Ext.define('Dinmu.view.Main', {
     extend: 'Ext.Carousel',
     xtype: 'main',
-    requires: \[
+    requires: [
         'Ext.TitleBar'
-    \],
+    ],
     config: {
         direction: 'vertical',
-        items: \[{
+        items: [{
             html: 'Settings Form'
         },{
             itemId: 'mainview',
             cls: 'textview'
-        }\]
+        }]
     }
 });
+```
 
 Viewed in the browser, the app looks pretty basic. Let’s add a top **titlebar** and a bottom toolbar. Before the Settings Form object, create a new object. This object will get the **xtype: ‘titlebar’** to add a new instance of **Ext.TitleBar** to the Viewport (the screen). Set a class name on the titlebar with the CSS class property: **cls: ‘title’**. Set a **docked: ‘top’** property to stick this titlebar to the top of the screen. Set the title to: **Do I need my Umbrella?** with the **title** property:
 
+``` JavaScript
 {
     xtype: 'titlebar',
     cls: 'title',
     docked: 'top',
     title: 'Do I need my Umbrella?'
 },
+```
 
 You will do the same for the bottom toolbar. This time the **xtype** is not **titlebar** but **toolbar**. The **cls** can be set to **footer**. Dock it to the bottom of the screen. Instead of the **title** property, the toolbar needs an **html** property. Set this to some copyright string. We will add an **ui** property which is set to **light** to create a lighter look and feel. Don’t forget to add **Ext.Toolbar** to the **requires** array in the top of the file, so the correct framework class will be loaded into the memory.
 
+``` JavaScript
 {
     xtype: 'toolbar',
     cls: 'footer',
@@ -145,6 +150,7 @@ You will do the same for the bottom toolbar. This time the **xtype** is not **ti
     docked: 'bottom',
     html: 'Powered by &copy; Sencha Touch'
 },
+```
 
 The next step is to create some buttons in the top titlebar.
 
@@ -152,22 +158,23 @@ The **titlebar** should contain an **items** array, which contains two buttons. 
 
 Confirm your code looks like this:
 
+``` JavaScript
 Ext.define('Dinmu.view.Main', {
     extend: 'Ext.Carousel',
     xtype: 'main',
-    requires: \[
+    requires: [
         'Ext.TitleBar',
         'Ext.Toolbar'
-    \],
+    ],
     config: {
         direction: 'vertical',
-        items: \[
+        items: [
         {
             xtype: 'titlebar',
             cls: 'title',
             docked: 'top',
             title: 'Do I need my Umbrella?',
-            items: \[{
+            items: [{
                cls: 'back',
                hidden: true,
                ui: 'back',
@@ -180,7 +187,7 @@ Ext.define('Dinmu.view.Main', {
                action: 'settings',
                ui: 'plain',
                align: 'right'
-            }\]
+            }]
         },
         {
             html: 'Settings Form'
@@ -194,9 +201,10 @@ Ext.define('Dinmu.view.Main', {
             ui: 'light',
             docked: 'bottom',
             html: 'Powered by &copy; Sencha Touch'
-        }\]
+        }]
     }
 });
+```
 
 Open your browser and run: [http://localhost/dinmu](http://localhost/dinmu). You should see a button with a gear in the right corner of the **Ext.TitleBar**.
 
@@ -216,17 +224,17 @@ Create a second **items** array in the **config** object (after the **title** pr
 
 Make sure the child items array contains all the fields and the button. Verify your code looks like this:
 
- 
+``` JavaScript
 Ext.define('Dinmu.view.SettingsView', {
     extend: 'Ext.form.Panel',
     xtype: 'settingsview',
  
     config: {
-        items:\[{
+        items:[{
             xtype: 'fieldset',
             title: 'SettingsView',
             instructions: 'In case you do not want the app to detect your location you can enter the city and country.',
-            items: \[
+            items: [
                 {
                     name: 'geo',
                     xtype: 'togglefield',
@@ -252,10 +260,11 @@ Ext.define('Dinmu.view.SettingsView', {
                     text: 'Submit',
                     ui: 'confirm'
                 }
-            \]        
-        }\]
+            ]
+        }]
     }
 });
+```
 
 Open your browser and run: [http://localhost/dinmu](http://localhost/dinmu). You should see the settings form with a **title** and some **instructions**. But there is something odd with the select unit field. It has no values.
 
@@ -269,6 +278,7 @@ Disable the units, city and country fields by adding **disabled: true** to all f
 
 The button **text**, should be **Refresh** instead of **Submit**. Change this in the button component. Add a **margin** with the value ‘**10 5**’. Also add an **action** property to the button and set this to ‘**refresh**’. This way, we can reference the button later:
 
+``` JavaScript
 {
     xtype: 'button',
     text: 'Refresh',
@@ -276,37 +286,41 @@ The button **text**, should be **Refresh** instead of **Submit**. Change this in
     margin: '10 5'
     ui: 'confirm'
 }
+```
 
 You might have noticed that the console outputs some warnings. The **Ext.Loader**, the mechanism that loads all the Sencha Touch framework classes in the correct order into memory, needs to load the classes that are used for the form fields. Create a **requires** array, (above the **config** object) and assign it the following strings:
 
-requires: \[
+``` JavaScript
+requires: [
     'Ext.form.FieldSet',
     'Ext.field.Toggle',
     'Ext.field.Select',
     'Ext.field.Text',
     'Ext.Button'
-\],
+],
+```
 
 You’ve finished the interface.
 
 Here’s the complete code for the settingsview:
 
+``` JavaScript
 Ext.define('Dinmu.view.SettingsView', {
     extend: 'Ext.form.Panel',
     xtype: 'settingsview',
-    requires: \[
+    requires: [
         'Ext.form.FieldSet',
         'Ext.field.Toggle',
         'Ext.field.Select',
         'Ext.field.Text',
         'Ext.Button'
-    \],
+    ],
     config: {
-        items:\[{
+        items:[{
             xtype: 'fieldset',
             title: 'SettingsView',
             instructions: 'In case you do not want the app to detect your location you can enter the city and country.',
-            items: \[
+            items: [
                 {
                     name: 'geo',
                     xtype: 'togglefield',
@@ -317,7 +331,7 @@ Ext.define('Dinmu.view.SettingsView', {
                 {
                     name: 'units',
                     xtype: 'selectfield',
-                    options: \[
+                    options: [
                     {
                         text: 'Fahrenheit',
                         value: 'f'
@@ -325,9 +339,9 @@ Ext.define('Dinmu.view.SettingsView', {
                     {
                          text: 'Celsius',
                          value: 'c'
-                    }\],
+                    }],
                     label: 'Units',
-            disabled: true
+                    disabled: true
                 },
                 {
                     name: 'city',
@@ -348,14 +362,15 @@ Ext.define('Dinmu.view.SettingsView', {
                     margin: '10 5',
                     ui: 'confirm'
                 }
-            \]        
-        }\]
+            ]
+        }]
     }
 });
+```
 
 But wait, what about the main view? Yes, you will dynamically inject this page with data. Therefore, you will need some logic to achieve this, so let's start with creating a controller.
 
-![Weather App](http://cdn.sencha.io/img/20131107-weather-app/weather-app-2.png)
+![Weather App](/images/weather-app-2.png)
 
 ### Building The Controller
 
@@ -367,22 +382,25 @@ This command generates the Main controller. Open **app/controller/Main.js** with
 
 Next, let’s create references to all the view components, **main**, **settingsview**, the **titlebar settings** and **back** buttons and to the settings **form fields** and **refresh** button. The selectors are a bit CSS-like. Your code could look like this:
 
+``` JavaScript
 refs: {
     mainView: 'main',
     settingsView: 'settingsview',
  
-    btnSettings: 'main button\[action=settings\]',
-    btnRefresh: 'settingsview button\[action=refresh\]',
-    btnBack: 'main button\[action=back\]',
+    btnSettings: 'main button[action=settings]',
+    btnRefresh: 'settingsview button[action=refresh]',
+    btnBack: 'main button[action=back]',
  
     toggleGeo: 'settingsview togglefield',
-    fieldCity: 'settingsview textfield\[name=city\]',
-    fieldCountry: 'settingsview textfield\[name=country\]',
+    fieldCity: 'settingsview textfield[name=city]',
+    fieldCountry: 'settingsview textfield[name=country]',
     fieldUnits: 'settingsview selectfield'
 },
+```
 
 Now that you have references to all the view components that should contain events, you can add the controls.
 
+``` JavaScript
 control: {
     'btnRefresh': {
         tap: 'onRefresh'
@@ -400,12 +418,15 @@ control: {
         activeitemchange: 'onCarouselChange'
     }
 }
+```
 
 Before browser testing the events, you must hook the controller to **app.js** which is the MVC’s entry point. Open **app.js**, create a **controllers** array, right below the **requires** array and pass in the string ‘**Main**’ mapping the Main controller to the **app/controller/Main.js** file.
 
-controllers: \[
+``` JavaScript
+controllers: [
     'Main'
-\],
+],
+```
 
 Now, we will add some logic. Go back to **Dinmu.controller.Main** and add the functions in the **goodies-tutorial** directory. You can find them in **controller.txt**.
 
@@ -419,27 +440,33 @@ Our app needs a store to save all the user settings.
 
 Unfortunately, you can’t generate stores with Sencha Cmd. Instead, let’s create a new file in the **app/store** folder called: **Settings.js**. Define a new class: **Dinmu.store.Settings**. This class extends all methods and properties from the **Ext.data.Store** class. In the **config** object, create a property called: **model**. It should connect to the Setting model. Also, the settings store should load automatically:
 
+``` JavaScript
 Ext.define('Dinmu.store.Settings', {
     extend: 'Ext.data.Store',
-    requires: \['Dinmu.model.Setting'\],
+    requires: ['Dinmu.model.Setting'],
         config: {
             model: 'Dinmu.model.Setting',
             autoLoad: true
     }
 });
+```
 
 Open **controller/Main.js**, in the **config** object create a **stores** array and add the **Dinmu.store.Settings** store to it:
 
+``` JavaScript
 stores: 'Dinmu.store.Settings',
+```
 
 Sometimes, it’s better to separate your business logic outside the MVC folders.
 
 In the app folder, create a new folder **utils**. Create the file **Functions.js**, and define a class called: **Dinmu.utils.Functions**. This class has a property: **singleton** set to **true**. Now your class is a singleton, you cannot create more than one instance of it, but you can run the singleton methods from everywhere in your code:
 
+``` JavaScript
 Ext.define('Dinmu.utils.Functions', {
     singleton: true,
     //singleton methods here
 });
+```
 
 Add **Dinmu.utils.Functions** to the **requires** array of the **app.js** file.
 
@@ -451,6 +478,6 @@ To test the logic, open **Google Chrome Developer Tools** and switch to the **Co
 
 Finally the _Do I need my Umbrella_ app is finished! Open your browser and run: [http://localhost/dinmu](http://localhost/dinmu). The next steps for improving your application would be to apply a theme and a production build. This is something I will discuss in the next Sencha Blog tutorial.
 
-![Weather App](http://cdn.sencha.io/img/20131107-weather-app/weather-app-3.png)
+![Weather App](/images/weather-app-3.png)
 
 If you found this tutorial helpful check out my book I wrote for O'Reilly: [Hands-on Sencha Touch 2](http://shop.oreilly.com/product/0636920030058.do)!

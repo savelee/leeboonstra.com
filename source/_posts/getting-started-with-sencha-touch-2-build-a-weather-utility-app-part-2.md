@@ -1,23 +1,18 @@
 ---
 title: 'Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 2)'
+description: Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd
 tags:
   - CSS
-  - Lee Boonstra
-  - O'Reilly Hands-on
   - Sass
   - Sencha Touch
   - Theming
-url: 428.html
-id: 428
 categories:
-  - CSS
-  - Sass
-  - Sencha
   - Sencha Touch
 date: 2014-04-14 10:48:47
 ---
 
 In this three-part Sencha Touch tutorial, you will build the _Do I need my Umbrella app_, a simple utility app that loads weather information from a web service — worldweatheronline.com. Based on weather codes, this app can predict if you need your umbrella or not.
+<!--more-->
 
 In this second part of the tutorial, you will start to build an app theme. You will use the code from part 1 of this tutorial. You can find the tutorial [here](http://www.leeboonstra.com/developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1).
 
@@ -38,18 +33,20 @@ This tutorial requires:
 
 You will build a custom theme that is based on the default theme. The default theme is a good theme to extend from, because it has a lot of Sencha Sass variables and mixins, which can be found in the API Docs.
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131126-weather-app-p2/weather-app-1.png)
+![Weather App Tutorial](/images/weather-app-1-docs.png)
 
 By default, when generating an application with Sencha Cmd, a _resources_ folder is already generated for you, with an empty Sass stylesheet: app.scss. Let’s open: **app.scss**
 
 The Sass stylesheet will look like this:
 
+``` SCSS
 //(1) Define your Sencha variables here
-
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
 
+
 //(2) Define your custom Sass/CSS code and mixins here
+```
 
 In the top (1), you will define all your (Sencha) variables; directly after the variables you will include the mixins. It’s important to keep this order, otherwise the variables won’t have any effect. The imports make use of these variables.
 
@@ -57,7 +54,9 @@ After the imports (2), you can start writing your own custom CSS rules and mixin
 
 Let’s start very easy and change the base-color:
 
+``` SCSS
 $base-color: #42282E;
+```
 
 By changing the base-color, you will set a primary color scheme that most of the Sencha Touch components use.
 
@@ -71,20 +70,26 @@ Now let’s play around. Sencha Touch has some really good Sass variables and mi
 
 Let’s set the colors for the buttons, alert box, and both screen backgrounds (settings and main):
 
+``` SCSS
 $alert-color: #D6665A;
 $confirm-color: #75A48B;
 $page-bg-color: lighten(#D9CFB0,15%);
 $form-bg-color: $page-bg-color;
+```
 
 Also, let’s get rid of all the gradients:
 
+``` SCSS
 $base-gradient: 'none';
+```
 
 The bottom toolbar has the ui: ‘light’. Let’s create a mixin to style the light skin of the bottom toolbar. You can use the sencha-toolbar-ui for this. We can implement it below the sencha imports (2):
 
+``` SCSS
 @include sencha-toolbar-ui('light', #DC9B74, 'none');
+```
 
-![Weather App Tutorial](https://cdn.sencha.com/img/20131126-weather-app-p2/weather-app-2.png)
+![Weather App Tutorial](/images/weather-app-2-styling.png)
 
 ### Create custom CSS
 
@@ -92,6 +97,7 @@ Now let’s implement our own CSS rules.
 
 First, we will modify the toolbar title text:
 
+``` SCSS
 .title {
     .x-title {
         line-height: 2.5em;
@@ -99,9 +105,11 @@ First, we will modify the toolbar title text:
         letter-spacing: -1px;
     }
 }
+```
 
 Next, let’s position the footer text:
 
+``` SCSS
 .footer {
     font-size: 0.6em;
     padding: 12px;
@@ -111,9 +119,11 @@ Next, let’s position the footer text:
         color :#000;
     }
 }
+```
 
 You will also need some styles for the custom template. Let’s modify the font and font colors:
 
+``` SCSS
 .textview {
     color: black;
     line-height: 1.2em;
@@ -132,9 +142,11 @@ You will also need some styles for the custom template. Let’s modify the font 
         color: $confirm-color;
     }
 }
+```
 
 Let’s edit the settings form. In your Sass stylesheet, create the styles to tweak the settings form:
 
+``` SCSS
 .x-form-fieldset {
     .x-form-fieldset-inner {
         border: none;
@@ -157,29 +169,36 @@ Let’s edit the settings form. In your Sass stylesheet, create the styles to tw
     position: absolute;
     right: 0;
 }
+```
 
 ### Implement a custom font
 
 Right above the sencha imports, add the imports for the font. We will make use of the Google Fonts service. With this font-service you can browse through lots of hosted font families and choose a font to implement:
 
+``` SCSS
 @import url(http://fonts.googleapis.com/css?family=Oswald:700);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
+```
 
 Now, set the fonts.
 
 For the toolbar title, add the following rules to the `.x-title` CSS class:
 
+``` SCSS
 font: {
     family: "Lobster";
     size: 1.2em;
 }
+```
 
 For the template view, add the following rules to the `.textview` CSS class:
 
+``` SCSS
 font: {
     family: "Oswald";
     size: 2em;
 }
+```
 
 ### Tweak the performance
 
@@ -189,7 +208,7 @@ Automatically, when you generated your app with Sencha Cmd, the compiled CSS sty
 
 Check the _resources/sass/config.rb_ file, it should be set like this:
 
-output_style = :compressed
+`output_style = :compressed`
 
 Instead of importing all Sencha Touch framework mixins, let’s only import the ones that are absolutely necessary. This will reduce the stylesheet size, so it will be faster to download.
 
@@ -197,8 +216,9 @@ I usually comment out the `@import` line that imports _all_ the mixins. Then, I 
 
 Then I start to comment out the mixins one by one, based on the classes I don’t use. This is tricky though; there are classes that you may have never directly coded, but they are subclasses from other classes, such as +Class+ or +Panel+. That's why you should remove them one by one, while watching your terminal to see that you don't get any compile errors. The list of all the available Sencha Touch mixins can be found in: `touch/resources/themes/[theme-to-extend-from]/all.scss`.
 
-Replace `@import &lsquo;sencha-touch/default/all&rsquo;` with the following imports:
+Replace `@import &lsquo;sencha-touch/default/all` with the following imports:
 
+``` SCSS
 @import 'sencha-touch/default/src/_Class.scss';
 @import 'sencha-touch/default/src/_Button.scss';
 @import 'sencha-touch/default/src/_Panel.scss';
@@ -215,18 +235,22 @@ Replace `@import &lsquo;sencha-touch/default/all&rsquo;` with the following impo
 @import 'sencha-touch/default/src/picker/_Picker.scss';
 @import 'sencha-touch/default/src/slider/_Slider.scss';
 @import 'sencha-touch/default/src/slider/_Toggle.scss';
+```
 
 We are not using many icons, so there is no need to implement the Pictos icon font. In this case, let’s just use our own icon font, so we can save some extra kilobytes.
 
 Add these variables to the top of your Sass stylesheet right before the import of the Sencha mixins:
 
+``` SCSS
 $include-pictos-font: false;
 $include-default-icons: false;
+```
 
 Now, you will include a custom icon font. I created an icon font via the IcoMoon website: [http://www.icomoon.io](http://www.icomoon.io). It’s in the goodies-tutorial folder of this tutorial. Just copy the _dinmu_ fonts folder over to _resources/sass/stylesheets/fonts/_.
 
 Underneath the imports of the google font, import the dinmu icon font:
 
+``` SCSS
 @font-face {
     font-family: 'Dinmu';
     src:url('stylesheets/fonts/dinmu/Dinmu.eot');
@@ -237,13 +261,15 @@ Underneath the imports of the google font, import the dinmu icon font:
     font-weight: normal;
     font-style: normal;
 }
+```
 
 Below all the imports, create an icon mixin, to display the settings button:
 
-@include icon('settings', 's', 'Dinmu');
+`@include icon('settings', 's', 'Dinmu');`
 
 Directly after that, you can code some funny icons for the template view:
 
+``` SCSS
 .rain:before,
 .norain:before {
     font-family: 'Dinmu';
@@ -269,10 +295,11 @@ Directly after that, you can code some funny icons for the template view:
     content: "52";
     color: $alert-color;
 }
+```
 
 Finally, the _Do I need my Umbrella_ theme is finished! Open your browser and run: [http://localhost/dinmu](http://localhost/dinmu).
 
-![Weather App Tutorial](http://cdn.sencha.io/img/20131126-weather-app-p2/weather-app-3.png)
+![Weather App Tutorial](/images/weather-app-3-styling2.png)
 
 The next steps for improving your application would be to create a production build and port this app to a native PhoneGap app. These topics will be discussed in part 3 of this tutorial.
 

@@ -1,5 +1,6 @@
 ---
 title: 'Asynchronous JavaScript: Promises'
+description: JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.
 tags:
   - async
   - ecmascript6
