@@ -3,7 +3,8 @@
     "public": "public",
     "ignore": [
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      ".env"
     ],
     "headers": [ {
       "source" : "**/*.@(eot|otf|svg|ttf|ttc|woff|font.css)",
@@ -19,10 +20,10 @@
       } ]
     }, 
     {
-      "source" : "404.html",
+      "source" : "404.html|main.css",
       "headers" : [ {
         "key" : "Cache-Control",
-        "value" : "max-age=3"
+        "value" : "max-age=3600"
       } ]
     }]
   }

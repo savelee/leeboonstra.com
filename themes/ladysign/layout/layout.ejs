@@ -86,7 +86,7 @@
 
     </nav>
 
-    <% if (url_for(page.path) == '/index.html'){ %> 
+    <% if (url_for(page.path) == '/index.html' || url_for(page.path).indexOf('/tags/') != -1 || url_for(page.path).indexOf('/categories/') != -1){ %> 
       <div class="container-fluid">
           <div class="row">
             <div class="jumbotron">

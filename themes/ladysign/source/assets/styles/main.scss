@@ -102,21 +102,13 @@ h2,h3,h4 {
     height: 65px;
 }
 
-@media (min-width: 769px){
-    .navbar-toggler {
-        display: none;
-    } 
-}
-
-@media (max-width: 1100px){
-    .article-inner {
-        padding-right: 50px !important;
-    }
-}
-
-@media (max-width: 768px){
+@media only screen and (max-width: 768px) {
     .article, .related, .comments {
      
+    }
+
+    .article-inner {
+        padding-right: 0;
     }
 
     #sidebar,
@@ -157,6 +149,28 @@ h2,h3,h4 {
         margin-bottom: 10px;
     }
 }
+
+
+@media only screen and (max-width: 1099px), (min-width: 769px) {
+    .navbar-toggler {
+        display: none;
+    } 
+    .article-inner {
+        padding-right: 50px !important;
+    }
+
+    .navbar-nav li a {
+        font-size: 1.2rem;
+        padding: 15px 8px;
+    }
+}
+@media only screen and (min-width: 1100px) {
+    .navbar-nav li a {
+        font-size: 1.6rem;
+        padding: 15px 10px;
+    }
+}
+
 
 .icon-github:before {
     content: "G";

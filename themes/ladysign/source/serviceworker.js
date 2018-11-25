@@ -4,6 +4,7 @@ importScripts('cache-pf.js');
 
 var CACHE_NAME = "devtricks";
 var REQUIRED_FILES = [
+  '/assets/styles/main.css',
   '/assets/js/vendor/jquery-3.3.1.min.js',
   '/assets/js/vendor/modernizr-3.6.0.min.js',
   '/assets/js/vendor/popper.min.js',
@@ -27,7 +28,7 @@ var REQUIRED_FILES = [
   '/assets/fonts/consolas-webfont.svg',
   '/assets/fonts/consolas-webfont.ttf',
   '/assets/fonts/consolas-webfont.woff',
-  "/assets/fonts/bebasneue-webfont",
+  "/assets/fonts/bebasneue-webfont.eot",
   "/assets/fonts/bebasneue-webfont.svg",
   "/assets/fonts/bebasneue-webfont.ttf",
   "/assets/fonts/bebasneue-webfont.woff",
