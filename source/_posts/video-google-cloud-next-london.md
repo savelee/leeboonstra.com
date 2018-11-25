@@ -8,6 +8,7 @@ tags:
 categories:
   - Videos
 date: 2018-11-08 17:25:28
+youtube: KhB0hwlyZkg
 ---
 
 At the Google Cloud Next event in London, I presented my customer care solution during the demo derby! 

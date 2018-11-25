@@ -3,6 +3,7 @@ title: 'Google Cloud Summit Paris, Keynote: Video Intelligence'
 categories:
   - Videos
 date: 2017-12-01 11:45:17
+youtube: ROSZHWkV4i8
 tags:
   - Video Intelligence API
 ---

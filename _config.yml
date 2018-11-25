@@ -123,3 +123,10 @@ disqus_shortname: leeboonstra-com
 
 sitemap:
     path: sitemap.xml
+
+marked:
+  gfm: true
+  sanitize: false
+  tables: true
+  breaks: false
+  autolink: true

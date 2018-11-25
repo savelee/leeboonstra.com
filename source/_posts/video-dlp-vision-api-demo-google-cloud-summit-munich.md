@@ -8,6 +8,7 @@ tags:
 categories:
   - Videos
 date: 2018-02-14 10:52:59
+youtube: sm3xLN0n95o
 ---
 
 At the Google Cloud Summit event in Munich, I presented the Vision API and DLP API for 3000+ IT professionals: 

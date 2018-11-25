@@ -1,5 +1,5 @@
 ---
-title: 'Create custom chat agents for Google Home with API.AI'
+title: 'Create custom chat agents for Google Home with Dialogflow'
 tags:
   - Alexa
   - Dialogflow

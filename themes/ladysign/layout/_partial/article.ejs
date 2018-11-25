@@ -61,17 +61,22 @@
       { "@context": "http://schema.org", 
       "@type": "BlogPosting",
       "headline": "<%- post.title %>",
-      "author": "Lee Boonstra", 
       "genre": "technology", 
       "datePublished": "<%- post.date %>",
       "dateCreated": "<%- post.date %>",
-      "dateModified": "<%- post.updated %>",
+      "dateModified": "<%- post.date %>",
+      "image": "https://www.leeboonstra.com/images/profile.jpg",
+      "publisher": {
+        "@type": "Person",
+        "name": "Lee Boonstra"
+      },
       "description": "<%=post.desc%>",
       "articleBody": "<%=post.desc%>",
-        "author": {
-          "@type": "Person",
-          "name": "Lee Boonstra"
-        }
+      "author": {
+        "@type": "Person",
+        "name": "Lee Boonstra",
+        "url": "http://www.leeboonstra.com"
+      }
       }
       </script>
 

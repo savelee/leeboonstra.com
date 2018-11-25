@@ -3,6 +3,7 @@ title: 'Keynote Frontmania: Machine Learning for JavaScript developers'
 categories:
   - Videos
 date: 2018-11-20 11:45:17
+youtube: NH-bL6Bd7Tw
 tags:
   - AutoML
 ---
