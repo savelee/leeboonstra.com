@@ -102,10 +102,14 @@ h2,h3,h4 {
     height: 65px;
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 767.98px) {
     .article, .related, .comments {
      
     }
+
+    .navbar-toggler {
+        display: block;
+    } 
 
     .article-inner {
         padding-right: 0;
@@ -151,7 +155,7 @@ h2,h3,h4 {
 }
 
 
-@media only screen and (max-width: 1099px), (min-width: 769px) {
+@media (min-width: 769px) {
     .navbar-toggler {
         display: none;
     } 
@@ -164,7 +168,8 @@ h2,h3,h4 {
         padding: 15px 8px;
     }
 }
-@media only screen and (min-width: 1100px) {
+
+@media (min-width: 1100px) {
     .navbar-nav li a {
         font-size: 1.6rem;
         padding: 15px 10px;
