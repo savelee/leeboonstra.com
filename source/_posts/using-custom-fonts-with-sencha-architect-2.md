@@ -4,13 +4,8 @@ tags:
   - Custom fonts
   - Font-Face
   - Sencha Architect
-url: 537.html
-id: 537
 categories:
-  - Architect
-  - CSS
-  - Sass
-  - Sencha
+  - Sencha Architect
 date: 2014-07-08 08:12:44
 ---
 
@@ -18,14 +13,20 @@ Back in the days when websites were restricted to typical fonts such as Arial, G
 
 This time, I will explain how to use custom fonts with Sencha Architect. For this tutorial, I will use one of the Sencha Touch starter apps, with the default theme. However, you can also use these tips for other Sencha Touch or Ext JS apps.
 
+<!--more-->
+
 ### Incorporating a custom font from a font service
 
 If you haven’t done so, drag the **Default** theme into your project (I used one of the Sencha Touch starter apps). **Apply** the Default theme, to create a custom theme extension.
 
 1.  Select the **MyDefaultTheme**, and click on the scss + button, to add a new Sass snippet.
-![](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/sass-snippet.png)3.  Click on the right arrow button of the Scss Resource to enter the Sass code snippet properties.
+
+![](/images/sass-snippet.png)
+
+3.  Click on the right arrow button of the Scss Resource to enter the Sass code snippet properties.
+
 4.  Set the **compile order** to `beforeVariables`
-[![](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/compile-order.png)](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/compile-order.png)
+![](/images/compile-order.png)
 
 _Note: One thing you should know about working with custom fonts is that font imports must always be at the very top of your stylesheet. If you don’t change the compile order of the Scss resource, this snippet will be inserted after all the Sencha theme styles are inserted. That would cause your custom fonts to not be visible._
 
@@ -35,24 +36,27 @@ Let’s use [Google Web Font](https://www.google.com/fonts) and you can choose a
 
 Once, you have found the font you want, click the **Add to Collection** button.
 
-[![](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/google-fonts.png)](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/google-fonts.png)
+![](/images/google-fonts.png)
 
-Next, click the “Use” tab. Scroll down to paragraph **#3**, and click the **@import** tab. Then, copy the code it displays. [![](http://cdn.sencha.io/img/20140519-training-tip-custom-fonts/google-fonts-add.png)](http://cdn.sencha.io/img/20140519-training-tip-custom-fonts/google-fonts-add.png)
+Next, click the “Use” tab. Scroll down to paragraph **#3**, and click the **@import** tab. Then, copy the code it displays. 
+![](/images/google-fonts-add.png)
 
 12.  Open Architect, in the **Code editor** paste the font code, for example:
 
+``` Sass
 @import
 url(http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext);
- 
+```
 
 14.  Select the **MyDefaultTheme** and click on the Theme tab in the config inspector.
+
 15.  Here, filter for font. In Ext.Class, you can set the **font family**. Set it to the following value (depending on the font you choose):
 
-'Exo', sans-serif;
+`'Exo', sans-serif;`
 
 Now go back to the Design view, (if you don’t see anything, hit the “Refresh” button) and preview your new font.
 
-[![](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/preview.png)](https://cdn.sencha.com/img/20140519-training-tip-custom-fonts/preview.png)
+![](/images/preview.png)
 
 ### Incorporating a custom @font-face (local) font
 
@@ -69,9 +73,10 @@ You can get these packages of fonts online. For example, [http://www.fontsquirre
 
 Click on the **Webfont kit** tab, make sure the following extensions are included in the package: **ttf, eot, woff, svg,** and hit the blue **Download @Font-face Kit** button.
 
-6.  Extract the zip file, and open one of the regular font folders. Check out the .css stylesheet that’s included, and copy the import lines of code.
-7.  Go back to Sencha Architect, in the **Code editor** of the MyDefaultTheme, and paste the import. For example:
+5.  Extract the zip file, and open one of the regular font folders. Check out the .css stylesheet that’s included, and copy the import lines of code.
+6.  Go back to Sencha Architect, in the **Code editor** of the MyDefaultTheme, and paste the import. For example:
 
+``` CSS
 @font-face {
     font-family: 'exo_2.0regular';
     src: url('Exo2.0-Regular-webfont.eot');
@@ -82,10 +87,13 @@ Click on the **Webfont kit** tab, make sure the following extensions are include
     font-weight: normal;
     font-style: normal;
 }
+```
 
-9.  Now save your Architect project, and copy the 4 font extensions over to your project **resources** folder in your file system; if you want, you may create a subfolder **fonts** here.
-10.  Since my fonts are located in _resources/fonts/_, I need to fix the path in my Architect snippet. Sencha Architect expects the fonts to be located in the _/theme/_ folder. I also renamed the font-family name:
+7. Now save your Architect project, and copy the 4 font extensions over to your project **resources** folder in your file system; if you want, you may create a subfolder **fonts** here.
 
+8.  Since my fonts are located in _resources/fonts/_, I need to fix the path in my Architect snippet. Sencha Architect expects the fonts to be located in the _/theme/_ folder. I also renamed the font-family name:
+
+``` SCSS
 @import url(http://fonts.googleapis.com/css?family=Exo&subset=latin,latin-ext);
  
 @font-face {
@@ -98,12 +106,12 @@ Click on the **Webfont kit** tab, make sure the following extensions are include
     font-weight: normal;
     font-style: normal;
 }
+```
 
-12.  Select the **MyDefaultTheme**, and click on the **Theme** tab.
-13.  Here, filter for font. In **Ext.Class**, you can set the **font family**. Set it to the following value: (depending on the font you choose):
+9. Select the **MyDefaultTheme**, and click on the **Theme** tab.
 
-'Exo2';
+10. Here, filter for font. In **Ext.Class**, you can set the **font family**. Set it to the following value: (depending on the font you choose):
 
-15.  Compile your project, and test the result in your browser. You will see the new font.
+`'Exo2';`
 
-Looking for more help with theming for Sencha Touch? Sign up for a training class. In July, we will offer an advanced [Sencha Touch online theming course](http://www.sencha.com/company/events/june-30-july-4-advanced-theming-for-sencha-touch-training-live-online/).
+11. Compile your project, and test the result in your browser. You will see the new font.

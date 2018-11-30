@@ -2,25 +2,24 @@
 title: Create dynamic Sencha models from your server-side
 tags:
   - Ext JS
-  - inject fields
-  - mysql
-  - php
-  - Sencha Touch
-url: 500.html
-id: 500
+  - MVC
+  - Models
 categories:
   - Ext JS
-  - Sencha
-  - Sencha Touch
 date: 2014-04-26 15:00:05
 ---
 
-Every now and then I get this question in my Sencha training classes: "How can I dynamically create Sencha Models from my server-side?", or "How can I dynamically inject fields?" Normally you would define a Sencha Model like this:
+Every now and then I get this question in my Sencha training classes: "How can I dynamically create Sencha Models from my server-side?".
 
+<!--more-->
+
+Or "How can I dynamically inject fields?" Normally you would define a Sencha Model like this:
+
+``` JavaScript
 Ext.define('App.model.MyModel', {
   extend: 'Ext.data.Model',
   
-  fields: \[{
+  fields: [{
      name: 'id',
      type: 'int'
   }, {
@@ -29,9 +28,10 @@ Ext.define('App.model.MyModel', {
   }, {
     name: 'lastname',
     type: 'string'
-  }\]
+  }]
 
 });
+```
 
 The previous code is a Model class definition written in Ext JS. In Sencha Touch, it's almost the same, you would wrap the `fields` array in a `config` object. Defining Models this way, is perfect, but sometimes you would like to generate your Models from the server-side. For example, because you are using lots of fields, field names often change and you don't want to maintain the fields on two places (server-side vs. client-side). Mind you, also the data-type or field validations, needs to be in sync on both places, to not experience funny behavior.
 
@@ -41,9 +41,10 @@ Let's say we have a PHP & MySQL server-side. I'm not gonna show you my PHP skill
 
 The next step is to output JSON. I only care about the field **names**, and the field **types**. But... the MySQL data-types are different then the data-types in Ext JS / Sencha Touch, so I somehow need to map a `varchar` to a `string` etc. After that's done, my JSON output should look something like this:
 
+``` JavaScript
 {
   success: true,
-  fields: \[{
+  fields: [{
     name: "id",
     type: "int"
   },{
@@ -52,11 +53,13 @@ The next step is to output JSON. I only care about the field **names**, and the 
   },{
     name: "lname",
     type: "string"
-  }\]
+  }]
 }
+```
 
 Now we are getting somewhere. These are the fields I dynamically want to inject in my Sencha Model. I can do this with an `Ext.Ajax.request`. Take a look:
 
+``` JavaScript
 Ext.define('App.store.MyStore', {
   extend: 'Ext.data.Store',
   
@@ -89,12 +92,13 @@ Ext.define('App.store.MyStore', {
     });
   }
 });
+```
 
 Here is what I did. I defined a Store, in the `constructor` I run an Ajax request, which fetches the `fields` array from my backend script, (in my case:) **../data/phpscript/?action=schema**, which returns the JSON. In the `success` method, I create a model, and that's where I inject the fields.
 
 Alright. Now hook up the Store to your app and test. You can run in your browser console the following line:
 
-Ext.create('App.model.MyModel', { lname: "Boonstra" });
+`Ext.create('App.model.MyModel', { lname: "Boonstra" });`
 
 That should work, it will return the record, and you will see all the (empty) fields that this record contains.
 

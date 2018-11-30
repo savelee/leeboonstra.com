@@ -49,7 +49,15 @@ Plugins There are 2 maven plugins that can help with building the Sencha app via
 
 ### Sencha Cmd execution, with the Maven exec-maven-plugin 
 
-With the *exec-maven-plugin*, http://www.mojohaus.org/exec-maven-plugin/usage.htm, you can use Maven to execute commands from the command-line. This will require, that you have Sencha Cmd installed on the machine that runs the Maven commands. Your **pom.xml** file, will look like this: https://gist.github.com/savelee/16e9b853977bb528ac26 When you want to work with environment vars, you can configure a profiles block: https://gist.github.com/savelee/59c57584a1663bfc7dfe `--environment` `${sencha.env}` See also: https://github.com/savelee/maven-ant-sencha/blob/master/pom_backup.xml for my complete solution. 
+With the *exec-maven-plugin*, http://www.mojohaus.org/exec-maven-plugin/usage.htm, you can use Maven to execute commands from the command-line. This will require, that you have Sencha Cmd installed on the machine that runs the Maven commands. Your **pom.xml** file, will look like this:
+
+{% gist 16e9b853977bb528ac26 %}
+
+When you want to work with environment vars, you can configure a profiles block:
+
+{% gist 59c57584a1663bfc7dfe %}
+
+`--environment` `${sencha.env}` See also: https://github.com/savelee/maven-ant-sencha/blob/master/pom_backup.xml for my complete solution. 
 
 ### Ant Task runner, with the Maven maven-antrun-plugin 
 
