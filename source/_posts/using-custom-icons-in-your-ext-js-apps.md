@@ -36,8 +36,8 @@ A lot of Ext JS components extend from panel, but what if you want to implement 
 4.  Alright, now comes the magic. In your Sass style sheet, write the following CSS rules:
   
 ```CSS
-    .arrow:before { 
-      content: ">"; //the character mapped to an icon font-family: 'MyIconFont'; //the name of the icon font color: red; //set additional colors or dimensions... margin-right: 10px; 
+.arrow:before { 
+      content: ">"; //the character mapped to an icon font-family: 'MyIconFont'; //the name of the icon font color: red; //set additional colors or dimensions... margin-right: 10px;
 }
 ```  
 

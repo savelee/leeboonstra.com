@@ -5,7 +5,7 @@ date: 2015-07-06 20:44:54
 
 > “I love creating technology, instead of just consuming technology.”
 
-I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) (33/female) from the Netherlands and I work for Google. as a Google Cloud sales engineer.
+I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) from the Netherlands and I work for Google. as a Google Cloud sales engineer.
 
 I studied Art & Technology in 2004 and during my last year of my study I worked for Accenture as a senior Java developer. I worked for clients such as UPC and KLM (Dutch Royal Airlines).
 

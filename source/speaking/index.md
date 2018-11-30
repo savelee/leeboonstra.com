@@ -16,9 +16,75 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
 <p>&nbsp;</p>
 <hr>
 
+2019
+----
+
+*   ### Friends of Search
+    
+     6 Feb 2019 | **Kromhouthallen, Amsterdam** | [Website](https://friendsofsearch.nl/) | Keynote: Google Assistant
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Friends of Search",
+        "url": "https://friendsofsearch.nl/",
+        "startDate": "06/02/2019",
+        "location": {
+          "@type": "Place",
+          "name": "Kromhouthallen",
+          "address": {
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
 
 2018
 ----
+
+*   ### Startup Roadshow
+    
+     11 Dec 2018 | **London, UK** | [Website](https://events.withgoogle.com/google-cloud-startup-roadshow-london/#content) | Build real world applications with Google Cloud.
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Startup Roadshow",
+        "url": "https://events.withgoogle.com/google-cloud-startup-roadshow-london/#content",
+        "startDate": "11/12/2018",
+        "location": {
+          "@type": "Place",
+          "name": "Google Academy",
+          "address": {
+            "addressLocality": "London",
+            "addressCountry": "UK"
+          }
+        }
+      }</script>
+
+*   ### Schiphol Developers Group
+    
+    06 Dec 2018 | **Amsterdam** | [Website](https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/) | Machine Learning for JavaScript Developers
+
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Schiphol Developers Group",
+        "url": "https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/",
+        "startDate": "06/12/2018",
+        "location": {
+          "@type": "Place",
+          "address": {
+            "addressLocality": "Schipholrijk",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
+
+*   ### Dialogflow Day
+    
+     04 Dec 2018 | **Amsterdam** | Contact Center AI
 
 *   ### Google Cloud Summit Amsterdam
     

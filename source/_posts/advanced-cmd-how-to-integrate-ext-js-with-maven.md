@@ -12,6 +12,7 @@ date: 2016-02-25 18:38:32
 ---
 
 This last article, will show you, how you can integrate Ext JS with tools like Maven. Please understand, Maven is not a required Sencha setup, though it is possible to build your Sencha projects with Maven.
+
 <!--more-->
 
 ## About Apache Maven
