@@ -25,6 +25,8 @@
         Posted on <%- partial('post/date', {class_name: 'article-date', date_format: 'MMM Do YYYY'}) %>
         <%- partial('post/category') %>
         <span class="hidden" itemprop="author">Lee Boonstra</span>
+        <span class="hidden" itemprop="publisher">Lee Boonstra</span>
+        
       </header>
     <% } %>
     <% if (post.excerpt && index){ %>
@@ -69,7 +71,7 @@
       "publisher": "Lee Boonstra",
       "description": "<%- post.desc %>",
       "mainEntityOfPage": "<%- page.link %>",
-      "image": "https//www.leeboonstra.com/images/screen.png"
+      "image": "https//www.leeboonstra.com/images/screen.png",
       "articleBody": "<%- post.desc %>",
       "author": {
         "@type": "Person",
