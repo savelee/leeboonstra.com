@@ -3,7 +3,8 @@
     <div class="col col-sm-9 article-inner">
   <% } else { %>
     <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="col col-sm-9 article-inner contentpage">
+      <link itemprop="mainEntityOfPage" href="<%- post.url %>" />
+      <div class="col col-sm-9 article-inner contentpage">
 
     <a class="twitter-share-button btn"
       href="https://twitter.com/intent/tweet?text=I came across: <%= post.title %> via @ladysign"
@@ -66,11 +67,10 @@
       "dateCreated": "<%- post.date %>",
       "dateModified": "<%- post.date %>",
       "image": "https://www.leeboonstra.com/images/profile.jpg",
-      "publisher": {
-        "@type": "Person",
-        "name": "Lee Boonstra"
-      },
+      "publisher": "Lee Boonstra",
       "description": "<%=post.desc%>",
+      "mainEntityOfPage": "<%- post.url %>",
+      "image": "https//www.leeboonstra.com/images/screen.png"
       "articleBody": "<%=post.desc%>",
       "author": {
         "@type": "Person",

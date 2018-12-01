@@ -31,10 +31,18 @@
     }
   %>
   <title itemprop="name"><% if (title) { %><%= title %>  | <% } %><%= config.title %></title>
-    
+
+  <meta itemprop="author" content="Lee Boonstra">   
   <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="canonical" href="http://www.leeboonstra.com" />
+  <link  href="//plus.google.com/117712452932146916020" rel="author" />
+  <link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png" />
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="//www.leeboonstra.com">
+  <link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com" />
 
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
