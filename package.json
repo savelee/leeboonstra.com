@@ -27,6 +27,7 @@
     "hexo-service-worker": "^1.0.1",
     "hexo-tag-fontawesome": "^1.0.0",
     "hexo-tag-owl": "^1.2.2",
-    "hexo-uglify": "0.0.5"
+    "hexo-uglify": "0.0.5",
+    "hexo-workbox": "0.0.2"
   }
 }

@@ -11,8 +11,6 @@ before_install:
   - npm install -g hexo
 install:
   - npm install
-before_script:
-  - sudo chown -R 700 /etc/couchdb/local.d
 script:
   - hexo clean
   - hexo generate

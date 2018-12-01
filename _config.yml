@@ -1,19 +1,19 @@
 # Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+## Docs: https:/hexo.io/docs/configuration.html
+## Source: https:/github.com/hexojs/hexo/
 
 # Site
 title: Google Cloud DevTricks
-subtitle: <span>Hi, my name is <b>Lee</b>.</span><br><span>I'm a writer, an engineer, a trainer and a public speaker.</span><br> <span>I create fixes & I fix headaches...</span><br> <span>Welcome to my <b>dev blog</b>.</span>
-description: Lee Boonstra is sales engineer @ Google. Book author @ O'Reilly. JavaScript developer &amp; evangelist. Loves Ext JS, Node.js, JavaScript, Dialogflow, Chatbots, Machine Learning, GCP, Python, Cloud, GSuite and videogames.
-keywords: Googler, Dialogflow, JavaScript, Ext JS, Sencha Touch, Cordova, Chatbot, Machine Learning, Cloud, GCP, Ext JS engineer, Google Sales Engineer, Google Customer Engineer, Google Cloud, Sencha Sales Engineer, Google Cloud Customer Engineer, Cloud Architect, Devrel, Developer Relations, Chatbot expert, Actions on Google, Dialogflow expert, Google Cloud Sales, Sencha Trainer, Sencha Trainings, JavaScript Developer, JavaScript Programmer, Node JS Developer, Client-side code, Lead Developer, JavaScript Amsterdam, JavaScript Evangelist, Google Cloud, GCP, Google Assistant, Dialogflow Enterprise, Chatbots, Bots, Chat agents, HTML5 & CSS3, Sencha Touch, Mobile Apps, Enterprise Apps
+subtitle: <span>Hi my name is <b>Lee</b>.</span><br><span>I'm a writer an engineer a trainer and a public speaker.</span><br> <span>I create fixes & I fix headaches...</span><br> <span>Welcome to my <b>dev blog</b>.</span>
+description: Lee Boonstra is sales engineer @ Google. Book author @ O'Reilly. JavaScript developer &amp; evangelist. Loves Ext JS Node.js JavaScript Dialogflow Chatbots Machine Learning GCP Python Cloud GSuite and videogames.
+keywords: Googler Dialogflow JavaScript Ext JS Sencha Touch Cordova Chatbot Machine Learning Cloud GCP Ext JS engineer Google Sales Engineer Google Customer Engineer Google Cloud Sencha Sales Engineer Google Cloud Customer Engineer Cloud Architect Devrel Developer Relations Chatbot expert Actions on Google Dialogflow expert Google Cloud Sales Sencha Trainer Sencha Trainings JavaScript Developer JavaScript Programmer Node JS Developer Client-side code Lead Developer JavaScript Amsterdam JavaScript Evangelist Google Cloud GCP Google Assistant Dialogflow Enterprise Chatbots Bots Chat agents HTML5 & CSS3 Sencha Touch Mobile Apps Enterprise Apps
 author: Lee Boonstra
 language: en
 timezone: Europe/Amsterdam
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://devtricks-45484.firebaseapp.com/
+## If your site is put in a subdirectory set url as 'http:/yoursite.com/child' and root as '/child/'
+url: https:/devtricks-45484.firebaseapp.com/
 root: /
 permalink: :category/:title/
 permalink_defaults:
@@ -72,7 +72,7 @@ tag_map:
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
+## http:/momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
@@ -82,12 +82,12 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
+## Plugins: https:/hexo.io/plugins/
+## Themes: https:/hexo.io/themes/
 theme: ladysign
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https:/hexo.io/docs/deployment.html
 deploy:
   type:
 
@@ -131,24 +131,12 @@ marked:
   breaks: false
   autolink: true
 
-service_worker:
-  maximumFileSizeToCacheInBytes: 5242880
-  staticFileGlobs:
-  - /**/*.{js,html,css,png,jpg,pdf,gif,svg,eot,ttf,woff,woff2}
-  verbose: true
-  runtimeCaching:
-    - urlPattern: /*
-      handler: cacheFirst
-    - urlPattern: /*
-      handler: networkFirst
-      options:
-        origin: platform.twitter.com
-  
+
 css_minifier:
   enable: true
   silent: false
   exclude: 
-    - '*.min.css'
+      - '/*.min.css'
 
 js_minifier:
   enable: true
@@ -157,7 +145,7 @@ js_minifier:
   output:
   compress:
   exclude: 
-    - '*.min.js'
+      - '/*.min.js'
 
 html_minifier:
   enable: true
@@ -173,3 +161,59 @@ image_minifier:
   pngquant: false
   progressive: false
   silent: false
+
+hexoWorkbox:
+  enable: true
+
+workbox:
+  swDest: 'sw.js'
+  globPatterns:
+    - '/assets/styles/main.css'
+    - '/assets/js/vendor/jquery-3.3.1.min.js'
+    - '/assets/js/vendor/modernizr-3.6.0.min.js'
+    - '/assets/js/vendor/popper.min.js'
+    - '/assets/js/vendor/bootstrap.min.js' 
+    - '/assets/js/disqus-lazy-min.js'      
+    - '/cache-pf.js'
+    - '/favicon.ico'
+    - '/manifest.json'
+    - '/images/profile.jpg'
+    - '/images/profile_small.jpg'        
+    - '/images/book.gif'
+    - '/images/leeboonstra-speaker-500x351.png'
+    - '/images/10yearsold-500x326.png'
+    - '/images/lee.boonstra-resume.pdf'
+    - '/images/leeboonstra-book.png'
+    - '/assets/fonts/icomoon.eot'
+    - '/assets/fonts/icomoon.svg'
+    - '/assets/fonts/icomoon.ttf'
+    - '/assets/fonts/icomoon.woff'
+    - '/assets/fonts/consolas-webfont.eot'
+    - '/assets/fonts/consolas-webfont.svg'
+    - '/assets/fonts/consolas-webfont.ttf'
+    - '/assets/fonts/consolas-webfont.woff'
+    - '/assets/fonts/bebasneue-webfont.eot'
+    - '/assets/fonts/bebasneue-webfont.svg'
+    - '/assets/fonts/bebasneue-webfont.ttf'
+    - '/assets/fonts/bebasneue-webfont.woff'
+    - '/assets/fonts/Mathlete-Skinny-webfont.eot'
+    - '/assets/fonts/Mathlete-Skinny-webfont.svg'
+    - '/assets/fonts/Mathlete-Skinny-webfont.ttf'
+    - '/assets/fonts/Mathlete-Skinny-webfont.woff'
+    - '/assets/fonts/oswald-regular-webfont.eot'
+    - '/assets/fonts/oswald-regular-webfont.svg'
+    - '/assets/fonts/oswald-regular-webfont.ttf'
+    - '/assets/fonts/oswald-regular-webfont.woff'
+    - '/assets/fonts/Roboto-Regular-webfont.eot'
+    - '/assets/fonts/Roboto-Regular-webfont.svg'
+    - '/assets/fonts/Roboto-Regular-webfont.ttf'
+    - '/assets/fonts/Roboto-Regular-webfont.woff'
+  globIgnores:
+      - '/!index.html'
+  runtimeCaching:
+    - urlPattern: '**/*.jpg'
+      handler: 'staleWhileRevalidate'
+      options:
+        cacheName: 'images'
+  skipWaiting: true
+  clientsClaim: true
