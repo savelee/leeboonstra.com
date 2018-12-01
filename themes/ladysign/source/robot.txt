@@ -1,0 +1,10 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/ 
+
+Disallow: /assets/js/
+Disallow: /assets/styles/
+Disallow: /assets/fonts/
+
+Sitemap: https://www.leeboonstra.com/sitemap.xml

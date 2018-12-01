@@ -4,7 +4,10 @@ code {
   font-family: consolas, monospace;
   color: #222;
   background: #eee;
-  font-size: 13px;
+  font-size: 15px;
+}
+.gutter .line {
+  color: lighten(#222, 40%);
 }
 code {
   -webkit-border-radius: 2px;
@@ -26,8 +29,9 @@ pre code {
   padding: 0;
 }
 .highlight {
-  background: #efefef;
-  border: darken(#efefef, 5%);
+  font-family: consolas, monospace;
+  background: lighten(#efefef, 5%);
+  border: darken(#efefef, 20%) 1px solid;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   padding: 10px;

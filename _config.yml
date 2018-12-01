@@ -130,3 +130,21 @@ marked:
   tables: true
   breaks: false
   autolink: true
+
+pwa:
+  serviceWorker:
+    path: /sw.js
+    preload:
+      urls:
+        - /
+      posts: 5
+    opts:
+      networkTimeoutSeconds: 5
+    routes:
+      - pattern: !!js/regexp /platform.twitter.com/
+        strategy: networkOnly
+      - pattern: !!js/regexp /.*\.(js|css|woff|ttf|svg|pdf|jpg|jpeg|png|gif)$/
+        strategy: cacheFirst
+      - pattern: !!js/regexp /\//
+        strategy: networkFirst
+  priority: 5

@@ -8,28 +8,34 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="640">
   <link type="img/ico" rel="shortcut icon" href="/favicon.ico">
- <%
-  var title = page.title;
-
-  if (is_archive()){
-    title = __('archive_a');
-
-    if (is_month()){
-      title += ': ' + page.year + '/' + page.month;
-    } else if (is_year()){
-      title += ': ' + page.year;
-    }
-  } else if (is_category()){
-    title = __('category') + ': ' + page.category;
-  } else if (is_tag()){
-    title = __('tag') + ': ' + page.tag;
-  }
-  %>
+ 
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title itemprop="name"><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  
+    <%
+    var title = page.title;
+    if (is_archive()) {
+        title = __('index.archive');
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    } else if (is_category()) {
+        title = __('index.category') + ': ' + page.category;
+    } else if (is_tag()) {
+        title = __('index.tag') + ': ' + page.tag;
+    } else if (is_post()) {
+        title = '' + page.title + '';
+    } else if (is_home()) {
+        title = ' DevTricks | Lee Boonstra\'s Developer Blog';
+    }
+  %>
+  <title itemprop="name"><% if (title) { %><%= title %>  | <% } %><%= config.title %></title>
+    
   <meta itemprop="creator" content="Lee Boonstra">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
+  <link rel="canonical" href="http://www.leeboonstra.com" />
+
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
@@ -60,7 +66,7 @@
       <button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="iconmenu"></span>
       </button>
-      <a class="navbar-brand" href="/" title="<%-config.title %>"><%- config.title %></a>
+      <a class="navbar-brand" href="/" title="<%-config.title %>">DevTricks</a>
         
       <div class="collapse navbar-collapse" id="navbarTogglerDemo">
         
@@ -116,6 +122,7 @@
 
 
   <main class="container-fluid content">
+      <h1 style="display: none;">Blog</h1>
       <%- body %>
   </main>
   <footer class="foot">
