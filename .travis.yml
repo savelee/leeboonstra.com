@@ -5,6 +5,7 @@ branches:
   only:
   - master
 before_install:
+  - chmod +x /etc/couchdb/local.d
   - sudo apt-get install libpng-dev
   - npm install -g firebase-tools
   - npm install -g hexo
