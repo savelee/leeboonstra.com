@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/about/index.html</loc>
+    
+    <lastmod>2018-11-30T19:18:45.937Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/speaking/index.html</loc>
+    
+    <lastmod>2018-11-30T19:16:52.707Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/</loc>
+    
+    <lastmod>2018-11-30T19:05:47.696Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Theming/using-custom-icons-in-your-ext-js-apps/</loc>
+    
+    <lastmod>2018-11-30T19:05:42.929Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/</loc>
+    
+    <lastmod>2018-11-30T18:59:05.925Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-Architect/using-custom-fonts-with-sencha-architect-2/</loc>
+    
+    <lastmod>2018-11-30T18:39:10.011Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1-2/</loc>
+    
+    <lastmod>2018-11-30T18:32:00.785Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/</loc>
+    
+    <lastmod>2018-11-30T18:29:22.639Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/d3-visualizations-in-ext-js-6-2/</loc>
+    
+    <lastmod>2018-11-30T18:11:00.119Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Theming/create-an-amazing-sencha-touch-theme-with-sass/</loc>
+    
+    <lastmod>2018-11-30T18:01:21.454Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/create-dynamic-sencha-models-from-your-server-side/</loc>
+    
+    <lastmod>2018-11-30T17:10:51.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/</loc>
+    
+    <lastmod>2018-11-30T14:54:31.066Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/</loc>
+    
+    <lastmod>2018-11-30T14:47:17.732Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Cordova/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/</loc>
+    
+    <lastmod>2018-11-30T14:32:57.581Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/creating-theme-specific-overrides-in-ext-js/</loc>
+    
+    <lastmod>2018-11-30T14:25:07.972Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-CMD/generate-a-theme-with-sencha-cmd/</loc>
+    
+    <lastmod>2018-11-30T14:21:47.949Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-CMD/running-multiple-sencha-cmd-versions-for-example-to-support-sencha-architect/</loc>
+    
+    <lastmod>2018-11-30T14:20:12.775Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Django/django-template-extending/</loc>
+    
+    <lastmod>2018-11-30T14:17:01.372Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Django/setup-a-django-project-with-a-mysql-database/</loc>
+    
+    <lastmod>2018-11-30T14:13:34.958Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/App-Cache/make-your-mobile-webapp-work-offline-with-application-cache/</loc>
+    
+    <lastmod>2018-11-30T14:05:54.554Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Machine-Learning/introduction-to-the-video-intelligence-api/</loc>
+    
+    <lastmod>2018-11-30T14:05:49.091Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-6/</loc>
+    
+    <lastmod>2018-11-30T13:41:26.002Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-3/</loc>
+    
+    <lastmod>2018-11-30T13:38:00.261Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-2/</loc>
+    
+    <lastmod>2018-11-30T13:36:01.879Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/</loc>
+    
+    <lastmod>2018-11-30T13:34:57.585Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-7/</loc>
+    
+    <lastmod>2018-11-30T13:34:52.815Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-5/</loc>
+    
+    <lastmod>2018-11-30T13:34:44.953Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-4/</loc>
+    
+    <lastmod>2018-11-30T13:34:41.074Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-1/</loc>
+    
+    <lastmod>2018-11-30T13:34:28.866Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/</loc>
+    
+    <lastmod>2018-11-25T16:23:28.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Bots/conditional-templating-in-dialogflow-for-google-assistant/</loc>
+    
+    <lastmod>2018-11-25T16:20:11.527Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/</loc>
+    
+    <lastmod>2018-11-25T16:13:44.141Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Robotics/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/</loc>
+    
+    <lastmod>2018-11-25T16:08:04.418Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/</loc>
+    
+    <lastmod>2018-11-25T16:00:28.886Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/</loc>
+    
+    <lastmod>2018-11-25T15:30:10.687Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/404.html</loc>
+    
+    <lastmod>2018-11-25T14:38:20.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/machine-learning-apis-for-python-developers/</loc>
+    
+    <lastmod>2018-11-25T13:08:50.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-extending-g-suite-with-business-applications/</loc>
+    
+    <lastmod>2018-11-25T12:59:14.043Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/senchaarchitect/</loc>
+    
+    <lastmod>2018-11-25T12:55:50.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/optimizing-extjs/</loc>
+    
+    <lastmod>2018-11-25T12:55:38.002Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/webinar-secrets-to-building-a-great-looking-universal-app/</loc>
+    
+    <lastmod>2018-11-25T12:36:21.991Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/</loc>
+    
+    <lastmod>2018-11-25T12:32:29.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/</loc>
+    
+    <lastmod>2018-11-25T12:06:04.961Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/</loc>
+    
+    <lastmod>2018-11-25T12:03:35.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/</loc>
+    
+    <lastmod>2018-11-25T11:59:39.782Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Ext-JS/asynchronous-javascript-promises/</loc>
+    
+    <lastmod>2018-11-25T11:45:32.656Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-create-custom-chat-agents-for-google-home-with-api-ai/</loc>
+    
+    <lastmod>2018-11-25T11:42:29.116Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-london/</loc>
+    
+    <lastmod>2018-11-25T11:30:21.619Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-summit-paris-keynote-video-intelligence/</loc>
+    
+    <lastmod>2018-11-25T11:30:12.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-amsterdam-keynote-video-intelligence-api/</loc>
+    
+    <lastmod>2018-11-25T11:30:04.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-frontmania/</loc>
+    
+    <lastmod>2018-11-25T11:29:56.085Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-dlp-vision-api-demo-google-cloud-summit-munich/</loc>
+    
+    <lastmod>2018-11-25T11:29:39.500Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-digitalwednesday/</loc>
+    
+    <lastmod>2018-11-25T11:29:30.294Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Videos/video-cloud-on-air-webinar-create-custom-conversations-with-dialogflow/</loc>
+    
+    <lastmod>2018-11-25T11:29:21.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/writing/index.html</loc>
+    
+    <lastmod>2018-11-25T11:14:24.292Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/Bots/actions-on-google-for-google-cloud-functions/</loc>
+    
+    <lastmod>2018-11-24T18:55:06.213Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://devtricks-45484.firebaseapp.com/contact/index.html</loc>
+    
+    <lastmod>2018-11-24T18:11:49.190Z</lastmod>
+    
+  </url>
+  
+</urlset>
