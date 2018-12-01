@@ -1,292 +1,296 @@
-.article, 
-.related,
-.comments {
-    h1, .h1 {
-        font-family: BebasNeue;
-        font-size: 36px;
-        line-height: 32px;
-    }
+@media screen {
 
-    .badge a, header a, footer a {
-        text-decoration: none;
-    }
-
-    a {
-        text-decoration: underline;
-    }
-
-    img {
-        max-width: 100%;
-    }
-
-    line-height: 24px;
-    
-    p {
-        max-width: 850px;
-    }
-
-    .float-left {
-        float: left;
-        margin-right: 10px;
-    }
-
-    .float-right {
-        float: right;
-        margin-left: 10px;
-    }
-
-    .border {
-        border: 2px solid $black;
-    }
-
-    .article-category {
-        display: inline;
-    }
-
-    .article-header {
-        margin-bottom: 15px;
-        font-size: 12px;
-    }
-    
-    #article-nav li a {
-        background: #008fa1;
-        color: $white;
-        padding: 3px 10px;
-        display: inline-block;
-        font-family: Oswald, Impact;
-    }
-    #article-nav li a:hover {
-        text-decoration: none;
-        background: lighten(#008fa1, 5%);
-    }
-
-    .article-foot {
-        clear: both;
-
-        .bar {
-            display: block;
-            margin-top: 20px;
+    .article, 
+    .related,
+    .comments {
+        h1, .h1 {
+            font-family: BebasNeue;
+            font-size: 36px;
+            line-height: 32px;
         }
-    }
-}
 
-.article {
-    .article-inner {
-        padding: 30px;
-    }
-}
-
-.article-nav {
-    font-size: 10px;
-}
-
-.gist {
-    max-width: 900px;
-}
-
-#comments, #related {
-    padding: 30px 0;
-}
-
-.frontarticle {
-    padding: 30px;
-}
-
-.badge {
-    margin-top: -2px;
-}
-
-#article-nav {
-    text-align: center;
-
-    li {
-        display: inline-block;
-        font-size: 25px;
-        width: 100px;
-    }
-}
-
-#page-nav {
-    text-align: center;
-    padding: 30px;
-    font-family: Oswald, Impact;
-
-    span, a {
-        margin-right: 5px;
-        padding: 5px;
-    }
-    a {
-        font-weight: bold;
-    }
-}
-
-//articles
-article:nth-child(4n+1) {
-    background: linear-gradient(darken($col1,2%), $col1);
-    background: -moz-linear-gradient(darken($col1,2%), $col1);
-    background: -o-linear-gradient(darken($col1,2%), $col1);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,2%)));
-    background: -webkit-linear-gradient(darken($col1,2%), $col1);
-    background-color: $col1;
-    border-color: darken($col1,2%);
-    border-width: 10px;
-    border-style: solid;
-    color: $white;
-
-    a {
-        color: $white;
-    }
-}
-
-.article:nth-child(4n+1):after {
-    border-color: darken($col1,2%) transparent;
-    border-style: solid;
-    border-width: 20px 50px 0;
-    left: 18%;
-    position: relative;
-    bottom: -60px;
-    z-index: 0;
-}
-
-.contentarticle:nth-child(4n+1):after {
-    bottom: -30px;
-}
-
-
-#related,
-article:nth-child(4n+2) {
-    background: linear-gradient(lighten($col2,2%), $col2);
-    background: -moz-linear-gradient(lighten($col2,2%), $col2);
-    background: -o-linear-gradient(lighten($col2,2%), $col2);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, lighten($col2,2%)));
-    background: -webkit-linear-gradient(lighten($col2,2%), $col2);
-    background-color: $col2;
-    border-color: lighten($col2,2%);
-    border-width: 10px;
-    border-style: solid;
-    color: $white;
-
-    a {
-        color: $white;
-    }
-}
-
-.article:nth-child(4n+2):after {
-    border-color: lighten($col2,2%) transparent;
-    border-style: solid;
-    border-width: 20px 50px 0;
-    left: 88%;
-    position: relative;
-    bottom: -60px;
-    z-index: 0;
-}
-
-article:nth-child(4n+3) {
-    background: linear-gradient(lighten($col3,5%), $col3);
-    background: -moz-linear-gradient(lighten($col3,5%), $col3);
-    background: -o-linear-gradient(lighten($col3,5%), $col3);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col3), color-stop(100%, lighten($col3,5%)));
-    background: -webkit-linear-gradient(lighten($col3,5%), $col3);
-    background-color: $col3;
-    border-color: lighten($col3,5%);
-    border-width: 10px;
-    border-style: solid;
-    color: $black;
-
-    a {
-        color: $black;
-    }
-
-    .btn {
-        color: $white;
-    }
-}
-
-.article:nth-child(4n+3):after {
-    border-color: lighten($col3,5%) transparent;
-    border-style: solid;
-    border-width: 20px 50px 0;
-    left: 28%;
-    position: relative;
-    bottom: -60px;
-    z-index: 0;
-}
-
-#comments,
-article:nth-child(4n+4) {
-    background: linear-gradient(darken($col4,5%), $col4);
-    background: -moz-linear-gradient(darken($col4,5%), $col4);
-    background: -o-linear-gradient(darken($col4,5%), $col4);
-    background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col4), color-stop(100%, darken($col4,5%)));
-    background: -webkit-linear-gradient(darken($col4,5%), $col4);
-    background-color: $col4;
-    border-color: darken($col4,5%);
-    border-width: 10px;
-    border-style: solid;
-    color: $white;
-
-    a {
-        color: $white;
-    }
-}
-
-.article:nth-child(4n+4):after {
-    border-color: darken($col4,5%) transparent;
-    border-style: solid;
-    border-width: 20px 50px 0;
-    left: 48%;
-    position: relative;
-    bottom: -60px;
-    z-index: 0;
-}
-
-.article {
-    .contentpage {
-        background: $white;
-        color: $black;
-        box-shadow: 0px 1px 5px $black;
-        -webkit-box-shadow: 0px 1px 5px $black;
+        .badge a, header a, footer a {
+            text-decoration: none;
+        }
 
         a {
-            color: $col1;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        line-height: 24px;
+        
+        p {
+            max-width: 850px;
+        }
+
+        .float-left {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .float-right {
+            float: right;
+            margin-left: 10px;
+        }
+
+        .border {
+            border: 2px solid $black;
+        }
+
+        .article-category {
+            display: inline;
+        }
+
+        .article-header {
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        
+        #article-nav li a {
+            background: #008fa1;
+            color: $white;
+            padding: 3px 10px;
+            display: inline-block;
+            font-family: Oswald, Impact;
+        }
+        #article-nav li a:hover {
+            text-decoration: none;
+            background: lighten(#008fa1, 5%);
+        }
+
+        .article-foot {
+            clear: both;
+
+            .bar {
+                display: block;
+                margin-top: 20px;
+            }
         }
     }
-}
 
-.badge {
-    background-color: #222 !important;
-    color: $white !important;
-}
-
-#page-nav {
-    background-color: $headercol1;
-    background-color: #00BCD4;
-    border-bottom: 4px solid #222;
-    border-top: 1px solid #222;
-    
-    span {
-        color: #f3f3f3;
+    .article {
+        .article-inner {
+            padding: 30px;
+        }
     }
-    a {
+
+    .article-nav {
+        font-size: 10px;
+    }
+
+    .gist {
+        max-width: 900px;
+    }
+
+    #comments, #related {
+        padding: 30px 0;
+    }
+
+    .frontarticle {
+        padding: 30px;
+    }
+
+    .badge {
+        margin-top: -2px;
+    }
+
+    #article-nav {
+        text-align: center;
+
+        li {
+            display: inline-block;
+            font-size: 25px;
+            width: 100px;
+        }
+    }
+
+    #page-nav {
+        text-align: center;
+        padding: 30px;
+        font-family: Oswald, Impact;
+
+        span, a {
+            margin-right: 5px;
+            padding: 5px;
+        }
+        a {
+            font-weight: bold;
+        }
+    }
+
+    //articles
+    article:nth-child(4n+1) {
+        background: linear-gradient(darken($col1,2%), $col1);
+        background: -moz-linear-gradient(darken($col1,2%), $col1);
+        background: -o-linear-gradient(darken($col1,2%), $col1);
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col1), color-stop(100%, darken($col1,2%)));
+        background: -webkit-linear-gradient(darken($col1,2%), $col1);
+        background-color: $col1;
+        border-color: darken($col1,2%);
+        border-width: 10px;
+        border-style: solid;
         color: $white;
+
+        a {
+            color: $white;
+        }
     }
-    span, a {
-        background-color: darken($headercol1,10%); 
+
+    .article:nth-child(4n+1):after {
+        border-color: darken($col1,2%) transparent;
+        border-style: solid;
+        border-width: 20px 50px 0;
+        left: 18%;
+        position: relative;
+        bottom: -60px;
+        z-index: 0;
     }
-}
 
-.twitter-share-button {
-    background: #38A1F3;
-
-    font-family: BebasNeue;
-    font-size: 20px;
-    line-height: 22px;
-
-    span {
-        color: #fff;
+    .contentarticle:nth-child(4n+1):after {
+        bottom: -30px;
     }
-}
 
-.twitter-share-button:hover {
-    background: darken(#38A1F3, 5%);
+
+    #related,
+    article:nth-child(4n+2) {
+        background: linear-gradient(lighten($col2,2%), $col2);
+        background: -moz-linear-gradient(lighten($col2,2%), $col2);
+        background: -o-linear-gradient(lighten($col2,2%), $col2);
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col2), color-stop(100%, lighten($col2,2%)));
+        background: -webkit-linear-gradient(lighten($col2,2%), $col2);
+        background-color: $col2;
+        border-color: lighten($col2,2%);
+        border-width: 10px;
+        border-style: solid;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
+
+    .article:nth-child(4n+2):after {
+        border-color: lighten($col2,2%) transparent;
+        border-style: solid;
+        border-width: 20px 50px 0;
+        left: 88%;
+        position: relative;
+        bottom: -60px;
+        z-index: 0;
+    }
+
+    article:nth-child(4n+3) {
+        background: linear-gradient(lighten($col3,5%), $col3);
+        background: -moz-linear-gradient(lighten($col3,5%), $col3);
+        background: -o-linear-gradient(lighten($col3,5%), $col3);
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col3), color-stop(100%, lighten($col3,5%)));
+        background: -webkit-linear-gradient(lighten($col3,5%), $col3);
+        background-color: $col3;
+        border-color: lighten($col3,5%);
+        border-width: 10px;
+        border-style: solid;
+        color: $black;
+
+        a {
+            color: $black;
+        }
+
+        .btn {
+            color: $white;
+        }
+    }
+
+    .article:nth-child(4n+3):after {
+        border-color: lighten($col3,5%) transparent;
+        border-style: solid;
+        border-width: 20px 50px 0;
+        left: 28%;
+        position: relative;
+        bottom: -60px;
+        z-index: 0;
+    }
+
+    #comments,
+    article:nth-child(4n+4) {
+        background: linear-gradient(darken($col4,5%), $col4);
+        background: -moz-linear-gradient(darken($col4,5%), $col4);
+        background: -o-linear-gradient(darken($col4,5%), $col4);
+        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, $col4), color-stop(100%, darken($col4,5%)));
+        background: -webkit-linear-gradient(darken($col4,5%), $col4);
+        background-color: $col4;
+        border-color: darken($col4,5%);
+        border-width: 10px;
+        border-style: solid;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
+
+    .article:nth-child(4n+4):after {
+        border-color: darken($col4,5%) transparent;
+        border-style: solid;
+        border-width: 20px 50px 0;
+        left: 48%;
+        position: relative;
+        bottom: -60px;
+        z-index: 0;
+    }
+
+    .article {
+        .contentpage {
+            background: $white;
+            color: $black;
+            box-shadow: 0px 1px 5px $black;
+            -webkit-box-shadow: 0px 1px 5px $black;
+
+            a {
+                color: $col1;
+            }
+        }
+    }
+
+    .badge {
+        background-color: #222 !important;
+        color: $white !important;
+    }
+
+    #page-nav {
+        background-color: $headercol1;
+        background-color: #00BCD4;
+        border-bottom: 4px solid #222;
+        border-top: 1px solid #222;
+        
+        span {
+            color: #f3f3f3;
+        }
+        a {
+            color: $white;
+        }
+        span, a {
+            background-color: darken($headercol1,10%); 
+        }
+    }
+
+    .twitter-share-button {
+        background: #38A1F3;
+
+        font-family: BebasNeue;
+        font-size: 20px;
+        line-height: 22px;
+
+        span {
+            color: #fff;
+        }
+    }
+
+    .twitter-share-button:hover {
+        background: darken(#38A1F3, 5%);
+    }
+
 }

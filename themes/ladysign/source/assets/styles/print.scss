@@ -1,0 +1,22 @@
+@media print {
+
+    iframe,
+    .article-nav,
+    .sidebar-module,
+    .sidebar-module-list,
+    .search-form,
+    #comments,
+    .foot
+    {
+        display: none !important;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    .wrapper::after {
+        content: "Please see www.leeboonstra.com for the latest version of this information.";
+    }
+
+}

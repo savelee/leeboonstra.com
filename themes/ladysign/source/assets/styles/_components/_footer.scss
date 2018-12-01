@@ -1,25 +1,27 @@
-footer.foot {
-    padding: 60px 0;
-}
-
-.bottom {
-    font-size: 10px;
-    height: 30px;
-    line-height: 30px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-//colors
-footer.foot {
-    background: $footercol1;
-    color: $white;
-    a {
-        color: $light;
+@media screen {
+    footer.foot {
+        padding: 60px 0;
     }
-}
 
-.bottom {
-    background: $footercol2;
-    color: $white;
+    .bottom {
+        font-size: 10px;
+        height: 30px;
+        line-height: 30px;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    //colors
+    footer.foot {
+        background: $footercol1;
+        color: $white;
+        a {
+            color: $light;
+        }
+    }
+
+    .bottom {
+        background: $footercol2;
+        color: $white;
+    }
 }

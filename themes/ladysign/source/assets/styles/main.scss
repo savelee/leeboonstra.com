@@ -6,6 +6,7 @@
 @import '_sections/sections';
 @import '_components/components';
 
+@import 'print';
 
 @font-face{
     font-family: Roboto;
@@ -32,7 +33,7 @@
 
 @font-face{
     font-family: consolas;
-    font-style:normal;
+    font-style: normal;
     font-weight:400;
     src:url(../fonts/consolas-webfont.eot);
     src:url(../fonts/consolas-webfont.eot?#iefix) format("embedded-opentype"),
@@ -73,6 +74,8 @@
         url(../fonts/icomoon.ttf) format("truetype"),
         url(../fonts/icomoon.svg#icomoon) format("svg")
 }
+
+@media screen {
 
 body{
     font-family: Roboto;
@@ -334,4 +337,6 @@ h2,h3,h4 {
 .btn-dark {
     background: $black;
     padding: 0 5px;
+}
+
 }
