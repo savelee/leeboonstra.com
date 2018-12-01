@@ -4,8 +4,6 @@ node_js:
 branches:
   only:
   - master
-before_cache:
-    - sudo chown travis:travis /etc/couchdb/local.d
 before_install:
   - sudo apt-get install libpng-dev
   - npm install -g firebase-tools
