@@ -3,7 +3,7 @@
     <div class="col col-sm-9 article-inner">
   <% } else { %>
     <article id="<%= post.layout %>-<%= post.slug %>" class="article row article-type-<%= post.layout %> row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-      <link itemprop="mainEntityOfPage" href="<%- post.url %>" />
+      <link itemprop="mainEntityOfPage" href="<%- post.permalink %>" />
       <div class="col col-sm-9 article-inner contentpage">
 
     <a class="twitter-share-button btn"
@@ -26,7 +26,7 @@
         <%- partial('post/category') %>
         <span class="hidden" itemprop="author">Lee Boonstra</span>
         <span class="hidden" itemprop="publisher">Lee Boonstra</span>
-        
+        <img class="hidden" itemprop="image" src="https//www.leeboonstra.com/images/screen.png">
       </header>
     <% } %>
     <% if (post.excerpt && index){ %>
@@ -70,7 +70,7 @@
       "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
       "publisher": "Lee Boonstra",
       "description": "<%- post.desc %>",
-      "mainEntityOfPage": "<%- page.link %>",
+      "mainEntityOfPage": "<%- post.permalink %>",
       "image": "https//www.leeboonstra.com/images/screen.png",
       "articleBody": "<%- post.desc %>",
       "author": {
