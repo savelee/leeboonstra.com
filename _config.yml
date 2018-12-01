@@ -169,3 +169,12 @@ html_minifier:
   ignore_error: false
   silent: false
   exclude:
+
+image_minifier:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
