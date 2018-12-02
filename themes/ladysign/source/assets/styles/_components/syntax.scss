@@ -1,7 +1,7 @@
 /* Syntax highlighting stolen from hexo.js webiste */
 pre,
 code {
-  font-family: consolas, monospace;
+  font-family: 'Inconsolata', monospace;
   color: #222;
   background: #eee;
   font-size: 15px;
@@ -29,7 +29,7 @@ pre code {
   padding: 0;
 }
 .highlight {
-  font-family: consolas, monospace;
+  font-family: 'Inconsolata', monospace;
   background: lighten(#efefef, 5%);
   border: darken(#efefef, 20%) 1px solid;
   -webkit-border-radius: 2px;

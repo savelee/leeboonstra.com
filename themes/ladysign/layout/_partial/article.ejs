@@ -50,11 +50,11 @@
           "@type": "VideoObject",
           "name": "<%= post.title %>",
           "@id":  "https://www.youtube.com/embed/<%= page.youtube %>",
-          "datePublished": "<%- post.date.format('YYYY-MM-DD') %>",
+          "datePublished": "<%- post.date.toISOString() %>",
           "description" : "Video: <%- post.title %>",
           "thumbnailURL" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
           "thumbnail" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
-          "uploadDate" : "<%- post.updated.format('YYYY-MM-DD') %>",
+          "uploadDate" : "<%- post.updated.toISOString() %>",
           "author": {
             "@type": "Person",
             "name": "Lee Boonstra"
@@ -68,9 +68,9 @@
       "@type": "BlogPosting",
       "headline": "<%- post.title %>",
       "genre": "technology", 
-      "datePublished": "<%- post.date.format('YYYY-MM-DD') %>",
-      "dateCreated": "<%- post.date.format('YYYY-MM-DD')  %>",
-      "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
+      "datePublished": "<%- post.date.toISOString() %>",
+      "dateCreated": "<%- post.date.toISOString()  %>",
+      "dateModified": "<%- post.date.toISOString() %>",
       "publisher": {
         "@type": "Organization",
         "name": "Ladysign",

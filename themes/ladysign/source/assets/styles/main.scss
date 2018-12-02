@@ -9,7 +9,7 @@
 @import 'print';
 
 @font-face{
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-style:normal;
     font-weight:400;
     src:url(../fonts/Roboto-Regular-webfont.eot);
@@ -20,7 +20,7 @@
 }
 
 @font-face{
-    font-family: BebasNeue;
+    font-family: 'BebasNeue';
     font-style:normal;
     font-weight:400;
     src:url(../fonts/bebasneue-webfont.eot);
@@ -30,20 +30,8 @@
         url(../fonts/bebasneue-webfont.svg#BebasNeue) format("svg")
 }
 
-
 @font-face{
-    font-family: consolas;
-    font-style: normal;
-    font-weight:400;
-    src:url(../fonts/consolas-webfont.eot);
-    src:url(../fonts/consolas-webfont.eot?#iefix) format("embedded-opentype"),
-        url(../fonts/consolas-webfont.woff) format("woff"),
-        url(../fonts/consolas-webfont.ttf) format("truetype"),
-        url(../fonts/consolas-webfont.svg#consolas) format("svg")
-}
-
-@font-face{
-    font-family: Oswald;
+    font-family: 'Oswald';
     font-style: normal;
     font-weight:400;
     src:url(../fonts/oswald-regular-webfont.eot);
@@ -54,7 +42,7 @@
 }
 
 @font-face{
-    font-family: Mathlete;
+    font-family: 'Mathlete';
     font-style:normal;
     font-weight:400;
     src:url(../fonts/Mathlete-Skinny-webfont.eot);
@@ -65,7 +53,7 @@
 }
 
 @font-face{
-    font-family: icomoon;
+    font-family: 'icomoon';
     font-style:normal;
     font-weight:400;
     src:url(../fonts/icomoon.eot);
@@ -78,7 +66,7 @@
 @media screen {
 
 body{
-    font-family: Roboto;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -86,7 +74,7 @@ body{
 }
 
 h2,h3,h4 {
-    font-family: BebasNeue;
+    font-family: 'BebasNeue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 26px;
     line-height: 28px;
 }
