@@ -26,7 +26,7 @@
         <%- partial('post/category') %>
         <span class="hidden" itemprop="author">Lee Boonstra</span>
         <span class="hidden" itemprop="publisher">Lee Boonstra</span>
-        <img class="hidden" itemprop="image" src="https//www.leeboonstra.com/images/screen.png">
+        <img class="hidden" itemprop="image" src="<%- config.url %>/images/screen.png">
       </header>
     <% } %>
     <% if (post.excerpt && index){ %>
@@ -48,17 +48,17 @@
           "name": "<%= post.title %>",
           "@id":  "https://www.youtube.com/embed/<%= page.youtube %>",
           "datePublished": "<%- post.date.format('YYYY-MM-DD') %>",
-          "description" : "<%- post.title %>",
+          "description" : "Video: <%- post.title %>",
           "thumbnailURL" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
           "thumbnail" : "https://img.youtube.com/vi/<%= page.youtube %>/0.jpg",
-          "uploadDate" : "<%- post.updated %>",
+          "uploadDate" : "<%- post.updated.format('YYYY-MM-DD') %>",
           "author": {
             "@type": "Person",
             "name": "Lee Boonstra"
           }
         }
     </script>
-    <% } %>
+    <% } else { %>
 
     <script type="application/ld+json">
       { "@context": "http://schema.org", 
@@ -69,10 +69,10 @@
       "dateCreated": "<%- post.date.format('YYYY-MM-DD')  %>",
       "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
       "publisher": "Lee Boonstra",
-      "description": "<%- post.desc %>",
+      "description": "DevTricks Lee Boonstra's blog. <%- post.description %>",
       "mainEntityOfPage": "<%- post.permalink %>",
-      "image": "https//www.leeboonstra.com/images/screen.png",
-      "articleBody": "<%- post.desc %>",
+      "image": "<%- config.url %>/images/screen.png",
+      "articleBody": "DevTricks Lee Boonstra's blog. <%- post.description %>",
       "author": {
         "@type": "Person",
         "name": "Lee Boonstra",
@@ -80,6 +80,9 @@
       }
       }
       </script>
+
+    
+    <% } %>
 
     <footer class="article-foot">
       <%- partial('post/tag') %>
