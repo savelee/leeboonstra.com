@@ -5,6 +5,12 @@
   "hexo": {
     "version": "3.8.0"
   },
+  "scripts": {
+    "install": "workbox wizard",
+    "sw": "workbox injectManifest themes/ladysign/source/sw-dev.js",
+    "serve": "workbox generateSW && hexo serve",
+    "build": "workbox generateSW && hexo generate"
+  },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "hexo": "^3.7.0",
@@ -27,5 +33,8 @@
     "hexo-tag-fontawesome": "^1.0.0",
     "hexo-tag-owl": "^1.2.2",
     "hexo-uglify": "0.0.5"
+  },
+  "devDependencies": {
+    "workbox-cli": "^3.6.3"
   }
 }

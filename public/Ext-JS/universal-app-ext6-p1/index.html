@@ -1,6 +1,355 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">How to Build a Great Looking Universal App with Ext JS – Part 1 | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t"><meta name="keywords" content="Universal App,Desktop,Mobile"><meta property="og:type" content="article"><meta property="og:title" content="How to Build a Great Looking Universal App with Ext JS – Part 1"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t"><meta property="og:locale" content="en"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img1.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img2.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img3.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img4.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img5.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img6.gif"><meta property="og:updated_time" content="2018-11-30T18:29:22.639Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="How to Build a Great Looking Universal App with Ext JS – Part 1"><meta name="twitter:description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t"><meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img1.png"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">How to Build a Great Looking Universal App with Ext JS
+    – Part 1 | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t">
+  <meta name="keywords" content="Universal App,Desktop,Mobile">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Build a Great Looking Universal App with Ext JS – Part 1">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t">
+  <meta property="og:locale" content="en">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img1.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img2.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img3.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img4.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img5.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img6.gif">
+  <meta property="og:updated_time" content="2018-11-30T18:29:22.639Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Build a Great Looking Universal App with Ext JS – Part 1">
+  <meta name="twitter:description" content="Background Back in 2011, I wanted to create an app. I love music, and I am a huge fan   of Spotify. I love that I can listen to a huge database of songs. The only   thing that always bothered me was t">
+  <meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/build-universal-app-img1.png">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-universal-app-ext6-p1" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: How to Build a Great Looking Universal App with Ext JS – Part 1 via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">How to Build a Great Looking Universal App with Ext JS – Part 1</h1>Posted on <a href="/Ext-JS/universal-app-ext6-p1/" class="article-date"><time datetime="2015-11-04T09:26:15.000Z" itemprop="datePublished">Nov 4th 2015</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Ext-JS/">Ext JS</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>Back in 2011, I wanted to create an app. I love music, and I am a huge fan of Spotify. I love that I can listen to a huge database of songs. The only thing that always bothered me was that I had to manually search for songs. That’s fine when I’m using my laptop, but it’s not so great when I’m walking or biking, and I use Spotify on my phone. Typing on a virtual keyboard is just not fun.</p><p>So, I created a Sencha Touch app that could connect to my LastFm account (an online database that can “scrobble” and save music that you’ve listened to). My app lists all the music I like, and with one button tap, I can play the song in Spotify.</p><a id="more"></a><p><img src="/images/build-universal-app-img1.png" alt="Sencha Touch app"></p><p>Sencha Touch was great for building this app. It has a powerful, smooth scrolling list and stylesheets that make my app look great on my iPhone. It was quick to build and ready to use.</p><p>I liked this app so much that I decided to share it. I deployed my app in the Apple App Store, by wrapping it with Cordova. Then, I noticed I was also using it on my desktop. It was just easier to choose songs, so I deployed my app on my webserver and hosted it in the Google Chrome Web Store.</p><p>A week later, I checked my reviews on the Chrome Web Store. I was heartbroken to see that I only had bad reviews: “What a weird looking app” and “Why can’t I use the mouse wheel to scroll?” It totally made sense though – my app was originally designed for iPhones. It looked like an iPhone app because of the stylesheet, but it behaved like a touch app because it was built with Sencha Touch using Touch events &amp; gestures. To scroll the music list, users had to tap the list and drag it up or down. That works great on touch devices, but it’s odd on a desktop. I realized that I needed a desktop version of my app too.</p><p><img src="/images/build-universal-app-img2.png" alt="Ext JS app"></p><p>That was when I started to play around with Ext JS, which is a great framework for creating desktop applications. It has fast performing desktop components like the grid, and a similar MVC architecture and class system as in Sencha Touch 2. I created the desktop version, and later I migrated my Ext JS 4 app to Ext JS 5. I chose Ext JS 5 because I wanted to clean up my code and use the new MVVM pattern, and also use touch events, responsive design, and stylesheets for a tablet version of my app. But when I realized I had to maintain two different code bases, with two frameworks, I turned to Ext JS 6.</p><p>Now, with Ext JS 6, you can create universal apps. With one codebase, your apps run on any supported device type.</p><h4 id="Tech-Specs-of-My-App"><a href="#Tech-Specs-of-My-App" class="headerlink" title="Tech Specs of My App"></a>Tech Specs of My App</h4><p>Before we move on, here are some technical specs for how my app works.</p><ul><li>To play songs in Spotify, I use URL Schemes.</li><li>To retrieve data from LastFm, I use an external JavaScript API, that must be in a custom written proxy, which is part of a package.</li><li>The LastFm username is saved in the HTML5 browser local storage.</li><li>Phones will get modern touch components, for now just iOS views.</li><li>Tablets and desktops will get rich classic desktop components, with a Spotify look &amp; feel.</li><li>MVVM pattern is used.</li></ul><h3 id="Universal-Apps-vs-Responsive-Web-Design"><a href="#Universal-Apps-vs-Responsive-Web-Design" class="headerlink" title="Universal Apps vs Responsive Web Design"></a>Universal Apps vs Responsive Web Design</h3><p>There are differences in how Universal Apps work in Sencha frameworks, and how <em>Responsive Web Design</em> is used for mobile websites to respond to certain environments.</p><p>Responsive Design for websites is usually done within a stylesheet using relative units, values in percentages, and breakpoints (mediaqueries) that can re-order and show/hide certain HTML elements.</p><p>Take a look at the code snippet below:</p><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> all and (min-width: 800px) and (max-width: 1024px) &#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> all and (min-width: 1025px) &#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line"><span class="attribute">display</span>: inline-block;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> all and (max-width: 799px)&#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>The previous code example has a few breakpoints. Small screens with a viewport width smaller than 799px, screens between 800px and 1024px, and large viewports with screens wider than 1025px. On big screens, there are list elements positions next to each other with a size of 25% width. For medium screens it’s 50%, and for small screens (such as phones), the list will be hidden.</p><p>This technique is great for websites, but not for real world applications. Why?</p><ul><li>When you are on a mobile phone, chances are that you are on a slow mobile network or using an (expensive) data plan. That’s very expensive, and you’re not even seeing these elements and data.</li><li>Also, you may want to change the text on a smaller screen size. I’ve worked a lot with copywriters, and they believe that text on a phone should be written differently than what’s on a desktop. Nobody likes to read whole books of text on a small screen.</li><li>By using only responsive web design, you’re probably missing a lot of opportunities to refine content or use device features, because you’re serving one code base. For example, your fancy floating calendar component looks great on a desktop, but it doesn’t work well on a phone. A text hyperlink works fine when you control your app with a mouse, but you will probably have trouble tapping it on a small touch device. Users are used to native app behavior, such as the built-in datepicker on an iPhone, or a big button as a link. Most often, responsive mobile websites don’t deliver the same experience as a native app.</li></ul><p>That’s why the Sencha approach is different and better. Universal apps in Ext JS 6 are far beyond just responsive design. We know you want to control the UI with more than just re-ordering, show/hiding elements. There are various approaches that you can take, and most of these, are not just limited to views. You can also control data and behavior.</p><p><strong>Toolkit / Universal app approach:</strong> The user experience is chosen before the framework is downloaded.</p><p><strong>How it works:</strong> You can create different views with touch (modern toolkit) or desktop (classic toolkit) component sets. The microloader will detect your device, OS, or browser, and serve the right component set for you, by loading a build profile. You can attach a particular theme to that build profile. You can create as many build profiles as you like, and it’s not only limited to views, you can also serve different data stores or behavior code.</p><p>In the screenshot below, you can see how my application looks on a desktop, and how it looks on an iPhone:</p><p><img src="/images/build-universal-app-img3.png" alt="App UI on desktop and phone"></p><p><strong>Device specific stylesheets:</strong> The stylesheet is chosen before the framework is downloaded.</p><p><strong>How it works:</strong> Ext JS 6 ships with themes (Sass stylesheets) that are great for classic toolkit, touch interfaces (with the look and feel of iOS, Android, and Windows Phone), or stylesheets that look great on both toolkits. The microloader can detect the environment, and serve the correct theme.</p><p><img src="/images/build-universal-app-img4.png" alt="Device specific stylesheets"></p><p><strong>Device Profiles:</strong> The profile for each user is chosen when the application launches.</p><p><strong>How it works:</strong> It’s possible to create a device profile, which contains different code or different component positioning. For example, when you open an email app on your phone, you see a list with an overview of all emails, and when you tap on an item, it opens the email on top. However, when you open the email application on a tablet, the list is docked to the left, and the body of the email is positioned on the right side of the screen. You can achieve these layouts with device profiles. It’s not just re-positioning certain components (list docked or not). It’s also different behavior under the hood (when you tap an email, it opens an extra window on top vs. loading next to the list).</p><p><img src="/images/build-universal-app-img5.png" alt="Device profiles"></p><p><strong>Responsive Design with JavaScript:</strong> Code responds to custom criteria at runtime.</p><p><strong>How it works:</strong> JavaScript responds to certain conditions (like screen size) at runtime. It’s possible to create any custom condition and have the view, data, or behavior respond.</p><p><img src="/images/build-universal-app-img6.gif" alt="Responsive Design with JavaScript"></p><p><strong>Traditional Web Design with CSS:</strong> The view responds to an environment at runtime.</p><p><strong>How it works:</strong> You can also use traditional responsive web design. You can use it for styling simple elements in views.</p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this article, I’ve described what an Ext JS 6 universal app is, what I like about the universal app approach, and why I converted my app. In Part 2, I’ll show you exactly how I converted my music app to a universal app.</p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-universal-app-ext6-p1" class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">How to Build a Great
+              Looking Universal App with Ext JS – Part 1</h1>Posted on <a href="/Ext-JS/universal-app-ext6-p1/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2015-11-04T09:26:15.000Z"
+                                                                                              itemprop="datePublished">Nov
+                4th 2015</time> <time class="hidden" datetime="2018-11-30"
+                                                                                              itemprop="dateModified">Nov
+                30th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Ext-JS/">Ext
+                JS</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3>
+          <p>Back in 2011, I wanted to create an app. I love music, and I am a
+            huge fan of Spotify. I love that I can listen to a huge database of
+            songs. The only thing that always bothered me was that I had to
+            manually search for songs. That’s fine when I’m using my laptop,
+            but it’s not so great when I’m walking or biking, and I use Spotify
+            on my phone. Typing on a virtual keyboard is just not fun.</p>
+          <p>So, I created a Sencha Touch app that could connect to my LastFm
+            account (an online database that can “scrobble” and save music that
+            you’ve listened to). My app lists all the music I like, and with
+            one button tap, I can play the song in Spotify.</p><a id="more"></a>
+          <p><img src="/images/build-universal-app-img1.png" alt="Sencha Touch app"></p>
+          <p>Sencha Touch was great for building this app. It has a powerful,
+            smooth scrolling list and stylesheets that make my app look great
+            on my iPhone. It was quick to build and ready to use.</p>
+          <p>I liked this app so much that I decided to share it. I deployed my
+            app in the Apple App Store, by wrapping it with Cordova. Then, I
+            noticed I was also using it on my desktop. It was just easier to
+            choose songs, so I deployed my app on my webserver and hosted it in
+            the Google Chrome Web Store.</p>
+          <p>A week later, I checked my reviews on the Chrome Web Store. I was
+            heartbroken to see that I only had bad reviews: “What a weird
+            looking app” and “Why can’t I use the mouse wheel to scroll?” It
+            totally made sense though – my app was originally designed for
+            iPhones. It looked like an iPhone app because of the stylesheet,
+            but it behaved like a touch app because it was built with Sencha
+            Touch using Touch events &amp; gestures. To scroll the music list,
+            users had to tap the list and drag it up or down. That works great
+            on touch devices, but it’s odd on a desktop. I realized that I
+            needed a desktop version of my app too.</p>
+          <p><img src="/images/build-universal-app-img2.png" alt="Ext JS app"></p>
+          <p>That was when I started to play around with Ext JS, which is a
+            great framework for creating desktop applications. It has fast
+            performing desktop components like the grid, and a similar MVC
+            architecture and class system as in Sencha Touch 2. I created the
+            desktop version, and later I migrated my Ext JS 4 app to Ext JS 5.
+            I chose Ext JS 5 because I wanted to clean up my code and use the
+            new MVVM pattern, and also use touch events, responsive design, and
+            stylesheets for a tablet version of my app. But when I realized I
+            had to maintain two different code bases, with two frameworks, I
+            turned to Ext JS 6.</p>
+          <p>Now, with Ext JS 6, you can create universal apps. With one
+            codebase, your apps run on any supported device type.</p>
+          <h4 id="Tech-Specs-of-My-App"><a href="#Tech-Specs-of-My-App" class="headerlink"
+                                                                                            title="Tech Specs of My App"></a>Tech
+            Specs of My App</h4>
+          <p>Before we move on, here are some technical specs for how my app
+            works.</p>
+          <ul>
+            <li>To play songs in Spotify, I use URL Schemes.</li>
+            <li>To retrieve data from LastFm, I use an external JavaScript API,
+              that must be in a custom written proxy, which is part of a
+              package.</li>
+            <li>The LastFm username is saved in the HTML5 browser local
+              storage.</li>
+            <li>Phones will get modern touch components, for now just iOS
+              views.</li>
+            <li>Tablets and desktops will get rich classic desktop components,
+              with a Spotify look &amp; feel.</li>
+            <li>MVVM pattern is used.</li>
+          </ul>
+          <h3 id="Universal-Apps-vs-Responsive-Web-Design"><a href="#Universal-Apps-vs-Responsive-Web-Design"
+                                                                                            class="headerlink"
+                                                                                            title="Universal Apps vs Responsive Web Design"></a>Universal
+            Apps vs Responsive Web Design</h3>
+          <p>There are differences in how Universal Apps work in Sencha
+            frameworks, and how <em>Responsive Web Design</em> is used for
+            mobile websites to respond to certain environments.</p>
+          <p>Responsive Design for websites is usually done within a stylesheet
+            using relative units, values in percentages, and breakpoints
+            (mediaqueries) that can re-order and show/hide certain HTML
+            elements.</p>
+          <p>Take a look at the code snippet below:</p>
+          <figure class="highlight scss">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">@<span class="keyword">media</span> all and (min-width: 800px) and (max-width: 1024px) &#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> all and (min-width: 1025px) &#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line"><span class="attribute">display</span>: inline-block;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> all and (max-width: 799px)&#123;</span><br><span class="line"> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-class">.products</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The previous code example has a few breakpoints. Small screens
+            with a viewport width smaller than 799px, screens between 800px and
+            1024px, and large viewports with screens wider than 1025px. On big
+            screens, there are list elements positions next to each other with
+            a size of 25% width. For medium screens it’s 50%, and for small
+            screens (such as phones), the list will be hidden.</p>
+          <p>This technique is great for websites, but not for real world
+            applications. Why?</p>
+          <ul>
+            <li>When you are on a mobile phone, chances are that you are on a
+              slow mobile network or using an (expensive) data plan. That’s
+              very expensive, and you’re not even seeing these elements and
+              data.</li>
+            <li>Also, you may want to change the text on a smaller screen size.
+              I’ve worked a lot with copywriters, and they believe that text on
+              a phone should be written differently than what’s on a desktop.
+              Nobody likes to read whole books of text on a small screen.</li>
+            <li>By using only responsive web design, you’re probably missing a
+              lot of opportunities to refine content or use device features,
+              because you’re serving one code base. For example, your fancy
+              floating calendar component looks great on a desktop, but it
+              doesn’t work well on a phone. A text hyperlink works fine when
+              you control your app with a mouse, but you will probably have
+              trouble tapping it on a small touch device. Users are used to
+              native app behavior, such as the built-in datepicker on an
+              iPhone, or a big button as a link. Most often, responsive mobile
+              websites don’t deliver the same experience as a native app.</li>
+          </ul>
+          <p>That’s why the Sencha approach is different and better. Universal
+            apps in Ext JS 6 are far beyond just responsive design. We know you
+            want to control the UI with more than just re-ordering, show/hiding
+            elements. There are various approaches that you can take, and most
+            of these, are not just limited to views. You can also control data
+            and behavior.</p>
+          <p><strong>Toolkit / Universal app approach:</strong> The user
+            experience is chosen before the framework is downloaded.</p>
+          <p><strong>How it works:</strong> You can create different views with
+            touch (modern toolkit) or desktop (classic toolkit) component sets.
+            The microloader will detect your device, OS, or browser, and serve
+            the right component set for you, by loading a build profile. You
+            can attach a particular theme to that build profile. You can create
+            as many build profiles as you like, and it’s not only limited to
+            views, you can also serve different data stores or behavior code.</p>
+          <p>In the screenshot below, you can see how my application looks on a
+            desktop, and how it looks on an iPhone:</p>
+          <p><img src="/images/build-universal-app-img3.png" alt="App UI on desktop and phone"></p>
+          <p><strong>Device specific stylesheets:</strong> The stylesheet is
+            chosen before the framework is downloaded.</p>
+          <p><strong>How it works:</strong> Ext JS 6 ships with themes (Sass
+            stylesheets) that are great for classic toolkit, touch interfaces
+            (with the look and feel of iOS, Android, and Windows Phone), or
+            stylesheets that look great on both toolkits. The microloader can
+            detect the environment, and serve the correct theme.</p>
+          <p><img src="/images/build-universal-app-img4.png" alt="Device specific stylesheets"></p>
+          <p><strong>Device Profiles:</strong> The profile for each user is
+            chosen when the application launches.</p>
+          <p><strong>How it works:</strong> It’s possible to create a device
+            profile, which contains different code or different component
+            positioning. For example, when you open an email app on your phone,
+            you see a list with an overview of all emails, and when you tap on
+            an item, it opens the email on top. However, when you open the
+            email application on a tablet, the list is docked to the left, and
+            the body of the email is positioned on the right side of the
+            screen. You can achieve these layouts with device profiles. It’s
+            not just re-positioning certain components (list docked or not).
+            It’s also different behavior under the hood (when you tap an email,
+            it opens an extra window on top vs. loading next to the list).</p>
+          <p><img src="/images/build-universal-app-img5.png" alt="Device profiles"></p>
+          <p><strong>Responsive Design with JavaScript:</strong> Code responds
+            to custom criteria at runtime.</p>
+          <p><strong>How it works:</strong> JavaScript responds to certain
+            conditions (like screen size) at runtime. It’s possible to create
+            any custom condition and have the view, data, or behavior respond.</p>
+          <p><img src="/images/build-universal-app-img6.gif" alt="Responsive Design with JavaScript"></p>
+          <p><strong>Traditional Web Design with CSS:</strong> The view
+            responds to an environment at runtime.</p>
+          <p><strong>How it works:</strong> You can also use traditional
+            responsive web design. You can use it for styling simple elements
+            in views.</p>
+          <h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3>
+          <p>In this article, I’ve described what an Ext JS 6 universal app is,
+            what I like about the universal app approach, and why I converted
+            my app. In Part 2, I’ll show you exactly how I converted my music
+            app to a universal app.</p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "How to Build a Great Looking Universal App with Ext JS – Part 1",
@@ -8,17 +357,77 @@
               "datePublished": "2015-11-04",
               "dateCreated": "2015-11-04",
               "dateModified": "2015-11-04",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. ",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. ",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Desktop/">Desktop</a><a class="badge badge-primary tag-link" href="/tags/Mobile/">Mobile</a><a class="badge badge-primary tag-link" href="/tags/Universal-App/">Universal App</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: How to Build a Great Looking Universal App with Ext JS – Part 1 - https://devtricks-45484.firebaseapp.com/Ext-JS/universal-app-ext6-p1/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Ext-JS/universal-app-ext6-p1-2/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Desktop/">Desktop</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Mobile/">Mobile</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Universal-App/">Universal
+              App</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Ext-JS/universal-app-ext6-p1-2/" id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +451,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +506,213 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/universal-app-ext6-p1-2/">How to Build a Great Looking Universal App with Ext JS – Part 2</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/">Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/universal-app-ext6-p1-2/">How
+                    to Build a Great Looking Universal App with Ext JS – Part 2</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/">Universal
+                    Windows Apps for Microsoft Surface Pro Hybrids / MS Edge
+                    with Ext JS 6</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

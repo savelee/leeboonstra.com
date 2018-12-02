@@ -1,6 +1,229 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Goodbye Sencha, Hello Google | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3"><meta name="keywords" content="Sencha,Google,Google Cloud"><meta property="og:type" content="article"><meta property="og:title" content="Goodbye Sencha, Hello Google"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3"><meta property="og:locale" content="en"><meta property="og:updated_time" content="2018-11-25T16:23:28.024Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Goodbye Sencha, Hello Google"><meta name="twitter:description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Goodbye Sencha, Hello Google | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3">
+  <meta name="keywords" content="Sencha,Google,Google Cloud">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Goodbye Sencha, Hello Google">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3">
+  <meta property="og:locale" content="en">
+  <meta property="og:updated_time" content="2018-11-25T16:23:28.024Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Goodbye Sencha, Hello Google">
+  <meta name="twitter:description" content="Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).   I’ve visited 15 countries and I’ve attended 3">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-goodbye-sencha-hello-google" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Goodbye Sencha, Hello Google via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Goodbye Sencha, Hello Google</h1>Posted on <a href="/Sencha/goodbye-sencha-hello-google/" class="article-date"><time datetime="2016-12-22T08:57:48.000Z" itemprop="datePublished">Dec 22nd 2016</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Sencha/">Sencha</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>Within 4 years working for Sencha, I’ve done 86 trips. 28 live trainings, I spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly). I’ve visited 15 countries and I’ve attended 3 SenchaCons. I’ve spoken with many customers. I’ve worked with every public, EA and beta version since Sencha Touch 0.8, and Ext JS 4.1. I’ve created many applications like <a href="https://www.leeboonstra.com/spotifinder/" target="_blank" rel="noopener">https://www.leeboonstra.com/spotifinder/</a> and <a href="https://github.com/savelee?page=1&amp;tab=repositories&amp;utf8=%E2%9C%93&amp;q=sencha" target="_blank" rel="noopener">https://github.com/savelee?page=1&amp;tab=repositories&amp;utf8=%E2%9C%93&amp;q=sencha</a>. Also I wrote a book about Sencha Touch for O’Reilly: <a href="https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach" target="_blank" rel="noopener">https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach</a>.</p><p>However, all good things come to an end. <a id="more"></a></p><p>I’ve decided to start a new challenge within my career. It’s a bit bittersweet. When I started working for Sencha, I was already a huge fan of their technology, I still am and also will be in the future. Although I won’t be working for the company anymore, I am still very excited in seeing what the future will bring for Sencha. With their new line-up of tools (Sencha’s Visual Studio Code plugin FTW!), NodeJS-based build tools and the new modern class system, I think the future is bright for Sencha wftdhfp.</p><p>Last week, was my last week at Sencha.<br>From next year, I will be start working as a sales engineer for Google. The project were I will be working on won’t be anything competing to Ext JS. Instead, I will join the Google Cloud Platform team. It’s a role, where I still will be in contact with many developers but in a broader sense than just front-end or JavaScript.<br>It might be even, that we will be still in contact with each other. Where I can help you in how you can deploy your (enterprise) applications into the cloud, and which services can help you by developing software faster. In case you’re interested; have a look: <a href="https://cloud.google.com/" target="_blank" rel="noopener">https://cloud.google.com/</a>; GCP currently has a deal, where you can get 300 dollar for free, to spend on the Google Cloud Platform.<br>(For what’s worth, my blog is actually hosted on Google’s Compute Engine, where I have the full control over my virtual machine in the cloud, and I can easily scale and maintain.)</p><p>What’s up with this website? Will I still write blog posts? Yeah I will. Honestly, I’ve created this blog in 2005, mainly for myself, to help me remembering dev problems I’ve faced while developing in Java, PHP, Salesforce, JavaScript, HTML, Sass/CSS, Python, Django and later on; Sencha technologies. As working on a daily basis with the Sencha Tools and frameworks, and meeting with so many customers; I’ve always known what people like to read about, and I am still planning in doing so.</p><p>As it was always a dream for me to work for Sencha Inc. it was also always a dream for me, to work as an engineer for Google. I’m the living proof, that we can all make our dreams come true. As long as you’re a good person and eager to learn something new.</p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-goodbye-sencha-hello-google" class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Goodbye Sencha, Hello
+              Google</h1>Posted on <a href="/Sencha/goodbye-sencha-hello-google/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2016-12-22T08:57:48.000Z"
+                                                                                              itemprop="datePublished">Dec
+                22nd 2016</time> <time class="hidden" datetime="2018-11-25"
+                                                                                              itemprop="dateModified">Nov
+                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Sencha/">Sencha</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>Within 4 years working for Sencha, I’ve done 86 trips. 28 live
+            trainings, I spoke at 38 webinars and events (including SenchaCon,
+            FITC and O’Reilly). I’ve visited 15 countries and I’ve attended 3
+            SenchaCons. I’ve spoken with many customers. I’ve worked with every
+            public, EA and beta version since Sencha Touch 0.8, and Ext JS 4.1.
+            I’ve created many applications like <a href="https://www.leeboonstra.com/spotifinder/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://www.leeboonstra.com/spotifinder/</a>
+            and <a href="https://github.com/savelee?page=1&amp;tab=repositories&amp;utf8=%E2%9C%93&amp;q=sencha"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://github.com/savelee?page=1&amp;tab=repositories&amp;utf8=%E2%9C%93&amp;q=sencha</a>.
+            Also I wrote a book about Sencha Touch for O’Reilly: <a href="https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach</a>.</p>
+          <p>However, all good things come to an end. <a id="more"></a></p>
+          <p>I’ve decided to start a new challenge within my career. It’s a bit
+            bittersweet. When I started working for Sencha, I was already a
+            huge fan of their technology, I still am and also will be in the
+            future. Although I won’t be working for the company anymore, I am
+            still very excited in seeing what the future will bring for Sencha.
+            With their new line-up of tools (Sencha’s Visual Studio Code plugin
+            FTW!), NodeJS-based build tools and the new modern class system, I
+            think the future is bright for Sencha wftdhfp.</p>
+          <p>Last week, was my last week at Sencha.<br>From next year, I will
+            be start working as a sales engineer for Google. The project were I
+            will be working on won’t be anything competing to Ext JS. Instead,
+            I will join the Google Cloud Platform team. It’s a role, where I
+            still will be in contact with many developers but in a broader
+            sense than just front-end or JavaScript.<br>It might be even, that
+            we will be still in contact with each other. Where I can help you
+            in how you can deploy your (enterprise) applications into the
+            cloud, and which services can help you by developing software
+            faster. In case you’re interested; have a look: <a href="https://cloud.google.com/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://cloud.google.com/</a>;
+            GCP currently has a deal, where you can get 300 dollar for free, to
+            spend on the Google Cloud Platform.<br>(For what’s worth, my blog
+            is actually hosted on Google’s Compute Engine, where I have the
+            full control over my virtual machine in the cloud, and I can easily
+            scale and maintain.)</p>
+          <p>What’s up with this website? Will I still write blog posts? Yeah I
+            will. Honestly, I’ve created this blog in 2005, mainly for myself,
+            to help me remembering dev problems I’ve faced while developing in
+            Java, PHP, Salesforce, JavaScript, HTML, Sass/CSS, Python, Django
+            and later on; Sencha technologies. As working on a daily basis with
+            the Sencha Tools and frameworks, and meeting with so many
+            customers; I’ve always known what people like to read about, and I
+            am still planning in doing so.</p>
+          <p>As it was always a dream for me to work for Sencha Inc. it was
+            also always a dream for me, to work as an engineer for Google. I’m
+            the living proof, that we can all make our dreams come true. As
+            long as you’re a good person and eager to learn something new.</p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Goodbye Sencha, Hello Google",
@@ -8,17 +231,76 @@
               "datePublished": "2016-12-22",
               "dateCreated": "2016-12-22",
               "dateModified": "2016-12-22",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. ",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. ",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Google/">Google</a><a class="badge badge-primary tag-link" href="/tags/Google-Cloud/">Google Cloud</a><a class="badge badge-primary tag-link" href="/tags/Sencha/">Sencha</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Goodbye Sencha, Hello Google - https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Google/">Google</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Google-Cloud/">Google
+              Cloud</a><a class="badge badge-primary tag-link" href="/tags/Sencha/">Sencha</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/"
+                                                                                                id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +324,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +379,218 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/">Advanced Cmd: How to integrate Ext JS with Maven</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/">Working With Sencha App Templates: Boilerplate Ext JS 6 code.</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/asynchronous-javascript-promises/">Asynchronous JavaScript: Promises</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/">Working
+                    With Sencha App Templates: Boilerplate Ext JS 6 code.</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/asynchronous-javascript-promises/">Asynchronous
+                    JavaScript: Promises</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/">Advanced
+                    Cmd: How to integrate Ext JS with Maven</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced
+                    Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

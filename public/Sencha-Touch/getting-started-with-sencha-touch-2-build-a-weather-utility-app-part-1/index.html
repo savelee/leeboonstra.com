@@ -1,6 +1,729 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1) | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta name="keywords" content="Sencha CMD,Sencha Touch,Utility app,Weather app"><meta property="og:type" content="article"><meta property="og:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta property="og:locale" content="en"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-2.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-3.png"><meta property="og:updated_time" content="2018-11-25T11:59:39.782Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)"><meta name="twitter:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1.png"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Getting Started with Sencha Touch 2: Build a Weather
+    Utility App (Part 1) | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta name="keywords" content="Sencha CMD,Sencha Touch,Utility app,Weather app">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta property="og:locale" content="en">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-2.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-3.png">
+  <meta property="og:updated_time" content="2018-11-25T11:59:39.782Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)">
+  <meta name="twitter:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1.png">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1) via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)</h1>Posted on <a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/" class="article-date"><time datetime="2014-04-07T08:42:51.000Z" itemprop="datePublished">Apr 7th 2014</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Sencha-Touch/">Sencha Touch</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p><em>Welcome at this series of blog posts: How to create a utility app with Sencha Touch and Sencha Cmd. Originally I wrote this tutorial for <a href="http://www.creativebloq.com/net-magazine" target="_blank" rel="noopener">.NET magazine</a> and afterwards I modified it for the <a href="http://www.sencha.com/blog/" target="_blank" rel="noopener">Sencha Blog Site</a>. Since I think it’s a good set of articles and you might have missed it. I will also post the 3 parts of the tutorial here, every week. Enjoy!</em> <a id="more"></a></p><p>In this three-part Sencha Touch tutorial, you will build the Do I need my Umbrella app, a simple utility app that loads weather information from a web service — worldweatheronline.com. Based on weather codes, this app can predict if you need your umbrella or not.</p><p>In this tutorial, you will start with coding the app. The next tutorials will focus on creating a cool Sencha Touch theme and how to port your app to a native app with PhoneGap.</p><p>This tutorial requires:</p><ul><li>Sencha Touch 2.3 or higher</li><li>Sencha Cmd 4.x</li><li>A modern browser</li><li>Editor</li></ul><p>Here are some additional resources:<br>You can see the app itself up and running <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/dinmu/" target="_blank" rel="noopener">here</a>.<br>The final code can be downloaded <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/code.zip" target="_blank" rel="noopener">here</a>.<br>There are some tutorial goodies you will need — <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/controller.txt" target="_blank" rel="noopener">controller</a> and <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/functions.txt" target="_blank" rel="noopener">functions</a>.</p><h3 id="Generate-and-run-the-demo-application"><a href="#Generate-and-run-the-demo-application" class="headerlink" title="Generate and run the demo application"></a>Generate and run the demo application</h3><p>Let’s start by creating a sencha folder somewhere on your hard disk. Download the Sencha Touch 2.3 framework and extract it into the newly created sencha folder. Now, create the folder for your app, I’ve called it dinmu since that is shorter than the name “DoINeedMyUmbrella” but it’s up to you.</p><p>Now, open your command line (MS-Dos Prompt or Mac OS X Terminal), navigate to the Sencha framework folder: (cd sencha/touch-2.3.x folder) and run the following command to generate your Sencha Touch MVC folder structure:</p><p>sencha generate app -name Dinmu -path ../dinmu</p><p>This command generates the full MVC structure for your application: <em>Do I need my Umbrella</em>. It takes the namespace <strong>Dinmu</strong>, to prefix all your classes. Review the folder structure it has created.</p><p>Now it’s time to start your web server via the command line — use the path to your <strong>sencha</strong> folder. (If you would rather use your own Apache web server, you are free to start it and skip this step.) On Mac OS X, you might need permissions for executing the next command: if you run into permission errors, prefix the above command with <strong>sudo</strong>.</p><p>sencha fs web -p 80 start -map /path/to/sencha/folder/</p><p>This will start your built-in Jetty web server. You need your CLI window open to keep the server running, so it makes sense to open a new CLI window for the next commands.</p><p>Test your generated Sencha Touch app. Open your modern browser (such as Google Chrome or Safari) and run: <a href="http://localhost/dinmu" target="_blank" rel="noopener">http://localhost/dinmu</a>. You should see the Sencha demo app interface with a bottom tab panel and two demo slides:</p><p><img src="/images/weather-app-1.png" alt="Weather App"></p><h3 id="The-Data-Package"><a href="#The-Data-Package" class="headerlink" title="The Data Package"></a>The Data Package</h3><p>In the next steps, you will generate the model which will define your data. There are a couple of settings you want to save in your app: <strong>id</strong>, <strong>city</strong>, <strong>country</strong>, <strong>units</strong> and <strong>geolocation</strong>. You will define these data settings as model fields. Sencha Cmd can scaffold this model for you. Run the following command from the <strong>dinmu</strong> folder on the command line:</p><p>sencha generate model Setting id,city,country,units,geo:boolean</p><p>This command generated the model for your application. It takes the classname <strong>Setting</strong> and one String with all the field names to define all the different fields. Let’s review your folder structure again.</p><p>Open <strong>app/model/Setting.js</strong> with your editor. Notice the namespace <strong>Dinmu.model.Setting</strong> is equal to <strong>app/model/Setting.js</strong>. This is your implementation of the Setting model; Sencha Cmd defined a Setting model class for you. It extends a model implementation from the Sencha Touch framework: <strong>Ext.data.Model</strong> and it contains all the fields and field types.</p><p>The field <strong>id</strong>, will define id’s for every model record in your application. To have it behave as a unique id, you will need to configure it. Before the <strong>fields</strong> array, configure an <strong>idProperty</strong> and an <strong>identifier</strong>.</p><p>idProperty: ‘id’, identifier: ‘uuid’,</p><p>The logic for these unique IDs are in a Sencha class that we need to “import” into our app. We can use a <strong>requires</strong> for that, this requires the class <strong>Ext.data.identifier.Uuid</strong>.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requires: [<span class="string">'Ext.data.identifier.Uuid'</span>]</span><br></pre></td></tr></table></figure><p>The next step is to create some <strong>validations</strong> for our model. After the <strong>fields</strong> array, create a <strong>validations</strong> array. The array contains validation objects to validate whether the data for these fields is present:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">validations: \[&#123;</span><br><span class="line">    type: <span class="string">'presence'</span>,</span><br><span class="line">    field: <span class="string">'city'</span>,</span><br><span class="line">    message: <span class="string">"Please provide a city."</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    type: <span class="string">'presence'</span>,</span><br><span class="line">    field: <span class="string">'country'</span>,</span><br><span class="line">    message: <span class="string">"Please provide a country."</span></span><br><span class="line">&#125;\],</span><br></pre></td></tr></table></figure><p>Since we want to save the local settings data to the device, the last step is to add a client proxy.</p><p>We will use <strong>localstorage</strong>. The localstorage proxy will make sure that all the data persists into the browser localstorage. Define the <strong>proxy</strong> object directly after the <strong>validations</strong> array:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">proxy: &#123;</span><br><span class="line">    type: <span class="string">'localstorage'</span>,</span><br><span class="line">    id: <span class="string">'weathersettings'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="The-View-Components"><a href="#The-View-Components" class="headerlink" title="The View Components"></a>The View Components</h3><p>The standard tabpanel interface that Sencha Cmd generates looks good, but it’s not what you need for a utility app. The <em>Do I need my Umbrella</em> app will need a carousel interface.</p><p>Open the code of <strong>app/view/Main.js</strong> in your IDE or text editor.</p><p>The current implementation of <strong>Dinmu.view.Main</strong> extends from the Sencha Touch <strong>Ext.tab.Panel</strong> class. It has a <strong>tabBarPosition</strong> property to add the tabs to the screen bottom.</p><p>We don’t need it, so remove <strong>tabBarPosition:bottom</strong> and change the <strong>extend</strong> to <strong>Ext.Carousel</strong>, to extend from the Sencha Touch Carousel class. From here, you can open your browser and run: <a href="http://localhost/dinmu" target="_blank" rel="noopener">http://localhost/dinmu</a>. You should see the generated Sencha demo app. The tabpanel interface is replaced by a carousel interface. You can slide the views horizontally.</p><p>Let’s remove more default components. We won’t need the demo video, so let’s remove the <strong>Ext.Video</strong> from the <strong>requires</strong> array. We can also empty the <strong>items</strong> array, since we will replace it with two new items.</p><p>The first item object (container by default) has only the <strong>html</strong> property. This can be set to a placeholder text: <strong>Settings Form</strong> so you can code this later. The second item object has a property <strong>itemId: ‘mainview’</strong> and a <strong>cls</strong> property (for styling) set to the value: <strong>textview</strong>. Also add a <strong>direction</strong> property, which will set the direction of the Carousel to ‘<strong>vertical</strong>’.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.view.Main'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.Carousel'</span>,</span><br><span class="line">    xtype: <span class="string">'main'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.TitleBar'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        direction: <span class="string">'vertical'</span>,</span><br><span class="line">        items: [&#123;</span><br><span class="line">            html: <span class="string">'Settings Form'</span></span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            itemId: <span class="string">'mainview'</span>,</span><br><span class="line">            cls: <span class="string">'textview'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>Viewed in the browser, the app looks pretty basic. Let’s add a top <strong>titlebar</strong> and a bottom toolbar. Before the Settings Form object, create a new object. This object will get the <strong>xtype: ‘titlebar’</strong> to add a new instance of <strong>Ext.TitleBar</strong> to the Viewport (the screen). Set a class name on the titlebar with the CSS class property: <strong>cls: ‘title’</strong>. Set a <strong>docked: ‘top’</strong> property to stick this titlebar to the top of the screen. Set the title to: <strong>Do I need my Umbrella?</strong> with the <strong>title</strong> property:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'titlebar'</span>,</span><br><span class="line">    cls: <span class="string">'title'</span>,</span><br><span class="line">    docked: <span class="string">'top'</span>,</span><br><span class="line">    title: <span class="string">'Do I need my Umbrella?'</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>You will do the same for the bottom toolbar. This time the <strong>xtype</strong> is not <strong>titlebar</strong> but <strong>toolbar</strong>. The <strong>cls</strong> can be set to <strong>footer</strong>. Dock it to the bottom of the screen. Instead of the <strong>title</strong> property, the toolbar needs an <strong>html</strong> property. Set this to some copyright string. We will add an <strong>ui</strong> property which is set to <strong>light</strong> to create a lighter look and feel. Don’t forget to add <strong>Ext.Toolbar</strong> to the <strong>requires</strong> array in the top of the file, so the correct framework class will be loaded into the memory.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'toolbar'</span>,</span><br><span class="line">    cls: <span class="string">'footer'</span>,</span><br><span class="line">    ui: <span class="string">'light'</span>,</span><br><span class="line">    docked: <span class="string">'bottom'</span>,</span><br><span class="line">    html: <span class="string">'Powered by &amp;copy; Sencha Touch'</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>The next step is to create some buttons in the top titlebar.</p><p>The <strong>titlebar</strong> should contain an <strong>items</strong> array, which contains two buttons. A back button, which will be displayed when you are on the settings screen, and a settings button which will be shown on the default screen. You don’t need to set the <strong>xtype</strong> to <strong>button</strong>, the default item of an <strong>Ext.TitleBar</strong> is a button. The back button, is by default <strong>hidden</strong> and it is left aligned in the titlebar. The settings button, shows an icon of a settings gear.</p><p>Confirm your code looks like this:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.view.Main'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.Carousel'</span>,</span><br><span class="line">    xtype: <span class="string">'main'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.TitleBar'</span>,</span><br><span class="line">        <span class="string">'Ext.Toolbar'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        direction: <span class="string">'vertical'</span>,</span><br><span class="line">        items: [</span><br><span class="line">        &#123;</span><br><span class="line">            xtype: <span class="string">'titlebar'</span>,</span><br><span class="line">            cls: <span class="string">'title'</span>,</span><br><span class="line">            docked: <span class="string">'top'</span>,</span><br><span class="line">            title: <span class="string">'Do I need my Umbrella?'</span>,</span><br><span class="line">            items: [&#123;</span><br><span class="line">               cls: <span class="string">'back'</span>,</span><br><span class="line">               hidden: <span class="literal">true</span>,</span><br><span class="line">               ui: <span class="string">'back'</span>,</span><br><span class="line">               action: <span class="string">'back'</span>,</span><br><span class="line">               align: <span class="string">'left'</span>,</span><br><span class="line">               text: <span class="string">'back'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               iconCls: <span class="string">'settings'</span>,</span><br><span class="line">               action: <span class="string">'settings'</span>,</span><br><span class="line">               ui: <span class="string">'plain'</span>,</span><br><span class="line">               align: <span class="string">'right'</span></span><br><span class="line">            &#125;]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            html: <span class="string">'Settings Form'</span></span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            itemId: <span class="string">'mainview'</span>,</span><br><span class="line">            cls: <span class="string">'textview'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            xtype: <span class="string">'toolbar'</span>,</span><br><span class="line">            cls: <span class="string">'footer'</span>,</span><br><span class="line">            ui: <span class="string">'light'</span>,</span><br><span class="line">            docked: <span class="string">'bottom'</span>,</span><br><span class="line">            html: <span class="string">'Powered by &amp;copy; Sencha Touch'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>Open your browser and run: <a href="http://localhost/dinmu" target="_blank" rel="noopener">http://localhost/dinmu</a>. You should see a button with a gear in the right corner of the <strong>Ext.TitleBar</strong>.</p><h3 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h3><p>Now, we can start with creating a form. You know what? Let’s generate this too. Navigate to the <strong>dinmu</strong> folder on the command line and run the following to generate your Sencha Touch form:</p><p>sencha generate form SettingsView geo:toggle,units:select,city,country</p><p>Review the form class that has been scaffolded. Open <strong>app/view/SettingsView</strong>. The <strong>Dinmu.view.SettingsView</strong> class has an <strong>xtype</strong> set to <strong>settingsview</strong>. You can assign custom made classes to item arrays with the <strong>xtype</strong> property.</p><p>So let’s do so. Open <strong>Dinmu.view.Main</strong> (<strong>app/view/Main.js</strong>), find the settings item in your code. By default, if you don’t specify its <strong>xtype</strong> is set to <strong>container</strong>. You will need to refer to the new <strong>xtype: settingsview</strong>, so add <strong>xtype: ‘settingsview’</strong> to the Main view code. You don’t need the placeholder html string anymore. Remove the <strong>html: settings</strong> property. Also don’t forget to add <strong>Dinmu.view.SettingsView</strong> to the <strong>requires</strong> array to make sure this class is loaded in memory.</p><p>To make it look better, you will add a <strong>fieldset</strong> to the <strong>Ext.form.Panel</strong> in the SettingsView. This fieldset contains the four new fields and the submit button. The fieldset will be a child of the formpanel and has its own children: the form <strong>fields</strong> and the <strong>button</strong>.</p><p>Create a second <strong>items</strong> array in the <strong>config</strong> object (after the <strong>title</strong> property). Nest the second items array as a child. The parent items array contains one fieldset xtype, with a <strong>title: ‘Your location’</strong>, and a line with <strong>instructions</strong>.</p><p>Make sure the child items array contains all the fields and the button. Verify your code looks like this:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.view.SettingsView'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.form.Panel'</span>,</span><br><span class="line">    xtype: <span class="string">'settingsview'</span>,</span><br><span class="line"> </span><br><span class="line">    config: &#123;</span><br><span class="line">        items:[&#123;</span><br><span class="line">            xtype: <span class="string">'fieldset'</span>,</span><br><span class="line">            title: <span class="string">'SettingsView'</span>,</span><br><span class="line">            instructions: <span class="string">'In case you do not want the app to detect your location you can enter the city and country.'</span>,</span><br><span class="line">            items: [</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'geo'</span>,</span><br><span class="line">                    xtype: <span class="string">'togglefield'</span>,</span><br><span class="line">                    label: <span class="string">'Geo'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'units'</span>,</span><br><span class="line">                    xtype: <span class="string">'selectfield'</span>,</span><br><span class="line">                    label: <span class="string">'Units'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'city'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'City'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'country'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'Country'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    xtype: <span class="string">'button'</span>,</span><br><span class="line">                    text: <span class="string">'Submit'</span>,</span><br><span class="line">                    ui: <span class="string">'confirm'</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>Open your browser and run: <a href="http://localhost/dinmu" target="_blank" rel="noopener">http://localhost/dinmu</a>. You should see the settings form with a <strong>title</strong> and some <strong>instructions</strong>. But there is something odd with the select unit field. It has no values.</p><p>Let’s add some values to the units <strong>selectfield</strong>.</p><p>Create an <strong>options</strong> array with two objects. One with the <strong>text: ‘Fahrenheit’</strong> and a <strong>value: ‘f’</strong> and one object with the <strong>text: ‘Celsius’</strong> and the <strong>value: ‘c’</strong>.</p><p>The label GEO in the <strong>togglefield</strong> makes little sense. Change this <strong>label to: ‘ Auto detect?’</strong> Since the text for this label takes much more space, we will set the <strong>labelWidth</strong> to ‘<strong>55%</strong>’. Set the value of the geo field to <strong>value: ‘1’</strong> to enable geolocation by default.</p><p>Disable the units, city and country fields by adding <strong>disabled: true</strong> to all fields.</p><p>The button <strong>text</strong>, should be <strong>Refresh</strong> instead of <strong>Submit</strong>. Change this in the button component. Add a <strong>margin</strong> with the value ‘<strong>10 5</strong>’. Also add an <strong>action</strong> property to the button and set this to ‘<strong>refresh</strong>’. This way, we can reference the button later:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'button'</span>,</span><br><span class="line">    text: <span class="string">'Refresh'</span>,</span><br><span class="line">    action: <span class="string">'refresh'</span>,</span><br><span class="line">    margin: <span class="string">'10 5'</span></span><br><span class="line">    ui: <span class="string">'confirm'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>You might have noticed that the console outputs some warnings. The <strong>Ext.Loader</strong>, the mechanism that loads all the Sencha Touch framework classes in the correct order into memory, needs to load the classes that are used for the form fields. Create a <strong>requires</strong> array, (above the <strong>config</strong> object) and assign it the following strings:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">requires: [</span><br><span class="line">    <span class="string">'Ext.form.FieldSet'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Toggle'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Select'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Text'</span>,</span><br><span class="line">    <span class="string">'Ext.Button'</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure><p>You’ve finished the interface.</p><p>Here’s the complete code for the settingsview:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.view.SettingsView'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.form.Panel'</span>,</span><br><span class="line">    xtype: <span class="string">'settingsview'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.form.FieldSet'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Toggle'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Select'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Text'</span>,</span><br><span class="line">        <span class="string">'Ext.Button'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        items:[&#123;</span><br><span class="line">            xtype: <span class="string">'fieldset'</span>,</span><br><span class="line">            title: <span class="string">'SettingsView'</span>,</span><br><span class="line">            instructions: <span class="string">'In case you do not want the app to detect your location you can enter the city and country.'</span>,</span><br><span class="line">            items: [</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'geo'</span>,</span><br><span class="line">                    xtype: <span class="string">'togglefield'</span>,</span><br><span class="line">                    label: <span class="string">'Auto Detect?'</span>,</span><br><span class="line">                    labelWidth: <span class="string">'55%'</span>,</span><br><span class="line">                    value: <span class="string">'1'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'units'</span>,</span><br><span class="line">                    xtype: <span class="string">'selectfield'</span>,</span><br><span class="line">                    options: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        text: <span class="string">'Fahrenheit'</span>,</span><br><span class="line">                        value: <span class="string">'f'</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                         text: <span class="string">'Celsius'</span>,</span><br><span class="line">                         value: <span class="string">'c'</span></span><br><span class="line">                    &#125;],</span><br><span class="line">                    label: <span class="string">'Units'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'city'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'City'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'country'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'Country'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    xtype: <span class="string">'button'</span>,</span><br><span class="line">                    text: <span class="string">'Refresh'</span>,</span><br><span class="line">                    action: <span class="string">'refresh'</span>,</span><br><span class="line">                    margin: <span class="string">'10 5'</span>,</span><br><span class="line">                    ui: <span class="string">'confirm'</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>But wait, what about the main view? Yes, you will dynamically inject this page with data. Therefore, you will need some logic to achieve this, so let’s start with creating a controller.</p><p><img src="/images/weather-app-2.png" alt="Weather App"></p><h3 id="Building-The-Controller"><a href="#Building-The-Controller" class="headerlink" title="Building The Controller"></a>Building The Controller</h3><p>The <strong>controller</strong> will be the glue between the settings <strong>model</strong> (the app data) and the settings <strong>view</strong>. It will contain references to all view components and dispatch its events. Navigate to the <strong>dinmu</strong> folder and run the following command from the command line:</p><p>sencha generate controller Main</p><p>This command generates the Main controller. Open <strong>app/controller/Main.js</strong> with your editor. You will see a <strong>controller</strong> with an empty references object (<strong>refs</strong>) and an empty <strong>control</strong> object.</p><p>Next, let’s create references to all the view components, <strong>main</strong>, <strong>settingsview</strong>, the <strong>titlebar settings</strong> and <strong>back</strong> buttons and to the settings <strong>form fields</strong> and <strong>refresh</strong> button. The selectors are a bit CSS-like. Your code could look like this:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">refs: &#123;</span><br><span class="line">    mainView: <span class="string">'main'</span>,</span><br><span class="line">    settingsView: <span class="string">'settingsview'</span>,</span><br><span class="line"> </span><br><span class="line">    btnSettings: <span class="string">'main button[action=settings]'</span>,</span><br><span class="line">    btnRefresh: <span class="string">'settingsview button[action=refresh]'</span>,</span><br><span class="line">    btnBack: <span class="string">'main button[action=back]'</span>,</span><br><span class="line"> </span><br><span class="line">    toggleGeo: <span class="string">'settingsview togglefield'</span>,</span><br><span class="line">    fieldCity: <span class="string">'settingsview textfield[name=city]'</span>,</span><br><span class="line">    fieldCountry: <span class="string">'settingsview textfield[name=country]'</span>,</span><br><span class="line">    fieldUnits: <span class="string">'settingsview selectfield'</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>Now that you have references to all the view components that should contain events, you can add the controls.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">control: &#123;</span><br><span class="line">    <span class="string">'btnRefresh'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onRefresh'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'btnSettings'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onSettingsBtnTap'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'btnBack'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onBackBtnTap'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'toggleGeo'</span>: &#123;</span><br><span class="line">        change: <span class="string">'onToggle'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'mainView'</span>: &#123;</span><br><span class="line">        activeitemchange: <span class="string">'onCarouselChange'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Before browser testing the events, you must hook the controller to <strong>app.js</strong> which is the MVC’s entry point. Open <strong>app.js</strong>, create a <strong>controllers</strong> array, right below the <strong>requires</strong> array and pass in the string ‘<strong>Main</strong>’ mapping the Main controller to the <strong>app/controller/Main.js</strong> file.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">controllers: [</span><br><span class="line">    <span class="string">'Main'</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure><p>Now, we will add some logic. Go back to <strong>Dinmu.controller.Main</strong> and add the functions in the <strong>goodies-tutorial</strong> directory. You can find them in <strong>controller.txt</strong>.</p><p>Replace the <strong>launch</strong> function with the functions provided.</p><h3 id="Setting-Up-Stores-and-Singletons"><a href="#Setting-Up-Stores-and-Singletons" class="headerlink" title="Setting Up Stores and Singletons"></a>Setting Up Stores and Singletons</h3><p>Stores encapsulate a client side cache of model objects. Stores can have a Proxy too, and also provide functions for sorting, filtering, grouping and querying the model instances (records) contained within it.</p><p>Our app needs a store to save all the user settings.</p><p>Unfortunately, you can’t generate stores with Sencha Cmd. Instead, let’s create a new file in the <strong>app/store</strong> folder called: <strong>Settings.js</strong>. Define a new class: <strong>Dinmu.store.Settings</strong>. This class extends all methods and properties from the <strong>Ext.data.Store</strong> class. In the <strong>config</strong> object, create a property called: <strong>model</strong>. It should connect to the Setting model. Also, the settings store should load automatically:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.store.Settings'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.data.Store'</span>,</span><br><span class="line">    requires: [<span class="string">'Dinmu.model.Setting'</span>],</span><br><span class="line">        config: &#123;</span><br><span class="line">            model: <span class="string">'Dinmu.model.Setting'</span>,</span><br><span class="line">            autoLoad: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>Open <strong>controller/Main.js</strong>, in the <strong>config</strong> object create a <strong>stores</strong> array and add the <strong>Dinmu.store.Settings</strong> store to it:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stores: <span class="string">'Dinmu.store.Settings'</span>,</span><br></pre></td></tr></table></figure><p>Sometimes, it’s better to separate your business logic outside the MVC folders.</p><p>In the app folder, create a new folder <strong>utils</strong>. Create the file <strong>Functions.js</strong>, and define a class called: <strong>Dinmu.utils.Functions</strong>. This class has a property: <strong>singleton</strong> set to <strong>true</strong>. Now your class is a singleton, you cannot create more than one instance of it, but you can run the singleton methods from everywhere in your code:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Ext.define(<span class="string">'Dinmu.utils.Functions'</span>, &#123;</span><br><span class="line">    singleton: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">//singleton methods here</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>Add <strong>Dinmu.utils.Functions</strong> to the <strong>requires</strong> array of the <strong>app.js</strong> file.</p><p>Open the snippet: <strong>functions.txt</strong> from the <strong>goodies-tutorial</strong> folder and copy all the functions into the <strong>utils/Functions.js</strong> file.</p><p>This snippet contains the functions you will need for requesting weather data from <a href="http://api.worldweatheronline.com/" target="_blank" rel="noopener">http://api.worldweatheronline.com/</a>. If you would rather request and use your own API_KEY, you can edit it on top of the <strong>Functions.js</strong> by changing the String for property <strong>API_KEY</strong>. It also contains logic for requesting geolocation on the device and injecting data in the template on the mainview. If you are really interested in this logic, I left complete comments in the functions.txt file which describes exactly what is going on.</p><p>To test the logic, open <strong>Google Chrome Developer Tools</strong> and switch to the <strong>Console tab</strong> and enter the following line: <strong>Dinmu.utils.Functions.getWeather(‘London’)</strong> it should return a weather object for London and display some text in the mainview.</p><p>Finally the <em>Do I need my Umbrella</em> app is finished! Open your browser and run: <a href="http://localhost/dinmu" target="_blank" rel="noopener">http://localhost/dinmu</a>. The next steps for improving your application would be to apply a theme and a production build. This is something I will discuss in the next Sencha Blog tutorial.</p><p><img src="/images/weather-app-3.png" alt="Weather App"></p><p>If you found this tutorial helpful check out my book I wrote for O’Reilly: <a href="http://shop.oreilly.com/product/0636920030058.do" target="_blank" rel="noopener">Hands-on Sencha Touch 2</a>!</p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1"
+                                                                                      class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Getting Started with
+              Sencha Touch 2: Build a Weather Utility App (Part 1)</h1>Posted
+            on <a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2014-04-07T08:42:51.000Z"
+                                                                                              itemprop="datePublished">Apr
+                7th 2014</time> <time class="hidden" datetime="2018-11-25"
+                                                                                              itemprop="dateModified">Nov
+                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Sencha-Touch/">Sencha
+                Touch</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p><em>Welcome at this series of blog posts: How to create a utility
+              app with Sencha Touch and Sencha Cmd. Originally I wrote this
+              tutorial for <a href="http://www.creativebloq.com/net-magazine"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">.NET
+                magazine</a> and afterwards I modified it for the <a href="http://www.sencha.com/blog/"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">Sencha
+                Blog Site</a>. Since I think it’s a good set of articles and
+              you might have missed it. I will also post the 3 parts of the
+              tutorial here, every week. Enjoy!</em> <a id="more"></a></p>
+          <p>In this three-part Sencha Touch tutorial, you will build the Do I
+            need my Umbrella app, a simple utility app that loads weather
+            information from a web service — worldweatheronline.com. Based on
+            weather codes, this app can predict if you need your umbrella or
+            not.</p>
+          <p>In this tutorial, you will start with coding the app. The next
+            tutorials will focus on creating a cool Sencha Touch theme and how
+            to port your app to a native app with PhoneGap.</p>
+          <p>This tutorial requires:</p>
+          <ul>
+            <li>Sencha Touch 2.3 or higher</li>
+            <li>Sencha Cmd 4.x</li>
+            <li>A modern browser</li>
+            <li>Editor</li>
+          </ul>
+          <p>Here are some additional resources:<br>You can see the app itself
+            up and running <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/dinmu/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">here</a>.<br>The
+            final code can be downloaded <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/code.zip"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">here</a>.<br>There
+            are some tutorial goodies you will need — <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/controller.txt"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">controller</a>
+            and <a href="https://training.sencha.com/sencha-blog/tutorial-nov-2013-lee/goodies-tutorial/functions.txt"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">functions</a>.</p>
+          <h3 id="Generate-and-run-the-demo-application"><a href="#Generate-and-run-the-demo-application"
+                                                                                            class="headerlink"
+                                                                                            title="Generate and run the demo application"></a>Generate
+            and run the demo application</h3>
+          <p>Let’s start by creating a sencha folder somewhere on your hard
+            disk. Download the Sencha Touch 2.3 framework and extract it into
+            the newly created sencha folder. Now, create the folder for your
+            app, I’ve called it dinmu since that is shorter than the name
+            “DoINeedMyUmbrella” but it’s up to you.</p>
+          <p>Now, open your command line (MS-Dos Prompt or Mac OS X Terminal),
+            navigate to the Sencha framework folder: (cd sencha/touch-2.3.x
+            folder) and run the following command to generate your Sencha Touch
+            MVC folder structure:</p>
+          <p>sencha generate app -name Dinmu -path ../dinmu</p>
+          <p>This command generates the full MVC structure for your
+            application: <em>Do I need my Umbrella</em>. It takes the namespace
+            <strong>Dinmu</strong>, to prefix all your classes. Review the
+            folder structure it has created.</p>
+          <p>Now it’s time to start your web server via the command line — use
+            the path to your <strong>sencha</strong> folder. (If you would
+            rather use your own Apache web server, you are free to start it and
+            skip this step.) On Mac OS X, you might need permissions for
+            executing the next command: if you run into permission errors,
+            prefix the above command with <strong>sudo</strong>.</p>
+          <p>sencha fs web -p 80 start -map /path/to/sencha/folder/</p>
+          <p>This will start your built-in Jetty web server. You need your CLI
+            window open to keep the server running, so it makes sense to open a
+            new CLI window for the next commands.</p>
+          <p>Test your generated Sencha Touch app. Open your modern browser
+            (such as Google Chrome or Safari) and run: <a href="http://localhost/dinmu"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu</a>.
+            You should see the Sencha demo app interface with a bottom tab
+            panel and two demo slides:</p>
+          <p><img src="/images/weather-app-1.png" alt="Weather App"></p>
+          <h3 id="The-Data-Package"><a href="#The-Data-Package" class="headerlink"
+                                                                                            title="The Data Package"></a>The
+            Data Package</h3>
+          <p>In the next steps, you will generate the model which will define
+            your data. There are a couple of settings you want to save in your
+            app: <strong>id</strong>, <strong>city</strong>, <strong>country</strong>,
+            <strong>units</strong> and <strong>geolocation</strong>. You will
+            define these data settings as model fields. Sencha Cmd can scaffold
+            this model for you. Run the following command from the <strong>dinmu</strong>
+            folder on the command line:</p>
+          <p>sencha generate model Setting id,city,country,units,geo:boolean</p>
+          <p>This command generated the model for your application. It takes
+            the classname <strong>Setting</strong> and one String with all the
+            field names to define all the different fields. Let’s review your
+            folder structure again.</p>
+          <p>Open <strong>app/model/Setting.js</strong> with your editor.
+            Notice the namespace <strong>Dinmu.model.Setting</strong> is equal
+            to <strong>app/model/Setting.js</strong>. This is your
+            implementation of the Setting model; Sencha Cmd defined a Setting
+            model class for you. It extends a model implementation from the
+            Sencha Touch framework: <strong>Ext.data.Model</strong> and it
+            contains all the fields and field types.</p>
+          <p>The field <strong>id</strong>, will define id’s for every model
+            record in your application. To have it behave as a unique id, you
+            will need to configure it. Before the <strong>fields</strong>
+            array, configure an <strong>idProperty</strong> and an <strong>identifier</strong>.</p>
+          <p>idProperty: ‘id’, identifier: ‘uuid’,</p>
+          <p>The logic for these unique IDs are in a Sencha class that we need
+            to “import” into our app. We can use a <strong>requires</strong>
+            for that, this requires the class <strong>Ext.data.identifier.Uuid</strong>.</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">requires: [<span class="string">'Ext.data.identifier.Uuid'</span>]</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The next step is to create some <strong>validations</strong> for
+            our model. After the <strong>fields</strong> array, create a
+            <strong>validations</strong> array. The array contains validation
+            objects to validate whether the data for these fields is present:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">validations: \[&#123;</span><br><span class="line">    type: <span class="string">'presence'</span>,</span><br><span class="line">    field: <span class="string">'city'</span>,</span><br><span class="line">    message: <span class="string">"Please provide a city."</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    type: <span class="string">'presence'</span>,</span><br><span class="line">    field: <span class="string">'country'</span>,</span><br><span class="line">    message: <span class="string">"Please provide a country."</span></span><br><span class="line">&#125;\],</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Since we want to save the local settings data to the device, the
+            last step is to add a client proxy.</p>
+          <p>We will use <strong>localstorage</strong>. The localstorage proxy
+            will make sure that all the data persists into the browser
+            localstorage. Define the <strong>proxy</strong> object directly
+            after the <strong>validations</strong> array:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">proxy: &#123;</span><br><span class="line">    type: <span class="string">'localstorage'</span>,</span><br><span class="line">    id: <span class="string">'weathersettings'</span></span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <h3 id="The-View-Components"><a href="#The-View-Components" class="headerlink"
+                                                                                            title="The View Components"></a>The
+            View Components</h3>
+          <p>The standard tabpanel interface that Sencha Cmd generates looks
+            good, but it’s not what you need for a utility app. The <em>Do I
+              need my Umbrella</em> app will need a carousel interface.</p>
+          <p>Open the code of <strong>app/view/Main.js</strong> in your IDE or
+            text editor.</p>
+          <p>The current implementation of <strong>Dinmu.view.Main</strong>
+            extends from the Sencha Touch <strong>Ext.tab.Panel</strong> class.
+            It has a <strong>tabBarPosition</strong> property to add the tabs
+            to the screen bottom.</p>
+          <p>We don’t need it, so remove <strong>tabBarPosition:bottom</strong>
+            and change the <strong>extend</strong> to <strong>Ext.Carousel</strong>,
+            to extend from the Sencha Touch Carousel class. From here, you can
+            open your browser and run: <a href="http://localhost/dinmu" target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu</a>.
+            You should see the generated Sencha demo app. The tabpanel
+            interface is replaced by a carousel interface. You can slide the
+            views horizontally.</p>
+          <p>Let’s remove more default components. We won’t need the demo
+            video, so let’s remove the <strong>Ext.Video</strong> from the
+            <strong>requires</strong> array. We can also empty the <strong>items</strong>
+            array, since we will replace it with two new items.</p>
+          <p>The first item object (container by default) has only the <strong>html</strong>
+            property. This can be set to a placeholder text: <strong>Settings
+              Form</strong> so you can code this later. The second item object
+            has a property <strong>itemId: ‘mainview’</strong> and a <strong>cls</strong>
+            property (for styling) set to the value: <strong>textview</strong>.
+            Also add a <strong>direction</strong> property, which will set the
+            direction of the Carousel to ‘<strong>vertical</strong>’.</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.view.Main'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.Carousel'</span>,</span><br><span class="line">    xtype: <span class="string">'main'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.TitleBar'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        direction: <span class="string">'vertical'</span>,</span><br><span class="line">        items: [&#123;</span><br><span class="line">            html: <span class="string">'Settings Form'</span></span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            itemId: <span class="string">'mainview'</span>,</span><br><span class="line">            cls: <span class="string">'textview'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Viewed in the browser, the app looks pretty basic. Let’s add a top
+            <strong>titlebar</strong> and a bottom toolbar. Before the Settings
+            Form object, create a new object. This object will get the <strong>xtype:
+              ‘titlebar’</strong> to add a new instance of <strong>Ext.TitleBar</strong>
+            to the Viewport (the screen). Set a class name on the titlebar with
+            the CSS class property: <strong>cls: ‘title’</strong>. Set a
+            <strong>docked: ‘top’</strong> property to stick this titlebar to
+            the top of the screen. Set the title to: <strong>Do I need my
+              Umbrella?</strong> with the <strong>title</strong> property:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'titlebar'</span>,</span><br><span class="line">    cls: <span class="string">'title'</span>,</span><br><span class="line">    docked: <span class="string">'top'</span>,</span><br><span class="line">    title: <span class="string">'Do I need my Umbrella?'</span></span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>You will do the same for the bottom toolbar. This time the <strong>xtype</strong>
+            is not <strong>titlebar</strong> but <strong>toolbar</strong>. The
+            <strong>cls</strong> can be set to <strong>footer</strong>. Dock it
+            to the bottom of the screen. Instead of the <strong>title</strong>
+            property, the toolbar needs an <strong>html</strong> property. Set
+            this to some copyright string. We will add an <strong>ui</strong>
+            property which is set to <strong>light</strong> to create a lighter
+            look and feel. Don’t forget to add <strong>Ext.Toolbar</strong> to
+            the <strong>requires</strong> array in the top of the file, so the
+            correct framework class will be loaded into the memory.</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'toolbar'</span>,</span><br><span class="line">    cls: <span class="string">'footer'</span>,</span><br><span class="line">    ui: <span class="string">'light'</span>,</span><br><span class="line">    docked: <span class="string">'bottom'</span>,</span><br><span class="line">    html: <span class="string">'Powered by &amp;copy; Sencha Touch'</span></span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The next step is to create some buttons in the top titlebar.</p>
+          <p>The <strong>titlebar</strong> should contain an <strong>items</strong>
+            array, which contains two buttons. A back button, which will be
+            displayed when you are on the settings screen, and a settings
+            button which will be shown on the default screen. You don’t need to
+            set the <strong>xtype</strong> to <strong>button</strong>, the
+            default item of an <strong>Ext.TitleBar</strong> is a button. The
+            back button, is by default <strong>hidden</strong> and it is left
+            aligned in the titlebar. The settings button, shows an icon of a
+            settings gear.</p>
+          <p>Confirm your code looks like this:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.view.Main'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.Carousel'</span>,</span><br><span class="line">    xtype: <span class="string">'main'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.TitleBar'</span>,</span><br><span class="line">        <span class="string">'Ext.Toolbar'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        direction: <span class="string">'vertical'</span>,</span><br><span class="line">        items: [</span><br><span class="line">        &#123;</span><br><span class="line">            xtype: <span class="string">'titlebar'</span>,</span><br><span class="line">            cls: <span class="string">'title'</span>,</span><br><span class="line">            docked: <span class="string">'top'</span>,</span><br><span class="line">            title: <span class="string">'Do I need my Umbrella?'</span>,</span><br><span class="line">            items: [&#123;</span><br><span class="line">               cls: <span class="string">'back'</span>,</span><br><span class="line">               hidden: <span class="literal">true</span>,</span><br><span class="line">               ui: <span class="string">'back'</span>,</span><br><span class="line">               action: <span class="string">'back'</span>,</span><br><span class="line">               align: <span class="string">'left'</span>,</span><br><span class="line">               text: <span class="string">'back'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               iconCls: <span class="string">'settings'</span>,</span><br><span class="line">               action: <span class="string">'settings'</span>,</span><br><span class="line">               ui: <span class="string">'plain'</span>,</span><br><span class="line">               align: <span class="string">'right'</span></span><br><span class="line">            &#125;]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            html: <span class="string">'Settings Form'</span></span><br><span class="line">        &#125;,&#123;</span><br><span class="line">            itemId: <span class="string">'mainview'</span>,</span><br><span class="line">            cls: <span class="string">'textview'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            xtype: <span class="string">'toolbar'</span>,</span><br><span class="line">            cls: <span class="string">'footer'</span>,</span><br><span class="line">            ui: <span class="string">'light'</span>,</span><br><span class="line">            docked: <span class="string">'bottom'</span>,</span><br><span class="line">            html: <span class="string">'Powered by &amp;copy; Sencha Touch'</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Open your browser and run: <a href="http://localhost/dinmu" target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu</a>.
+            You should see a button with a gear in the right corner of the
+            <strong>Ext.TitleBar</strong>.</p>
+          <h3 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h3>
+          <p>Now, we can start with creating a form. You know what? Let’s
+            generate this too. Navigate to the <strong>dinmu</strong> folder on
+            the command line and run the following to generate your Sencha
+            Touch form:</p>
+          <p>sencha generate form SettingsView
+            geo:toggle,units:select,city,country</p>
+          <p>Review the form class that has been scaffolded. Open <strong>app/view/SettingsView</strong>.
+            The <strong>Dinmu.view.SettingsView</strong> class has an <strong>xtype</strong>
+            set to <strong>settingsview</strong>. You can assign custom made
+            classes to item arrays with the <strong>xtype</strong> property.</p>
+          <p>So let’s do so. Open <strong>Dinmu.view.Main</strong> (<strong>app/view/Main.js</strong>),
+            find the settings item in your code. By default, if you don’t
+            specify its <strong>xtype</strong> is set to <strong>container</strong>.
+            You will need to refer to the new <strong>xtype: settingsview</strong>,
+            so add <strong>xtype: ‘settingsview’</strong> to the Main view
+            code. You don’t need the placeholder html string anymore. Remove
+            the <strong>html: settings</strong> property. Also don’t forget to
+            add <strong>Dinmu.view.SettingsView</strong> to the <strong>requires</strong>
+            array to make sure this class is loaded in memory.</p>
+          <p>To make it look better, you will add a <strong>fieldset</strong>
+            to the <strong>Ext.form.Panel</strong> in the SettingsView. This
+            fieldset contains the four new fields and the submit button. The
+            fieldset will be a child of the formpanel and has its own children:
+            the form <strong>fields</strong> and the <strong>button</strong>.</p>
+          <p>Create a second <strong>items</strong> array in the <strong>config</strong>
+            object (after the <strong>title</strong> property). Nest the second
+            items array as a child. The parent items array contains one
+            fieldset xtype, with a <strong>title: ‘Your location’</strong>, and
+            a line with <strong>instructions</strong>.</p>
+          <p>Make sure the child items array contains all the fields and the
+            button. Verify your code looks like this:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.view.SettingsView'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.form.Panel'</span>,</span><br><span class="line">    xtype: <span class="string">'settingsview'</span>,</span><br><span class="line"> </span><br><span class="line">    config: &#123;</span><br><span class="line">        items:[&#123;</span><br><span class="line">            xtype: <span class="string">'fieldset'</span>,</span><br><span class="line">            title: <span class="string">'SettingsView'</span>,</span><br><span class="line">            instructions: <span class="string">'In case you do not want the app to detect your location you can enter the city and country.'</span>,</span><br><span class="line">            items: [</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'geo'</span>,</span><br><span class="line">                    xtype: <span class="string">'togglefield'</span>,</span><br><span class="line">                    label: <span class="string">'Geo'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'units'</span>,</span><br><span class="line">                    xtype: <span class="string">'selectfield'</span>,</span><br><span class="line">                    label: <span class="string">'Units'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'city'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'City'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'country'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'Country'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    xtype: <span class="string">'button'</span>,</span><br><span class="line">                    text: <span class="string">'Submit'</span>,</span><br><span class="line">                    ui: <span class="string">'confirm'</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Open your browser and run: <a href="http://localhost/dinmu" target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu</a>.
+            You should see the settings form with a <strong>title</strong> and
+            some <strong>instructions</strong>. But there is something odd with
+            the select unit field. It has no values.</p>
+          <p>Let’s add some values to the units <strong>selectfield</strong>.</p>
+          <p>Create an <strong>options</strong> array with two objects. One
+            with the <strong>text: ‘Fahrenheit’</strong> and a <strong>value:
+              ‘f’</strong> and one object with the <strong>text: ‘Celsius’</strong>
+            and the <strong>value: ‘c’</strong>.</p>
+          <p>The label GEO in the <strong>togglefield</strong> makes little
+            sense. Change this <strong>label to: ‘ Auto detect?’</strong> Since
+            the text for this label takes much more space, we will set the
+            <strong>labelWidth</strong> to ‘<strong>55%</strong>’. Set the
+            value of the geo field to <strong>value: ‘1’</strong> to enable
+            geolocation by default.</p>
+          <p>Disable the units, city and country fields by adding <strong>disabled:
+              true</strong> to all fields.</p>
+          <p>The button <strong>text</strong>, should be <strong>Refresh</strong>
+            instead of <strong>Submit</strong>. Change this in the button
+            component. Add a <strong>margin</strong> with the value ‘<strong>10
+              5</strong>’. Also add an <strong>action</strong> property to the
+            button and set this to ‘<strong>refresh</strong>’. This way, we can
+            reference the button later:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">&#123;</span><br><span class="line">    xtype: <span class="string">'button'</span>,</span><br><span class="line">    text: <span class="string">'Refresh'</span>,</span><br><span class="line">    action: <span class="string">'refresh'</span>,</span><br><span class="line">    margin: <span class="string">'10 5'</span></span><br><span class="line">    ui: <span class="string">'confirm'</span></span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>You might have noticed that the console outputs some warnings. The
+            <strong>Ext.Loader</strong>, the mechanism that loads all the
+            Sencha Touch framework classes in the correct order into memory,
+            needs to load the classes that are used for the form fields. Create
+            a <strong>requires</strong> array, (above the <strong>config</strong>
+            object) and assign it the following strings:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">requires: [</span><br><span class="line">    <span class="string">'Ext.form.FieldSet'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Toggle'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Select'</span>,</span><br><span class="line">    <span class="string">'Ext.field.Text'</span>,</span><br><span class="line">    <span class="string">'Ext.Button'</span></span><br><span class="line">],</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>You’ve finished the interface.</p>
+          <p>Here’s the complete code for the settingsview:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.view.SettingsView'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.form.Panel'</span>,</span><br><span class="line">    xtype: <span class="string">'settingsview'</span>,</span><br><span class="line">    requires: [</span><br><span class="line">        <span class="string">'Ext.form.FieldSet'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Toggle'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Select'</span>,</span><br><span class="line">        <span class="string">'Ext.field.Text'</span>,</span><br><span class="line">        <span class="string">'Ext.Button'</span></span><br><span class="line">    ],</span><br><span class="line">    config: &#123;</span><br><span class="line">        items:[&#123;</span><br><span class="line">            xtype: <span class="string">'fieldset'</span>,</span><br><span class="line">            title: <span class="string">'SettingsView'</span>,</span><br><span class="line">            instructions: <span class="string">'In case you do not want the app to detect your location you can enter the city and country.'</span>,</span><br><span class="line">            items: [</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'geo'</span>,</span><br><span class="line">                    xtype: <span class="string">'togglefield'</span>,</span><br><span class="line">                    label: <span class="string">'Auto Detect?'</span>,</span><br><span class="line">                    labelWidth: <span class="string">'55%'</span>,</span><br><span class="line">                    value: <span class="string">'1'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'units'</span>,</span><br><span class="line">                    xtype: <span class="string">'selectfield'</span>,</span><br><span class="line">                    options: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        text: <span class="string">'Fahrenheit'</span>,</span><br><span class="line">                        value: <span class="string">'f'</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                         text: <span class="string">'Celsius'</span>,</span><br><span class="line">                         value: <span class="string">'c'</span></span><br><span class="line">                    &#125;],</span><br><span class="line">                    label: <span class="string">'Units'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'city'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'City'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: <span class="string">'country'</span>,</span><br><span class="line">                    xtype: <span class="string">'textfield'</span>,</span><br><span class="line">                    label: <span class="string">'Country'</span>,</span><br><span class="line">                    disabled: <span class="literal">true</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    xtype: <span class="string">'button'</span>,</span><br><span class="line">                    text: <span class="string">'Refresh'</span>,</span><br><span class="line">                    action: <span class="string">'refresh'</span>,</span><br><span class="line">                    margin: <span class="string">'10 5'</span>,</span><br><span class="line">                    ui: <span class="string">'confirm'</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>But wait, what about the main view? Yes, you will dynamically
+            inject this page with data. Therefore, you will need some logic to
+            achieve this, so let’s start with creating a controller.</p>
+          <p><img src="/images/weather-app-2.png" alt="Weather App"></p>
+          <h3 id="Building-The-Controller"><a href="#Building-The-Controller"
+                                                                                            class="headerlink"
+                                                                                            title="Building The Controller"></a>Building
+            The Controller</h3>
+          <p>The <strong>controller</strong> will be the glue between the
+            settings <strong>model</strong> (the app data) and the settings
+            <strong>view</strong>. It will contain references to all view
+            components and dispatch its events. Navigate to the <strong>dinmu</strong>
+            folder and run the following command from the command line:</p>
+          <p>sencha generate controller Main</p>
+          <p>This command generates the Main controller. Open <strong>app/controller/Main.js</strong>
+            with your editor. You will see a <strong>controller</strong> with
+            an empty references object (<strong>refs</strong>) and an empty
+            <strong>control</strong> object.</p>
+          <p>Next, let’s create references to all the view components, <strong>main</strong>,
+            <strong>settingsview</strong>, the <strong>titlebar settings</strong>
+            and <strong>back</strong> buttons and to the settings <strong>form
+              fields</strong> and <strong>refresh</strong> button. The
+            selectors are a bit CSS-like. Your code could look like this:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">refs: &#123;</span><br><span class="line">    mainView: <span class="string">'main'</span>,</span><br><span class="line">    settingsView: <span class="string">'settingsview'</span>,</span><br><span class="line"> </span><br><span class="line">    btnSettings: <span class="string">'main button[action=settings]'</span>,</span><br><span class="line">    btnRefresh: <span class="string">'settingsview button[action=refresh]'</span>,</span><br><span class="line">    btnBack: <span class="string">'main button[action=back]'</span>,</span><br><span class="line"> </span><br><span class="line">    toggleGeo: <span class="string">'settingsview togglefield'</span>,</span><br><span class="line">    fieldCity: <span class="string">'settingsview textfield[name=city]'</span>,</span><br><span class="line">    fieldCountry: <span class="string">'settingsview textfield[name=country]'</span>,</span><br><span class="line">    fieldUnits: <span class="string">'settingsview selectfield'</span></span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Now that you have references to all the view components that
+            should contain events, you can add the controls.</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">control: &#123;</span><br><span class="line">    <span class="string">'btnRefresh'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onRefresh'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'btnSettings'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onSettingsBtnTap'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'btnBack'</span>: &#123;</span><br><span class="line">        tap: <span class="string">'onBackBtnTap'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'toggleGeo'</span>: &#123;</span><br><span class="line">        change: <span class="string">'onToggle'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'mainView'</span>: &#123;</span><br><span class="line">        activeitemchange: <span class="string">'onCarouselChange'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Before browser testing the events, you must hook the controller to
+            <strong>app.js</strong> which is the MVC’s entry point. Open
+            <strong>app.js</strong>, create a <strong>controllers</strong>
+            array, right below the <strong>requires</strong> array and pass in
+            the string ‘<strong>Main</strong>’ mapping the Main controller to
+            the <strong>app/controller/Main.js</strong> file.</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">controllers: [</span><br><span class="line">    <span class="string">'Main'</span></span><br><span class="line">],</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Now, we will add some logic. Go back to <strong>Dinmu.controller.Main</strong>
+            and add the functions in the <strong>goodies-tutorial</strong>
+            directory. You can find them in <strong>controller.txt</strong>.</p>
+          <p>Replace the <strong>launch</strong> function with the functions
+            provided.</p>
+          <h3 id="Setting-Up-Stores-and-Singletons"><a href="#Setting-Up-Stores-and-Singletons"
+                                                                                            class="headerlink"
+                                                                                            title="Setting Up Stores and Singletons"></a>Setting
+            Up Stores and Singletons</h3>
+          <p>Stores encapsulate a client side cache of model objects. Stores
+            can have a Proxy too, and also provide functions for sorting,
+            filtering, grouping and querying the model instances (records)
+            contained within it.</p>
+          <p>Our app needs a store to save all the user settings.</p>
+          <p>Unfortunately, you can’t generate stores with Sencha Cmd. Instead,
+            let’s create a new file in the <strong>app/store</strong> folder
+            called: <strong>Settings.js</strong>. Define a new class: <strong>Dinmu.store.Settings</strong>.
+            This class extends all methods and properties from the <strong>Ext.data.Store</strong>
+            class. In the <strong>config</strong> object, create a property
+            called: <strong>model</strong>. It should connect to the Setting
+            model. Also, the settings store should load automatically:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.store.Settings'</span>, &#123;</span><br><span class="line">    extend: <span class="string">'Ext.data.Store'</span>,</span><br><span class="line">    requires: [<span class="string">'Dinmu.model.Setting'</span>],</span><br><span class="line">        config: &#123;</span><br><span class="line">            model: <span class="string">'Dinmu.model.Setting'</span>,</span><br><span class="line">            autoLoad: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Open <strong>controller/Main.js</strong>, in the <strong>config</strong>
+            object create a <strong>stores</strong> array and add the <strong>Dinmu.store.Settings</strong>
+            store to it:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">stores: <span class="string">'Dinmu.store.Settings'</span>,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Sometimes, it’s better to separate your business logic outside the
+            MVC folders.</p>
+          <p>In the app folder, create a new folder <strong>utils</strong>.
+            Create the file <strong>Functions.js</strong>, and define a class
+            called: <strong>Dinmu.utils.Functions</strong>. This class has a
+            property: <strong>singleton</strong> set to <strong>true</strong>.
+            Now your class is a singleton, you cannot create more than one
+            instance of it, but you can run the singleton methods from
+            everywhere in your code:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.define(<span class="string">'Dinmu.utils.Functions'</span>, &#123;</span><br><span class="line">    singleton: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">//singleton methods here</span></span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Add <strong>Dinmu.utils.Functions</strong> to the <strong>requires</strong>
+            array of the <strong>app.js</strong> file.</p>
+          <p>Open the snippet: <strong>functions.txt</strong> from the <strong>goodies-tutorial</strong>
+            folder and copy all the functions into the <strong>utils/Functions.js</strong>
+            file.</p>
+          <p>This snippet contains the functions you will need for requesting
+            weather data from <a href="http://api.worldweatheronline.com/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://api.worldweatheronline.com/</a>.
+            If you would rather request and use your own API_KEY, you can edit
+            it on top of the <strong>Functions.js</strong> by changing the
+            String for property <strong>API_KEY</strong>. It also contains
+            logic for requesting geolocation on the device and injecting data
+            in the template on the mainview. If you are really interested in
+            this logic, I left complete comments in the functions.txt file
+            which describes exactly what is going on.</p>
+          <p>To test the logic, open <strong>Google Chrome Developer Tools</strong>
+            and switch to the <strong>Console tab</strong> and enter the
+            following line: <strong>Dinmu.utils.Functions.getWeather(‘London’)</strong>
+            it should return a weather object for London and display some text
+            in the mainview.</p>
+          <p>Finally the <em>Do I need my Umbrella</em> app is finished! Open
+            your browser and run: <a href="http://localhost/dinmu" target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu</a>.
+            The next steps for improving your application would be to apply a
+            theme and a production build. This is something I will discuss in
+            the next Sencha Blog tutorial.</p>
+          <p><img src="/images/weather-app-3.png" alt="Weather App"></p>
+          <p>If you found this tutorial helpful check out my book I wrote for
+            O’Reilly: <a href="http://shop.oreilly.com/product/0636920030058.do"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">Hands-on
+              Sencha Touch 2</a>!</p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)",
@@ -8,17 +731,76 @@
               "datePublished": "2014-04-07",
               "dateCreated": "2014-04-07",
               "dateModified": "2014-04-07",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Sencha-CMD/">Sencha CMD</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha Touch</a><a class="badge badge-primary tag-link" href="/tags/Utility-app/">Utility app</a><a class="badge badge-primary tag-link" href="/tags/Weather-app/">Weather app</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1) - https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Theming/using-custom-icons-in-your-ext-js-apps/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Sencha-CMD/">Sencha
+              CMD</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha
+              Touch</a><a class="badge badge-primary tag-link" href="/tags/Utility-app/">Utility
+              app</a><a class="badge badge-primary tag-link" href="/tags/Weather-app/">Weather
+              app</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/"
+                                                                                                id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Theming/using-custom-icons-in-your-ext-js-apps/" id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +824,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +879,220 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/">Create a TV app with Sencha Touch and Sencha Architect</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 2)</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 3)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/">Create
+                    a TV app with Sencha Touch and Sencha Architect</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced
+                    Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 2)</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

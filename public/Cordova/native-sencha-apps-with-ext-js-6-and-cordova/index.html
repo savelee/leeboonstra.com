@@ -1,6 +1,368 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Native Sencha apps with Ext JS 6 and Cordova / PhoneGap | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl"><meta name="keywords" content="Cordova,Native,Phonegap,Hybrid"><meta property="og:type" content="article"><meta property="og:title" content="Native Sencha apps with Ext JS 6 and Cordova &#x2F; PhoneGap"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl"><meta property="og:locale" content="en"><meta property="og:updated_time" content="2018-11-30T14:47:17.732Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Native Sencha apps with Ext JS 6 and Cordova &#x2F; PhoneGap"><meta name="twitter:description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Native Sencha apps with Ext JS 6 and Cordova /
+    PhoneGap | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl">
+  <meta name="keywords" content="Cordova,Native,Phonegap,Hybrid">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Native Sencha apps with Ext JS 6 and Cordova &#x2F; PhoneGap">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl">
+  <meta property="og:locale" content="en">
+  <meta property="og:updated_time" content="2018-11-30T14:47:17.732Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Native Sencha apps with Ext JS 6 and Cordova &#x2F; PhoneGap">
+  <meta name="twitter:description" content="Last time I played with Cordova, I developed Sencha Touch apps. Been there,   done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can   create desktop applications or mobile (tabl">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-native-sencha-apps-with-ext-js-6-and-cordova" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Native Sencha apps with Ext JS 6 and Cordova / PhoneGap via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Native Sencha apps with Ext JS 6 and Cordova / PhoneGap</h1>Posted on <a href="/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/" class="article-date"><time datetime="2016-06-18T16:10:22.000Z" itemprop="datePublished">Jun 18th 2016</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Cordova/">Cordova</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>Last time I played with Cordova, I developed Sencha Touch apps. Been there, done that. Sencha’s new mobile framework, is Ext JS 6. With Ext JS 6 you can create desktop applications or mobile (tablets or phone) apps. And.. you can create universal apps. A universal app, means one Ext JS 6 code base, for any type of device. Whether it’s a phone, a tablet or a desktop app, we let Sencha detect the type of device, browser or OS, and download and serve the right kind of experience for you. That works great for web applications, the so called PWAs, progressive web apps. But what if you want to create a native app with Ext JS?</p><a id="more"></a><p>For example, because you want to sell your app in an app store, or because you want to make use of native device API features. The solution would be Adobe PhoneGap or Apache Cordova. Just in case you are completely new to this technology; PhoneGap and Cordova are making use of the same technology, but PhoneGap is from Adobe and is a commercial solution, Cordova is Apache and open source. The commercial version has a cloud build tool, which can build your applications to native online, (and therefore you don’t need to install dev tools (like for example XCode) on your own machine. Just like how Cordova works, with PhoneGap it’s also possible to build yourself, from your own machine. This requires you to have the SDKs for Android Dev Tools, Windows Tools or XCode installed on your pc or Mac. The way how Cordova/PhoneGap works, is they will take your web build (the Sencha concatenated / minified JavaScript build, index.html and CSS theme), and copy this in a native project file. (like an XCode project). These SDK project files contain a webview (a native shell. It’s like a browser, it can display webpages/apps, you just can’t enter URLs, it defaults to your web build). Alright, so in the past I’ve wrote tutorials about Cordova and PhoneGap before, you can find those <a href="https://www.leeboonstra.com/developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3" target="_blank" rel="noopener">here</a> and <a href="https://www.leeboonstra.com/developer/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins" target="_blank" rel="noopener">here</a>.</p><p>However, that has been a while ago, and I’m curious to see if it all works the same way, since technologies change, and so do Android and iOS versions. In particular I’m curious how it will work with Ext JS 6 universal apps. I do want to have one code base for maintainability, however I do <em>not</em> want to have my desktop application deployed with my mobile app, since it’s only for mobiles. Further more, I don’t want to have my Android interface in an iOS build etc. So let’s dive into this! We will make use of Cordova, since it’s open source there will be many plugins available. In case you haven’t already. You will need to install Cordova with the NPM package manager, from your command-line. It requires Node. I’m currently running Node JS version: 5.8.0 <code>`$ npm install -g cordova`</code> (Mac OSX users might need to prefix the CLI commands with sudo, for the permissions.) Afterwards, review if Cordova has been correctly installed: <code>`$ cordova -v`</code> Generate a new Ext JS universal app. (Or use an existing one.) (<code>sencha generate app MyApp ../mypath</code>), you run this command from the downloaded Sencha SDK folder. Next open from your Ext JS app, the app.json file. We will add some code here. Scroll to the <strong><em>builds</em></strong> block. Add the following build profile:</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">"cordovaios": &#123; </span><br><span class="line">  "packager": "cordova", </span><br><span class="line">  "cordova": &#123; </span><br><span class="line">    "config": &#123; </span><br><span class="line">        "platforms": "ios", </span><br><span class="line">        "remote": false, </span><br><span class="line">        "id": "com.ladysign.Spotifinder", </span><br><span class="line">        "name": "MyApp" </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "toolkit": "modern", "theme": "theme-ios" &#125;,</span><br></pre></td></tr></table></figure><p>The <em>packager</em> field, will trigger Sencha Cmd, to make use of your Cordova installation. Note, you can also enter <strong>phonegap</strong> here, in case you have PhoneGap installed on your machine. Once you have the packager defined, you can use the <strong>cordova</strong> object.</p><p>In the <em>platforms</em> field, you define the platforms you want to build for (again, it requires the SDK tools for every platform). Unless you are creating an application with one universal look and feel (a theme derived from Neptune or Triton), I would put only one platform here. You can always create multiple build profiles in the app.json.</p><p>I only wrote <em>ios</em> here, because my app is making use of the new Ext JS 6.2 <em>theme-ios</em> theme. (Remember, that I don’t want to put more than one theme in my build?).</p><p>The field <em>remote</em> is set to false, unless you want to make use of the PhoneGap cloud builder, than it would be <em>true</em>. The <em>id</em> is the id (reverse domain notation), you will use in your app store, and <em>name</em> that’s the name of your app, as you use in <code>Ext.Application</code>.</p><p>The <em>toolkit</em> property is important for an Ext JS 6 app. (Remember, that I don’t want to include the desktop version of my app in this build?). All phone applications should make use of the toolkit, since that’s a faster performing toolkit, with more components that were designed for mobile touch user experience. Next. verify, that you didn’t make typos in the <strong>app.json</strong> file, by running from your project folder the following command: <code>$ sencha app refresh</code> Now, we need to modify the index.html file, to make sure the application can load within Cordova. The microloader will need to detect if it’s an Cordova app, to load the correct JavaScript code and theme:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Ext = Ext || &#123;&#125;; <span class="comment">// Ext namespace won't be defined yet...</span></span><br><span class="line">  <span class="comment">// This function is called by the Microloader after it has performed basic</span></span><br><span class="line">  <span class="comment">// device detection. The results are provided in the "tags" object. You can</span></span><br><span class="line">  <span class="comment">// use these tags here or even add custom tags. These can be used by platform</span></span><br><span class="line">  <span class="comment">// filters in your manifest or by platformConfig expressions in your app.</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  Ext.beforeLoad = <span class="function"><span class="keyword">function</span> (<span class="params">tags</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> s = location.search,  <span class="comment">// the query string (ex "?foo=1&amp;amp;bar")</span></span><br><span class="line">          profile;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">          location.href.match(<span class="regexp">/\bcordova\b/</span>) ||</span><br><span class="line">          Ext.platformTags.cordova ||</span><br><span class="line">          Ext.platformTags.webview</span><br><span class="line">      ) &#123;</span><br><span class="line">          profile = <span class="string">'cordovaios'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/\bmodern\b/</span>) || tags.ios) &#123;</span><br><span class="line">          profile = <span class="string">'modern'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/\bandroid\b/</span>) || Ext.platformTags.android &amp;gt; <span class="number">0</span>) &#123;</span><br><span class="line">          profile = <span class="string">'android'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          profile = <span class="string">'classic'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      Ext.manifest = profile;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure><p>This tells the Sencha microloader, to load the <em>cordovaios</em> build, if: <em>cordova</em> is in the url (to test on your development machine) or if the app runs in a cordova or webview shell. Sure, instead of all this if else checking, you could force <code>Ext.manifest = ‘cordovaios’</code> but the magic here, is that we will reuse this index.html for every type of app, whether it’s an desktop app, iOS PWA or Android PWA. So this microloader is actually great. Ready? Let’s go and build: <code>$ sencha app build cordovaios</code> We tell Sencha Cmd to build the <em>cordovaios</em> profile, like we wrote in <strong>app.json</strong>. Woopie. It seems like it worked.</p><p>Let’s take a close look and see where the build is located. According to my build log, it looks like there’s a <strong>cordova</strong> folder created in my Ext JS application folder: <strong>MyApp/cordova</strong>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">MyApp </span><br><span class="line">- cordova </span><br><span class="line">- - config.xml </span><br><span class="line">- - hooks </span><br><span class="line">- - platforms </span><br><span class="line">- - plugins </span><br><span class="line">- - www </span><br><span class="line">- - - index.html </span><br><span class="line">- - - cordovaios </span><br><span class="line">- - - - app.js </span><br><span class="line">- - - - resources </span><br><span class="line">- - - - - MyApp.css</span><br></pre></td></tr></table></figure><p>The <strong>www</strong> folder, will be the place, where a copy of your Sencha Ext JS 6 app will be located. Let’s look into this folder, and verify what’s inside of it. So what’s in the <strong>cordovaios</strong> folder, is the JavaScript code, for the modern toolkit only. Nice! So. you won’t bundle the desktop version inside of it. And also, it only includes one theme, the right one. This is all because of the <em>toolkit</em> and <em>theme</em> settings we made in the <strong>app.json</strong> file. How awesome.</p><p>Let’s cover some Cordova / XCode stuff, since you are here anyway. If you have done this before, this is probably not so interesting for you… Oh cool. So you are still here. Open <strong>config.xml</strong> and modify the name and description fields to describe your app. After your first build, you can copy the generated <strong>cordova.js</strong> and <strong>cordova-plugins.js</strong> files, and put it in your cordova <strong>www</strong> folder. Copy it from <strong>MyApp/cordova/platforms/ios/www</strong>. That way the other <strong>cordova/www</strong> folder won’t have 404 errors. You could make another build: <code>$ sencha app build cordovaios</code> Open your application from the cordova www folder in your browser, and verify that everything works without issues. For example: <a href="http://localhost/MyApp/cordova/www/" target="_blank" rel="noopener">http://localhost/MyApp/cordova/www/</a> We don’t need the auto generated <strong>css</strong> and <strong>js</strong> folders. So remove those. No worries, the next time you make a cordovaios build, those folders won’t come back. Ok, so basically, we could now open XCode, open the <strong>MyApp/cordova/platforms/ios/MyApp.xcodeproj</strong>, and build with XCode tools, the applications.</p><p>In XCode, press the <em>play</em> button. It creates a build, and it should run it in an simulator. I run into a common issue: <em>The status bar is mixed into my layout.</em> We can fix this with the cordova-plugin-statusbar plugin. So install it. Run on the CLI from he cordova folder: <code>$ cordova plugin add cordova-plugin-statusbar</code></p><p>In XCode rightclick your project to view the <em>resources/MyApp.pList</em> configuration. And add the following settings:</p><ul><li><code>Status bar is initially hidden = YES</code></li><li><code>View controller-based status bar appearance = NO</code></li><li><code>UIRequiresFullScreen = YES</code></li></ul><p>This should be fixed. Next replace all the Cordova logos and splash screens. You can find and replace those assets from here: <strong>MyApp/Cordova/platforms/ios/MyApp/Images.xcassets</strong> And that’s it. Project &gt; Clean your build, Rebuild, <em>Project &gt; Build</em>. And test and run your application in the simulator. For iOS developers, the next steps would be to setup an paid Apple Developer account. It cost about a 100 bucks a year, and you can sell unlimited applications from the Apple App Store. With the developer account, you can get access to iOS beta releases, and you can test your applications on real devices. <a href="http://developer.apple.com" target="_blank" rel="noopener">https://developer.apple.com/</a></p><p>Success! Feel free to share your deployed Sencha hybrid apps for Android or iOS with me in the comments!</p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-native-sencha-apps-with-ext-js-6-and-cordova" class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Native Sencha apps
+              with Ext JS 6 and Cordova / PhoneGap</h1>Posted on <a href="/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2016-06-18T16:10:22.000Z"
+                                                                                              itemprop="datePublished">Jun
+                18th 2016</time> <time class="hidden" datetime="2018-11-30"
+                                                                                              itemprop="dateModified">Nov
+                30th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Cordova/">Cordova</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>Last time I played with Cordova, I developed Sencha Touch apps.
+            Been there, done that. Sencha’s new mobile framework, is Ext JS 6.
+            With Ext JS 6 you can create desktop applications or mobile
+            (tablets or phone) apps. And.. you can create universal apps. A
+            universal app, means one Ext JS 6 code base, for any type of
+            device. Whether it’s a phone, a tablet or a desktop app, we let
+            Sencha detect the type of device, browser or OS, and download and
+            serve the right kind of experience for you. That works great for
+            web applications, the so called PWAs, progressive web apps. But
+            what if you want to create a native app with Ext JS?</p><a id="more"></a>
+          <p>For example, because you want to sell your app in an app store, or
+            because you want to make use of native device API features. The
+            solution would be Adobe PhoneGap or Apache Cordova. Just in case
+            you are completely new to this technology; PhoneGap and Cordova are
+            making use of the same technology, but PhoneGap is from Adobe and
+            is a commercial solution, Cordova is Apache and open source. The
+            commercial version has a cloud build tool, which can build your
+            applications to native online, (and therefore you don’t need to
+            install dev tools (like for example XCode) on your own machine.
+            Just like how Cordova works, with PhoneGap it’s also possible to
+            build yourself, from your own machine. This requires you to have
+            the SDKs for Android Dev Tools, Windows Tools or XCode installed on
+            your pc or Mac. The way how Cordova/PhoneGap works, is they will
+            take your web build (the Sencha concatenated / minified JavaScript
+            build, index.html and CSS theme), and copy this in a native project
+            file. (like an XCode project). These SDK project files contain a
+            webview (a native shell. It’s like a browser, it can display
+            webpages/apps, you just can’t enter URLs, it defaults to your web
+            build). Alright, so in the past I’ve wrote tutorials about Cordova
+            and PhoneGap before, you can find those <a href="https://www.leeboonstra.com/developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">here</a>
+            and <a href="https://www.leeboonstra.com/developer/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">here</a>.</p>
+          <p>However, that has been a while ago, and I’m curious to see if it
+            all works the same way, since technologies change, and so do
+            Android and iOS versions. In particular I’m curious how it will
+            work with Ext JS 6 universal apps. I do want to have one code base
+            for maintainability, however I do <em>not</em> want to have my
+            desktop application deployed with my mobile app, since it’s only
+            for mobiles. Further more, I don’t want to have my Android
+            interface in an iOS build etc. So let’s dive into this! We will
+            make use of Cordova, since it’s open source there will be many
+            plugins available. In case you haven’t already. You will need to
+            install Cordova with the NPM package manager, from your
+            command-line. It requires Node. I’m currently running Node JS
+            version: 5.8.0 <code>`$ npm install -g cordova`</code> (Mac OSX
+            users might need to prefix the CLI commands with sudo, for the
+            permissions.) Afterwards, review if Cordova has been correctly
+            installed: <code>`$ cordova -v`</code> Generate a new Ext JS
+            universal app. (Or use an existing one.) (<code>sencha generate app
+              MyApp ../mypath</code>), you run this command from the downloaded
+            Sencha SDK folder. Next open from your Ext JS app, the app.json
+            file. We will add some code here. Scroll to the <strong><em>builds</em></strong>
+            block. Add the following build profile:</p>
+          <figure class="highlight">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">"cordovaios": &#123; </span><br><span class="line">  "packager": "cordova", </span><br><span class="line">  "cordova": &#123; </span><br><span class="line">    "config": &#123; </span><br><span class="line">        "platforms": "ios", </span><br><span class="line">        "remote": false, </span><br><span class="line">        "id": "com.ladysign.Spotifinder", </span><br><span class="line">        "name": "MyApp" </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  "toolkit": "modern", "theme": "theme-ios" &#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The <em>packager</em> field, will trigger Sencha Cmd, to make use
+            of your Cordova installation. Note, you can also enter <strong>phonegap</strong>
+            here, in case you have PhoneGap installed on your machine. Once you
+            have the packager defined, you can use the <strong>cordova</strong>
+            object.</p>
+          <p>In the <em>platforms</em> field, you define the platforms you want
+            to build for (again, it requires the SDK tools for every platform).
+            Unless you are creating an application with one universal look and
+            feel (a theme derived from Neptune or Triton), I would put only one
+            platform here. You can always create multiple build profiles in the
+            app.json.</p>
+          <p>I only wrote <em>ios</em> here, because my app is making use of
+            the new Ext JS 6.2 <em>theme-ios</em> theme. (Remember, that I
+            don’t want to put more than one theme in my build?).</p>
+          <p>The field <em>remote</em> is set to false, unless you want to make
+            use of the PhoneGap cloud builder, than it would be <em>true</em>.
+            The <em>id</em> is the id (reverse domain notation), you will use
+            in your app store, and <em>name</em> that’s the name of your app,
+            as you use in <code>Ext.Application</code>.</p>
+          <p>The <em>toolkit</em> property is important for an Ext JS 6 app.
+            (Remember, that I don’t want to include the desktop version of my
+            app in this build?). All phone applications should make use of the
+            toolkit, since that’s a faster performing toolkit, with more
+            components that were designed for mobile touch user experience.
+            Next. verify, that you didn’t make typos in the <strong>app.json</strong>
+            file, by running from your project folder the following command:
+            <code>$ sencha app refresh</code> Now, we need to modify the
+            index.html file, to make sure the application can load within
+            Cordova. The microloader will need to detect if it’s an Cordova
+            app, to load the correct JavaScript code and theme:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> Ext = Ext || &#123;&#125;; <span class="comment">// Ext namespace won't be defined yet...</span></span><br><span class="line">  <span class="comment">// This function is called by the Microloader after it has performed basic</span></span><br><span class="line">  <span class="comment">// device detection. The results are provided in the "tags" object. You can</span></span><br><span class="line">  <span class="comment">// use these tags here or even add custom tags. These can be used by platform</span></span><br><span class="line">  <span class="comment">// filters in your manifest or by platformConfig expressions in your app.</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  Ext.beforeLoad = <span class="function"><span class="keyword">function</span> (<span class="params">tags</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> s = location.search,  <span class="comment">// the query string (ex "?foo=1&amp;amp;bar")</span></span><br><span class="line">          profile;</span><br><span class="line">      <span class="keyword">if</span> (</span><br><span class="line">          location.href.match(<span class="regexp">/\bcordova\b/</span>) ||</span><br><span class="line">          Ext.platformTags.cordova ||</span><br><span class="line">          Ext.platformTags.webview</span><br><span class="line">      ) &#123;</span><br><span class="line">          profile = <span class="string">'cordovaios'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/\bmodern\b/</span>) || tags.ios) &#123;</span><br><span class="line">          profile = <span class="string">'modern'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/\bandroid\b/</span>) || Ext.platformTags.android &amp;gt; <span class="number">0</span>) &#123;</span><br><span class="line">          profile = <span class="string">'android'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> &#123;</span><br><span class="line">          profile = <span class="string">'classic'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      Ext.manifest = profile;</span><br><span class="line">  &#125;;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>This tells the Sencha microloader, to load the <em>cordovaios</em>
+            build, if: <em>cordova</em> is in the url (to test on your
+            development machine) or if the app runs in a cordova or webview
+            shell. Sure, instead of all this if else checking, you could force
+            <code>Ext.manifest = ‘cordovaios’</code> but the magic here, is
+            that we will reuse this index.html for every type of app, whether
+            it’s an desktop app, iOS PWA or Android PWA. So this microloader is
+            actually great. Ready? Let’s go and build: <code>$ sencha app build
+              cordovaios</code> We tell Sencha Cmd to build the <em>cordovaios</em>
+            profile, like we wrote in <strong>app.json</strong>. Woopie. It
+            seems like it worked.</p>
+          <p>Let’s take a close look and see where the build is located.
+            According to my build log, it looks like there’s a <strong>cordova</strong>
+            folder created in my Ext JS application folder: <strong>MyApp/cordova</strong>:</p>
+          <figure class="highlight plain">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">MyApp </span><br><span class="line">- cordova </span><br><span class="line">- - config.xml </span><br><span class="line">- - hooks </span><br><span class="line">- - platforms </span><br><span class="line">- - plugins </span><br><span class="line">- - www </span><br><span class="line">- - - index.html </span><br><span class="line">- - - cordovaios </span><br><span class="line">- - - - app.js </span><br><span class="line">- - - - resources </span><br><span class="line">- - - - - MyApp.css</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The <strong>www</strong> folder, will be the place, where a copy
+            of your Sencha Ext JS 6 app will be located. Let’s look into this
+            folder, and verify what’s inside of it. So what’s in the <strong>cordovaios</strong>
+            folder, is the JavaScript code, for the modern toolkit only. Nice!
+            So. you won’t bundle the desktop version inside of it. And also, it
+            only includes one theme, the right one. This is all because of the
+            <em>toolkit</em> and <em>theme</em> settings we made in the <strong>app.json</strong>
+            file. How awesome.</p>
+          <p>Let’s cover some Cordova / XCode stuff, since you are here anyway.
+            If you have done this before, this is probably not so interesting
+            for you… Oh cool. So you are still here. Open <strong>config.xml</strong>
+            and modify the name and description fields to describe your app.
+            After your first build, you can copy the generated <strong>cordova.js</strong>
+            and <strong>cordova-plugins.js</strong> files, and put it in your
+            cordova <strong>www</strong> folder. Copy it from <strong>MyApp/cordova/platforms/ios/www</strong>.
+            That way the other <strong>cordova/www</strong> folder won’t have
+            404 errors. You could make another build: <code>$ sencha app build
+              cordovaios</code> Open your application from the cordova www
+            folder in your browser, and verify that everything works without
+            issues. For example: <a href="http://localhost/MyApp/cordova/www/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://localhost/MyApp/cordova/www/</a>
+            We don’t need the auto generated <strong>css</strong> and <strong>js</strong>
+            folders. So remove those. No worries, the next time you make a
+            cordovaios build, those folders won’t come back. Ok, so basically,
+            we could now open XCode, open the <strong>MyApp/cordova/platforms/ios/MyApp.xcodeproj</strong>,
+            and build with XCode tools, the applications.</p>
+          <p>In XCode, press the <em>play</em> button. It creates a build, and
+            it should run it in an simulator. I run into a common issue: <em>The
+              status bar is mixed into my layout.</em> We can fix this with the
+            cordova-plugin-statusbar plugin. So install it. Run on the CLI from
+            he cordova folder: <code>$ cordova plugin add
+              cordova-plugin-statusbar</code></p>
+          <p>In XCode rightclick your project to view the <em>resources/MyApp.pList</em>
+            configuration. And add the following settings:</p>
+          <ul>
+            <li><code>Status bar is initially hidden = YES</code></li>
+            <li><code>View controller-based status bar appearance = NO</code></li>
+            <li><code>UIRequiresFullScreen = YES</code></li>
+          </ul>
+          <p>This should be fixed. Next replace all the Cordova logos and
+            splash screens. You can find and replace those assets from here:
+            <strong>MyApp/Cordova/platforms/ios/MyApp/Images.xcassets</strong>
+            And that’s it. Project &gt; Clean your build, Rebuild, <em>Project
+              &gt; Build</em>. And test and run your application in the
+            simulator. For iOS developers, the next steps would be to setup an
+            paid Apple Developer account. It cost about a 100 bucks a year, and
+            you can sell unlimited applications from the Apple App Store. With
+            the developer account, you can get access to iOS beta releases, and
+            you can test your applications on real devices. <a href="http://developer.apple.com"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://developer.apple.com/</a></p>
+          <p>Success! Feel free to share your deployed Sencha hybrid apps for
+            Android or iOS with me in the comments!</p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Native Sencha apps with Ext JS 6 and Cordova / PhoneGap",
@@ -8,17 +370,77 @@
               "datePublished": "2016-06-18",
               "dateCreated": "2016-06-18",
               "dateModified": "2016-06-18",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. ",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. ",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Cordova/">Cordova</a><a class="badge badge-primary tag-link" href="/tags/Hybrid/">Hybrid</a><a class="badge badge-primary tag-link" href="/tags/Native/">Native</a><a class="badge badge-primary tag-link" href="/tags/Phonegap/">Phonegap</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Native Sencha apps with Ext JS 6 and Cordova / PhoneGap - https://devtricks-45484.firebaseapp.com/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Ext-JS/d3-visualizations-in-ext-js-6-2/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Ext-JS/asynchronous-javascript-promises/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Cordova/">Cordova</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Hybrid/">Hybrid</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Native/">Native</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Phonegap/">Phonegap</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Ext-JS/d3-visualizations-in-ext-js-6-2/" id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Ext-JS/asynchronous-javascript-promises/" id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +464,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +519,214 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Cordova/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/">Make a native build with Ext JS 5, Sencha Cmd 5 and Phonegap / Cordova with plugins.</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Cordova/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/">Make
+                    a native build with Ext JS 5, Sencha Cmd 5 and Phonegap /
+                    Cordova with plugins.</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 3)</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

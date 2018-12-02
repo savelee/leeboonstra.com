@@ -1,6 +1,415 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps."><meta name="keywords" content="Sencha,Ext JS,Apache Ant,build properties,build scripts,Sencha CMD"><meta property="og:type" content="article"><meta property="og:title" content="Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps."><meta property="og:locale" content="en"><meta property="og:updated_time" content="2018-11-25T15:30:10.687Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure"><meta name="twitter:description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps."><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Advanced Sencha Cmd: Dealing with a multi Ext JS app
+    infrastructure | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps.">
+  <meta name="keywords" content="Sencha,Ext JS,Apache Ant,build properties,build scripts,Sencha CMD">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps.">
+  <meta property="og:locale" content="en">
+  <meta property="og:updated_time" content="2018-11-25T15:30:10.687Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure">
+  <meta name="twitter:description" content="This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps.">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure</h1>Posted on <a href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/" class="article-date"><time datetime="2016-02-21T17:06:24.000Z" itemprop="datePublished">Feb 21st 2016</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Sencha-CMD/">Sencha CMD</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps. I will discuss:</p><ul><li>Local workspaces</li><li>How to split builds</li><li>How to modify file paths and output settings</li></ul><a id="more"></a><h2 id="About-Workspaces"><a href="#About-Workspaces" class="headerlink" title="About Workspaces"></a>About Workspaces</h2><p>To support these, Sencha Cmd defines the concept of a “Workspace”. A Workspace is simply a folder that ultimately contains one or more apps (pages), frameworks, packages and other shared code or files. The location of the Workspace root folder should be chosen to facilitate these needs as well as your source control requirements. Any generated applications/pages created in sub-folders of the Workspace folder regardless of their depth are considered to be members of the Workspace. Though not a requirement, it is typically the case that the Workspace folder is the root folder in a source control repository. To create a workspace, you will need to have a downloaded copy of the Ext JS framework on your hard disk, also you will need to have Sencha Cmd installed. On the command-line navigate to the downloaded Ext JS sdk folder. From here, enter the following command: <code>sencha generate workspace [path to workspace[</code> This will generate the following folder structure:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">workspace.json   # The JSON descriptor for the workspace.</span><br><span class="line">ext		     # A copy of the Ext JS sdk, examples/docs are stripped out</span><br><span class="line">packages	     # Empty folder, which will contain shared code / themes</span><br><span class="line">.sencha/                # Sencha-specific files (e.g. configuration)</span><br><span class="line">    workspace/          # Workspace-specific content (see below)</span><br><span class="line">        sencha.cfg       # Configuration file for Sencha Cmd</span><br><span class="line">        plugin.xml        # Plugin for Sencha Cmd</span><br></pre></td></tr></table></figure><p>Within this workspace you can generate Ext JS apps, from the <em>ext</em> folder: <code>cd ext</code> <code>sencha generate app MyApp [folder-name[</code> All applications within the workspace, can share the same Sencha ext folder, code packages (such as custom components, themes or locals) can be shared across both apps and also applications can find each other in the workspace. (for example, in case you want to extend from apps.) For more information about workspaces see:</p><ul><li><a href="http://docs.sencha.com/cmd/6.x/workspaces.html" target="_blank" rel="noopener">http://docs.sencha.com/cmd/6.x/workspaces.html</a></li><li><a href="http://docs.sencha.com/cmd/6.x/extjs/cmd_app.html" target="_blank" rel="noopener">http://docs.sencha.com/cmd/6.x/extjs/cmd_app.html</a></li></ul><h2 id="Splitting-builds"><a href="#Splitting-builds" class="headerlink" title="Splitting builds"></a>Splitting builds</h2><p>By default, a workspace only matters on your development machine. Once you make a build: <code>sencha app build</code> Sencha will copy all the used framework classes and all your self written Sencha classes to a build folder. For production, all scripts will be minified. Also the Sass themes will be compiled to production ready css, and copied together with the resources. This means, by default, all shared frameworks and code packages, will be duplicated in the production build, as they can run as stand-alones. For most users, this behavior is exactly what they want. However, there are reasons, why people want to “split” their builds, and host code packages or frameworks separated from their app code. Examples of such reasons are:</p><ul><li>You are creating your own application framework. You are dynamically generating views, or maybe you are hosting the framework within a portal, expecting your code base will grow over time.</li><li>You are building a large application, with separated areas, such as an application, and an admin panel. Each of these areas, could be treated as an app itself. Which contains many views, controllers and models etc. It might be that you have different user groups visiting these apps. Why deliver them code, which they don’t need?</li><li>Your application became huge, and you want to split your scripts in smaller chunks. For the last reason, there’s a good tutorial online: <a href="https://www.sencha.com/blog/blazingly-fast-load-times-for-apps-built-with-ext-js-and-sencha-touch/" target="_blank" rel="noopener">https://www.sencha.com/blog/blazingly-fast-load-times-for-apps-built-with-ext-js-and-sencha-touch/</a></li></ul><p>Let’s dive into this topic, about splitting builds. Assuming you want to exclude the Sencha framework classes from your own app code. In every sencha application folder, there’s a hidden <strong>.sencha</strong> folder. This hidden folder contains lots of build scripts, settings and metadata used by Sencha Cmd. One of those files is: <strong>js-impl.xml</strong>, an Apache Ant build script, which contains an <strong>compile-js</strong> block, which takes care of filtering out all the used framework classes, and all your own JavaScript classes, to create a (minified) build: <a href="https://gist.github.com/savelee/b854dba3217ed5fb0252" target="_blank" rel="noopener">https://gist.github.com/savelee/b854dba3217ed5fb0252</a> It checks if, setting: <strong>enable.split.mode</strong> is set to true, and if so, it will split your framework with a minified, concatenated framework file &amp; a minified, concatenated <strong>app.js</strong> file, which contains your own classes. Note, by default this setting is false. Unfortunately, the code in the first block, doesn’t really work in Ext JS 6. But you can change it to something like below, to make it working again. I’ve been playing around with this: <a href="https://gist.github.com/savelee/4c2fdd2bda303bc03704" target="_blank" rel="noopener">https://gist.github.com/savelee/4c2fdd2bda303bc03704</a> *NOTE: I will need to test this further, but this code will need some more iterations though, I have the idea, you can union more, by tagging the `Ext` namespace. Also, saving this script in <strong>js-impl.xml</strong>, is not a best practice. When you reinstall Sencha Cmd, and upgrade your app, you will loose everything that’s inside the hidden <strong>.sencha</strong> folder. Instead you want to move this script out and leave it a build xml file within your project.</p><ul><li>You can find a working example in my Github repository: <a href="https://github.com/savelee/ext-workspace-demo/blob/master/app1/.sencha/app/js-impl.xml" target="_blank" rel="noopener">https://github.com/savelee/ext-workspace-demo/blob/master/app1/.sencha/app/js-impl.xml</a></li></ul><p>In this example, I have 2 generated Sencha apps. <strong>MyApp1</strong> and <strong>MyApp2</strong>. Both contain a custom build file, to make sure the framework will be filtered out of the final build. ##Build properties So where is this <em>enable.split.mode</em> setting coming from? It’s a property file, and the hidden <strong>.sencha</strong> folder, has many properties files. You can find them all in: <strong>default.properties</strong>. To fine-tune your build, you could open <strong>production.properties</strong>, and add the props you like, for example:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enable.split.mode=true</span><br><span class="line">build.out.framework.path=$&#123;build.out.base.path&#125;/$&#123;app.output.framework.path&#125;</span><br><span class="line">app.output.framework=framework.js</span><br><span class="line">app.output.framework.path=$&#123;app.output.framework&#125;</span><br><span class="line">app.output.framework.enable=false</span><br></pre></td></tr></table></figure><p>Ideally you shouldn’t edit the <strong>.properties</strong> files, these are located in the hidden sencha folder, so this means they will be overwritten when you update Sencha Cmd. Additionally, I don’t recommend, checking <strong>.sencha</strong> and framework folders in source control systems such like Git. You don’t want to get merge errors, when other team members have newer versions of software, running on their machines. So to make these changes, to make sure that the sencha build process, splits the build, you can make changes in the <strong>app.json</strong> file of your app:</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"output": &#123;</span><br><span class="line">..</span><br><span class="line">        "framework": &#123;</span><br><span class="line">          "path": "$&#123;workspace.build.dir&#125;/$&#123;build.environment&#125;/framework.js",</span><br><span class="line">          "enable": true</span><br><span class="line">        &#125;,</span><br><span class="line">..</span><br></pre></td></tr></table></figure><p>Move the framework.js outside the app build folder Now that we know how to split builds, or you might want to move assets / scripts around. By default it will include <strong>framework.js</strong> and <strong>app.js</strong> in the same application folder but this will be a file, which needs to be located on a central place. Luckily with Ext JS, you are able to move around files very easily. Many things are configurable. In the <strong>app.json</strong> file, there will be an output block. In this block, you can rename the files, change the extension from the index page. (for example, in case you want to change it to a jsp or php file…), and you are also able to change the base path. Once the base path is changed, you probably will need to change all the other paths as well. Have a look into the <strong>app.json</strong> file that I wrote, or the snippets below: <a href="https://github.com/savelee/ext-workspace-demo/blob/master/app1/app.json" target="_blank" rel="noopener">https://github.com/savelee/ext-workspace-demo/blob/master/app1/app.json</a> The output block:</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">"output": &#123;</span><br><span class="line">        "base": "$&#123;workspace.build.dir&#125;/$&#123;build.environment&#125;/",</span><br><span class="line">        "page": "$&#123;app.name&#125;/index.html", //you can change this to index.jsp</span><br><span class="line">        "manifest": "$&#123;app.name&#125;/$&#123;build.id&#125;.json",</span><br><span class="line">        "js": "$&#123;app.name&#125;/$&#123;build.id&#125;/app.js",</span><br><span class="line">        "framework": &#123;</span><br><span class="line">          "path": "framework.js", //this will be the shared sencha framework stuff</span><br><span class="line">          "enable": true</span><br><span class="line">        &#125;,</span><br><span class="line">        "resources": &#123;</span><br><span class="line">            "path": "$&#123;app.name&#125;/$&#123;build.id&#125;/resources",</span><br><span class="line">            "shared": "resources"</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br></pre></td></tr></table></figure><p>The archivePath, to move the archives folder: <code>&quot;archivePath&quot;: &quot;${app.name}/archive/${build.id}&quot;,</code> The appCache block, to move the <strong>app.cache</strong> file. Note, it’s also located in the production block.</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"appCache": &#123;</span><br><span class="line">            "path": "$&#123;app.name&#125;/app.cache",</span><br><span class="line">            "enable": false</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>The cache block, to move the delta folders:</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"cache": &#123;</span><br><span class="line">        "enable": false,</span><br><span class="line">        "deltas": "$&#123;app.name&#125;/$&#123;build.id&#125;/deltas"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>Versioning Systems I mentioned it before, there are a couple of scripts, you ideally don’t want to check into your source control. For Git, you can write a gitignore file, which blocks checking in the below files. I’m sure, other versioning systems, can do the same. <a href="https://gist.github.com/savelee/d76bfd972531ab96f6a0" target="_blank" rel="noopener">https://gist.github.com/savelee/d76bfd972531ab96f6a0</a> There are some handy links, I like to share with you:</p><ul><li><a href="http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_compiler_reference.html" target="_blank" rel="noopener">http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_compiler_reference.html</a></li><li><a href="http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_advanced.html" target="_blank" rel="noopener">http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_advanced.html</a></li></ul><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure"
+                                                                                      class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Advanced Sencha Cmd:
+              Dealing with a multi Ext JS app infrastructure</h1>Posted on <a
+                                                                                            href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2016-02-21T17:06:24.000Z"
+                                                                                              itemprop="datePublished">Feb
+                21st 2016</time> <time class="hidden" datetime="2018-11-25"
+                                                                                              itemprop="dateModified">Nov
+                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Sencha-CMD/">Sencha
+                CMD</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>This guide will describe how to deal with an infrastructure, that
+            contains multiple Ext JS apps. I will discuss:</p>
+          <ul>
+            <li>Local workspaces</li>
+            <li>How to split builds</li>
+            <li>How to modify file paths and output settings</li>
+          </ul><a id="more"></a>
+          <h2 id="About-Workspaces"><a href="#About-Workspaces" class="headerlink"
+                                                                                            title="About Workspaces"></a>About
+            Workspaces</h2>
+          <p>To support these, Sencha Cmd defines the concept of a “Workspace”.
+            A Workspace is simply a folder that ultimately contains one or more
+            apps (pages), frameworks, packages and other shared code or files.
+            The location of the Workspace root folder should be chosen to
+            facilitate these needs as well as your source control requirements.
+            Any generated applications/pages created in sub-folders of the
+            Workspace folder regardless of their depth are considered to be
+            members of the Workspace. Though not a requirement, it is typically
+            the case that the Workspace folder is the root folder in a source
+            control repository. To create a workspace, you will need to have a
+            downloaded copy of the Ext JS framework on your hard disk, also you
+            will need to have Sencha Cmd installed. On the command-line
+            navigate to the downloaded Ext JS sdk folder. From here, enter the
+            following command: <code>sencha generate workspace [path to
+              workspace[</code> This will generate the following folder
+            structure:</p>
+          <figure class="highlight plain">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">workspace.json   # The JSON descriptor for the workspace.</span><br><span class="line">ext		     # A copy of the Ext JS sdk, examples/docs are stripped out</span><br><span class="line">packages	     # Empty folder, which will contain shared code / themes</span><br><span class="line">.sencha/                # Sencha-specific files (e.g. configuration)</span><br><span class="line">    workspace/          # Workspace-specific content (see below)</span><br><span class="line">        sencha.cfg       # Configuration file for Sencha Cmd</span><br><span class="line">        plugin.xml        # Plugin for Sencha Cmd</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Within this workspace you can generate Ext JS apps, from the <em>ext</em>
+            folder: <code>cd ext</code> <code>sencha generate app MyApp
+              [folder-name[</code> All applications within the workspace, can
+            share the same Sencha ext folder, code packages (such as custom
+            components, themes or locals) can be shared across both apps and
+            also applications can find each other in the workspace. (for
+            example, in case you want to extend from apps.) For more
+            information about workspaces see:</p>
+          <ul>
+            <li><a href="http://docs.sencha.com/cmd/6.x/workspaces.html" target="_blank"
+                                                                                              rel="noopener">http://docs.sencha.com/cmd/6.x/workspaces.html</a></li>
+            <li><a href="http://docs.sencha.com/cmd/6.x/extjs/cmd_app.html"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://docs.sencha.com/cmd/6.x/extjs/cmd_app.html</a></li>
+          </ul>
+          <h2 id="Splitting-builds"><a href="#Splitting-builds" class="headerlink"
+                                                                                            title="Splitting builds"></a>Splitting
+            builds</h2>
+          <p>By default, a workspace only matters on your development machine.
+            Once you make a build: <code>sencha app build</code> Sencha will
+            copy all the used framework classes and all your self written
+            Sencha classes to a build folder. For production, all scripts will
+            be minified. Also the Sass themes will be compiled to production
+            ready css, and copied together with the resources. This means, by
+            default, all shared frameworks and code packages, will be
+            duplicated in the production build, as they can run as
+            stand-alones. For most users, this behavior is exactly what they
+            want. However, there are reasons, why people want to “split” their
+            builds, and host code packages or frameworks separated from their
+            app code. Examples of such reasons are:</p>
+          <ul>
+            <li>You are creating your own application framework. You are
+              dynamically generating views, or maybe you are hosting the
+              framework within a portal, expecting your code base will grow
+              over time.</li>
+            <li>You are building a large application, with separated areas,
+              such as an application, and an admin panel. Each of these areas,
+              could be treated as an app itself. Which contains many views,
+              controllers and models etc. It might be that you have different
+              user groups visiting these apps. Why deliver them code, which
+              they don’t need?</li>
+            <li>Your application became huge, and you want to split your
+              scripts in smaller chunks. For the last reason, there’s a good
+              tutorial online: <a href="https://www.sencha.com/blog/blazingly-fast-load-times-for-apps-built-with-ext-js-and-sencha-touch/"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">https://www.sencha.com/blog/blazingly-fast-load-times-for-apps-built-with-ext-js-and-sencha-touch/</a></li>
+          </ul>
+          <p>Let’s dive into this topic, about splitting builds. Assuming you
+            want to exclude the Sencha framework classes from your own app
+            code. In every sencha application folder, there’s a hidden <strong>.sencha</strong>
+            folder. This hidden folder contains lots of build scripts, settings
+            and metadata used by Sencha Cmd. One of those files is: <strong>js-impl.xml</strong>,
+            an Apache Ant build script, which contains an <strong>compile-js</strong>
+            block, which takes care of filtering out all the used framework
+            classes, and all your own JavaScript classes, to create a
+            (minified) build: <a href="https://gist.github.com/savelee/b854dba3217ed5fb0252"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://gist.github.com/savelee/b854dba3217ed5fb0252</a>
+            It checks if, setting: <strong>enable.split.mode</strong> is set to
+            true, and if so, it will split your framework with a minified,
+            concatenated framework file &amp; a minified, concatenated <strong>app.js</strong>
+            file, which contains your own classes. Note, by default this
+            setting is false. Unfortunately, the code in the first block,
+            doesn’t really work in Ext JS 6. But you can change it to something
+            like below, to make it working again. I’ve been playing around with
+            this: <a href="https://gist.github.com/savelee/4c2fdd2bda303bc03704"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://gist.github.com/savelee/4c2fdd2bda303bc03704</a>
+            *NOTE: I will need to test this further, but this code will need
+            some more iterations though, I have the idea, you can union more,
+            by tagging the `Ext` namespace. Also, saving this script in <strong>js-impl.xml</strong>,
+            is not a best practice. When you reinstall Sencha Cmd, and upgrade
+            your app, you will loose everything that’s inside the hidden
+            <strong>.sencha</strong> folder. Instead you want to move this
+            script out and leave it a build xml file within your project.</p>
+          <ul>
+            <li>You can find a working example in my Github repository: <a href="https://github.com/savelee/ext-workspace-demo/blob/master/app1/.sencha/app/js-impl.xml"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">https://github.com/savelee/ext-workspace-demo/blob/master/app1/.sencha/app/js-impl.xml</a></li>
+          </ul>
+          <p>In this example, I have 2 generated Sencha apps. <strong>MyApp1</strong>
+            and <strong>MyApp2</strong>. Both contain a custom build file, to
+            make sure the framework will be filtered out of the final build.
+            ##Build properties So where is this <em>enable.split.mode</em>
+            setting coming from? It’s a property file, and the hidden <strong>.sencha</strong>
+            folder, has many properties files. You can find them all in:
+            <strong>default.properties</strong>. To fine-tune your build, you
+            could open <strong>production.properties</strong>, and add the
+            props you like, for example:</p>
+          <figure class="highlight plain">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">enable.split.mode=true</span><br><span class="line">build.out.framework.path=$&#123;build.out.base.path&#125;/$&#123;app.output.framework.path&#125;</span><br><span class="line">app.output.framework=framework.js</span><br><span class="line">app.output.framework.path=$&#123;app.output.framework&#125;</span><br><span class="line">app.output.framework.enable=false</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Ideally you shouldn’t edit the <strong>.properties</strong> files,
+            these are located in the hidden sencha folder, so this means they
+            will be overwritten when you update Sencha Cmd. Additionally, I
+            don’t recommend, checking <strong>.sencha</strong> and framework
+            folders in source control systems such like Git. You don’t want to
+            get merge errors, when other team members have newer versions of
+            software, running on their machines. So to make these changes, to
+            make sure that the sencha build process, splits the build, you can
+            make changes in the <strong>app.json</strong> file of your app:</p>
+          <figure class="highlight">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">"output": &#123;</span><br><span class="line">..</span><br><span class="line">        "framework": &#123;</span><br><span class="line">          "path": "$&#123;workspace.build.dir&#125;/$&#123;build.environment&#125;/framework.js",</span><br><span class="line">          "enable": true</span><br><span class="line">        &#125;,</span><br><span class="line">..</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Move the framework.js outside the app build folder Now that we
+            know how to split builds, or you might want to move assets /
+            scripts around. By default it will include <strong>framework.js</strong>
+            and <strong>app.js</strong> in the same application folder but this
+            will be a file, which needs to be located on a central place.
+            Luckily with Ext JS, you are able to move around files very easily.
+            Many things are configurable. In the <strong>app.json</strong>
+            file, there will be an output block. In this block, you can rename
+            the files, change the extension from the index page. (for example,
+            in case you want to change it to a jsp or php file…), and you are
+            also able to change the base path. Once the base path is changed,
+            you probably will need to change all the other paths as well. Have
+            a look into the <strong>app.json</strong> file that I wrote, or the
+            snippets below: <a href="https://github.com/savelee/ext-workspace-demo/blob/master/app1/app.json"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://github.com/savelee/ext-workspace-demo/blob/master/app1/app.json</a>
+            The output block:</p>
+          <figure class="highlight">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">"output": &#123;</span><br><span class="line">        "base": "$&#123;workspace.build.dir&#125;/$&#123;build.environment&#125;/",</span><br><span class="line">        "page": "$&#123;app.name&#125;/index.html", //you can change this to index.jsp</span><br><span class="line">        "manifest": "$&#123;app.name&#125;/$&#123;build.id&#125;.json",</span><br><span class="line">        "js": "$&#123;app.name&#125;/$&#123;build.id&#125;/app.js",</span><br><span class="line">        "framework": &#123;</span><br><span class="line">          "path": "framework.js", //this will be the shared sencha framework stuff</span><br><span class="line">          "enable": true</span><br><span class="line">        &#125;,</span><br><span class="line">        "resources": &#123;</span><br><span class="line">            "path": "$&#123;app.name&#125;/$&#123;build.id&#125;/resources",</span><br><span class="line">            "shared": "resources"</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The archivePath, to move the archives folder: <code>&quot;archivePath&quot;:
+              &quot;${app.name}/archive/${build.id}&quot;,</code> The appCache
+            block, to move the <strong>app.cache</strong> file. Note, it’s also
+            located in the production block.</p>
+          <figure class="highlight">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">"appCache": &#123;</span><br><span class="line">            "path": "$&#123;app.name&#125;/app.cache",</span><br><span class="line">            "enable": false</span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The cache block, to move the delta folders:</p>
+          <figure class="highlight">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">"cache": &#123;</span><br><span class="line">        "enable": false,</span><br><span class="line">        "deltas": "$&#123;app.name&#125;/$&#123;build.id&#125;/deltas"</span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Versioning Systems I mentioned it before, there are a couple of
+            scripts, you ideally don’t want to check into your source control.
+            For Git, you can write a gitignore file, which blocks checking in
+            the below files. I’m sure, other versioning systems, can do the
+            same. <a href="https://gist.github.com/savelee/d76bfd972531ab96f6a0"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://gist.github.com/savelee/d76bfd972531ab96f6a0</a>
+            There are some handy links, I like to share with you:</p>
+          <ul>
+            <li><a href="http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_compiler_reference.html"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_compiler_reference.html</a></li>
+            <li><a href="http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_advanced.html"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://docs.sencha.com/cmd/6.x/advanced_cmd/cmd_advanced.html</a></li>
+          </ul>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure",
@@ -8,17 +417,80 @@
               "datePublished": "2016-02-21",
               "dateCreated": "2016-02-21",
               "dateModified": "2016-02-21",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps.",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. This guide will describe how to deal with an infrastructure, that contains multiple Ext JS apps.",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Apache-Ant/">Apache Ant</a><a class="badge badge-primary tag-link" href="/tags/Ext-JS/">Ext JS</a><a class="badge badge-primary tag-link" href="/tags/Sencha/">Sencha</a><a class="badge badge-primary tag-link" href="/tags/Sencha-CMD/">Sencha CMD</a><a class="badge badge-primary tag-link" href="/tags/build-properties/">build properties</a><a class="badge badge-primary tag-link" href="/tags/build-scripts/">build scripts</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure - https://devtricks-45484.firebaseapp.com/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Robotics/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Apache-Ant/">Apache
+              Ant</a><a class="badge badge-primary tag-link" href="/tags/Ext-JS/">Ext
+              JS</a><a class="badge badge-primary tag-link" href="/tags/Sencha/">Sencha</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Sencha-CMD/">Sencha
+              CMD</a><a class="badge badge-primary tag-link" href="/tags/build-properties/">build
+              properties</a><a class="badge badge-primary tag-link" href="/tags/build-scripts/">build
+              scripts</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/"
+                                                                                                id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Robotics/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +514,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +569,242 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/create-dynamic-sencha-models-from-your-server-side/">Create dynamic Sencha models from your server-side</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/">Working With Sencha App Templates: Boilerplate Ext JS 6 code.</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-2/">Tutorial: Full-stack JavaScript for the Enterprise. Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (2)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-4/">Tutorial: Full-stack JavaScript for the Enterprise. Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (4)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/">Advanced Cmd: How to integrate Ext JS with Maven</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-6/">Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (6)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/">Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (8)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-7/">Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (7)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-3/">Tutorial: Full-stack JavaScript for the Enterprise. Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (3)</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/asynchronous-javascript-promises/">Asynchronous
+                    JavaScript: Promises</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/">Working
+                    With Sencha App Templates: Boilerplate Ext JS 6 code.</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 1)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 3)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-5/">Tutorial:
+                    Full-stack JavaScript for the Enterprise. Getting started
+                    with: Ext JS, Node.js, Express, MongoDB and Docker. (5)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-4/">Tutorial:
+                    Full-stack JavaScript for the Enterprise. Getting started
+                    with: Ext JS, Node.js, Express, MongoDB and Docker. (4)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha/goodbye-sencha-hello-google/">Goodbye
+                    Sencha, Hello Google</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-3/">Tutorial:
+                    Full-stack JavaScript for the Enterprise. Getting started
+                    with: Ext JS, Node.js, Express, MongoDB and Docker. (3)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-7/">Tutorial:
+                    Full-stack JavaScript for the Enterprise Getting started
+                    with: Ext JS, Node.js, Express, MongoDB and Docker. (7)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/create-dynamic-sencha-models-from-your-server-side/">Create
+                    dynamic Sencha models from your server-side</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

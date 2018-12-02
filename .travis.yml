@@ -13,6 +13,7 @@ install:
   - npm install
 script:
   - hexo clean
+  - workbox generateSW
   - hexo generate
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN

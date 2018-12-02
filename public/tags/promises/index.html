@@ -1,6 +1,181 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">index.tag: promises | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS, Node.js, JavaScript, Dialogflow, Chatbots, Machine Learning, GCP, Python, Cloud, G"><meta name="keywords" content="Googler, Dialogflow, JavaScript, Ext JS, Sencha Touch, Cordova, Chatbot, Machine Learning, Cloud, GCP, Ext JS engineer, Google Sales Engineer, Google Customer Engineer, Google Cloud, Sencha Sales Engineer, Google Cloud Customer Engineer, Cloud Architect, Devrel, Developer Relations, Chatbot expert, Actions on Google, Dialogflow expert, Google Cloud Sales, Sencha Trainer, Sencha Trainings, JavaScript Developer, JavaScript Programmer, Node JS Developer, Client-side code, Lead Developer, JavaScript Amsterdam, JavaScript Evangelist, Google Cloud, GCP, Google Assistant, Dialogflow Enterprise, Chatbots, Bots, Chat agents, HTML5 &amp; CSS3, Sencha Touch, Mobile Apps, Enterprise Apps"><meta property="og:type" content="website"><meta property="og:title" content="Google Cloud DevTricks"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/tags/promises/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS, Node.js, JavaScript, Dialogflow, Chatbots, Machine Learning, GCP, Python, Cloud, G"><meta property="og:locale" content="en"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Google Cloud DevTricks"><meta name="twitter:description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS, Node.js, JavaScript, Dialogflow, Chatbots, Machine Learning, GCP, Python, Cloud, G"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">index.tag: promises | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS Node.js JavaScript Dialogflow Chatbots Machine Learning GCP Python Cloud GSuite and">
+  <meta name="keywords" content="Googler Dialogflow JavaScript Ext JS Sencha Touch Cordova Chatbot Machine Learning Cloud GCP Ext JS engineer Google Sales Engineer Google Customer Engineer Google Cloud Sencha Sales Engineer Google Cloud Customer Engineer Cloud Architect Devrel Developer Relations Chatbot expert Actions on Google Dialogflow expert Google Cloud Sales Sencha Trainer Sencha Trainings JavaScript Developer JavaScript Programmer Node JS Developer Client-side code Lead Developer JavaScript Amsterdam JavaScript Evangelist Google Cloud GCP Google Assistant Dialogflow Enterprise Chatbots Bots Chat agents HTML5 &amp; CSS3 Sencha Touch Mobile Apps Enterprise Apps">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Google Cloud DevTricks">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/tags/promises/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS Node.js JavaScript Dialogflow Chatbots Machine Learning GCP Python Cloud GSuite and">
+  <meta property="og:locale" content="en">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Google Cloud DevTricks">
+  <meta name="twitter:description" content="Lee Boonstra is sales engineer @ Google. Book author @ O&apos;Reilly. JavaScript developer &amp;amp; evangelist. Loves Ext JS Node.js JavaScript Dialogflow Chatbots Machine Learning GCP Python Cloud GSuite and">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav><div class="container-fluid"><div class="row"><div class="jumbotron"><span>Hi, my name is <b>Lee</b>.</span><br><span>I'm a writer, an engineer, a trainer and a public speaker.</span><br><span>I create fixes & I fix headaches...</span><br><span>Welcome to my <b>dev blog</b>.</span><ul class="social"><li><a href="http://github.com/savelee/" target="_blank" class="icon-github"><span>Github</span></a></li><li><a href="http://www.twitter.com/ladysign" target="_blank" class="icon-twitter"><span>Twitter</span></a></li><li><a href="http://nl.linkedin.com/in/leeboonstra/" target="_blank" class="icon-linkedin"><span>LinkedIn</span></a></li><li><a id="nav-rss-link" class="icon-rss" href="/atom.xml" title="rss_feed"></a></li></ul></div></div></div><aside id="sidebarfront" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="jumbotron"><span>Hi my name is <b>Lee</b>.</span><br><span>I'm
+              a writer an engineer a trainer and a public speaker.</span><br><span>I
+              create fixes & I fix headaches...</span><br><span>Welcome to my
+              <b>dev blog</b>.</span>
+            <ul class="social">
+              <li><a href="http://github.com/savelee/" target="_blank" class="icon-github"><span>Github</span></a></li>
+              <li><a href="http://www.twitter.com/ladysign" target="_blank"
+                                                                                                class="icon-twitter"><span>Twitter</span></a></li>
+              <li><a href="http://nl.linkedin.com/in/leeboonstra/" target="_blank"
+                                                                                                class="icon-linkedin"><span>LinkedIn</span></a></li>
+              <li><a id="nav-rss-link" class="icon-rss" href="/atom.xml" title="rss_feed"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <aside id="sidebarfront" class="sidebar">
+        <div class="profile">
+          <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                src="/images/profile_small.jpg"
+                                                                                                alt="Lee Boonstra"></a></span>
+            <h2><a href="https://plus.google.com/117712452932146916020/" rel="author me"
+                                                                                              target="_blank">Lee
+                Boonstra</a></h2>
+            <div>
+              <p><a href="https://plus.google.com/117712452932146916020/" rel="author me"
+                                                                                                target="_blank">Lee
+                  Boonstra</a> is a customer engineer at Google, at the Google
+                Cloud team where she assist the sales team with technical
+                knowledge for the financial industry.</p>
+              <p>Lee lives in Amsterdam and has experience in application
+                development. She spends her spare time developing web and
+                mobile apps. Before Google, she worked for Sencha, where she
+                traveled all the world as sales engineer and technical trainer.
+                Further more, she speaks regularly at seminars and conferences
+                and writes blogposts and articles for various magazines and
+                websites. Also, she wrote a book for O'Reilly: Hands-on Sencha
+                Touch 2.</p>
+            </div>
+            <script type="application/ld+json">
+              {
                 "@context": "http://schema.org",
                 "@type": "Person",
                 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -24,7 +199,31 @@
                   "http://twitter.com/ladysign",
                   "https://plus.google.com/117712452932146916020/"
                 ]
-              }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+              }
+
+            </script>
+          </section>
+          <section>
+            <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                            class="book"><img
+                                                                                              height="100"
+                                                                                              src="/images/book.gif"
+                                                                                              class="thumb"
+                                                                                              alt="My book."></a>
+            <p>Build snappy web apps for mobile devices with Sencha Touch 2,
+              the user interface JavaScript framework built specifically for
+              the mobile Web.</p>
+            <p>With this book, you’ll learn how to build a complete HTML5-based
+              multi-device app...</p>
+            <ul class="books">
+              <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                class="btn btn-default"><b>Buy
+                    my book!</b></a></li>
+              <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                class="btn btn-default"><b>Amazon</b></a></li>
+            </ul>
+            <script type="application/ld+json">
+              {
                 "@context": "http://schema.org/",
                 "@type": "Review",
                 "itemReviewed": {
@@ -55,7 +254,102 @@
                 "datePublished": "July 31, 2014",
                 "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                 "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-              }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-asynchronous-javascript-promises" class="article row article-type-post row frontarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><div class="col col-sm-9 article-inner"><header class="article-header"><h2 class="h1" itemprop="headline"><a class="article-title" href="/Ext-JS/asynchronous-javascript-promises/">Asynchronous JavaScript: Promises</a></h2>Posted on <a href="/Ext-JS/asynchronous-javascript-promises/" class="article-date"><time datetime="2016-04-01T08:14:56.000Z" itemprop="datePublished">Apr 1st 2016</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Ext-JS/">Ext JS</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>JavaScript is single threaded, causing code to execute from top to bottom, so two bits of code cannot run at the same time. For example, you might download a JSON file from an (external) server and you’d have to wait until you retrieve that file. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.</p><p class="article-more-link"><a role="button" class="btn btn-primary" href="/Ext-JS/asynchronous-javascript-promises/">Read More</a></p><script type="application/ld+json">{
+              }
+
+            </script>
+          </section>
+        </div>
+        <div class="sidebar-module categories">
+          <h4>Categories</h4>
+          <ul class="sidebar-module-list">
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/App-Cache/">App
+                Cache</a><span class="sidebar-module-list-count">1</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Bots/">Bots</a><span
+                                                                                              class="sidebar-module-list-count">3</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Containers/">Containers</a><span
+                                                                                              class="sidebar-module-list-count">8</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Cordova/">Cordova</a><span
+                                                                                              class="sidebar-module-list-count">2</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Django/">Django</a><span
+                                                                                              class="sidebar-module-list-count">2</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Ext-JS/">Ext
+                JS</a><span class="sidebar-module-list-count">8</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Google-Cloud-Platform/">Google
+                Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Machine-Learning/">Machine
+                Learning</a><span class="sidebar-module-list-count">1</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Robotics/">Robotics</a><span
+                                                                                              class="sidebar-module-list-count">1</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Sencha/">Sencha</a><span
+                                                                                              class="sidebar-module-list-count">1</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Sencha-Architect/">Sencha
+                Architect</a><span class="sidebar-module-list-count">2</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Sencha-CMD/">Sencha
+                CMD</a><span class="sidebar-module-list-count">4</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Sencha-Touch/">Sencha
+                Touch</a><span class="sidebar-module-list-count">3</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Theming/">Theming</a><span
+                                                                                              class="sidebar-module-list-count">2</span></li>
+            <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                              href="/categories/Videos/">Videos</a><span
+                                                                                              class="sidebar-module-list-count">13</span></li>
+          </ul>
+        </div>
+      </aside>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-asynchronous-javascript-promises" class="article row article-type-post row frontarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <div class="col col-sm-9 article-inner">
+          <header class="article-header">
+            <h2 class="h1" itemprop="headline"><a class="article-title" href="/Ext-JS/asynchronous-javascript-promises/">Asynchronous
+                JavaScript: Promises</a></h2>Posted on <a href="/Ext-JS/asynchronous-javascript-promises/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2016-04-01T08:14:56.000Z"
+                                                                                              itemprop="datePublished">Apr
+                1st 2016</time> <time class="hidden" datetime="2018-11-25"
+                                                                                              itemprop="dateModified">Nov
+                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Ext-JS/">Ext
+                JS</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>JavaScript is single threaded, causing code to execute from top to
+            bottom, so two bits of code cannot run at the same time. For
+            example, you might download a JSON file from an (external) server
+            and you’d have to wait until you retrieve that file. Instead of
+            blocking the thread, there are ways you can streamline this code
+            execution by using asynchronous JavaScript.</p>
+          <p class="article-more-link"><a role="button" class="btn btn-primary"
+                                                                                            href="/Ext-JS/asynchronous-javascript-promises/">Read
+              More</a></p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Asynchronous JavaScript: Promises",
@@ -63,14 +357,158 @@
               "datePublished": "2016-04-01",
               "dateCreated": "2016-04-01",
               "dateModified": "2016-04-01",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Ext-JS/asynchronous-javascript-promises/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/ExtJS6/">ExtJS6</a><a class="badge badge-primary tag-link" href="/tags/JavaScript/">JavaScript</a><a class="badge badge-primary tag-link" href="/tags/Sencha/">Sencha</a><a class="badge badge-primary tag-link" href="/tags/async/">async</a><a class="badge badge-primary tag-link" href="/tags/ecmascript6/">ecmascript6</a><a class="badge badge-primary tag-link" href="/tags/es6/">es6</a><a class="badge badge-primary tag-link" href="/tags/promises/">promises</a></footer></div><div class="col col-sm-3"></div></article></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/ExtJS6/">ExtJS6</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/JavaScript/">JavaScript</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Sencha/">Sencha</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/async/">async</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/ecmascript6/">ecmascript6</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/es6/">es6</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/promises/">promises</a></footer>
+        </div>
+        <div class="col col-sm-3"></div>
+      </article>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

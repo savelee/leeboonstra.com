@@ -1,8 +1,17 @@
 <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('serviceworker.js').then(function() {
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
         console.log('ServiceWorker has been registered!');
       }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
     }
 </script> 
 
@@ -29,6 +38,6 @@
     return t;
   }(document, "script", "twitter-wjs"));</script>
 
-<script type="text/javascript">                
+<script>                
   $.disqusLoader( '.disqus', { scriptUrl: '//leeboonstra-com.disqus.com/embed.js' });
 </script>

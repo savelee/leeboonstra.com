@@ -1,6 +1,620 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3) | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta name="keywords" content="Cordova,Phonegap,Sencha CMD,Sencha Touch,Build native app,hybrid app,Sencha Ant,Sencha Build"><meta property="og:type" content="article"><meta property="og:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta property="og:locale" content="en"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1-build.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-2-files.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-3-styling2.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-4.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-5.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-6.png"><meta property="og:updated_time" content="2018-11-25T12:06:04.961Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)"><meta name="twitter:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd"><meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1-build.png"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Getting Started with Sencha Touch 2: Build a Weather
+    Utility App (Part 3) | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta name="keywords" content="Cordova,Phonegap,Sencha CMD,Sencha Touch,Build native app,hybrid app,Sencha Ant,Sencha Build">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta property="og:locale" content="en">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1-build.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-2-files.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-3-styling2.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-4.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-5.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-6.png">
+  <meta property="og:updated_time" content="2018-11-25T12:06:04.961Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)">
+  <meta name="twitter:description" content="Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd">
+  <meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/weather-app-1-build.png">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3) via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)</h1>Posted on <a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/" class="article-date"><time datetime="2014-04-21T08:52:47.000Z" itemprop="datePublished">Apr 21st 2014</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Sencha-Touch/">Sencha Touch</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>In this three-part Sencha Touch tutorial, you will build the <em>Do I need my Umbrella?</em> app, a simple utility app that loads weather information from a web service — worldweatheronline.com. Based on weather codes, this app can predict if you need your umbrella or not. <a id="more"></a></p><p>In this last part of the tutorial, we’ll talk about builds. You’ll use Sencha Cmd as well as PhoneGap/Cordova.</p><p>For the native app, you’ll use a native API for retrieving the location of the device, and you’ll port your app to a native mobile app with PhoneGap/Cordova for iOS, Android, BlackBerry10 or Windows Phone.</p><p>Note: If you want to test your app on an iOS, BlackBerry or Windows Phone device, you will need authorization keys and developer accounts. Also, if you use Cordova, you can’t build an iOS app in the Windows operating system, nor can you build a Windows app from within Mac OS X.</p><p>For reference, you can view <a href="http://www.leeboonstra.com/developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2" target="_blank" rel="noopener">Part 2</a> of this tutorial.</p><p>You can download the solution code from Part 2 of the tutorial — <a href="https://training.sencha.com/sencha-blog/tutorial-dec-2013-lee/goodies-tutorial/fullsolution-download.zip" target="_blank" rel="noopener">full solution</a>.</p><p><strong>This tutorial requires:</strong></p><ul><li>Sencha Touch 2.3 or higher</li><li>Sencha Cmd 4.x</li><li>Compass and Sass on top of Ruby</li><li>A modern browser</li><li>An editor</li><li><a href="http://phonegap.com/install/" target="_blank" rel="noopener">PhoneGap 3.3</a> / <a href="http://cordova.apache.org/" target="_blank" rel="noopener">Cordova 3.3</a></li><li><a href="http://www.nodejs.org" target="_blank" rel="noopener">Node.js v.0.10.23</a></li></ul><p>Optionally, you can install the following software to build apps locally:</p><ul><li>XCode 5 (for building iOS app locally, for Mac OS X users only)</li><li>Android Developer Tools (Revisions 13+, for building Android apps locally)</li><li>Windows 8 Pro with Visual Studio 2012 Pro/Ultimate (for building Windows Phone apps locally, for windows users only)</li><li>Blackberry 10 Native SDK (for building BlackBerry 10 apps locally)</li></ul><h3 id="Creating-a-production-build"><a href="#Creating-a-production-build" class="headerlink" title="Creating a production build"></a>Creating a production build</h3><p>With Sencha Cmd, you can create production and test build packages. The production build package compiles the Sass style sheet to production-ready (minified) CSS. It will also copy over your static images and build your JavaScript (Sencha Touch framework classes plus your own custom classes) into a single minified, concatenated file that’s small enough to easily download or cache the file. The production build will also include a cache manifest file to enable local caching.</p><p>The test package won’t contain this file. In the test build, the JavaScript and CSS files in the test package won’t be minified and therefore will be readable.</p><p><img src="/images/weather-app-1-build.png" alt="Weather App Tutorial"></p><p>Let’s first create a production build of the Weather application. We’re not going to create a native build yet. In case you want to host the Weather App on your own server, you need to copy the production build folder over to your web server.</p><p>On the command-line enter the following command to generate a production build:</p><p><code>sencha app build production</code></p><p>or</p><p><code>sencha app build testing</code></p><p>Review the folder structure. This is the folder structure you can use on your web server, in case you decide to run the mobile application from an online URL.</p><p><img src="/images/weather-app-2-files.png" alt="Weather App Tutorial"></p><p>Perhaps you noticed that the fonts are not copied into the build folder. We could copy this folder manually, or we could modify the build process. Let’s look into these options.</p><p>Sencha Cmd uses Apache Ant for the build processes. You can find all the internally used tasks in the hidden <strong>.sencha</strong> folder.</p><p>If you want to modify the build process yourself, you can open the <strong>build.xml</strong> file in the root of your application folder and add the following Ant task to the end of the file:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"-after-build"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"build"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">depends</span>=<span class="string">"init,-before-build,-build,-after-build"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">description</span>=<span class="string">"Copy over the font/dinmu folder and remove temp files"</span>&gt;</span><span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="tag">&lt;<span class="name">copy</span> <span class="attr">todir</span>=<span class="string">"$&#123;basedir&#125;/resources/css/stylesheets/fonts/dinmu"</span> <span class="attr">overwrite</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fileset</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/resources/sass/stylesheets/fonts/dinmu"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">name</span>=<span class="string">"**/*"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fileset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">copy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">copy</span> <span class="attr">todir</span>=<span class="string">"$&#123;build.dir&#125;/resources/css/stylesheets/fonts/dinmu"</span> <span class="attr">overwrite</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fileset</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/resources/sass/stylesheets/fonts/dinmu"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">name</span>=<span class="string">"**/*"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fileset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">copy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/$&#123;build.dir&#125;"</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Now build your application again:</p><p>sencha app build</p><p>You can test the production build with the following url: <a href="http://localhost/dinmu/production/Dinmu/" target="_blank" rel="noopener">http://localhost/dinmu/production/Dinmu/</a></p><h3 id="Native-Device-APIs"><a href="#Native-Device-APIs" class="headerlink" title="Native Device APIs"></a>Native Device APIs</h3><p>Do you want to run your application as a native app on your device? With tools such as Adobe PhoneGap and Apache Cordova, you can port your app to a hybrid app.</p><p>Once you have a hybrid app, you can use device APIs, such as geolocation. The <a href="http://docs.phonegap.com/en/edge/cordova_geolocation_geolocation.md.html#Geolocation" target="_blank" rel="noopener">geolocation</a> object provides access to location data based on the device’s GPS sensor or inferred from network signals.</p><p>Open the following file with your editor: <strong>app/utils/Functions.js</strong> and inspect line 101:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Ext.device.Geolocation.getCurrentPosition(&#123;</span><br><span class="line">   timeout: <span class="number">5000</span>,</span><br><span class="line">   maximumAge: <span class="number">10000</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> place = position.coords.latitude + <span class="string">","</span> + position.coords.longitude;</span><br><span class="line">      Dinmu.utils.Functions.getWeather(place);</span><br><span class="line">      Ext.Viewport.unmask();</span><br><span class="line">   &#125;,</span><br><span class="line">   failure: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      Ext.Viewport.unmask();</span><br><span class="line">      Ext.Msg.alert(<span class="string">'Timeout'</span>, <span class="string">'Can not retrieve position, please retry.'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>The Sencha Touch class: <code>Ext.device.Geolocation()</code> provides access to the native Geolocation API when running on a device. There are three implementations of this API:</p><ul><li><a href="http://docs.sencha.com/touch/2.3.1/#!/guide/native_packaging-section-step-2%3A-create-a-packaging-configuration-file" target="_blank" rel="noopener">Sencha Mobile Packager</a></li><li><a href="http://docs.phonegap.com/en/1.4.1/phonegap_device_device.md.html" target="_blank" rel="noopener">PhoneGap/Cordova</a></li><li>Browser</li></ul><p>This class will automatically select the correct implementation for the device your application is running on.</p><p>Before we will build the Do I need my umbrella (Dinmu) application, there are two more checks.</p><ul><li>Prefix the request to api.worldweatheronline.com with the http protocol. You can find this request in <strong>app/utils/Functions.js</strong> on line 125.</li><li>Make sure you entered a valid API Key for the worldweatheronline.com web service. You can retrieve an API Key by registering at <a href="http://www.worldweatheronline.com" target="_blank" rel="noopener">http://www.worldweatheronline.com</a></li></ul><p>All set? That’s great. The only thing that’s left is building a native app with PhoneGap/Cordova.</p><p><img src="/images/weather-app-3-styling2.png" alt="Weather App Tutorial"></p><h3 id="Building-a-hybrid-app"><a href="#Building-a-hybrid-app" class="headerlink" title="Building a hybrid app"></a>Building a hybrid app</h3><p>There are three products you can use to create a native app from a Sencha Touch code base: Sencha Mobile Packager, Adobe PhoneGap, and Apache Cordova. All products are supported by the Sencha Device API which allows you to access hardware resources on devices.</p><p>Let me explain the differences between these three solutions:</p><h4 id="Sencha-Mobile-Packager"><a href="#Sencha-Mobile-Packager" class="headerlink" title="Sencha Mobile Packager"></a>Sencha Mobile Packager</h4><p>Uses the <strong>packager.json</strong> to build iOS or Android build packages locally that can be distributed through the Android Marketplace or Apple App Store.</p><h4 id="Adobe-PhoneGap"><a href="#Adobe-PhoneGap" class="headerlink" title="Adobe PhoneGap"></a>Adobe PhoneGap</h4><p>Lets you use the PhoneGap Build cloud service to (remotely) package your apps and distribute them through the Android Marketplace, BlackBerry App World, Windows Phone Store or Apple App Store. It’s an easy solution, and you can test applications on your device by scanning a QR code. You can also build applications locally. It’s a commercial product, and the free version is limited to one private app.</p><h4 id="Apache-Cordova"><a href="#Apache-Cordova" class="headerlink" title="Apache Cordova"></a>Apache Cordova</h4><p>Apache Cordova is a top-level project within the Apache Software Foundation. Cordova is the free, open-source, community-driven version of Adobe PhoneGap. Cordova lets you package apps locally and distribute them through the Android Marketplace, Blackberry App World, Windows Phone Store or Apple App Store.</p><p>Building packages locally via the command-line requires an installation of XCode, Android Developer Tools, BlackBerry 10 SDK or Windows 8 Pro with Visual Studio.</p><p>Building packages via PhoneGap build requires a (free) Adobe (PhoneGap Build) account: <a href="https://build.phonegap.com/apps" target="_blank" rel="noopener">https://build.phonegap.com/apps</a></p><p>Note: We will use PhoneGap Build in this tutorial. If you would rather use Cordova, you can use the same commands as you see in the tutorial, but replace the word <strong><code>phonegap</code></strong> with <strong><code>cordova</code></strong> on the command-line. <img src="/images/weather-app-4.png" alt="Weather App Tutorial"></p><h4 id="Initialize-a-PhoneGap-project"><a href="#Initialize-a-PhoneGap-project" class="headerlink" title="Initialize a PhoneGap project"></a>Initialize a PhoneGap project</h4><p>The first step in building a hybrid app is to issue the following command from your project’s directory to enable it:</p><p>sencha phonegap init<app-id><app-name></app-name></app-id></p><ul><li>The <strong>App ID</strong> follows this pattern: <code>&lt;REVERSED-DOMAIN&gt;.&lt;APP-NAME&gt;</code>.</li><li>Your <strong>application name</strong> should be the same value as the name property that you specified in your app.json file.</li></ul><p>Note: If you want to port to an iOS app, you will need to make sure that the App Id is the same one that you registered in your Apple provisioning portal.</p><p>Here’s the command I used to enable PhoneGap support:</p><p>sencha phonegap init com.sencha.dinmu Dinmu</p><p>Note: Mac OS X users might need to prefix with sudo to get administrative rights.</p><p>This generated the following structure/files:</p><ul><li>PhoneGap folder structure</li><li>phonegap.local.properties</li><li>config.xml</li></ul><h4 id="MyApp-phonegap"><a href="#MyApp-phonegap" class="headerlink" title="MyApp/phonegap"></a>MyApp/phonegap</h4><p><strong>MyApp/phonegap</strong> contains the full PhoneGap file structure. If you used Cordova to initialize a project, the folder will be named <strong>cordova</strong>.</p><p><img src="/images/weather-app-5.png" alt="Weather App Tutorial"></p><h4 id="phonegap-local-properties"><a href="#phonegap-local-properties" class="headerlink" title="phonegap.local.properties"></a>phonegap.local.properties</h4><p>The <strong>phonegap.local.properties</strong> file contains the names of the platforms that you want when building locally. By default, it takes the local installed SDKs, for example:</p><p>phonegap.platforms=ios android blackberry10 wp8</p><p>When you run the phonegap <code>init</code> command, the property file also gives you settings for the Adobe PhoneGap remote packager. When you have a PhoneGap Build account, you can set up these additional settings:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">phonegap.build.remote=true</span><br><span class="line">\# Username for PhoneGap Build</span><br><span class="line">phonegap.build.remote.username=&#123;username&#125;</span><br><span class="line">\# Password for PhoneGap Build</span><br><span class="line">phonegap.build.remote.password=&#123;password&#125;</span><br></pre></td></tr></table></figure><p>When you leave the phonegap.build.remote property as false, you have to have one of the SDKs (XCode, Android Developer Tools, BlackBerry 10 SDK or Windows 8 Pro with Visual Studio) installed on your machine.</p><h4 id="config-xml"><a href="#config-xml" class="headerlink" title="config.xml"></a>config.xml</h4><p>The default Cordova/PhoneGap <strong>config.xml</strong> file contains metadata about your app. Let’s modify this file:</p><p>We will change the app name, app description and author information:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Dinmu<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span></span><br><span class="line">    Do I need my Umbrella today?</span><br><span class="line"><span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span> <span class="attr">email</span>=<span class="string">"myemail@addres.com"</span> <span class="attr">href</span>=<span class="string">"http://www.mydomain.com"</span>&gt;</span></span><br><span class="line">    Your name</span><br><span class="line"><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre></td></tr></table></figure><p>The next step is to enable the Geolocation plugin at startup, to retrieve the location via the device:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"EnableLocation"</span> <span class="attr">value</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">preference</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Disable fullscreen mode, to show the status bar (battery indicator and time):</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"fullscreen"</span> <span class="attr">value</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">preference</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Let’s make sure the application supports connections to external urls. The weather application will connect to <a href="http://www.worldweatheronline.com" target="_blank" rel="noopener">http://www.worldweatheronline.com</a>. Therefore, we need to give access to either this URL or all external URLs. We can use the wildcard to allow all external connections:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">access</span> <span class="attr">origin</span>=<span class="string">"*"</span>&gt;</span><span class="tag">&lt;/<span class="name">access</span>&gt;</span></span><br></pre></td></tr></table></figure><p>The last thing we’ll modify are the paths to the icons and loading images. By default Sencha Touch generated iOS icons and splash images. They can be found in the <strong>MyApp/resources</strong> folder.</p><p>When building apps for iPhones with retina displays (iPhone 5+), it’s important that you provide the correct splash screens with the required screen sizes. If not, your viewport may be resized incorrectly. For this example, we’ll stick to the PhoneGap splash screens. Feel free to replace them with your own splash screens.</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">src</span>=<span class="string">"icon.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"57"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon.png"</span> <span class="attr">width</span>=<span class="string">"57"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"72"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon~ipad.png"</span> <span class="attr">width</span>=<span class="string">"72"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"114"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon@2x.png"</span> <span class="attr">width</span>=<span class="string">"114"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"144"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon~ipad@2x.png"</span> <span class="attr">width</span>=<span class="string">"144"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"480"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-iphone-portrait.png"</span> <span class="attr">width</span>=<span class="string">"320"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"960"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-iphone-portrait-2x.png"</span> <span class="attr">width</span>=<span class="string">"640"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"1024"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-ipad-portrait.png"</span> <span class="attr">width</span>=<span class="string">"768"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"768"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-ipad-landscape.png"</span> <span class="attr">width</span>=<span class="string">"1024"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br></pre></td></tr></table></figure><p>For more information about possible settings in config.xml, check the <a href="http://docs.phonegap.com/en/3.3.0/" target="_blank" rel="noopener">PhoneGap documentation.</a></p><h4 id="Creating-the-native-build-package"><a href="#Creating-the-native-build-package" class="headerlink" title="Creating the native build package"></a>Creating the native build package</h4><p>After initializing your application with PhoneGap or Cordova, it’s time to create a native build. Run the following command from the command-line:</p><p><code>sencha app build -run native</code></p><p>Note: The -run argument makes sure your app will be loaded in an emulator that’s installed on your machine. Again, Mac OS X users might need to prefix with sudo to get administrative rights.</p><p>It will build the applications in the MyApp/cordova or MyApp/phonegap folder:</p><ul><li>platforms/android/bin - Android .apk file</li><li>platforms/ios/build/ - iOS .app file</li><li>platforms/blackberry10/build/simulator - BlackBerry 10 .bar file</li><li>platforms/wp8/Bin/Debug - Windows Phone .xap file</li></ul><h4 id="Testing-a-native-build"><a href="#Testing-a-native-build" class="headerlink" title="Testing a native build"></a>Testing a native build</h4><p>If you’re using PhoneGap Build, testing the application on Android devices will be very easy. Simply scan the QR code or download, drag and drop the <strong>.apk</strong> file on the memory card of your phone.</p><p>For iOS, you will need provisioning and code signing, which assures users that the app is from a known source and the app hasn’t been modified since it was last signed. Windows Phone developers and iOS developers will need a (paid) developer account.</p><p>Once you have an iOS developer account, you’ll need to set up a certificate, an identifier and a provisioning profile. For more information, see the <a href="https://developer.apple.com/" target="_blank" rel="noopener">Apple Developer Tools</a> and Sencha Touch docs on <a href="http://docs.sencha.com/touch/2.3.1/#!/guide/native_provisioning" target="_blank" rel="noopener">Packaging Native iOS Applications</a>.</p><p>When all is set, you can build the application with PhoneGap from the command-line interface:</p><p>sencha app build native</p><p>When you build for iOS, you might run into a build error because you need to code sign the iOS app. With PhoneGap Build, you’ll need to upload the <strong>*.p12 certificate</strong> and the <strong>*.mobileprovisioning mobile provisioning profile</strong>. After you’ve uploaded these two keys, you can unlock the keys and rebuild.</p><p>If you’re building the app locally, (PhoneGap remote=false or with Cordova), you can open: <strong>platforms/ios/Dinmu.xcodeproj</strong> from the <strong>phonegap</strong> or <strong>cordova</strong> folder, and maintain the build settings to code sign the application. Your developer identity should be in the <em>Code signing identity</em> list. If not, you probably need to go through the whole native provisioning process again.</p><p><img src="/images/weather-app-6.png" alt="Weather App Tutorial"></p><p>Make sure your phone is hooked up to your Mac OS X, and build and run in XCode.</p><p>Congratulations, you’ve finished building a Sencha Touch utility app from scratch. If you’ve followed all three tutorials in this series, you’ve generated an application with Sencha Cmd and created all the views, models, stores and controllers for the Do I need my Umbrella? app. You’ve created a custom theme with Sass, and you’ve created a production build to host on a web server or built a hybrid app wtih Adobe PhoneGap/Cordova. With this workflow, you’re ready to build any app you like.</p><p>Did you like this series of tutorials? Join one of the (advanced) Ext JS and Sencha Touch Training courses. Take a look at the <a href="http://www.sencha.com/training/" target="_blank" rel="noopener">open courses</a> located around the world or join an online class or check out my book that I wrote for O’Reilly: <a href="http://shop.oreilly.com/product/0636920030058.do" target="_blank" rel="noopener">Hands-on Sencha Touch 2 by Lee Boonstra</a></p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3"
+                                                                                      class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Getting Started with
+              Sencha Touch 2: Build a Weather Utility App (Part 3)</h1>Posted
+            on <a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2014-04-21T08:52:47.000Z"
+                                                                                              itemprop="datePublished">Apr
+                21st 2014</time> <time class="hidden" datetime="2018-11-25"
+                                                                                              itemprop="dateModified">Nov
+                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Sencha-Touch/">Sencha
+                Touch</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>In this three-part Sencha Touch tutorial, you will build the <em>Do
+              I need my Umbrella?</em> app, a simple utility app that loads
+            weather information from a web service — worldweatheronline.com.
+            Based on weather codes, this app can predict if you need your
+            umbrella or not. <a id="more"></a></p>
+          <p>In this last part of the tutorial, we’ll talk about builds. You’ll
+            use Sencha Cmd as well as PhoneGap/Cordova.</p>
+          <p>For the native app, you’ll use a native API for retrieving the
+            location of the device, and you’ll port your app to a native mobile
+            app with PhoneGap/Cordova for iOS, Android, BlackBerry10 or Windows
+            Phone.</p>
+          <p>Note: If you want to test your app on an iOS, BlackBerry or
+            Windows Phone device, you will need authorization keys and
+            developer accounts. Also, if you use Cordova, you can’t build an
+            iOS app in the Windows operating system, nor can you build a
+            Windows app from within Mac OS X.</p>
+          <p>For reference, you can view <a href="http://www.leeboonstra.com/developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">Part
+              2</a> of this tutorial.</p>
+          <p>You can download the solution code from Part 2 of the tutorial —
+            <a href="https://training.sencha.com/sencha-blog/tutorial-dec-2013-lee/goodies-tutorial/fullsolution-download.zip"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">full
+              solution</a>.</p>
+          <p><strong>This tutorial requires:</strong></p>
+          <ul>
+            <li>Sencha Touch 2.3 or higher</li>
+            <li>Sencha Cmd 4.x</li>
+            <li>Compass and Sass on top of Ruby</li>
+            <li>A modern browser</li>
+            <li>An editor</li>
+            <li><a href="http://phonegap.com/install/" target="_blank" rel="noopener">PhoneGap
+                3.3</a> / <a href="http://cordova.apache.org/" target="_blank"
+                                                                                              rel="noopener">Cordova
+                3.3</a></li>
+            <li><a href="http://www.nodejs.org" target="_blank" rel="noopener">Node.js
+                v.0.10.23</a></li>
+          </ul>
+          <p>Optionally, you can install the following software to build apps
+            locally:</p>
+          <ul>
+            <li>XCode 5 (for building iOS app locally, for Mac OS X users only)</li>
+            <li>Android Developer Tools (Revisions 13+, for building Android
+              apps locally)</li>
+            <li>Windows 8 Pro with Visual Studio 2012 Pro/Ultimate (for
+              building Windows Phone apps locally, for windows users only)</li>
+            <li>Blackberry 10 Native SDK (for building BlackBerry 10 apps
+              locally)</li>
+          </ul>
+          <h3 id="Creating-a-production-build"><a href="#Creating-a-production-build"
+                                                                                            class="headerlink"
+                                                                                            title="Creating a production build"></a>Creating
+            a production build</h3>
+          <p>With Sencha Cmd, you can create production and test build
+            packages. The production build package compiles the Sass style
+            sheet to production-ready (minified) CSS. It will also copy over
+            your static images and build your JavaScript (Sencha Touch
+            framework classes plus your own custom classes) into a single
+            minified, concatenated file that’s small enough to easily download
+            or cache the file. The production build will also include a cache
+            manifest file to enable local caching.</p>
+          <p>The test package won’t contain this file. In the test build, the
+            JavaScript and CSS files in the test package won’t be minified and
+            therefore will be readable.</p>
+          <p><img src="/images/weather-app-1-build.png" alt="Weather App Tutorial"></p>
+          <p>Let’s first create a production build of the Weather application.
+            We’re not going to create a native build yet. In case you want to
+            host the Weather App on your own server, you need to copy the
+            production build folder over to your web server.</p>
+          <p>On the command-line enter the following command to generate a
+            production build:</p>
+          <p><code>sencha app build production</code></p>
+          <p>or</p>
+          <p><code>sencha app build testing</code></p>
+          <p>Review the folder structure. This is the folder structure you can
+            use on your web server, in case you decide to run the mobile
+            application from an online URL.</p>
+          <p><img src="/images/weather-app-2-files.png" alt="Weather App Tutorial"></p>
+          <p>Perhaps you noticed that the fonts are not copied into the build
+            folder. We could copy this folder manually, or we could modify the
+            build process. Let’s look into these options.</p>
+          <p>Sencha Cmd uses Apache Ant for the build processes. You can find
+            all the internally used tasks in the hidden <strong>.sencha</strong>
+            folder.</p>
+          <p>If you want to modify the build process yourself, you can open the
+            <strong>build.xml</strong> file in the root of your application
+            folder and add the following Ant task to the end of the file:</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"-after-build"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"build"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">depends</span>=<span class="string">"init,-before-build,-build,-after-build"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">description</span>=<span class="string">"Copy over the font/dinmu folder and remove temp files"</span>&gt;</span><span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">    <span class="tag">&lt;<span class="name">copy</span> <span class="attr">todir</span>=<span class="string">"$&#123;basedir&#125;/resources/css/stylesheets/fonts/dinmu"</span> <span class="attr">overwrite</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fileset</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/resources/sass/stylesheets/fonts/dinmu"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">name</span>=<span class="string">"**/*"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fileset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">copy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">copy</span> <span class="attr">todir</span>=<span class="string">"$&#123;build.dir&#125;/resources/css/stylesheets/fonts/dinmu"</span> <span class="attr">overwrite</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">fileset</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/resources/sass/stylesheets/fonts/dinmu"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">name</span>=<span class="string">"**/*"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">fileset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">copy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">dir</span>=<span class="string">"$&#123;basedir&#125;/$&#123;build.dir&#125;"</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Now build your application again:</p>
+          <p>sencha app build</p>
+          <p>You can test the production build with the following url: <a href="http://localhost/dinmu/production/Dinmu/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://localhost/dinmu/production/Dinmu/</a></p>
+          <h3 id="Native-Device-APIs"><a href="#Native-Device-APIs" class="headerlink"
+                                                                                            title="Native Device APIs"></a>Native
+            Device APIs</h3>
+          <p>Do you want to run your application as a native app on your
+            device? With tools such as Adobe PhoneGap and Apache Cordova, you
+            can port your app to a hybrid app.</p>
+          <p>Once you have a hybrid app, you can use device APIs, such as
+            geolocation. The <a href="http://docs.phonegap.com/en/edge/cordova_geolocation_geolocation.md.html#Geolocation"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">geolocation</a>
+            object provides access to location data based on the device’s GPS
+            sensor or inferred from network signals.</p>
+          <p>Open the following file with your editor: <strong>app/utils/Functions.js</strong>
+            and inspect line 101:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.device.Geolocation.getCurrentPosition(&#123;</span><br><span class="line">   timeout: <span class="number">5000</span>,</span><br><span class="line">   maximumAge: <span class="number">10000</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params">position</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> place = position.coords.latitude + <span class="string">","</span> + position.coords.longitude;</span><br><span class="line">      Dinmu.utils.Functions.getWeather(place);</span><br><span class="line">      Ext.Viewport.unmask();</span><br><span class="line">   &#125;,</span><br><span class="line">   failure: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      Ext.Viewport.unmask();</span><br><span class="line">      Ext.Msg.alert(<span class="string">'Timeout'</span>, <span class="string">'Can not retrieve position, please retry.'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The Sencha Touch class: <code>Ext.device.Geolocation()</code>
+            provides access to the native Geolocation API when running on a
+            device. There are three implementations of this API:</p>
+          <ul>
+            <li><a href="http://docs.sencha.com/touch/2.3.1/#!/guide/native_packaging-section-step-2%3A-create-a-packaging-configuration-file"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">Sencha
+                Mobile Packager</a></li>
+            <li><a href="http://docs.phonegap.com/en/1.4.1/phonegap_device_device.md.html"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">PhoneGap/Cordova</a></li>
+            <li>Browser</li>
+          </ul>
+          <p>This class will automatically select the correct implementation
+            for the device your application is running on.</p>
+          <p>Before we will build the Do I need my umbrella (Dinmu)
+            application, there are two more checks.</p>
+          <ul>
+            <li>Prefix the request to api.worldweatheronline.com with the http
+              protocol. You can find this request in <strong>app/utils/Functions.js</strong>
+              on line 125.</li>
+            <li>Make sure you entered a valid API Key for the
+              worldweatheronline.com web service. You can retrieve an API Key
+              by registering at <a href="http://www.worldweatheronline.com"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://www.worldweatheronline.com</a></li>
+          </ul>
+          <p>All set? That’s great. The only thing that’s left is building a
+            native app with PhoneGap/Cordova.</p>
+          <p><img src="/images/weather-app-3-styling2.png" alt="Weather App Tutorial"></p>
+          <h3 id="Building-a-hybrid-app"><a href="#Building-a-hybrid-app" class="headerlink"
+                                                                                            title="Building a hybrid app"></a>Building
+            a hybrid app</h3>
+          <p>There are three products you can use to create a native app from a
+            Sencha Touch code base: Sencha Mobile Packager, Adobe PhoneGap, and
+            Apache Cordova. All products are supported by the Sencha Device API
+            which allows you to access hardware resources on devices.</p>
+          <p>Let me explain the differences between these three solutions:</p>
+          <h4 id="Sencha-Mobile-Packager"><a href="#Sencha-Mobile-Packager"
+                                                                                            class="headerlink"
+                                                                                            title="Sencha Mobile Packager"></a>Sencha
+            Mobile Packager</h4>
+          <p>Uses the <strong>packager.json</strong> to build iOS or Android
+            build packages locally that can be distributed through the Android
+            Marketplace or Apple App Store.</p>
+          <h4 id="Adobe-PhoneGap"><a href="#Adobe-PhoneGap" class="headerlink"
+                                                                                            title="Adobe PhoneGap"></a>Adobe
+            PhoneGap</h4>
+          <p>Lets you use the PhoneGap Build cloud service to (remotely)
+            package your apps and distribute them through the Android
+            Marketplace, BlackBerry App World, Windows Phone Store or Apple App
+            Store. It’s an easy solution, and you can test applications on your
+            device by scanning a QR code. You can also build applications
+            locally. It’s a commercial product, and the free version is limited
+            to one private app.</p>
+          <h4 id="Apache-Cordova"><a href="#Apache-Cordova" class="headerlink"
+                                                                                            title="Apache Cordova"></a>Apache
+            Cordova</h4>
+          <p>Apache Cordova is a top-level project within the Apache Software
+            Foundation. Cordova is the free, open-source, community-driven
+            version of Adobe PhoneGap. Cordova lets you package apps locally
+            and distribute them through the Android Marketplace, Blackberry App
+            World, Windows Phone Store or Apple App Store.</p>
+          <p>Building packages locally via the command-line requires an
+            installation of XCode, Android Developer Tools, BlackBerry 10 SDK
+            or Windows 8 Pro with Visual Studio.</p>
+          <p>Building packages via PhoneGap build requires a (free) Adobe
+            (PhoneGap Build) account: <a href="https://build.phonegap.com/apps"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://build.phonegap.com/apps</a></p>
+          <p>Note: We will use PhoneGap Build in this tutorial. If you would
+            rather use Cordova, you can use the same commands as you see in the
+            tutorial, but replace the word <strong><code>phonegap</code></strong>
+            with <strong><code>cordova</code></strong> on the command-line.
+            <img src="/images/weather-app-4.png" alt="Weather App Tutorial"></p>
+          <h4 id="Initialize-a-PhoneGap-project"><a href="#Initialize-a-PhoneGap-project"
+                                                                                            class="headerlink"
+                                                                                            title="Initialize a PhoneGap project"></a>Initialize
+            a PhoneGap project</h4>
+          <p>The first step in building a hybrid app is to issue the following
+            command from your project’s directory to enable it:</p>
+          <p>sencha phonegap init<app-id>
+              <app-name></app-name>
+            </app-id>
+          </p>
+          <ul>
+            <li>The <strong>App ID</strong> follows this pattern: <code>&lt;REVERSED-DOMAIN&gt;.&lt;APP-NAME&gt;</code>.</li>
+            <li>Your <strong>application name</strong> should be the same value
+              as the name property that you specified in your app.json file.</li>
+          </ul>
+          <p>Note: If you want to port to an iOS app, you will need to make
+            sure that the App Id is the same one that you registered in your
+            Apple provisioning portal.</p>
+          <p>Here’s the command I used to enable PhoneGap support:</p>
+          <p>sencha phonegap init com.sencha.dinmu Dinmu</p>
+          <p>Note: Mac OS X users might need to prefix with sudo to get
+            administrative rights.</p>
+          <p>This generated the following structure/files:</p>
+          <ul>
+            <li>PhoneGap folder structure</li>
+            <li>phonegap.local.properties</li>
+            <li>config.xml</li>
+          </ul>
+          <h4 id="MyApp-phonegap"><a href="#MyApp-phonegap" class="headerlink"
+                                                                                            title="MyApp/phonegap"></a>MyApp/phonegap</h4>
+          <p><strong>MyApp/phonegap</strong> contains the full PhoneGap file
+            structure. If you used Cordova to initialize a project, the folder
+            will be named <strong>cordova</strong>.</p>
+          <p><img src="/images/weather-app-5.png" alt="Weather App Tutorial"></p>
+          <h4 id="phonegap-local-properties"><a href="#phonegap-local-properties"
+                                                                                            class="headerlink"
+                                                                                            title="phonegap.local.properties"></a>phonegap.local.properties</h4>
+          <p>The <strong>phonegap.local.properties</strong> file contains the
+            names of the platforms that you want when building locally. By
+            default, it takes the local installed SDKs, for example:</p>
+          <p>phonegap.platforms=ios android blackberry10 wp8</p>
+          <p>When you run the phonegap <code>init</code> command, the property
+            file also gives you settings for the Adobe PhoneGap remote
+            packager. When you have a PhoneGap Build account, you can set up
+            these additional settings:</p>
+          <figure class="highlight plain">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">phonegap.build.remote=true</span><br><span class="line">\# Username for PhoneGap Build</span><br><span class="line">phonegap.build.remote.username=&#123;username&#125;</span><br><span class="line">\# Password for PhoneGap Build</span><br><span class="line">phonegap.build.remote.password=&#123;password&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>When you leave the phonegap.build.remote property as false, you
+            have to have one of the SDKs (XCode, Android Developer Tools,
+            BlackBerry 10 SDK or Windows 8 Pro with Visual Studio) installed on
+            your machine.</p>
+          <h4 id="config-xml"><a href="#config-xml" class="headerlink" title="config.xml"></a>config.xml</h4>
+          <p>The default Cordova/PhoneGap <strong>config.xml</strong> file
+            contains metadata about your app. Let’s modify this file:</p>
+          <p>We will change the app name, app description and author
+            information:</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Dinmu<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span></span><br><span class="line">    Do I need my Umbrella today?</span><br><span class="line"><span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">author</span> <span class="attr">email</span>=<span class="string">"myemail@addres.com"</span> <span class="attr">href</span>=<span class="string">"http://www.mydomain.com"</span>&gt;</span></span><br><span class="line">    Your name</span><br><span class="line"><span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The next step is to enable the Geolocation plugin at startup, to
+            retrieve the location via the device:</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"EnableLocation"</span> <span class="attr">value</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">preference</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Disable fullscreen mode, to show the status bar (battery indicator
+            and time):</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">preference</span> <span class="attr">name</span>=<span class="string">"fullscreen"</span> <span class="attr">value</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">preference</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Let’s make sure the application supports connections to external
+            urls. The weather application will connect to <a href="http://www.worldweatheronline.com"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://www.worldweatheronline.com</a>.
+            Therefore, we need to give access to either this URL or all
+            external URLs. We can use the wildcard to allow all external
+            connections:</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">access</span> <span class="attr">origin</span>=<span class="string">"*"</span>&gt;</span><span class="tag">&lt;/<span class="name">access</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The last thing we’ll modify are the paths to the icons and loading
+            images. By default Sencha Touch generated iOS icons and splash
+            images. They can be found in the <strong>MyApp/resources</strong>
+            folder.</p>
+          <p>When building apps for iPhones with retina displays (iPhone 5+),
+            it’s important that you provide the correct splash screens with the
+            required screen sizes. If not, your viewport may be resized
+            incorrectly. For this example, we’ll stick to the PhoneGap splash
+            screens. Feel free to replace them with your own splash screens.</p>
+          <figure class="highlight xml">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">src</span>=<span class="string">"icon.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"57"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon.png"</span> <span class="attr">width</span>=<span class="string">"57"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"72"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon~ipad.png"</span> <span class="attr">width</span>=<span class="string">"72"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"114"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon@2x.png"</span> <span class="attr">width</span>=<span class="string">"114"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"144"</span> <span class="attr">src</span>=<span class="string">"resources/icons/Icon~ipad@2x.png"</span> <span class="attr">width</span>=<span class="string">"144"</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span> </span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"480"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-iphone-portrait.png"</span> <span class="attr">width</span>=<span class="string">"320"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"960"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-iphone-portrait-2x.png"</span> <span class="attr">width</span>=<span class="string">"640"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"1024"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-ipad-portrait.png"</span> <span class="attr">width</span>=<span class="string">"768"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">gap:splash</span> <span class="attr">gap:platform</span>=<span class="string">"ios"</span> <span class="attr">height</span>=<span class="string">"768"</span> <span class="attr">src</span>=<span class="string">"res/screen/ios/screen-ipad-landscape.png"</span> <span class="attr">width</span>=<span class="string">"1024"</span>&gt;</span><span class="tag">&lt;/<span class="name">gap:splash</span>&gt;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>For more information about possible settings in config.xml, check
+            the <a href="http://docs.phonegap.com/en/3.3.0/" target="_blank"
+                                                                                            rel="noopener">PhoneGap
+              documentation.</a></p>
+          <h4 id="Creating-the-native-build-package"><a href="#Creating-the-native-build-package"
+                                                                                            class="headerlink"
+                                                                                            title="Creating the native build package"></a>Creating
+            the native build package</h4>
+          <p>After initializing your application with PhoneGap or Cordova, it’s
+            time to create a native build. Run the following command from the
+            command-line:</p>
+          <p><code>sencha app build -run native</code></p>
+          <p>Note: The -run argument makes sure your app will be loaded in an
+            emulator that’s installed on your machine. Again, Mac OS X users
+            might need to prefix with sudo to get administrative rights.</p>
+          <p>It will build the applications in the MyApp/cordova or
+            MyApp/phonegap folder:</p>
+          <ul>
+            <li>platforms/android/bin - Android .apk file</li>
+            <li>platforms/ios/build/ - iOS .app file</li>
+            <li>platforms/blackberry10/build/simulator - BlackBerry 10 .bar
+              file</li>
+            <li>platforms/wp8/Bin/Debug - Windows Phone .xap file</li>
+          </ul>
+          <h4 id="Testing-a-native-build"><a href="#Testing-a-native-build"
+                                                                                            class="headerlink"
+                                                                                            title="Testing a native build"></a>Testing
+            a native build</h4>
+          <p>If you’re using PhoneGap Build, testing the application on Android
+            devices will be very easy. Simply scan the QR code or download,
+            drag and drop the <strong>.apk</strong> file on the memory card of
+            your phone.</p>
+          <p>For iOS, you will need provisioning and code signing, which
+            assures users that the app is from a known source and the app
+            hasn’t been modified since it was last signed. Windows Phone
+            developers and iOS developers will need a (paid) developer account.</p>
+          <p>Once you have an iOS developer account, you’ll need to set up a
+            certificate, an identifier and a provisioning profile. For more
+            information, see the <a href="https://developer.apple.com/" target="_blank"
+                                                                                            rel="noopener">Apple
+              Developer Tools</a> and Sencha Touch docs on <a href="http://docs.sencha.com/touch/2.3.1/#!/guide/native_provisioning"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">Packaging
+              Native iOS Applications</a>.</p>
+          <p>When all is set, you can build the application with PhoneGap from
+            the command-line interface:</p>
+          <p>sencha app build native</p>
+          <p>When you build for iOS, you might run into a build error because
+            you need to code sign the iOS app. With PhoneGap Build, you’ll need
+            to upload the <strong>*.p12 certificate</strong> and the <strong>*.mobileprovisioning
+              mobile provisioning profile</strong>. After you’ve uploaded these
+            two keys, you can unlock the keys and rebuild.</p>
+          <p>If you’re building the app locally, (PhoneGap remote=false or with
+            Cordova), you can open: <strong>platforms/ios/Dinmu.xcodeproj</strong>
+            from the <strong>phonegap</strong> or <strong>cordova</strong>
+            folder, and maintain the build settings to code sign the
+            application. Your developer identity should be in the <em>Code
+              signing identity</em> list. If not, you probably need to go
+            through the whole native provisioning process again.</p>
+          <p><img src="/images/weather-app-6.png" alt="Weather App Tutorial"></p>
+          <p>Make sure your phone is hooked up to your Mac OS X, and build and
+            run in XCode.</p>
+          <p>Congratulations, you’ve finished building a Sencha Touch utility
+            app from scratch. If you’ve followed all three tutorials in this
+            series, you’ve generated an application with Sencha Cmd and created
+            all the views, models, stores and controllers for the Do I need my
+            Umbrella? app. You’ve created a custom theme with Sass, and you’ve
+            created a production build to host on a web server or built a
+            hybrid app wtih Adobe PhoneGap/Cordova. With this workflow, you’re
+            ready to build any app you like.</p>
+          <p>Did you like this series of tutorials? Join one of the (advanced)
+            Ext JS and Sencha Touch Training courses. Take a look at the <a
+                                                                                            href="http://www.sencha.com/training/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">open
+              courses</a> located around the world or join an online class or
+            check out my book that I wrote for O’Reilly: <a href="http://shop.oreilly.com/product/0636920030058.do"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">Hands-on
+              Sencha Touch 2 by Lee Boonstra</a></p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)",
@@ -8,17 +622,83 @@
               "datePublished": "2014-04-21",
               "dateCreated": "2014-04-21",
               "dateModified": "2014-04-21",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Build-native-app/">Build native app</a><a class="badge badge-primary tag-link" href="/tags/Cordova/">Cordova</a><a class="badge badge-primary tag-link" href="/tags/Phonegap/">Phonegap</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Ant/">Sencha Ant</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Build/">Sencha Build</a><a class="badge badge-primary tag-link" href="/tags/Sencha-CMD/">Sencha CMD</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha Touch</a><a class="badge badge-primary tag-link" href="/tags/hybrid-app/">hybrid app</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3) - https://devtricks-45484.firebaseapp.com/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Ext-JS/create-dynamic-sencha-models-from-your-server-side/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Build-native-app/">Build
+              native app</a><a class="badge badge-primary tag-link" href="/tags/Cordova/">Cordova</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Phonegap/">Phonegap</a><a
+                                                                                            class="badge badge-primary tag-link"
+                                                                                            href="/tags/Sencha-Ant/">Sencha
+              Ant</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Build/">Sencha
+              Build</a><a class="badge badge-primary tag-link" href="/tags/Sencha-CMD/">Sencha
+              CMD</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha
+              Touch</a><a class="badge badge-primary tag-link" href="/tags/hybrid-app/">hybrid
+              app</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Ext-JS/create-dynamic-sencha-models-from-your-server-side/"
+                                                                                                id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +722,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +777,227 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Cordova/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/">Make a native build with Ext JS 5, Sencha Cmd 5 and Phonegap / Cordova with plugins.</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/">Native Sencha apps with Ext JS 6 and Cordova / PhoneGap</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/">Create a TV app with Sencha Touch and Sencha Architect</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 2)</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Cordova/native-sencha-apps-with-ext-js-6-and-cordova/">Native
+                    Sencha apps with Ext JS 6 and Cordova / PhoneGap</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Cordova/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins/">Make
+                    a native build with Ext JS 5, Sencha Cmd 5 and Phonegap /
+                    Cordova with plugins.</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 1)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/">Create
+                    a TV app with Sencha Touch and Sencha Architect</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 2)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced
+                    Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

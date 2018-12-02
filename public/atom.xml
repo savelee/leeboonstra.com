@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Google Cloud DevTricks</title>
   
-  <subtitle>&lt;span&gt;Hi, my name is &lt;b&gt;Lee&lt;/b&gt;.&lt;/span&gt;&lt;br&gt;&lt;span&gt;I&#39;m a writer, an engineer, a trainer and a public speaker.&lt;/span&gt;&lt;br&gt; &lt;span&gt;I create fixes &amp; I fix headaches...&lt;/span&gt;&lt;br&gt; &lt;span&gt;Welcome to my &lt;b&gt;dev blog&lt;/b&gt;.&lt;/span&gt;</subtitle>
+  <subtitle>&lt;span&gt;Hi my name is &lt;b&gt;Lee&lt;/b&gt;.&lt;/span&gt;&lt;br&gt;&lt;span&gt;I&#39;m a writer an engineer a trainer and a public speaker.&lt;/span&gt;&lt;br&gt; &lt;span&gt;I create fixes &amp; I fix headaches...&lt;/span&gt;&lt;br&gt; &lt;span&gt;Welcome to my &lt;b&gt;dev blog&lt;/b&gt;.&lt;/span&gt;</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://devtricks-45484.firebaseapp.com/"/>

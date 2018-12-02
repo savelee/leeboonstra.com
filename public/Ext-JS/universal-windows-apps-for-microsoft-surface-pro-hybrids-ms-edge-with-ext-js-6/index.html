@@ -1,6 +1,460 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6 | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for"><meta name="keywords" content="Surface Pro,Universal App"><meta property="og:type" content="article"><meta property="og:title" content="Universal Windows Apps for Microsoft Surface Pro Hybrids &#x2F; MS Edge with Ext JS 6"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for"><meta property="og:locale" content="en"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/sp4-500x326.png"><meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/studio-500x281.jpg"><meta property="og:updated_time" content="2018-11-30T18:59:05.925Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Universal Windows Apps for Microsoft Surface Pro Hybrids &#x2F; MS Edge with Ext JS 6"><meta name="twitter:description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for"><meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/sp4-500x326.png"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Universal Windows Apps for Microsoft Surface Pro
+    Hybrids / MS Edge with Ext JS 6 | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for">
+  <meta name="keywords" content="Surface Pro,Universal App">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Universal Windows Apps for Microsoft Surface Pro Hybrids &#x2F; MS Edge with Ext JS 6">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for">
+  <meta property="og:locale" content="en">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/sp4-500x326.png">
+  <meta property="og:image" content="https://devtricks-45484.firebaseapp.com/images/studio-500x281.jpg">
+  <meta property="og:updated_time" content="2018-11-30T18:59:05.925Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Universal Windows Apps for Microsoft Surface Pro Hybrids &#x2F; MS Edge with Ext JS 6">
+  <meta name="twitter:description" content="Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got   popular, I often hear people asking me, if it’s possible to create Ext JS   apps for Windows tablets? Ext JS 6 has support for">
+  <meta name="twitter:image" content="https://devtricks-45484.firebaseapp.com/images/sp4-500x326.png">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6 via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6</h1>Posted on <a href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/" class="article-date"><time datetime="2016-11-02T12:59:17.000Z" itemprop="datePublished">Nov 2nd 2016</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Ext-JS/">Ext JS</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got popular, I often hear people asking me, if it’s possible to create Ext JS apps for Windows tablets? Ext JS 6 has support for Windows 10. The classic toolkit supports IE8 and up, and the modern toolkit supports the Edge browser. It even contains a Windows mobile theme!</p><a id="more"></a><p><img src="/images/sp4-500x326.png" alt="sp4"></p><p>Ext JS 6 is also the framework, with supports you by creating universal apps. With one code base you can create Windows desktop apps for mouse and keyboard usage, and tablet interface for touch usage. Just generate your project like: <code>sencha generate app MyWindowsApp ../mywindowsapp</code></p><p>This will create a folder structure for you, with a classic and modern toolkit folder, to branche out the separate views. For more information about universal apps, please see my previous blog post: <a href="https://www.leeboonstra.com/developer/webinar-secrets-to-building-a-great-looking-universal-app/" target="_blank" rel="noopener">https://www.leeboonstra.com/developer/webinar-secrets-to-building-a-great-looking-universal-app/</a></p><p>The fun stuff comes into the <strong>app.json</strong> file. I’ve created these build profiles:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"builds"</span>: &#123; </span><br><span class="line">  <span class="string">"desktop"</span>: &#123; </span><br><span class="line">    <span class="string">"toolkit"</span>: <span class="string">"classic"</span>, </span><br><span class="line">    <span class="string">"theme"</span>: <span class="string">"theme-crisp"</span> </span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">"tablet"</span>: &#123; </span><br><span class="line">    <span class="string">"toolkit"</span>: <span class="string">"modern"</span>, </span><br><span class="line">    <span class="comment">//classic "theme": "theme-windows" </span></span><br><span class="line">    <span class="comment">//theme-crisp-touch </span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>You can set the tablet theme to windows mobile, or in case you prefer to make use of the classic toolkit, then switch the theme to “theme-crisp-touch” for more whitespace around buttons and links, and bigger icons and buttons. So you won’t miss tap. My <strong>index.html</strong> file, has an <code>Ext.beforeLoad</code> method, that looks like this:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Ext.beforeLoad = <span class="function"><span class="keyword">function</span> (<span class="params">tags</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> s = location.search, profile; </span><br><span class="line">  <span class="keyword">if</span> (s.match(<span class="regexp">/desktop/</span>)) &#123; </span><br><span class="line">    profile = <span class="string">'desktop'</span>; </span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/tablet/</span>)) &#123; </span><br><span class="line">    profile = <span class="string">'tablet'</span>; </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; profile = tags.desktop ? <span class="string">'desktop'</span> : <span class="string">'tablet'</span>; </span><br><span class="line">  &#125; Ext.manifest = profile; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><code>Ext.platformTags</code> is a singleton <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#property-platformTags" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#property-platformTags</a> within Ext JS which can contain information about what type of device I am running on. When I execute this command on my Windows Surfarce Pro tablet, I get the following information:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ext.platformTags.tablet &gt; <span class="literal">false</span> Ext.platformTags.touch &gt; <span class="number">10</span> Ext.platformTags.edge &gt; <span class="number">15</span></span><br></pre></td></tr></table></figure><p>If I switch to touch / tablet mode, for example by removing my tablet from the dock:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ext.platformTags.tablet &gt; <span class="literal">false</span> Ext.platformTags.touch &gt; <span class="number">10</span> Ext.platformTags.edge &gt; <span class="number">15</span></span><br></pre></td></tr></table></figure><p>Hmm. Not what I expected. Unfortunately, there is no out of the box way, on how you can detect the tablet mode, from your browser, or from the <code>Ext.platformTags</code> singleton. Now obviously you can create a button in the top of your app, which contains an onclick handler that does something like this:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">onTablet: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; </span><br><span class="line">  url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; <span class="built_in">window</span>.location.href = url + <span class="string">'?tablet'</span>; </span><br><span class="line">&#125;, </span><br><span class="line">onDesktop: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; <span class="built_in">window</span>.location.href = url + <span class="string">'?desktop'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>It would be nicer, if my device can detect this mode switch programmatically. Unfortunately, by the time of writing there is no HTML5 / JavaScript API solution, which can detect mode changes. I tried to look into projects like Apache Cordova, to figure out if there are native API solutions, but I couldn’t find it either. I can’t check on touch input either, because on a hybrid machine, like the surface pro, touch input works regardless switching the mode, since the screen is just a touch screen. So <code>navigator.pointerEnabled</code> will always return true. So for now, we are left with a trick. It’s a smart trick though. And it won’t work in IE11 or below. Which is ok, since for our demo, we will make use of the modern toolkit for tablet mode, and modern toolkit is for modern browsers, like Microsoft Edge. <strong>However, it won’t work in any other browser either. So not, in Google Chrome or Firefox. For those browsers, you will have to stick with the button switch approach. This might be an ok solution for you, since we are talking here about developing universal windows apps.</strong></p><p>In tablet mode; there is no browser scrollbar. The browser scrollbar will be 0, while on desktop mode, it will be a value in pixels. (like 12px). Now, user: robocat created a working JavaScript example in a JSBin, where you can see a working demo: <a href="https://output.jsbin.com/puseco" target="_blank" rel="noopener">https://output.jsbin.com/puseco</a>. The trick here, is to add an hidden div to your page body with overflow scroll, to start calculating the scrollWidth. Now I was super amazed and surprised, but apparently Ext JS already has a built-in function like this! Yay. So you only need to call: <code>Ext.getScrollbarSize(true)</code> where you are forcing it to re-check it: <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#method-getScrollbarSize" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#method-getScrollbarSize</a> So on my Windows Surface Pro, in desktop mode, it will return:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ext.getScrollbarSize(<span class="literal">true</span>).height &gt; <span class="number">12</span> Ext.getScrollbarSize(<span class="literal">true</span>).width &gt; <span class="number">12</span></span><br></pre></td></tr></table></figure><p>And in tablet mode:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ext.getScrollbarSize(<span class="literal">true</span>).height &gt;<span class="number">0</span> Ext.getScrollbarSize(<span class="literal">true</span>).width &gt;<span class="number">0</span></span><br></pre></td></tr></table></figure><p>Great! We are getting close. Now let’s check and see if we can detect it automatically! Most of the times, when switching modes, it will also fire a window resize <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-resize" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-resize</a> or a childmove <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-childmove" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-childmove</a> event. We can attach a resize listener on an <code>Ext.Viewport</code>, like our <strong>main.js</strong> file, and run the mode switch. Note the extra check that I created to make sure you are switching profiles. (Otherwise your app would keep on refreshing.) <strong>Main.js</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">listeners: &#123; </span><br><span class="line">  resize: <span class="string">'onMainResize'</span>, </span><br><span class="line">  childmove: <span class="string">'onMainResize'</span> </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p><strong>MainController.js</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">onMainResize: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; </span><br><span class="line">  url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; </span><br><span class="line">  <span class="comment">//console.log(Ext.getScrollbarSize(true).height == 0); //console.log(Ext.manifest.profile); </span></span><br><span class="line">  <span class="keyword">if</span> ( Ext.platformTags.edge &gt; <span class="number">0</span> &amp;&amp; Ext.manifest.profile == <span class="string">'desktop'</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).width == <span class="number">0</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).height == <span class="number">0</span> ) &#123;    <span class="built_in">window</span>.location.href = url + <span class="string">'?tablet'</span>; &#125; </span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> ( Ext.platformTags.edge &gt; <span class="number">0</span> &amp;&amp; Ext.manifest.profile == <span class="string">'tablet'</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).width != <span class="number">0</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).height != <span class="number">0</span> ) &#123;      <span class="built_in">window</span>.location.href = url + <span class="string">'?desktop'</span>; &#125; &#125;,</span><br></pre></td></tr></table></figure><p>Let’s finish this article with a bonus topic. Sencha has responsiveConfig to change configuration on runtime, based on criteria. <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.plugin.Responsive.html" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.plugin.Responsive.htm</a>.</p><p>Responsive Design in Ext JS, means it’s JavaScript configuration, which means that you can write any type of criteria. It also means, that you can change anything you like on runtime. This doesn’t necessary means that you have to change the look and feel. You can change anything, so for example also load different models, redraw or refresh a page. (..because you can override a setter/update method). Here’s a simple example. Any property can be configured as long as it has an setter under the hood. (if not, you can create your own setters of course.)</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plugins: [<span class="string">'responsive'</span>],</span><br><span class="line">responsiveConfig: &#123; </span><br><span class="line">  tall: &#123; <span class="attr">tabPosition</span>: <span class="string">'left'</span> &#125;, </span><br><span class="line">  wide: &#123; <span class="attr">tabPosition</span>: <span class="string">'bottom'</span> &#125; </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><p>Now look into this customized example, where I override the updateMethod</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">config: &#123; <span class="attr">customTabPanel</span>: <span class="literal">false</span> &#125;, </span><br><span class="line">plugins: [<span class="string">'responsive'</span>], </span><br><span class="line">responsiveConfig: &#123; <span class="attr">tall</span>: &#123; </span><br><span class="line">  customTabPanel: <span class="literal">true</span> &#125;, </span><br><span class="line">  wide: &#123; <span class="attr">customTabPanel</span>: <span class="literal">false</span> &#125; </span><br><span class="line">&#125;, <span class="attr">updateCustomTabPanel</span>: <span class="function"><span class="keyword">function</span>(<span class="params">isCustomTabPanel</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">if</span>(isCustomTabPanel)&#123; </span><br><span class="line">      <span class="comment">//manually build my tabpanel, and do a whole bunch of //other stuff, like creating models or something </span></span><br><span class="line">      <span class="comment">//or destroying a screen and rebuild it </span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">      <span class="comment">//code for when customTabPanel is false &#125; &#125;</span></span><br></pre></td></tr></table></figure><p>The criteria to choose from are: <code>tall</code> — Viewport width &lt; height regardless of device type <code>wide</code> — Viewport width &gt; height regardless of device type. <code>landscape</code> — Like wide, but always true on desktop devices <code>portrait</code> — Like tall, but always false on desktop devices <code>width</code> — An expression that tests for the specific width of the viewport <code>height</code>— An expression that tests for the specific height of the viewport <code>platform</code> — An object containing various booleans describing the platform So how can you create a custom criteria? With responsiveFormulas! <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.mixin.Responsive.html#cfg-responsiveFormulas" target="_blank" rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.mixin.Responsive.html#cfg-responsiveFormulas</a></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">responsiveFormulas: &#123; </span><br><span class="line">  touch: <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> Ext.feature.has.Touch; </span><br><span class="line">  &#125;, </span><br><span class="line">  notTouch: <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> !Ext.feature.has.Touch; &#125; </span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure><p>I have used this example, for example in a chart. On a touch device I use pinch to zoom, and on a mouse and keyboard device, I use the crosshair interaction. Although this is a great example, it would make less sense for a windows universal app, since hybrid tablet PCs have both interfaces: touch and mouse/keyboard support. Maybe you are creating an interface that needs to support mouse/keyboard or touch support. Do you have a tablet/pc hybrid and want to play around with this? Here’s my project on Github to fork: <a href="https://github.com/savelee/sencha-windows-universal-apps" target="_blank" rel="noopener">https://github.com/savelee/sencha-windows-universal-apps</a></p><p><img src="/images/studio-500x281.jpg" alt="studio"></p><p><em>(PS: I own a Microsoft Surface Pro 4, and the best thing of it, is it’s keyboard. ;) - As a small hybrid touch windows PC it’s great. As a tablet, it really sucks. No matter to what mode you switch it, it feels and breaths like a PC with touch support. Certain things in Windows are designed for mouse and keyboard usage. And also, the way how it boots, load times etc, it just shows you, it’s a PC. ..but a really good one.)</em></p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6"
+                                                                                      class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Universal Windows
+              Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6</h1>Posted
+            on <a href="/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2016-11-02T12:59:17.000Z"
+                                                                                              itemprop="datePublished">Nov
+                2nd 2016</time> <time class="hidden" datetime="2018-11-30"
+                                                                                              itemprop="dateModified">Nov
+                30th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Ext-JS/">Ext
+                JS</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>Now that hybrid touch pc’s / tablets, like the Windows Surface
+            Pro, got popular, I often hear people asking me, if it’s possible
+            to create Ext JS apps for Windows tablets? Ext JS 6 has support for
+            Windows 10. The classic toolkit supports IE8 and up, and the modern
+            toolkit supports the Edge browser. It even contains a Windows
+            mobile theme!</p><a id="more"></a>
+          <p><img src="/images/sp4-500x326.png" alt="sp4"></p>
+          <p>Ext JS 6 is also the framework, with supports you by creating
+            universal apps. With one code base you can create Windows desktop
+            apps for mouse and keyboard usage, and tablet interface for touch
+            usage. Just generate your project like: <code>sencha generate app
+              MyWindowsApp ../mywindowsapp</code></p>
+          <p>This will create a folder structure for you, with a classic and
+            modern toolkit folder, to branche out the separate views. For more
+            information about universal apps, please see my previous blog post:
+            <a href="https://www.leeboonstra.com/developer/webinar-secrets-to-building-a-great-looking-universal-app/"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://www.leeboonstra.com/developer/webinar-secrets-to-building-a-great-looking-universal-app/</a></p>
+          <p>The fun stuff comes into the <strong>app.json</strong> file. I’ve
+            created these build profiles:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="string">"builds"</span>: &#123; </span><br><span class="line">  <span class="string">"desktop"</span>: &#123; </span><br><span class="line">    <span class="string">"toolkit"</span>: <span class="string">"classic"</span>, </span><br><span class="line">    <span class="string">"theme"</span>: <span class="string">"theme-crisp"</span> </span><br><span class="line">  &#125;, </span><br><span class="line">  <span class="string">"tablet"</span>: &#123; </span><br><span class="line">    <span class="string">"toolkit"</span>: <span class="string">"modern"</span>, </span><br><span class="line">    <span class="comment">//classic "theme": "theme-windows" </span></span><br><span class="line">    <span class="comment">//theme-crisp-touch </span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>You can set the tablet theme to windows mobile, or in case you
+            prefer to make use of the classic toolkit, then switch the theme to
+            “theme-crisp-touch” for more whitespace around buttons and links,
+            and bigger icons and buttons. So you won’t miss tap. My <strong>index.html</strong>
+            file, has an <code>Ext.beforeLoad</code> method, that looks like
+            this:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.beforeLoad = <span class="function"><span class="keyword">function</span> (<span class="params">tags</span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> s = location.search, profile; </span><br><span class="line">  <span class="keyword">if</span> (s.match(<span class="regexp">/desktop/</span>)) &#123; </span><br><span class="line">    profile = <span class="string">'desktop'</span>; </span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s.match(<span class="regexp">/tablet/</span>)) &#123; </span><br><span class="line">    profile = <span class="string">'tablet'</span>; </span><br><span class="line">  &#125; <span class="keyword">else</span> &#123; profile = tags.desktop ? <span class="string">'desktop'</span> : <span class="string">'tablet'</span>; </span><br><span class="line">  &#125; Ext.manifest = profile; </span><br><span class="line">&#125;;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p><code>Ext.platformTags</code> is a singleton <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#property-platformTags"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#property-platformTags</a>
+            within Ext JS which can contain information about what type of
+            device I am running on. When I execute this command on my Windows
+            Surfarce Pro tablet, I get the following information:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.platformTags.tablet &gt; <span class="literal">false</span> Ext.platformTags.touch &gt; <span class="number">10</span> Ext.platformTags.edge &gt; <span class="number">15</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>If I switch to touch / tablet mode, for example by removing my
+            tablet from the dock:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.platformTags.tablet &gt; <span class="literal">false</span> Ext.platformTags.touch &gt; <span class="number">10</span> Ext.platformTags.edge &gt; <span class="number">15</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Hmm. Not what I expected. Unfortunately, there is no out of the
+            box way, on how you can detect the tablet mode, from your browser,
+            or from the <code>Ext.platformTags</code> singleton. Now obviously
+            you can create a button in the top of your app, which contains an
+            onclick handler that does something like this:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">onTablet: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; </span><br><span class="line">  url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; <span class="built_in">window</span>.location.href = url + <span class="string">'?tablet'</span>; </span><br><span class="line">&#125;, </span><br><span class="line">onDesktop: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; <span class="built_in">window</span>.location.href = url + <span class="string">'?desktop'</span>;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>It would be nicer, if my device can detect this mode switch
+            programmatically. Unfortunately, by the time of writing there is no
+            HTML5 / JavaScript API solution, which can detect mode changes. I
+            tried to look into projects like Apache Cordova, to figure out if
+            there are native API solutions, but I couldn’t find it either. I
+            can’t check on touch input either, because on a hybrid machine,
+            like the surface pro, touch input works regardless switching the
+            mode, since the screen is just a touch screen. So <code>navigator.pointerEnabled</code>
+            will always return true. So for now, we are left with a trick. It’s
+            a smart trick though. And it won’t work in IE11 or below. Which is
+            ok, since for our demo, we will make use of the modern toolkit for
+            tablet mode, and modern toolkit is for modern browsers, like
+            Microsoft Edge. <strong>However, it won’t work in any other browser
+              either. So not, in Google Chrome or Firefox. For those browsers,
+              you will have to stick with the button switch approach. This
+              might be an ok solution for you, since we are talking here about
+              developing universal windows apps.</strong></p>
+          <p>In tablet mode; there is no browser scrollbar. The browser
+            scrollbar will be 0, while on desktop mode, it will be a value in
+            pixels. (like 12px). Now, user: robocat created a working
+            JavaScript example in a JSBin, where you can see a working demo: <a
+                                                                                            href="https://output.jsbin.com/puseco"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://output.jsbin.com/puseco</a>.
+            The trick here, is to add an hidden div to your page body with
+            overflow scroll, to start calculating the scrollWidth. Now I was
+            super amazed and surprised, but apparently Ext JS already has a
+            built-in function like this! Yay. So you only need to call: <code>Ext.getScrollbarSize(true)</code>
+            where you are forcing it to re-check it: <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#method-getScrollbarSize"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.html#method-getScrollbarSize</a>
+            So on my Windows Surface Pro, in desktop mode, it will return:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.getScrollbarSize(<span class="literal">true</span>).height &gt; <span class="number">12</span> Ext.getScrollbarSize(<span class="literal">true</span>).width &gt; <span class="number">12</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>And in tablet mode:</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">Ext.getScrollbarSize(<span class="literal">true</span>).height &gt;<span class="number">0</span> Ext.getScrollbarSize(<span class="literal">true</span>).width &gt;<span class="number">0</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Great! We are getting close. Now let’s check and see if we can
+            detect it automatically! Most of the times, when switching modes,
+            it will also fire a window resize <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-resize"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-resize</a>
+            or a childmove <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-childmove"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.container.Viewport.html#event-childmove</a>
+            event. We can attach a resize listener on an <code>Ext.Viewport</code>,
+            like our <strong>main.js</strong> file, and run the mode switch.
+            Note the extra check that I created to make sure you are switching
+            profiles. (Otherwise your app would keep on refreshing.) <strong>Main.js</strong></p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">listeners: &#123; </span><br><span class="line">  resize: <span class="string">'onMainResize'</span>, </span><br><span class="line">  childmove: <span class="string">'onMainResize'</span> </span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p><strong>MainController.js</strong></p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">onMainResize: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">  <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href; </span><br><span class="line">  url = url.split(<span class="string">'?'</span>)[<span class="number">0</span>]; </span><br><span class="line">  <span class="comment">//console.log(Ext.getScrollbarSize(true).height == 0); //console.log(Ext.manifest.profile); </span></span><br><span class="line">  <span class="keyword">if</span> ( Ext.platformTags.edge &gt; <span class="number">0</span> &amp;&amp; Ext.manifest.profile == <span class="string">'desktop'</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).width == <span class="number">0</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).height == <span class="number">0</span> ) &#123;    <span class="built_in">window</span>.location.href = url + <span class="string">'?tablet'</span>; &#125; </span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> ( Ext.platformTags.edge &gt; <span class="number">0</span> &amp;&amp; Ext.manifest.profile == <span class="string">'tablet'</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).width != <span class="number">0</span> &amp;&amp; Ext.getScrollbarSize(<span class="literal">true</span>).height != <span class="number">0</span> ) &#123;      <span class="built_in">window</span>.location.href = url + <span class="string">'?desktop'</span>; &#125; &#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Let’s finish this article with a bonus topic. Sencha has
+            responsiveConfig to change configuration on runtime, based on
+            criteria. <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.plugin.Responsive.html"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.plugin.Responsive.htm</a>.</p>
+          <p>Responsive Design in Ext JS, means it’s JavaScript configuration,
+            which means that you can write any type of criteria. It also means,
+            that you can change anything you like on runtime. This doesn’t
+            necessary means that you have to change the look and feel. You can
+            change anything, so for example also load different models, redraw
+            or refresh a page. (..because you can override a setter/update
+            method). Here’s a simple example. Any property can be configured as
+            long as it has an setter under the hood. (if not, you can create
+            your own setters of course.)</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">plugins: [<span class="string">'responsive'</span>],</span><br><span class="line">responsiveConfig: &#123; </span><br><span class="line">  tall: &#123; <span class="attr">tabPosition</span>: <span class="string">'left'</span> &#125;, </span><br><span class="line">  wide: &#123; <span class="attr">tabPosition</span>: <span class="string">'bottom'</span> &#125; </span><br><span class="line">&#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Now look into this customized example, where I override the
+            updateMethod</p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">config: &#123; <span class="attr">customTabPanel</span>: <span class="literal">false</span> &#125;, </span><br><span class="line">plugins: [<span class="string">'responsive'</span>], </span><br><span class="line">responsiveConfig: &#123; <span class="attr">tall</span>: &#123; </span><br><span class="line">  customTabPanel: <span class="literal">true</span> &#125;, </span><br><span class="line">  wide: &#123; <span class="attr">customTabPanel</span>: <span class="literal">false</span> &#125; </span><br><span class="line">&#125;, <span class="attr">updateCustomTabPanel</span>: <span class="function"><span class="keyword">function</span>(<span class="params">isCustomTabPanel</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">if</span>(isCustomTabPanel)&#123; </span><br><span class="line">      <span class="comment">//manually build my tabpanel, and do a whole bunch of //other stuff, like creating models or something </span></span><br><span class="line">      <span class="comment">//or destroying a screen and rebuild it </span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">      <span class="comment">//code for when customTabPanel is false &#125; &#125;</span></span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>The criteria to choose from are: <code>tall</code> — Viewport
+            width &lt; height regardless of device type <code>wide</code> —
+            Viewport width &gt; height regardless of device type. <code>landscape</code>
+            — Like wide, but always true on desktop devices <code>portrait</code>
+            — Like tall, but always false on desktop devices <code>width</code>
+            — An expression that tests for the specific width of the viewport
+            <code>height</code>— An expression that tests for the specific
+            height of the viewport <code>platform</code> — An object containing
+            various booleans describing the platform So how can you create a
+            custom criteria? With responsiveFormulas! <a href="http://docs.sencha.com/extjs/6.0.0/classic/Ext.mixin.Responsive.html#cfg-responsiveFormulas"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://docs.sencha.com/extjs/6.0.0/classic/Ext.mixin.Responsive.html#cfg-responsiveFormulas</a></p>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">responsiveFormulas: &#123; </span><br><span class="line">  touch: <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> Ext.feature.has.Touch; </span><br><span class="line">  &#125;, </span><br><span class="line">  notTouch: <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> !Ext.feature.has.Touch; &#125; </span><br><span class="line">  &#125;,</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>I have used this example, for example in a chart. On a touch
+            device I use pinch to zoom, and on a mouse and keyboard device, I
+            use the crosshair interaction. Although this is a great example, it
+            would make less sense for a windows universal app, since hybrid
+            tablet PCs have both interfaces: touch and mouse/keyboard support.
+            Maybe you are creating an interface that needs to support
+            mouse/keyboard or touch support. Do you have a tablet/pc hybrid and
+            want to play around with this? Here’s my project on Github to fork:
+            <a href="https://github.com/savelee/sencha-windows-universal-apps"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">https://github.com/savelee/sencha-windows-universal-apps</a></p>
+          <p><img src="/images/studio-500x281.jpg" alt="studio"></p>
+          <p><em>(PS: I own a Microsoft Surface Pro 4, and the best thing of
+              it, is it’s keyboard. ;) - As a small hybrid touch windows PC
+              it’s great. As a tablet, it really sucks. No matter to what mode
+              you switch it, it feels and breaths like a PC with touch support.
+              Certain things in Windows are designed for mouse and keyboard
+              usage. And also, the way how it boots, load times etc, it just
+              shows you, it’s a PC. ..but a really good one.)</em></p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6",
@@ -8,17 +462,74 @@
               "datePublished": "2016-11-02",
               "dateCreated": "2016-11-02",
               "dateModified": "2016-11-02",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. ",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. ",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Surface-Pro/">Surface Pro</a><a class="badge badge-primary tag-link" href="/tags/Universal-App/">Universal App</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6 - https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Sencha/goodbye-sencha-hello-google/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Surface-Pro/">Surface
+              Pro</a><a class="badge badge-primary tag-link" href="/tags/Universal-App/">Universal
+              App</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Sencha/goodbye-sencha-hello-google/" id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +553,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +608,212 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/universal-app-ext6-p1-2/">How to Build a Great Looking Universal App with Ext JS – Part 2</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Ext-JS/universal-app-ext6-p1/">How to Build a Great Looking Universal App with Ext JS – Part 1</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/universal-app-ext6-p1-2/">How
+                    to Build a Great Looking Universal App with Ext JS – Part 2</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/universal-app-ext6-p1/">How
+                    to Build a Great Looking Universal App with Ext JS – Part 1</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>

@@ -1,6 +1,504 @@
-<!DOCTYPE html><html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="robots" content="all"><meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="640"><link type="img/ico" rel="shortcut icon" href="/favicon.ico"><meta http-equiv="x-ua-compatible" content="ie=edge"><title itemprop="name">Create a TV app with Sencha Touch and Sencha Architect | Google Cloud DevTricks</title><meta itemprop="author" content="Lee Boonstra"><meta itemprop="creator" content="Lee Boonstra"><meta itemprop="publisher" content="Lee Boonstra"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel="canonical" href="http://www.leeboonstra.com"><link href="//plus.google.com/117712452932146916020" rel="author"><link rel="image_src" itemprop="image" type="image/png" href="//www.leeboonstra.com/images/screen.png"><link rel="profile" href="//gmpg.org/xfn/11"><link rel="pingback" href="//www.leeboonstra.com"><link itemprop="mainEntityOfPage" href="http://www.leeboonstra.com"><meta name="description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch"><meta name="keywords" content="Sencha Architect,Sencha Touch"><meta property="og:type" content="article"><meta property="og:title" content="Create a TV app with Sencha Touch and Sencha Architect"><meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/index.html"><meta property="og:site_name" content="Google Cloud DevTricks"><meta property="og:description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch"><meta property="og:locale" content="en"><meta property="og:updated_time" content="2018-11-30T14:54:31.066Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Create a TV app with Sencha Touch and Sencha Architect"><meta name="twitter:description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch"><link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml"><link rel="preconnect" href="https://devtricks-45484.firebaseapp.com"><link rel="preload" href="/assets/styles/main.css" as="style" type="text/css" onload='this.rel="stylesheet"'><noscript><link rel="stylesheet" href="/assets/styles/main.css"></noscript><link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script"><link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script"><link rel="preload" href="/assets/js/vendor/popper.min.js" as="script"><link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script"><link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script"><link rel="manifest" href="/manifest.json"></head><body><!--[if lte IE 9]>
+<!DOCTYPE html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+
+<head>
+  <meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="robots" content="all">
+  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="640">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title itemprop="name">Create a TV app with Sencha Touch and Sencha Architect
+    | Google Cloud DevTricks</title>
+  <meta itemprop="author" content="Lee Boonstra">
+  <meta itemprop="creator" content="Lee Boonstra">
+  <meta itemprop="publisher" content="Lee Boonstra">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link href="//plus.google.com/117712452932146916020" rel="author">
+  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="profile" href="//gmpg.org/xfn/11">
+  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
+  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <meta name="description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch">
+  <meta name="keywords" content="Sencha Architect,Sencha Touch">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Create a TV app with Sencha Touch and Sencha Architect">
+  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/index.html">
+  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch">
+  <meta property="og:locale" content="en">
+  <meta property="og:updated_time" content="2018-11-30T14:54:31.066Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Create a TV app with Sencha Touch and Sencha Architect">
+  <meta name="twitter:description" content="Often people think, Sencha Touch is a great framework to create mobile     phone apps with. While that is certainly true, it’s also a great   framework to create mobile apps with, as in any touch">
+  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
+  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
+                                                                                  onload='this.rel="stylesheet"'><noscript>
+    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
+  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
+  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="manifest" href="/manifest.json">
+</head>
+
+<body>
+  <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]--><div class="wrapper"><header><div class="filler"></div><nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button class="navbar-toggler btn btn-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"><span class="iconmenu"></span></button> <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a><div class="collapse navbar-collapse" id="navbarTogglerDemo"><ul class="nav navbar-nav"><li><a class="iconHome" href="/index.html">Home</a></li><li><a class="iconAbout" href="/about/">About</a></li><li><a class="iconSpeaking" href="/speaking/">Speaking</a></li><li><a class="iconWriting" href="/writing/">Writing</a></li><li><a class="iconVideos" href="/categories/Videos/">Videos</a></li><li><a class="iconContact" href="/contact/">Contact</a></li><li><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></li></ul><form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search..."> <button type="submit" class="btn btn-primary search-form-submit"><span class="iconsearch"></span></button> <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form></div></nav></header><main class="container-fluid content"><h1 style="display:none">Blog</h1><article id="post-create-a-tv-app-with-sencha-touch-and-sencha-architect" class="article row article-type-post row contentarticle" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting"><link itemprop="mainEntityOfPage" href=""><div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Create a TV app with Sencha Touch and Sencha Architect via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign" data-size="large">Follow @ladysign</a><header class="article-header"><h1 class="article-title" itemprop="headline">Create a TV app with Sencha Touch and Sencha Architect</h1>Posted on <a href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/" class="article-date"><time datetime="2014-06-16T10:00:02.000Z" itemprop="datePublished">Jun 16th 2014</time></a> in<div class="article-category"><a class="badge badge-primary-link" href="/categories/Sencha-Architect/">Sencha Architect</a></div><span class="hidden" itemprop="author">Lee Boonstra</span></header><p>Often people think, Sencha Touch is a great framework to create <strong>mobile phone apps with.</strong> While that is certainly true, it’s also a great framework to create mobile apps with, as in <strong>any</strong> <strong>touch enabled device</strong>.</p><p>Think about car navigation systems, game consoles, smart watches or tv/media centers. These devices all probably run HTML5; and are great to build Sencha Touch apps for. To show you something cool this week; I will provide you all the steps, how you can create a simple media app with Sencha Touch and our visual design tool: Sencha Architect.</p><a id="more"></a><p>This is the app we will build: <strong>TouchTunes</strong>, a videoclip app, which you can run on your tv and control it with your fingers or with a TV remote!</p><h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h2><ol><li>Open <strong>Sencha Architect</strong></li><li>Choose <strong>Sencha Touch 2.3</strong></li><li>Save Project: - TouchTunes - touchtunes</li><li>Configuration - <a href="http://localhost:1841/touchtunes" target="_blank" rel="noopener">http://localhost:1841/touchtunes</a></li><li>Create a new resolution: (Let’s take this: <a href="http://www.samsungdforum.com/Devtools/Spec" target="_blank" rel="noopener">http://www.samsungdforum.com/Devtools/Spec</a>) <strong>Samsung TV App 960x540</strong></li><li><strong>Switch the orientation</strong></li></ol><h2 id="The-Model"><a href="#The-Model" class="headerlink" title="The Model"></a>The Model</h2><ol><li>Click in the project inspector on the <strong>+ button</strong></li><li>Select <strong>Model</strong></li><li>Select the new Model</li><li>In the Config panel make the following settings: <em>- userClassName: Video - fields: artist,id,image,preview,title</em></li><li>Select the <em>artist</em> field</li><li>In the Config panel make the following settings: <em>- mappings: [“im:artist”].label</em></li><li>Do the same for the following fields: <em>- id - id.attributes[“im:id”] - image - [“im:image”][2].label - preview - link[1].attributes.href - title - [“im:name”].label</em></li></ol><h2 id="The-Store"><a href="#The-Store" class="headerlink" title="The Store"></a>The Store</h2><ol><li>Click in the project inspector on the <strong>+ button</strong></li><li>Select <strong>Store &gt; JsonP Store</strong></li><li>Select the new Store</li><li>In the Config panel make the following settings: <em>- userClassName: Videos - model: Video - autoLoad: check - MyJsonPProxy: select - url: <a href="https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json" target="_blank" rel="noopener">https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json</a> - MyJsonReader: select - rootProperty: feed.entry</em></li></ol><h2 id="Test-Feed"><a href="#Test-Feed" class="headerlink" title="Test Feed"></a>Test Feed</h2><ol><li><strong>Save</strong> Architect</li><li>Press <strong>Preview</strong></li><li>In your browser: Right Click: Inspect Element</li><li>Go to the Network tab</li><li>Review: <a href="https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json?_dc=1392819371345&amp;page=1&amp;start=0&amp;limit=25&amp;callback=Ext.data.JsonP.callback1" target="_blank" rel="noopener">https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json?_dc=1392819371345&amp;page=1&amp;start=0&amp;limit=25&amp;callback=Ext.data.JsonP.callback1</a> It should return a JSON feed. 6. Run the following command in your browser console: <em>Ext.getStore(‘Videos’).getCount();</em> It should return 25.</li></ol><h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><ol><li>In your toolbox, filter for <strong>Container</strong></li><li>Drag a Container into the design canvas</li><li>Click the <strong>gear icon</strong> in the top right of the container component</li><li>Select a layout: <strong>hbox</strong></li><li>In the Config Panel, make the following setting: <em>- requires: Ext.Video</em></li><li>In your toolbox, filter for <strong>Toolbar</strong></li><li>Drag a Toolbar component into the Container</li><li>Double click on the Toolbar and set the following text: <em>“TouchTunes”</em></li><li>In your toolbox, filter for List</li><li>Drag a List into the Container</li><li>Select the List</li><li>In the Config panel, make the following settings: <em>- flex: 2 - store: Videos - itemTpl: select -<div>{artist:ellipsis(20, false)} - {title:ellipsis(20, false)}</div></em></li><li>In your toolbox, filter for Container</li><li>Drag another Container into the Project Inspector &gt; Views &gt; Container, right above the List</li><li>Select the new Container</li><li>In the Config panel, make the following settings: <em>- flex: 3 - cls: holder - displayName: Holder - layout: vbox - align: center - pack: center</em></li><li>In your toolbox, filter for <strong>Image</strong></li><li>Drag an Image component into the Project Inspector &gt; Views &gt; Holder,</li><li>Select the new Image 20. In the Config panel, make the following settings: <em>- width: 400 - height: 300</em></li></ol><h2 id="Navigation-View"><a href="#Navigation-View" class="headerlink" title="Navigation View"></a>Navigation View</h2><ol><li>In your toolbox, filter for <strong>Navigation View</strong></li><li>Drag the Navigation View into the Project Inspector &gt; Views</li><li>Drag the MyContainer into the Navigation View</li><li>Press the <strong>Link</strong> button when prompted.</li><li>In the Config Panel make the following settings: <em>- useralias: navview - initialView: check - navigationbar: uncheck</em></li></ol><h2 id="Listeners"><a href="#Listeners" class="headerlink" title="Listeners"></a>Listeners</h2><ol><li>In the Project Inspector, select the <strong>List</strong></li><li>In the Config panel, select <strong>Event Bindings</strong></li><li><strong>Add Basic Event Binding</strong></li><li>Choose the <strong>select</strong> event</li><li>In the Project Inspector, double click on the <strong>onMylistSelect</strong> function</li><li>Enter the following code:</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> image = Ext.ComponentQuery.query(<span class="string">'container[cls=holder] .image'</span>)[<span class="number">0</span>];</span><br><span class="line">image.setSrc(record.get(<span class="string">'image'</span>));</span><br></pre></td></tr></table></figure><h2 id="The-Controller"><a href="#The-Controller" class="headerlink" title="The Controller"></a>The Controller</h2><p>We will map some keyboard keys, check out: <a href="http://wiki.xbmc.org/index.php?title=Keyboard_controls" target="_blank" rel="noopener">http://wiki.xbmc.org/index.php?title=Keyboard_controls</a> We will map the arrow keys, the spacebar and the enter key.</p><ol><li>Click in the project inspector on the <strong>+ button</strong></li><li>Select <strong>Controller</strong></li><li>In the Config Panel, set the following settings: <em>- userClassName: Navigation - Actions: Add - Choose a target type: Ext.dataview.List - Choose an event by name: initialize - Enter the following code:</em></li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> me = <span class="keyword">this</span>;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'keydown'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">40</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'downkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">38</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'upkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">37</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'leftkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">39</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'rightkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">13</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'enterkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">32</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'spaceKey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="4"><li>Select the Navigation Controller and Add the following functions: <em>- navDown - navUp - navEnter - videoPause - navList</em></li><li>Double click the navDown() function and enter the following code: <em>this.navList(1);</em></li><li>Double click the navUp() function and enter the following code: <em>this.navList(-1);</em></li><li>Double click the navList() function and enter the following code:</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = Ext.Viewport.down(<span class="string">'list'</span>),</span><br><span class="line">records = list.getSelection(),</span><br><span class="line">store = Ext.getStore(<span class="string">'Videos'</span>),</span><br><span class="line">count = store.getCount();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(records.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> i = store.find(<span class="string">'id'</span>, records[<span class="number">0</span>].get(<span class="string">'id'</span>)),</span><br><span class="line">  next = store.getAt(i+direction);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(i+direction &lt; <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//console.log('reached the top');</span></span><br><span class="line">    list.select(<span class="number">0</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(i+direction &gt;= store.getCount()) &#123;</span><br><span class="line">    <span class="comment">//console.log('reached the end');</span></span><br><span class="line">    list.select(count<span class="number">-1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//console.log(i + direction, records[0]);</span></span><br><span class="line">    list.select(i + direction);</span><br><span class="line">    list.scrollToRecord(next);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  list.select(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="8"><li>Double click the navEnter() function and enter the following code:</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list = Ext.Viewport.down(<span class="string">'list'</span>),</span><br><span class="line">record = list.getSelection()[<span class="number">0</span>],</span><br><span class="line">video = Ext.Viewport.down(<span class="string">'video'</span>);</span><br><span class="line"><span class="keyword">if</span>(video)&#123;</span><br><span class="line">  video.stop();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(record)&#123;</span><br><span class="line">  <span class="keyword">var</span> data = record.getData();</span><br><span class="line">  Ext.Viewport.down(<span class="string">'navview'</span>).push(&#123;</span><br><span class="line">    xtype: <span class="string">'video'</span>,</span><br><span class="line">    url: data.preview,</span><br><span class="line">    id: <span class="string">'myvideos'</span>,</span><br><span class="line">    title: data.title,</span><br><span class="line">    listeners: &#123;</span><br><span class="line">      painted: <span class="function"><span class="keyword">function</span> (<span class="params">component</span>) </span>&#123;</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).setEnableControls(<span class="literal">true</span>);</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).play();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).ghost.hide();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).media.show();</span><br><span class="line">      &#125;,</span><br><span class="line">      pause: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).ghost.hide();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).media.show();</span><br><span class="line">      &#125;,</span><br><span class="line">      stop: <span class="function"><span class="keyword">function</span>(<span class="params">component</span>)</span>&#123; </span><br><span class="line">        Ext.Viewport.down(<span class="string">'navview'</span>).pop();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="9"><li>Double click the videoPause() function and use the following code:</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> video = Ext.Viewport.down(<span class="string">'video'</span>);</span><br><span class="line"><span class="keyword">if</span>(video)&#123;</span><br><span class="line">  <span class="keyword">if</span>(video.isPlaying())&#123;</span><br><span class="line">    video.pause();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    video.play();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="10"><li>Double click the videoPrev() function and use the following code:</li><li>Double click the videoNext() function and use the following code:</li><li>In the Config Panel, add 6 Actions: (Option, Target type, Event name, Function Body) - Controller Action - Ext.dataview.List - downkey this.navDown(); - Controller Action - Ext.dataview.List - upkey this.navUp(); - Controller Action - Ext.dataview.List - enterkey this.navEnter(); - Controller Action - Ext.dataview.List - spacekey this.videoPause()</li></ol><h2 id="The-Theme"><a href="#The-Theme" class="headerlink" title="The Theme"></a>The Theme</h2><ol><li>In the Project Inspector, select <strong>Resources &gt; MyDefaultTheme</strong></li><li>In the Config Panel, set the Filename to: <em>MediaCenter</em></li><li>Click in the Config Panel, the <strong>Theme tab</strong> Now our app is finished, we can control it with a tv remote. The only thing is… It doesn’t look like a MediaCenter app yet… Let’s style it!</li></ol><h2 id="Theme-Variables"><a href="#Theme-Variables" class="headerlink" title="Theme Variables"></a>Theme Variables</h2><ol><li>Filter for the following variables: <em>- base color: #000 - page bg color: #000 - list bg color: #000 - list color: #fff - list active color: #1b51fb; - include default icons: false - include pictos font: false</em></li></ol><h2 id="Add-custom-styling"><a href="#Add-custom-styling" class="headerlink" title="Add custom styling"></a>Add custom styling</h2><ol><li>In the Project Inspector, select Resources &gt; MyDefaultTheme</li><li>In the Config Panel, add a SCSS snippet - Set the compile order to: <strong>afterFramework</strong> - Set the DisplayName to: <strong>List</strong></li><li>Use the following styles, to style the List:</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.x-list</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.x-list</span> <span class="selector-class">.x-list-item</span><span class="selector-class">.x-item-selected</span> <span class="selector-class">.x-dock-horizontal</span>,</span><br><span class="line"><span class="selector-class">.x-list</span> <span class="selector-class">.x-list-item</span><span class="selector-class">.x-item-selected</span><span class="selector-class">.x-list-item-tpl</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="attribute">-webkit-box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">-moz-box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#000</span>;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top, #000, #56626E 55%, lighten(#000, 15%) <span class="number">55%</span>, <span class="number">#000</span>);</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top, #000, #56626E 55%, lighten(#000, 15%) <span class="number">55%</span>, <span class="number">#000</span>);</span><br><span class="line"></span><br><span class="line">* &#123; color: #fff; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="4"><li>Create another SCSS snippet - Set the compile order to: <strong>afterFramework</strong> - Set the DisplayName to: <strong>Image</strong></li><li>Use the following styles:</li></ol><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.x-img</span> &#123;</span><br><span class="line"><span class="attribute">-webkit-transform</span>: <span class="built_in">perspective</span>(600px) <span class="built_in">rotateY</span>(10deg);</span><br><span class="line"><span class="attribute">-webkit-box-reflect</span>: below -<span class="number">1px</span></span><br><span class="line"><span class="built_in">-webkit-gradient</span>(linear, left top, left bottom, from(transparent), <span class="built_in">color-stop</span>(0.7, transparent), <span class="built_in">to</span>(rgba(0,0,0,0.5)));</span><br><span class="line"></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">perspective</span>(600px) <span class="built_in">rotateY</span>(10deg);</span><br><span class="line"><span class="attribute">box-reflect</span>: below -<span class="number">1px</span></span><br><span class="line"><span class="built_in">gradient</span>(linear, left top, left bottom, from(transparent), <span class="built_in">color-stop</span>(0.7, transparent), <span class="built_in">to</span>(rgba(0,0,0,0.5)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="6"><li>Create another SCSS snippet - Set the compile order to: <strong>beforeVariables</strong> - Set the DisplayName to: <strong>Fonts</strong></li><li>Pick a Google Font: - Choose a font - Add to Collection - Click the Use tab - Copy the @Import code. For example:</li></ol><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> url(http://fonts.googleapis.com/css?family=Coda+Caption:<span class="number">800</span>);</span><br><span class="line"></span><br><span class="line">- Paste it into the Architect SCSS snippet. 8. Open the List SCSS snippet, add the following styles:</span><br><span class="line"></span><br><span class="line">.x-toolbar .x-innerhtml &#123;</span><br><span class="line">  font-family: <span class="string">'Coda Caption'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Note the name of your chosen font.</p><h2 id="Build-the-app"><a href="#Build-the-app" class="headerlink" title="Build the app"></a>Build the app</h2><ol><li>In the toolbar hit the <strong>Build web app button</strong>.</li><li>In the popup select the environment: <strong>Production</strong></li><li>Click <strong>Save</strong></li><li>Click <strong>Run</strong></li><li>Test your application: <a href="http://localhost:1841/Architect/TunesTouch/build/production/TunesTouch/" target="_blank" rel="noopener">http://localhost:1841/Architect/TunesTouch/build/production/TunesTouch/</a></li></ol><p>And well done! How to run this app on your TV? First, upload the production package to some server online. In case you have a smart tv, you could open the browser app, and browse to the TunesTouch app. I tested it on my Raspbmc and on the Ouya XBMC browser app, and it runs great!</p><script type="application/ld+json">{
+  <![endif]-->
+  <div class="wrapper">
+    <header>
+      <div class="filler"></div>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-inverse navbar-fixed-top"><button
+                                                                                        class="navbar-toggler btn btn-dark"
+                                                                                        type="button"
+                                                                                        data-toggle="collapse"
+                                                                                        data-target="#navbarTogglerDemo"
+                                                                                        aria-controls="navbarTogglerDemo"
+                                                                                        aria-expanded="false"
+                                                                                        aria-label="Toggle navigation"><span
+                                                                                          class="iconmenu"></span></button>
+        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="nav navbar-nav">
+            <li><a class="iconHome" href="/index.html">Home</a></li>
+            <li><a class="iconAbout" href="/about/">About</a></li>
+            <li><a class="iconSpeaking" href="/speaking/">Speaking</a></li>
+            <li><a class="iconWriting" href="/writing/">Writing</a></li>
+            <li><a class="iconVideos" href="/categories/Videos/">Videos</a></li>
+            <li><a class="iconContact" href="/contact/">Contact</a></li>
+            <li>
+              <div class="sidebar-module categories">
+                <h4>Categories</h4>
+                <ul class="sidebar-module-list">
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/App-Cache/">App
+                      Cache</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Bots/">Bots</a><span
+                                                                                                    class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Containers/">Containers</a><span
+                                                                                                    class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Cordova/">Cordova</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Django/">Django</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Ext-JS/">Ext
+                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Google-Cloud-Platform/">Google
+                      Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Machine-Learning/">Machine
+                      Learning</a><span class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Robotics/">Robotics</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha/">Sencha</a><span
+                                                                                                    class="sidebar-module-list-count">1</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Architect/">Sencha
+                      Architect</a><span class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-CMD/">Sencha
+                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Sencha-Touch/">Sencha
+                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Theming/">Theming</a><span
+                                                                                                    class="sidebar-module-list-count">2</span></li>
+                  <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                    href="/categories/Videos/">Videos</a><span
+                                                                                                    class="sidebar-module-list-count">13</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8"
+                                                                                          class="search-form"><input
+                                                                                            type="search"
+                                                                                            name="q"
+                                                                                            class="search-form-input"
+                                                                                            placeholder="Search...">
+            <button type="submit" class="btn btn-primary search-form-submit"><span
+                                                                                              class="iconsearch"></span></button>
+            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+        </div>
+      </nav>
+    </header>
+    <main class="container-fluid content">
+      <h1 style="display:none">Blog</h1>
+      <article id="post-create-a-tv-app-with-sencha-touch-and-sencha-architect"
+                                                                                      class="article row article-type-post row contentarticle"
+                                                                                      itemprop="blogPosts"
+                                                                                      itemscope
+                                                                                      itemtype="http://schema.org/BlogPosting">
+        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/">
+        <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
+                                                                                          href="https://twitter.com/intent/tweet"
+                                                                                          data-size="large"
+                                                                                          target="_blank"><span>Tweet
+              this</span></a> <a class="twitter-follow-button btn" href="https://twitter.com/ladysign"
+                                                                                          data-size="large">Follow
+            @ladysign</a>
+          <header class="article-header">
+            <h1 class="article-title" itemprop="headline">Create a TV app with
+              Sencha Touch and Sencha Architect</h1>Posted on <a href="/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/"
+                                                                                            class="article-date"><time
+                                                                                              datetime="2014-06-16T10:00:02.000Z"
+                                                                                              itemprop="datePublished">Jun
+                16th 2014</time> <time class="hidden" datetime="2018-11-30"
+                                                                                              itemprop="dateModified">Nov
+                30th 2018</time></a> in&nbsp;<div class="article-category"><a
+                                                                                              class="badge badge-primary-link"
+                                                                                              href="/categories/Sencha-Architect/">Sencha
+                Architect</a></div>
+            <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+                                                                                              itemprop="name">Lee
+                Boonstra</span></div>
+            <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+              <meta itemprop="name" content="Ladysign">
+              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+                                                                                            alt="Screenshot">
+          </header>
+          <p>Often people think, Sencha Touch is a great framework to create
+            <strong>mobile phone apps with.</strong> While that is certainly
+            true, it’s also a great framework to create mobile apps with, as in
+            <strong>any</strong> <strong>touch enabled device</strong>.</p>
+          <p>Think about car navigation systems, game consoles, smart watches
+            or tv/media centers. These devices all probably run HTML5; and are
+            great to build Sencha Touch apps for. To show you something cool
+            this week; I will provide you all the steps, how you can create a
+            simple media app with Sencha Touch and our visual design tool:
+            Sencha Architect.</p><a id="more"></a>
+          <p>This is the app we will build: <strong>TouchTunes</strong>, a
+            videoclip app, which you can run on your tv and control it with
+            your fingers or with a TV remote!</p>
+          <h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The
+            Setup</h2>
+          <ol>
+            <li>Open <strong>Sencha Architect</strong></li>
+            <li>Choose <strong>Sencha Touch 2.3</strong></li>
+            <li>Save Project: - TouchTunes - touchtunes</li>
+            <li>Configuration - <a href="http://localhost:1841/touchtunes"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://localhost:1841/touchtunes</a></li>
+            <li>Create a new resolution: (Let’s take this: <a href="http://www.samsungdforum.com/Devtools/Spec"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://www.samsungdforum.com/Devtools/Spec</a>)
+              <strong>Samsung TV App 960x540</strong></li>
+            <li><strong>Switch the orientation</strong></li>
+          </ol>
+          <h2 id="The-Model"><a href="#The-Model" class="headerlink" title="The Model"></a>The
+            Model</h2>
+          <ol>
+            <li>Click in the project inspector on the <strong>+ button</strong></li>
+            <li>Select <strong>Model</strong></li>
+            <li>Select the new Model</li>
+            <li>In the Config panel make the following settings: <em>-
+                userClassName: Video - fields: artist,id,image,preview,title</em></li>
+            <li>Select the <em>artist</em> field</li>
+            <li>In the Config panel make the following settings: <em>-
+                mappings: [“im:artist”].label</em></li>
+            <li>Do the same for the following fields: <em>- id -
+                id.attributes[“im:id”] - image - [“im:image”][2].label -
+                preview - link[1].attributes.href - title - [“im:name”].label</em></li>
+          </ol>
+          <h2 id="The-Store"><a href="#The-Store" class="headerlink" title="The Store"></a>The
+            Store</h2>
+          <ol>
+            <li>Click in the project inspector on the <strong>+ button</strong></li>
+            <li>Select <strong>Store &gt; JsonP Store</strong></li>
+            <li>Select the new Store</li>
+            <li>In the Config panel make the following settings: <em>-
+                userClassName: Videos - model: Video - autoLoad: check -
+                MyJsonPProxy: select - url: <a href="https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json"
+                                                                                                target="_blank"
+                                                                                                rel="noopener">https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json</a>
+                - MyJsonReader: select - rootProperty: feed.entry</em></li>
+          </ol>
+          <h2 id="Test-Feed"><a href="#Test-Feed" class="headerlink" title="Test Feed"></a>Test
+            Feed</h2>
+          <ol>
+            <li><strong>Save</strong> Architect</li>
+            <li>Press <strong>Preview</strong></li>
+            <li>In your browser: Right Click: Inspect Element</li>
+            <li>Go to the Network tab</li>
+            <li>Review: <a href="https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json?_dc=1392819371345&amp;page=1&amp;start=0&amp;limit=25&amp;callback=Ext.data.JsonP.callback1"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json?_dc=1392819371345&amp;page=1&amp;start=0&amp;limit=25&amp;callback=Ext.data.JsonP.callback1</a>
+              It should return a JSON feed. 6. Run the following command in
+              your browser console: <em>Ext.getStore(‘Videos’).getCount();</em>
+              It should return 25.</li>
+          </ol>
+          <h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2>
+          <ol>
+            <li>In your toolbox, filter for <strong>Container</strong></li>
+            <li>Drag a Container into the design canvas</li>
+            <li>Click the <strong>gear icon</strong> in the top right of the
+              container component</li>
+            <li>Select a layout: <strong>hbox</strong></li>
+            <li>In the Config Panel, make the following setting: <em>-
+                requires: Ext.Video</em></li>
+            <li>In your toolbox, filter for <strong>Toolbar</strong></li>
+            <li>Drag a Toolbar component into the Container</li>
+            <li>Double click on the Toolbar and set the following text: <em>“TouchTunes”</em></li>
+            <li>In your toolbox, filter for List</li>
+            <li>Drag a List into the Container</li>
+            <li>Select the List</li>
+            <li>In the Config panel, make the following settings: <em>- flex: 2
+                - store: Videos - itemTpl: select -<div>{artist:ellipsis(20,
+                  false)} - {title:ellipsis(20, false)}</div></em></li>
+            <li>In your toolbox, filter for Container</li>
+            <li>Drag another Container into the Project Inspector &gt; Views
+              &gt; Container, right above the List</li>
+            <li>Select the new Container</li>
+            <li>In the Config panel, make the following settings: <em>- flex: 3
+                - cls: holder - displayName: Holder - layout: vbox - align:
+                center - pack: center</em></li>
+            <li>In your toolbox, filter for <strong>Image</strong></li>
+            <li>Drag an Image component into the Project Inspector &gt; Views
+              &gt; Holder,</li>
+            <li>Select the new Image 20. In the Config panel, make the
+              following settings: <em>- width: 400 - height: 300</em></li>
+          </ol>
+          <h2 id="Navigation-View"><a href="#Navigation-View" class="headerlink"
+                                                                                            title="Navigation View"></a>Navigation
+            View</h2>
+          <ol>
+            <li>In your toolbox, filter for <strong>Navigation View</strong></li>
+            <li>Drag the Navigation View into the Project Inspector &gt; Views</li>
+            <li>Drag the MyContainer into the Navigation View</li>
+            <li>Press the <strong>Link</strong> button when prompted.</li>
+            <li>In the Config Panel make the following settings: <em>-
+                useralias: navview - initialView: check - navigationbar:
+                uncheck</em></li>
+          </ol>
+          <h2 id="Listeners"><a href="#Listeners" class="headerlink" title="Listeners"></a>Listeners</h2>
+          <ol>
+            <li>In the Project Inspector, select the <strong>List</strong></li>
+            <li>In the Config panel, select <strong>Event Bindings</strong></li>
+            <li><strong>Add Basic Event Binding</strong></li>
+            <li>Choose the <strong>select</strong> event</li>
+            <li>In the Project Inspector, double click on the <strong>onMylistSelect</strong>
+              function</li>
+            <li>Enter the following code:</li>
+          </ol>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> image = Ext.ComponentQuery.query(<span class="string">'container[cls=holder] .image'</span>)[<span class="number">0</span>];</span><br><span class="line">image.setSrc(record.get(<span class="string">'image'</span>));</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <h2 id="The-Controller"><a href="#The-Controller" class="headerlink"
+                                                                                            title="The Controller"></a>The
+            Controller</h2>
+          <p>We will map some keyboard keys, check out: <a href="http://wiki.xbmc.org/index.php?title=Keyboard_controls"
+                                                                                            target="_blank"
+                                                                                            rel="noopener">http://wiki.xbmc.org/index.php?title=Keyboard_controls</a>
+            We will map the arrow keys, the spacebar and the enter key.</p>
+          <ol>
+            <li>Click in the project inspector on the <strong>+ button</strong></li>
+            <li>Select <strong>Controller</strong></li>
+            <li>In the Config Panel, set the following settings: <em>-
+                userClassName: Navigation - Actions: Add - Choose a target
+                type: Ext.dataview.List - Choose an event by name: initialize -
+                Enter the following code:</em></li>
+          </ol>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> me = <span class="keyword">this</span>;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'keydown'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">40</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'downkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">38</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'upkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">37</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'leftkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">39</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'rightkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">13</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'enterkey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(e.keyCode == <span class="number">32</span>) &#123;</span><br><span class="line">   Ext.Viewport.down(<span class="string">'list'</span>).fireEvent(<span class="string">'spaceKey'</span>, e);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="4">
+            <li>Select the Navigation Controller and Add the following
+              functions: <em>- navDown - navUp - navEnter - videoPause -
+                navList</em></li>
+            <li>Double click the navDown() function and enter the following
+              code: <em>this.navList(1);</em></li>
+            <li>Double click the navUp() function and enter the following code:
+              <em>this.navList(-1);</em></li>
+            <li>Double click the navList() function and enter the following
+              code:</li>
+          </ol>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> list = Ext.Viewport.down(<span class="string">'list'</span>),</span><br><span class="line">records = list.getSelection(),</span><br><span class="line">store = Ext.getStore(<span class="string">'Videos'</span>),</span><br><span class="line">count = store.getCount();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(records.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> i = store.find(<span class="string">'id'</span>, records[<span class="number">0</span>].get(<span class="string">'id'</span>)),</span><br><span class="line">  next = store.getAt(i+direction);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(i+direction &lt; <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//console.log('reached the top');</span></span><br><span class="line">    list.select(<span class="number">0</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(i+direction &gt;= store.getCount()) &#123;</span><br><span class="line">    <span class="comment">//console.log('reached the end');</span></span><br><span class="line">    list.select(count<span class="number">-1</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//console.log(i + direction, records[0]);</span></span><br><span class="line">    list.select(i + direction);</span><br><span class="line">    list.scrollToRecord(next);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  list.select(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="8">
+            <li>Double click the navEnter() function and enter the following
+              code:</li>
+          </ol>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> list = Ext.Viewport.down(<span class="string">'list'</span>),</span><br><span class="line">record = list.getSelection()[<span class="number">0</span>],</span><br><span class="line">video = Ext.Viewport.down(<span class="string">'video'</span>);</span><br><span class="line"><span class="keyword">if</span>(video)&#123;</span><br><span class="line">  video.stop();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(record)&#123;</span><br><span class="line">  <span class="keyword">var</span> data = record.getData();</span><br><span class="line">  Ext.Viewport.down(<span class="string">'navview'</span>).push(&#123;</span><br><span class="line">    xtype: <span class="string">'video'</span>,</span><br><span class="line">    url: data.preview,</span><br><span class="line">    id: <span class="string">'myvideos'</span>,</span><br><span class="line">    title: data.title,</span><br><span class="line">    listeners: &#123;</span><br><span class="line">      painted: <span class="function"><span class="keyword">function</span> (<span class="params">component</span>) </span>&#123;</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).setEnableControls(<span class="literal">true</span>);</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).play();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).ghost.hide();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).media.show();</span><br><span class="line">      &#125;,</span><br><span class="line">      pause: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).ghost.hide();</span><br><span class="line">        Ext.getCmp(<span class="string">'myvideos'</span>).media.show();</span><br><span class="line">      &#125;,</span><br><span class="line">      stop: <span class="function"><span class="keyword">function</span>(<span class="params">component</span>)</span>&#123; </span><br><span class="line">        Ext.Viewport.down(<span class="string">'navview'</span>).pop();</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="9">
+            <li>Double click the videoPause() function and use the following
+              code:</li>
+          </ol>
+          <figure class="highlight javascript">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="keyword">var</span> video = Ext.Viewport.down(<span class="string">'video'</span>);</span><br><span class="line"><span class="keyword">if</span>(video)&#123;</span><br><span class="line">  <span class="keyword">if</span>(video.isPlaying())&#123;</span><br><span class="line">    video.pause();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    video.play();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="10">
+            <li>Double click the videoPrev() function and use the following
+              code:</li>
+            <li>Double click the videoNext() function and use the following
+              code:</li>
+            <li>In the Config Panel, add 6 Actions: (Option, Target type, Event
+              name, Function Body) - Controller Action - Ext.dataview.List -
+              downkey this.navDown(); - Controller Action - Ext.dataview.List -
+              upkey this.navUp(); - Controller Action - Ext.dataview.List -
+              enterkey this.navEnter(); - Controller Action - Ext.dataview.List
+              - spacekey this.videoPause()</li>
+          </ol>
+          <h2 id="The-Theme"><a href="#The-Theme" class="headerlink" title="The Theme"></a>The
+            Theme</h2>
+          <ol>
+            <li>In the Project Inspector, select <strong>Resources &gt;
+                MyDefaultTheme</strong></li>
+            <li>In the Config Panel, set the Filename to: <em>MediaCenter</em></li>
+            <li>Click in the Config Panel, the <strong>Theme tab</strong> Now
+              our app is finished, we can control it with a tv remote. The only
+              thing is… It doesn’t look like a MediaCenter app yet… Let’s style
+              it!</li>
+          </ol>
+          <h2 id="Theme-Variables"><a href="#Theme-Variables" class="headerlink"
+                                                                                            title="Theme Variables"></a>Theme
+            Variables</h2>
+          <ol>
+            <li>Filter for the following variables: <em>- base color: #000 -
+                page bg color: #000 - list bg color: #000 - list color: #fff -
+                list active color: #1b51fb; - include default icons: false -
+                include pictos font: false</em></li>
+          </ol>
+          <h2 id="Add-custom-styling"><a href="#Add-custom-styling" class="headerlink"
+                                                                                            title="Add custom styling"></a>Add
+            custom styling</h2>
+          <ol>
+            <li>In the Project Inspector, select Resources &gt; MyDefaultTheme</li>
+            <li>In the Config Panel, add a SCSS snippet - Set the compile order
+              to: <strong>afterFramework</strong> - Set the DisplayName to:
+              <strong>List</strong></li>
+            <li>Use the following styles, to style the List:</li>
+          </ol>
+          <figure class="highlight css">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="selector-class">.x-list</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.x-list</span> <span class="selector-class">.x-list-item</span><span class="selector-class">.x-item-selected</span> <span class="selector-class">.x-dock-horizontal</span>,</span><br><span class="line"><span class="selector-class">.x-list</span> <span class="selector-class">.x-list-item</span><span class="selector-class">.x-item-selected</span><span class="selector-class">.x-list-item-tpl</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="attribute">-webkit-box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">-moz-box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">box-shadow</span>: inset <span class="number">1px</span> <span class="number">0px</span> <span class="number">5px</span> <span class="number">2px</span> <span class="number">#347EC9</span>;</span><br><span class="line"><span class="attribute">background-color</span>: <span class="number">#000</span>;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">-moz-linear-gradient</span>(top, #000, #56626E 55%, lighten(#000, 15%) <span class="number">55%</span>, <span class="number">#000</span>);</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(top, #000, #56626E 55%, lighten(#000, 15%) <span class="number">55%</span>, <span class="number">#000</span>);</span><br><span class="line"></span><br><span class="line">* &#123; color: #fff; &#125;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="4">
+            <li>Create another SCSS snippet - Set the compile order to: <strong>afterFramework</strong>
+              - Set the DisplayName to: <strong>Image</strong></li>
+            <li>Use the following styles:</li>
+          </ol>
+          <figure class="highlight css">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line"><span class="selector-class">.x-img</span> &#123;</span><br><span class="line"><span class="attribute">-webkit-transform</span>: <span class="built_in">perspective</span>(600px) <span class="built_in">rotateY</span>(10deg);</span><br><span class="line"><span class="attribute">-webkit-box-reflect</span>: below -<span class="number">1px</span></span><br><span class="line"><span class="built_in">-webkit-gradient</span>(linear, left top, left bottom, from(transparent), <span class="built_in">color-stop</span>(0.7, transparent), <span class="built_in">to</span>(rgba(0,0,0,0.5)));</span><br><span class="line"></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">perspective</span>(600px) <span class="built_in">rotateY</span>(10deg);</span><br><span class="line"><span class="attribute">box-reflect</span>: below -<span class="number">1px</span></span><br><span class="line"><span class="built_in">gradient</span>(linear, left top, left bottom, from(transparent), <span class="built_in">color-stop</span>(0.7, transparent), <span class="built_in">to</span>(rgba(0,0,0,0.5)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <ol start="6">
+            <li>Create another SCSS snippet - Set the compile order to: <strong>beforeVariables</strong>
+              - Set the DisplayName to: <strong>Fonts</strong></li>
+            <li>Pick a Google Font: - Choose a font - Add to Collection - Click
+              the Use tab - Copy the @Import code. For example:</li>
+          </ol>
+          <figure class="highlight scss">
+            <table>
+              <tr>
+                <td class="gutter">
+                  <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                </td>
+                <td class="code">
+                  <pre><span class="line">@<span class="keyword">import</span> url(http://fonts.googleapis.com/css?family=Coda+Caption:<span class="number">800</span>);</span><br><span class="line"></span><br><span class="line">- Paste it into the Architect SCSS snippet. 8. Open the List SCSS snippet, add the following styles:</span><br><span class="line"></span><br><span class="line">.x-toolbar .x-innerhtml &#123;</span><br><span class="line">  font-family: <span class="string">'Coda Caption'</span>;</span><br><span class="line">&#125;</span><br></pre>
+                </td>
+              </tr>
+            </table>
+          </figure>
+          <p>Note the name of your chosen font.</p>
+          <h2 id="Build-the-app"><a href="#Build-the-app" class="headerlink"
+                                                                                            title="Build the app"></a>Build
+            the app</h2>
+          <ol>
+            <li>In the toolbar hit the <strong>Build web app button</strong>.</li>
+            <li>In the popup select the environment: <strong>Production</strong></li>
+            <li>Click <strong>Save</strong></li>
+            <li>Click <strong>Run</strong></li>
+            <li>Test your application: <a href="http://localhost:1841/Architect/TunesTouch/build/production/TunesTouch/"
+                                                                                              target="_blank"
+                                                                                              rel="noopener">http://localhost:1841/Architect/TunesTouch/build/production/TunesTouch/</a></li>
+          </ol>
+          <p>And well done! How to run this app on your TV? First, upload the
+            production package to some server online. In case you have a smart
+            tv, you could open the browser app, and browse to the TunesTouch
+            app. I tested it on my Raspbmc and on the Ouya XBMC browser app,
+            and it runs great!</p>
+          <script type="application/ld+json">
+            {
               "@context": "http://schema.org",
               "@type": "BlogPosting",
               "headline": "Create a TV app with Sencha Touch and Sencha Architect",
@@ -8,17 +506,75 @@
               "datePublished": "2014-06-16",
               "dateCreated": "2014-06-16",
               "dateModified": "2014-06-16",
-              "publisher": "Lee Boonstra",
-              "description": "",
-              "mainEntityOfPage": "",
-              "image": "https//www.leeboonstra.com/images/screen.png"
-              "articleBody": "",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Ladysign",
+                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+              },
+              "description": "DevTricks Lee Boonstra's blog. ",
+              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/",
+              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "articleBody": "DevTricks Lee Boonstra's blog. ",
               "author": {
                 "@type": "Person",
                 "name": "Lee Boonstra",
                 "url": "http://www.leeboonstra.com"
               }
-            }</script><footer class="article-foot"><a class="badge badge-primary tag-link" href="/tags/Sencha-Architect/">Sencha Architect</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha Touch</a><div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet?text=I came across: Create a TV app with Sencha Touch and Sencha Architect - https://devtricks-45484.firebaseapp.com/Sencha-Architect/create-a-tv-app-with-sencha-touch-and-sencha-architect/ via @ladysign" data-size="large" target="_blank"><span>Tweet this</span></a></div><ul id="article-nav"><li><a href="/Sencha-Architect/using-custom-fonts-with-sencha-architect-2/" id="article-nav-newer" class="article-nav-link-wrap" rel="prev"><div class="article-nav-title">&laquo;</div></a></li><li><a href="/Ext-JS/creating-theme-specific-overrides-in-ext-js/" id="article-nav-older" class="article-nav-link-wrap" rel="next"><div class="article-nav-title">&raquo;</div></a></li></ul></footer></div><div class="col col-sm-3"><aside id="sidebar" class="sidebar"><div class="profile"><section><span class="headshot"><a href="/images/profile.jpg"><img src="/images/profile_small.jpg" alt="Lee Boonstra"></a></span><h2><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a></h2><div><p><a href="https://plus.google.com/117712452932146916020/" rel="author me" target="_blank">Lee Boonstra</a> is a customer engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.</p><p>Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites. Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.</p></div><script type="application/ld+json">{
+            }
+
+          </script>
+          <footer class="article-foot"><a class="badge badge-primary tag-link"
+                                                                                            href="/tags/Sencha-Architect/">Sencha
+              Architect</a><a class="badge badge-primary tag-link" href="/tags/Sencha-Touch/">Sencha
+              Touch</a>
+            <div class="bar"><a class="twitter-share-button btn" href="https://twitter.com/intent/tweet"
+                                                                                              data-size="large"
+                                                                                              target="_blank"><span>Tweet
+                  this</span></a></div>
+            <ul id="article-nav">
+              <li><a href="/Sencha-Architect/using-custom-fonts-with-sencha-architect-2/"
+                                                                                                id="article-nav-newer"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="prev">
+                  <div class="article-nav-title">&laquo;</div>
+                </a></li>
+              <li><a href="/Ext-JS/creating-theme-specific-overrides-in-ext-js/"
+                                                                                                id="article-nav-older"
+                                                                                                class="article-nav-link-wrap"
+                                                                                                rel="next">
+                  <div class="article-nav-title">&raquo;</div>
+                </a></li>
+            </ul>
+          </footer>
+        </div>
+        <div class="col col-sm-3">
+          <aside id="sidebar" class="sidebar">
+            <div class="profile">
+              <section><span class="headshot"><a href="/images/profile.jpg"><img
+                                                                                                    src="/images/profile_small.jpg"
+                                                                                                    alt="Lee Boonstra"></a></span>
+                <h2><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                  rel="author me"
+                                                                                                  target="_blank">Lee
+                    Boonstra</a></h2>
+                <div>
+                  <p><a href="https://plus.google.com/117712452932146916020/"
+                                                                                                    rel="author me"
+                                                                                                    target="_blank">Lee
+                      Boonstra</a> is a customer engineer at Google, at the
+                    Google Cloud team where she assist the sales team with
+                    technical knowledge for the financial industry.</p>
+                  <p>Lee lives in Amsterdam and has experience in application
+                    development. She spends her spare time developing web and
+                    mobile apps. Before Google, she worked for Sencha, where
+                    she traveled all the world as sales engineer and technical
+                    trainer. Further more, she speaks regularly at seminars and
+                    conferences and writes blogposts and articles for various
+                    magazines and websites. Also, she wrote a book for
+                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                </div>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -42,7 +598,31 @@
                       "http://twitter.com/ladysign",
                       "https://plus.google.com/117712452932146916020/"
                     ]
-                  }</script></section><section><h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do" class="book"><img height="100" src="/images/book.gif" class="thumb" alt="My book."></a><p>Build snappy web apps for mobile devices with Sencha Touch 2, the user interface JavaScript framework built specifically for the mobile Web.</p><p>With this book, you’ll learn how to build a complete HTML5-based multi-device app...</p><ul class="books"><li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058" class="btn btn-default"><b>Buy my book!</b></a></li><li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2" class="btn btn-default"><b>Amazon</b></a></li></ul><script type="application/ld+json">{
+                  }
+
+                </script>
+              </section>
+              <section>
+                <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
+                                                                                                class="book"><img
+                                                                                                  height="100"
+                                                                                                  src="/images/book.gif"
+                                                                                                  class="thumb"
+                                                                                                  alt="My book."></a>
+                <p>Build snappy web apps for mobile devices with Sencha Touch
+                  2, the user interface JavaScript framework built specifically
+                  for the mobile Web.</p>
+                <p>With this book, you’ll learn how to build a complete
+                  HTML5-based multi-device app...</p>
+                <ul class="books">
+                  <li><a href="http://www.jdoqocy.com/click-7625429-11290546?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920030058.do%3Fcmp%3Daf-code-books-video-product_cj_0636920030058_%25zp&amp;cjsku=0636920030058"
+                                                                                                    class="btn btn-default"><b>Buy
+                        my book!</b></a></li>
+                  <li><a href="https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&amp;qid=1475512984&amp;sr=8-1&amp;keywords=hands-on+sencha+touch+2"
+                                                                                                    class="btn btn-default"><b>Amazon</b></a></li>
+                </ul>
+                <script type="application/ld+json">
+                  {
                     "@context": "http://schema.org/",
                     "@type": "Review",
                     "itemReviewed": {
@@ -73,4 +653,227 @@
                     "datePublished": "July 31, 2014",
                     "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
                     "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
-                  }</script></section></div><div class="sidebar-module categories"><h4>Categories</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/App-Cache/">App Cache</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Bots/">Bots</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Containers/">Containers</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Cordova/">Cordova</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Django/">Django</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Ext-JS/">Ext JS</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Google-Cloud-Platform/">Google Cloud Platform</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Robotics/">Robotics</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha/">Sencha</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Architect/">Sencha Architect</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-CMD/">Sencha CMD</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Sencha-Touch/">Sencha Touch</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Theming/">Theming</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Videos/">Videos</a><span class="sidebar-module-list-count">13</span></li></ul></div></aside></div></article><section id="related" class="related containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Related Posts</h2><ul class="related-posts"><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 3)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Architect/using-custom-fonts-with-sencha-architect-2/">Using Custom Fonts with Sencha Architect</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 2)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 1)</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Videos/optimizing-extjs/">Optimizing Your Current Ext JS Applications for Touch and Tablets</a></li><li class="related-posts-item"><a class="related-posts-link" href="/Videos/senchaarchitect/">Re-skinning Your Apps Just Got Easier with Sencha Architect 3</a></li></ul></div><div class="col col-sm-3"></div></div></div></section><section id="comments" class="comments containerfluid"><div class="container"><div class="row"><div class="col col-sm-9"><h2>Comments</h2><div class="disqus"></div><noscript>Please enable JavaScript to view the comments.</noscript></div></div><div class="col col-sm-3"></div></div></section></main><footer class="foot"><div class="container"><div class="row"><div class="col col-sm-4"><div class="sidebar-module archive"><h4>Archives</h4><ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/">2018</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/">2017</a><span class="sidebar-module-list-count">8</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/">2016</a><span class="sidebar-module-list-count">18</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/">2015</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/">2014</a><span class="sidebar-module-list-count">11</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/">2012</a><span class="sidebar-module-list-count">3</span></li></ul></div></div><div class="col col-sm-4"><h4>External Sites</h4><ul><li><a href="https://gist.github.com/savelee">My Gists Code Snippets</a></li><li><a href="http://www.github.com/savelee">My Github</a></li><li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li><li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My Book</a></li><li><a href="http://twitter.com/ladysign">My Twitter</a></li><li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li></ul></div><div class="col col-sm-4"><div class="sidebar-module"><h4>Recents</h4><ul class="sidebar-module-list"><li><a href="/Videos/video-frontmania/">Keynote Frontmania: Machine Learning for JavaScript developers</a></li><li><a href="/Videos/video-google-cloud-next-london/">Google Cloud Next London Teaser</a></li><li><a href="/Videos/video-digitalwednesday/">Digital Wednesday Building agents for the Google Assistant (Dutch)</a></li><li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional Templating in Dialogflow for Google Assistant</a></li><li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom greeting Google Assistant app with Dialogflow and Actions on Google</a></li></ul></div></div></div></div></footer><footer class="bottom"><div class="row">&copy; 2018 Lee Boonstra</div></footer></div><script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script><script src="/assets/js/vendor/jquery-3.3.1.min.js"></script><script src="/assets/js/vendor/popper.min.js"></script><script src="/assets/js/vendor/bootstrap.min.js"></script><script src="/assets/js/disqus-lazy-min.js"></script><script>window.twttr=function(t,e,r){var n,i=t.getElementsByTagName(e)[0],w=window.twttr||{};return t.getElementById(r)||((n=t.createElement(e)).id=r,n.src="//platform.twitter.com/widgets.js",i.parentNode.insertBefore(n,i),w._e=[],w.ready=function(t){w._e.push(t)}),w}(document,"script","twitter-wjs")</script><script type="text/javascript">$.disqusLoader(".disqus",{scriptUrl:"//leeboonstra-com.disqus.com/embed.js"})</script><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject="ga",e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script"),ga("create","UA-85081556-1","auto"),ga("send","pageview")</script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+                  }
+
+                </script>
+              </section>
+            </div>
+            <div class="sidebar-module categories">
+              <h4>Categories</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/App-Cache/">App
+                    Cache</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Bots/">Bots</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Containers/">Containers</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Cordova/">Cordova</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Django/">Django</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Ext-JS/">Ext
+                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Google-Cloud-Platform/">Google
+                    Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Machine-Learning/">Machine
+                    Learning</a><span class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Robotics/">Robotics</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha/">Sencha</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Architect/">Sencha
+                    Architect</a><span class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-CMD/">Sencha
+                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Sencha-Touch/">Sencha
+                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Theming/">Theming</a><span
+                                                                                                  class="sidebar-module-list-count">2</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/categories/Videos/">Videos</a><span
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <section id="related" class="related containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Related Posts</h2>
+              <ul class="related-posts">
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Videos/optimizing-extjs/">Optimizing
+                    Your Current Ext JS Applications for Touch and Tablets</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Videos/senchaarchitect/">Re-skinning
+                    Your Apps Just Got Easier with Sencha Architect 3</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 1)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Architect/using-custom-fonts-with-sencha-architect-2/">Using
+                    Custom Fonts with Sencha Architect</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-3/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 3)</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/">Getting
+                    Started with Sencha Touch 2: Build a Weather Utility App
+                    (Part 2)</a></li>
+              </ul>
+            </div>
+            <div class="col col-sm-3"></div>
+          </div>
+        </div>
+      </section>
+      <section id="comments" class="comments containerfluid">
+        <div class="container">
+          <div class="row">
+            <div class="col col-sm-9">
+              <h2>Comments</h2>
+              <div class="disqus"></div><noscript>Please enable JavaScript to
+                view the comments.</noscript>
+            </div>
+          </div>
+          <div class="col col-sm-3"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-4">
+            <div class="sidebar-module archive">
+              <h4>Archives</h4>
+              <ul class="sidebar-module-list">
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2018/">2018</a><span
+                                                                                                  class="sidebar-module-list-count">7</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2017/">2017</a><span
+                                                                                                  class="sidebar-module-list-count">8</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2016/">2016</a><span
+                                                                                                  class="sidebar-module-list-count">18</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2015/">2015</a><span
+                                                                                                  class="sidebar-module-list-count">5</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2014/">2014</a><span
+                                                                                                  class="sidebar-module-list-count">11</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2012/">2012</a><span
+                                                                                                  class="sidebar-module-list-count">3</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col col-sm-4">
+            <h4>External Sites</h4>
+            <ul>
+              <li><a href="https://gist.github.com/savelee">My Gists Code
+                  Snippets</a></li>
+              <li><a href="http://www.github.com/savelee">My Github</a></li>
+              <li><a href="http://speakerdeck.com/savelee/">My Slidedecks</a></li>
+              <li><a href="http://www.amazon.com/Lee-Boonstra/e/B00MRXE3Q0/ref=sr_ntt_srch_lnk_1?qid=1436781780&amp;sr=8-1">My
+                  Book</a></li>
+              <li><a href="http://twitter.com/ladysign">My Twitter</a></li>
+              <li><a href="https://www.linkedin.com/in/leeboonstra">My Linkedin</a></li>
+            </ul>
+          </div>
+          <div class="col col-sm-4">
+            <div class="sidebar-module">
+              <h4>Recents</h4>
+              <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
+                    Machine Learning for JavaScript developers</a></li>
+                <li><a href="/Videos/video-google-cloud-next-london/">Google
+                    Cloud Next London Teaser</a></li>
+                <li><a href="/Videos/video-digitalwednesday/">Digital Wednesday
+                    Building agents for the Google Assistant (Dutch)</a></li>
+                <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
+                    Templating in Dialogflow for Google Assistant</a></li>
+                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
+                    greeting Google Assistant app with Dialogflow and Actions
+                    on Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <div class="row">&copy; 2018 Lee Boonstra</div>
+    </footer>
+  </div>
+  <script>
+    /*if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function() {
+        console.log('ServiceWorker has been registered!');
+      }).catch(console.error);
+    }*/
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+      });
+    }
+
+  </script>
+  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/vendor/popper.min.js"></script>
+  <script src="/assets/js/vendor/bootstrap.min.js"></script>
+  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script>
+    window.twttr = function(t, e, r) {
+      var n, i = t.getElementsByTagName(e)[0],
+        w = window.twttr || {};
+      return t.getElementById(r) || ((n = t.createElement(e)).id = r, n.src =
+        "//platform.twitter.com/widgets.js", i.parentNode.insertBefore(n, i),
+        w._e = [], w.ready = function(t) {
+          w._e.push(t)
+        }), w
+    }(document, "script", "twitter-wjs")
+
+  </script>
+  <script>
+    $.disqusLoader(".disqus", {
+      scriptUrl: "//leeboonstra-com.disqus.com/embed.js"
+    })
+
+  </script>
+  <script type="text/javascript">
+    ! function(e, a, t, n, g, c, o) {
+      e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
+          (e.ga.q = e.ga.q || []).push(arguments)
+        }, e.ga.l = 1 * new Date, c = a.createElement(t), o = a.getElementsByTagName(
+          t)[0], c.async = 1, c.src = "//www.google-analytics.com/analytics.js",
+        o.parentNode.insertBefore(c, o)
+    }(window, document, "script"), ga("create", "UA-85081556-1", "auto"), ga(
+      "send", "pageview")
+
+  </script>
+</body>
+
+</html>
