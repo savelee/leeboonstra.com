@@ -72,7 +72,11 @@
       "datePublished": "<%- post.date.format('YYYY-MM-DD') %>",
       "dateCreated": "<%- post.date.format('YYYY-MM-DD')  %>",
       "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
-      "publisher": "Lee Boonstra",
+      "publisher": {
+        "@type": "Person",
+        "name": "Lee Boonstra",
+        "url": "http://www.leeboonstra.com"
+      }
       "description": "DevTricks Lee Boonstra's blog. <%- post.description %>",
       "mainEntityOfPage": "<%- post.permalink %>",
       "image": "<%- config.url %>/images/screen.png",
