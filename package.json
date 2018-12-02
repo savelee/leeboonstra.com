@@ -6,7 +6,6 @@
     "version": "3.8.0"
   },
   "scripts": {
-    "install": "workbox wizard",
     "sw": "workbox injectManifest themes/ladysign/source/sw-dev.js",
     "serve": "workbox generateSW && hexo serve",
     "build": "workbox generateSW && hexo generate"
