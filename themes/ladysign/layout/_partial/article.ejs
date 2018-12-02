@@ -24,8 +24,12 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
         Posted on <%- partial('post/date', {class_name: 'article-date', date_format: 'MMM Do YYYY'}) %>
         <%- partial('post/category') %>
-        <span class="hidden" itemprop="author">Lee Boonstra</span>
-        <span class="hidden" itemprop="publisher">Lee Boonstra</span>
+        <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">Lee Boonstra</span>
+        </div>
+        <div class="hidden" itemprop="publisher" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">Lee Boonstra</span>
+        </div>
         <img class="hidden" itemprop="image" src="<%- config.url %>/images/screen.png">
       </header>
     <% } %>
