@@ -27,8 +27,8 @@
         <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <span itemprop="name">Lee Boonstra</span>
         </div>
-        <div class="hidden" itemprop="publisher" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">Lee Boonstra</span>
+        <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <meta itemprop="name" content="Ladysign">
         </div>
         <img class="hidden" itemprop="image" src="<%- config.url %>/images/screen.png">
       </header>
@@ -73,10 +73,9 @@
       "dateCreated": "<%- post.date.format('YYYY-MM-DD')  %>",
       "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
       "publisher": {
-        "@type": "Person",
-        "name": "Lee Boonstra",
-        "url": "http://www.leeboonstra.com"
-      }
+        "@type": "Organization",
+        "name": "Ladysign"
+      },
       "description": "DevTricks Lee Boonstra's blog. <%- post.description %>",
       "mainEntityOfPage": "<%- post.permalink %>",
       "image": "<%- config.url %>/images/screen.png",
