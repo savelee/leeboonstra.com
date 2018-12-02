@@ -7,13 +7,11 @@
       <div class="col col-sm-9 article-inner contentpage">
 
     <a class="twitter-share-button btn"
-      href="https://twitter.com/intent/tweet?text=I came across: <%= post.title %> via @ladysign"
-      data-size="large" target="_blank">
+      href="https://twitter.com/intent/tweet" data-size="large" target="_blank">
     <span>Tweet this</span></a>
 
     <a class="twitter-follow-button btn"
-      href="https://twitter.com/ladysign"
-      data-size="large">
+      href="https://twitter.com/ladysign" data-size="large">
     Follow @ladysign</a>
 
     <% } %>
@@ -28,9 +26,10 @@
           <span itemprop="name">Lee Boonstra</span>
         </div>
         <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-          <meta itemprop="name" content="Ladysign">
+          <meta itemprop="name" content="Ladysign" />
+          <meta itemprop="logo" content="<%- config.url %>/images/screen.png" />
         </div>
-        <img class="hidden" itemprop="image" src="<%- config.url %>/images/screen.png">
+        <img class="hidden" itemprop="image" src="<%- config.url %>/images/screen.png" alt="Screenshot">
       </header>
     <% } %>
     <% if (post.excerpt && index){ %>
@@ -74,7 +73,8 @@
       "dateModified": "<%- post.date.format('YYYY-MM-DD') %>",
       "publisher": {
         "@type": "Organization",
-        "name": "Ladysign"
+        "name": "Ladysign",
+        "logo": "<%- config.url %>/images/screen.png"
       },
       "description": "DevTricks Lee Boonstra's blog. <%- post.description %>",
       "mainEntityOfPage": "<%- post.permalink %>",
@@ -97,7 +97,7 @@
       <% if (!index){ %>
         <div class="bar">
           <a class="twitter-share-button btn"
-          href="https://twitter.com/intent/tweet?text=I came across: <%= post.title %> - <%- config.url %><%- url_for(post.path) %> via @ladysign"
+          href="https://twitter.com/intent/tweet"
           data-size="large" target="_blank">
           <span>Tweet this</span></a>
         </div>
