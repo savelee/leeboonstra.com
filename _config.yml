@@ -13,7 +13,7 @@ timezone: Europe/Amsterdam
 
 # URL
 ## If your site is put in a subdirectory set url as 'http:/yoursite.com/child' and root as '/child/'
-url: https://devtricks-45484.firebaseapp.com/
+url: https://www.leeboonstra.com/
 root: /
 permalink: :category/:title/
 permalink_defaults:
