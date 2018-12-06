@@ -36,12 +36,20 @@ Beside writing this blog, I’ve also published my work elsewhere. Below is a li
     ------------------------------------------
     
     10-2013 | **Future Plc**
+
+
+ *   Lee Boonstra Press Releases
+     ---------------------------
+
+    12-2018 | [MarketingFacts.nl - Google wil het platform worden voor voice en chatbots](https://www.marketingfacts.nl/berichten/google-wil-het-platform-worden-voor-voice-en-chatbots)
+
+    12-2018 | [Customertalk.nl - De ontwikkeling van een chatbot was nog nimmer zo eenvoudig](https://www.customertalk.nl/nieuws/de-ontwikkeling-van-een-chatbot-was-nog-nimmer-zo-eenvoudig/)
     
+    10-2016 | [CodePanCake.com - Girls in Tech](http://www.codepancake.com/spotlight-49-meet-sales-engineer-lee-boonstra/)
 
 
 <hr>
 
 <img src="/images/leeboonstra-book.png" width="500" class="border" alt="Lee Boonstra Author"/>
 
-Read my **Girls In Tech spotlight interview** at [CodePanCake](http://www.codepancake.com/spotlight-49-meet-sales-engineer-lee-boonstra/)
 

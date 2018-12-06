@@ -1,5 +1,6 @@
 ---
 title: 'Google Cloud Next Amsterdam Keynote - Video Intelligence API'
+description: Lee Boonstra speaking at the Google Cloud Next Amsterdam 2017 keynote about the Video Intelligence API
 tags:
   - Video Intelligence API
 categories:

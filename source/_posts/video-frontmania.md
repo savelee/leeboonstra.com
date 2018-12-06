@@ -1,5 +1,6 @@
 ---
 title: 'Keynote Frontmania: Machine Learning for JavaScript developers'
+description: Lee Boonstra speaking at Frontmania about Machine Learning
 categories:
   - Videos
 date: 2018-11-20 11:45:17
@@ -7,6 +8,8 @@ youtube: NH-bL6Bd7Tw
 tags:
   - AutoML
 ---
+
+
 
 At Frontmania in Utrecht I presented during the keynote, about machine learning for JavaScript developers:
 <!--more-->

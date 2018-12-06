@@ -7,7 +7,7 @@
       ".env"
     ],
     "headers": [ {
-      "source" : "**/*.@(eot|otf|svg|ttf|ttc|woff|font.css)",
+      "source" : "**/*.@(eot|otf|svg|ttf|ttc|woff2|woff|font.css)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
         "value" : "*"
@@ -18,7 +18,13 @@
         "key" : "Cache-Control",
         "value" : "max-age=31557600"
       } ]
-    }, 
+    }, {
+      "source" : "**/*.@(html|css",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=7200"
+      } ]
+    },
     {
       "source" : "404.html|main.css",
       "headers" : [ {

@@ -1,5 +1,6 @@
 ---
 title: 'Cloud on air webinar: Create custom conversations with Dialogflow'
+description: Training Session by Lee Boonstra. Learn about Dialogflow and Chatbots.
 categories:
   - Videos
 date: 2017-11-06 08:43:23

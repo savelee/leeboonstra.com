@@ -1,5 +1,6 @@
 ---
 title: 'Digital Wednesday Building agents for the Google Assistant (Dutch)'
+description: Lee Boonstra speaks at Digital Wednesday about Building actions for the Dutch Google Assistant.
 categories:
   - Videos
 date: 2018-10-01 11:45:17

@@ -1,5 +1,6 @@
 ---
 title: 'Create custom chat agents for Google Home with Dialogflow'
+description: Lee Boonstra speaking during the Leader Circle at Google Cloud Next Amsterdam 2017 about chatbots.
 tags:
   - Alexa
   - Dialogflow

@@ -1,5 +1,6 @@
 ---
 title: 'Google Cloud Next London Teaser'
+description: Lee Boonstra featured in the Google Cloud Next London teaser showing a Customer Care demo.
 tags:
   - BigQuery
   - Chatbots

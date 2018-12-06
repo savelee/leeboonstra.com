@@ -1,5 +1,6 @@
 ---
 title: 'DLP & Vision API demo @ Google Cloud Summit Munich'
+description: Lee Boonstra speaks during the Google Cloud Summit Munich 2017 about the DLP API and Vision API.
 tags:
   - DLP API
   - GDPR
