@@ -4,7 +4,8 @@ date: 2015-07-06 20:45:21
 event: true
 ---
 
-<img src="/images/leeboonstra-speaker-500x351.png" width="400" class="float-right border" alt="Lee Speaking">
+<img src="/images/lee-speaking2.png" width="400" class="float-right border" alt="Lee Speaking">
+
 
 Worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of my past sessions.
 
@@ -38,6 +39,7 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
           }
         }
       }</script>
+
 
 2018
 ----
@@ -302,6 +304,9 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
     
     Workshop: Create the TV guide action for the Google Assistant with API.AI and Cloud Functions.
     
+
+
+<img src="/images/leeboonstra-speaker-500x351.png" width="400" class="float-right border" alt="Lee Speaking">
 
 2016
 ----
