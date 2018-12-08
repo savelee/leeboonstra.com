@@ -9,8 +9,10 @@ tags:
   - promises
   - ExtJS6
   - Sencha
+  - Ext JS 6
 categories:
   - Ext JS
+alias: /developer/asynchronous-javascript-promises/
 date: 2016-04-01 10:14:56
 ---
 

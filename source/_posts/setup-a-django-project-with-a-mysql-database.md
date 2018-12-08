@@ -1,12 +1,15 @@
 ---
 title: Setup a Django Project with a MySQL database.
+description: This simple tutorial will show you haow to setup Django with a MySQL database.
 tags:
   - Django
   - MySQL
-  - Phyton
+  - Python
+  - Django Database
 categories:
   - Django
 date: 2016-03-29 17:50:43
+alias: /developer/setup-a-django-project-with-a-mysql-database/
 ---
 
 This tutorial will show you haow to setup Django with a MySQL database, it requires Python 2.7. 

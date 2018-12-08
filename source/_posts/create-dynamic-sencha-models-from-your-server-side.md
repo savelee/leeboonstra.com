@@ -1,11 +1,14 @@
 ---
 title: Create dynamic Sencha models from your server-side
+description: Learn how to generate sencha models with server-side coding.
 tags:
   - Ext JS
   - MVC
   - Models
+  - Generate Models
 categories:
   - Ext JS
+alias: /developer/create-dynamic-sencha-models-from-your-server-side/
 date: 2014-04-26 15:00:05
 ---
 

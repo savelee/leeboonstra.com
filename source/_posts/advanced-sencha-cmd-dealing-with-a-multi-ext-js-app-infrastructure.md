@@ -10,6 +10,7 @@ tags:
   - Sencha CMD
 categories:
   - Sencha CMD
+alias: /developer/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/ 
 date: 2016-02-21 18:06:24
 ---
 

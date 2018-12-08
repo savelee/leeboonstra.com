@@ -11,6 +11,7 @@ tags:
   - Virtual Machines
 categories:
   - Google Cloud Platform
+alias: /developer/analyzing-data-with-bigquery-and-machine-learning-apis/
 date: 2017-03-18 08:00:31
 ---
 

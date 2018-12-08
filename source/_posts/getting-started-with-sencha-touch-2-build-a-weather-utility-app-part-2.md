@@ -1,6 +1,6 @@
 ---
 title: 'Getting Started with Sencha Touch 2: Build a Weather Utility App (Part 2)'
-description: Welcome at this series of blog posts How to create a utility app with Sencha Touch and Sencha Cmd
+description: Learn how to create a utility app with Sencha Touch and Sencha Cmd
 tags:
   - CSS
   - Sass
@@ -8,6 +8,7 @@ tags:
   - Theming
 categories:
   - Sencha Touch
+alias: /developer/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-2/
 date: 2014-04-14 10:48:47
 ---
 

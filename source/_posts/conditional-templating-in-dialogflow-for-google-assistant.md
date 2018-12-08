@@ -7,8 +7,11 @@ tags:
   - Google Assistant
   - Pug
   - Templating
+  - Chatbots
+  - Dialogflow Enterprise
 categories:
   - Bots
+alias: /developer/conditional-templating-in-dialogflow-for-google-assistant/
 date: 2018-05-20 17:02:22
 ---
 

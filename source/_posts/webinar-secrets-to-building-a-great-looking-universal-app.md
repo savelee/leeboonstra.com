@@ -1,8 +1,15 @@
 ---
 title: 'Webinar: Secrets to Building a Great Looking Universal App'
+description: Checkout my webinar training video on how to build great looking universal apps
 categories:
   - Videos
+tags:
+  - Video
+  - Universal App
+  - Ext JS
+  - Theming
 date: 2015-11-10 10:49:40
+alias: /developer/webinar-secrets-to-building-a-great-looking-universal-app/
 ---
 
 A while ago I recorded this great webinar for Sencha. Just in case you missed it; you can watch it back!

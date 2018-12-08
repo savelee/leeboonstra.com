@@ -3,8 +3,11 @@ title: Optimizing Your Current Ext JS Applications for Touch and Tablets
 description: Re-skinning Your Apps Just Got Easier with Sencha Architect 3
 tags:
   - Sencha Architect
+  - Touch Features
+  - Tablet Applications
 categories:
   - Videos
+alias: /developer/optimizing-extjs/
 date: 2014-08-08 09:16:41
 ---
 

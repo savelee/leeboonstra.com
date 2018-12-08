@@ -5,8 +5,14 @@ categories:
   - Videos
 date: 2018-10-01 11:45:17
 youtube: mzHWYTougwI
+alias: /developer/video-digitalwednesday/
 tags:
-  - Video Intelligence API
+  - Actions on Google
+  - Digital Wednesday
+  - Google Assistant
+  - Dialogflow
+  - Chatbots
+  - Video
 ---
 
 I've presented in Eindhoven during Digital Wednesday about Dialogflow and Google Assistant:

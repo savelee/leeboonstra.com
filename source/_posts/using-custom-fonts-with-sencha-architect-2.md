@@ -1,5 +1,6 @@
 ---
 title: Using Custom Fonts with Sencha Architect
+description: Learn how to use custom fonts in Sencha Architect
 tags:
   - Custom fonts
   - Font-Face
@@ -7,6 +8,7 @@ tags:
 categories:
   - Sencha Architect
 date: 2014-07-08 08:12:44
+alias: /developer/using-custom-fonts-with-sencha-architect-2/
 ---
 
 Back in the days when websites were restricted to typical fonts such as Arial, Georgia, Times and so on, fonts were delivered from the user’s machine. Fortunately today, because of HTML5 and CSS3, browsers support embedded web fonts.

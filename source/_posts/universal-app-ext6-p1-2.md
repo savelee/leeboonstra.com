@@ -1,12 +1,16 @@
 ---
 title: How to Build a Great Looking Universal App with Ext JS – Part 2
+description: Part 2 on how to learn how to build a universal apps with Ext JS 6
 tags:
   - Desktop
   - Mobile
-  - Universal App
+  - Universal Apps
+  - Spotlib
+  - Spotify Theme
 categories:
   - Ext JS
 date: 2015-11-08 10:45:21
+alias: /developer/universal-app-ext6-p1-2/
 ---
 
 In [part 1](/Ext-JS/universal-app-ext6-p1/) of this series, I described what a universal app is and how it’s created in Ext JS 6. Now, I’ll show you how I built my application.

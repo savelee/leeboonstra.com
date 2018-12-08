@@ -1,5 +1,6 @@
 ---
 title: Using Custom Icons in Your Ext JS Apps
+description: Learn how to use custom icons in your Ext JS apps
 tags:
   - glyphs
   - icon fonts
@@ -9,6 +10,7 @@ tags:
 categories:
   - Theming
 date: 2014-03-28 11:19:30
+alias: /developer/using-custom-icons-in-your-ext-js-apps/
 ---
 
 Do you like the glyph attribute in Ext JS 4.2 as much as I do? With glyphs, you can implement an icon that is created from a font. 

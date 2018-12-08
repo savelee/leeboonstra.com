@@ -1,11 +1,16 @@
 ---
 title: Introduction to the Video Intelligence API
+description: Learn how to use machine learning on videos and get insights with Google Cloud
 tags:
   - Pre-trained Model
   - Machine Learning
   - Video Intelligence Api
+  - ML
+  - AI
+  - Google Cloud
 categories:
   - Machine Learning
+alias: /developer/introduction-to-the-video-intelligence-api/
 date: 2017-04-10 15:59:18
 ---
 

@@ -6,8 +6,10 @@ tags:
   - Maven
   - pom
   - Sencha
+  - Sencha Cmd
 categories:
   - Sencha CMD
+alias: /developer/advanced-cmd-how-to-integrate-ext-js-with-maven/ 
 date: 2016-02-25 18:38:32
 ---
 

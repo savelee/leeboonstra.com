@@ -5,12 +5,7 @@ importScripts('cache-pf.js');
 var CACHE_NAME = "devtricks";
 var REQUIRED_FILES = [
   '/assets/styles/main.css',
-  '/assets/js/vendor/jquery-3.3.1.min.js',
-  '/assets/js/vendor/modernizr-3.6.0.min.js',
-  '/assets/js/vendor/popper.min.js',
-  '/assets/js/vendor/bootstrap.min.js', 
-  '/assets/js/disqus-lazy-min.js',      
-  '/cache-pf.js',
+  '/assets/js/vendor/vendors.min.js',
   '/favicon.ico',
   '/manifest.json',
   '/images/profile.jpg',

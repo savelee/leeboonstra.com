@@ -3,9 +3,12 @@ title: Re-skinning Your Apps Just Got Easier with Sencha Architect 3
 description: Re-skinning Your Apps Just Got Easier with Sencha Architect 3
 tags:
   - Sencha Architect
+  - Skinning
+  - Theming
 categories:
   - Videos
 date: 2014-08-08 09:16:41
+alias: /developer/senchaarchitect/
 ---
 
 Ever had to reskin UI components to match a visual design or brand standard? The new Themes feature in Architect 3 makes changing the look and feel of your app easier than ever.

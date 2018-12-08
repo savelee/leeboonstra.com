@@ -5,8 +5,14 @@ categories:
   - Videos
 date: 2018-12-06 20:00:00
 youtube: LNmDwLV68fc
+alias: /developer/video-schiphol-developers/
 tags:
   - AutoML
+  - Video
+  - Machine Learning
+  - Tensorflow
+  - Pre-trained Models
+  - ML APIs
 ---
 
 I recently spoke at the Schiphol Developers Group about Machine Learning and Auto ML.

@@ -1,11 +1,14 @@
 ---
 title: Create a TV app with Sencha Touch and Sencha Architect
+description: Design a TV application with Sencha Touch and Sencha Architect.
 categories:
   - Sencha Architect
+alias: /developer/create-a-tv-app-with-sencha-touch-and-sencha-architect/
 date: 2014-06-16 12:00:02
 tags:
   - Sencha Architect
   - Sencha Touch
+  - TV Application
 ---
 
 Often people think, Sencha Touch is a great framework to create **mobile phone apps with.** While that is certainly true, it's also a great framework to create mobile apps with, as in **any** **touch enabled device**.

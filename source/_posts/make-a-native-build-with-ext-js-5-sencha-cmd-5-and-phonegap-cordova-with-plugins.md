@@ -2,6 +2,7 @@
 title: >-
   Make a native build with Ext JS 5, Sencha Cmd 5 and Phonegap / Cordova with
   plugins.
+description: Learn how to make a native iOS build with Ext JS 5 and PhoneGap Cordova.
 tags:
   - Cordova
   - Hybrid App
@@ -9,8 +10,10 @@ tags:
   - iOS
   - Native
   - Phonegap
+  - Mobile App
 categories:
   - Cordova
+alias: /developer/make-a-native-build-with-ext-js-5-sencha-cmd-5-and-phonegap-cordova-with-plugins
 date: 2014-09-03 20:16:28
 ---
 

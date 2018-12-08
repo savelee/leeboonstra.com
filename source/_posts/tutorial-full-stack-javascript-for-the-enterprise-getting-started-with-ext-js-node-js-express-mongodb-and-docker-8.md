@@ -2,14 +2,18 @@
 title: >-
   Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext
   JS, Node.js, Express, MongoDB and Docker. (8)
+description: Part 8 of the tutorial full stack JS development with Ext JS, Node.js, MongoDB and Docker
 tags:
   - Docker
   - Node.js
   - MongoDB
   - Ext JS
+  - Docker Hub
+  - Container Registry
 categories:
   - Containers
 date: 2016-08-23 14:00:30
+alias: /developer/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/
 ---
 
 _This is the last part of this tutorial series, it will cover Github and the Docker Hub._ 

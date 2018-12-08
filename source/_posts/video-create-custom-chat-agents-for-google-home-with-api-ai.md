@@ -9,9 +9,12 @@ tags:
   - Google Assistant
   - Google Home
   - Siri
+  - Actions on Google
+  - Video
 categories:
   - Videos
 date: 2017-09-26 10:21:28
+alias: /developer/video-create-custom-chat-agents-for-google-home-with-api-ai/
 youtube: iWWodOrIf7I
 ---
 

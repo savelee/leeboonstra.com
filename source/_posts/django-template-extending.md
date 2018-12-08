@@ -1,11 +1,13 @@
 ---
 title: Django Template extending
+description: Learn how to extend from Django templates.
 tags:
   - Django
   - Python
   - Templates
 categories:
   - Django
+alias: /developer/django-template-extending/
 date: 2016-03-29 18:03:43
 ---
 

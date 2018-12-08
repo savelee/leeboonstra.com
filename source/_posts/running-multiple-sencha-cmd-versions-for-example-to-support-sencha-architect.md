@@ -1,10 +1,12 @@
 ---
 title: Running multiple Sencha Cmd versions
+description: Learn how to run multiple Sencha Cmd versions next to each other
 tags:
   - Sench Cmd
 categories:
   - Sencha CMD
 date: 2015-07-10 09:19:52
+alias: /developer/running-multiple-sencha-cmd-versions-for-example-to-support-sencha-architect/
 ---
 
 Do you want to run multiple versions of Sencha Cmd, because you are developing Sencha Touch, Ext JS 4, 5 and 6 apps all together? This guide will give you answers.

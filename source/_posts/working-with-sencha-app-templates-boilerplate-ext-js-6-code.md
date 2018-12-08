@@ -10,6 +10,7 @@ tags:
 categories:
   - Ext JS
 date: 2015-07-10 14:43:57
+alias: /developer/working-with-sencha-app-templates-boilerplate-ext-js-6-code/
 ---
 
 ### Software in a day 

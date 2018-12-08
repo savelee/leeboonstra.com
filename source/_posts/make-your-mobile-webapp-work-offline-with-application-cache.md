@@ -1,11 +1,15 @@
 ---
 title: Make your mobile webapp work offline with application cache
+description: This tutorial will help you to put your mobile webapp offline.
 tags:
   - Application Cache
   - JavaScript
   - Offline Apps
+  - App Cache
+  - Caching Web Applications
 categories:
   - App Cache
+alias: /developer/make-your-mobile-webapp-work-offline-with-application-cache/
 date: 2012-11-11 09:33:34
 ---
 

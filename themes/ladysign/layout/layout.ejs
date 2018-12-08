@@ -49,7 +49,7 @@
   <meta itemprop="publisher" content="Lee Boonstra">
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="canonical" href="<%- config.url %>" />
+  <%- autoCanonical(config, page) %>
   <link  href="//plus.google.com/117712452932146916020" rel="author" />
   <link rel="image_src" type="image/png" href="<%- config.url %>/images/screen.png" />
   <link rel="profile" href="//gmpg.org/xfn/11">
@@ -63,11 +63,7 @@
 
   <link rel="preconnect" href="<%= config.url %>">
 
-  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
-  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="preload" href="/assets/js/vendor/vendors.min.js" as="script">
 
   <link rel="manifest" href="/manifest.json">
 

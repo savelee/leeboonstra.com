@@ -1,12 +1,15 @@
 ---
 title: >-
   Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6
+description: Learn how to create universal apps for Microsoft Surface Pro Hybrids with Ext JS 6
 tags:
   - Surface Pro
   - Universal App
+  - Microsoft Hybrid Apps
 categories:
   - Ext JS
 date: 2016-11-02 13:59:17
+alias: /developer/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/
 ---
 
 Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got popular, I often hear people asking me, if it’s possible to create Ext JS apps for Windows tablets? Ext JS 6 has support for Windows 10. The classic toolkit supports IE8 and up, and the modern toolkit supports the Edge browser. It even contains a Windows mobile theme!

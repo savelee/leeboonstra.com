@@ -5,8 +5,15 @@ categories:
   - Videos
 date: 2018-11-20 11:45:17
 youtube: NH-bL6Bd7Tw
+alias: /developer/video-frontmania/
 tags:
   - AutoML
+  - Machine Learning
+  - Tensorflow
+  - Pre-trained Models
+  - ML APIs
+  - Video
+  - Frontmania
 ---
 
 

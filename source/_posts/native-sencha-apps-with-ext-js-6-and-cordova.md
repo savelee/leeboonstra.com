@@ -1,12 +1,16 @@
 ---
 title: Native Sencha apps with Ext JS 6 and Cordova / PhoneGap
+description: Learn how to make native mobile apps with Ext JS 6 and Cordova PhoneGap
 tags:
   - Cordova
   - Hybrid
   - Native
   - Phonegap
+  - Mobile App
+  - iOS
 categories:
   - Cordova
+alias: /developer/native-sencha-apps-with-ext-js-6-and-cordova/
 date: 2016-06-18 18:10:22
 ---
 

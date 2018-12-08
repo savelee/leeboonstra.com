@@ -1,10 +1,14 @@
 ---
 title: Creating Theme-Specific Overrides in Ext JS
+description: Learn how to override components in themes.
 tags:
   - Overrides
   - Theming
+  - Ext JS
+  - Plugins
 categories:
   - Ext JS
+alias: /developer/creating-theme-specific-overrides-in-ext-js/
 date: 2014-05-05 11:17:51
 ---
 

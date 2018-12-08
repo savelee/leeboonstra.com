@@ -2,12 +2,15 @@
 title: Connect & play around with BB-8 by Sphero with JavaScript on a Mac
 description: Play around with the BB-8 Sphero JavaScript SDK.
 tags:
-  - BB8
+  - BB-8
   - JavaScript
   - Sphero
   - Star Wars
+  - Robotics
+  - Node.js
 categories:
   - Robotics
+alias: /developer/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/
 date: 2016-01-02 12:07:16
 ---
 

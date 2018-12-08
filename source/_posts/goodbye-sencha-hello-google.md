@@ -4,8 +4,10 @@ tags:
   - Google
   - Google Cloud
   - Sencha
+  - Lee Boonstra
 categories:
   - Sencha
+alias: /developer/goodbye-sencha-hello-google.md/
 date: 2016-12-22 09:57:48
 ---
 

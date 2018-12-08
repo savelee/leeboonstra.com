@@ -2,9 +2,16 @@
 title: 'Google Cloud Summit Paris, Keynote: Video Intelligence'
 description: Lee Boonstra speaking at Google Cloud Summit Paris about the Video Intelligence API
 categories:
-  - Videos
+  - Video Intelligence API
+  - Video
+  - Machine Learning
+  - Tensorflow
+  - Pre-trained Models
+  - ML APIs
+  - Google Cloud Next
 date: 2017-12-01 11:45:17
 youtube: ROSZHWkV4i8
+alias: /developer/video-google-cloud-summit-paris-keynote-video-intelligence/
 tags:
   - Video Intelligence API
 ---

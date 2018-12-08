@@ -5,6 +5,7 @@ tags:
   - SVG
 categories:
   - Ext JS
+alias: /d3-visualizations-in-ext-js-6-2/
 date: 2016-06-28 11:03:31
 ---
 

@@ -6,12 +6,14 @@ tags:
   - Sencha Cmd
   - Sencha themes
   - Theming
+  - SCSS
 categories:
   - Sencha CMD
+alias: /developer/generate-a-theme-with-sencha-cmd/
 date: 2012-12-18 10:36:45
 ---
 
-This guide will teach you how to generate a Sencha Theme with Sencha CMD, to start theming with SASS.
+This guide will teach you how to generate a Sencha Theme with Sencha CMD, to start theming with Sass.
 
 <!--more-->
 

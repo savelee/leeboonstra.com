@@ -2,14 +2,17 @@
 title: >-
   Tutorial: Full-stack JavaScript for the Enterprise. Getting started with: Ext
   JS, Node.js, Express, MongoDB and Docker. (4)
+description: Part 4 of the tutorial full stack JS development with Ext JS, Node.js, MongoDB and Docker
 tags:
   - Docker
   - Node.js
   - MongoDB
   - Ext JS
+  - CORS
 categories:
   - Containers
 date: 2016-08-19 16:30:58
+alias: /developer/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-4/
 ---
 
 *This is part IV of the tutorial, and covers: Setting up CORS on Node.js* 

@@ -6,9 +6,12 @@ tags:
   - GDPR
   - Machine Learning
   - Vision API
+  - Video
+  - Google Cloud Summit
 categories:
   - Videos
 date: 2018-02-14 10:52:59
+alias: /developer/video-dlp-vision-api-demo-google-cloud-summit-munich/
 youtube: sm3xLN0n95o
 ---
 
