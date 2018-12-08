@@ -1,25 +1,22 @@
 ---
 title: How to Create a Dark Ext JS Theme (part 2)
+description: I will share with your how I created a dark Spotify -like dark Ext JS theme.
 tags:
   - CSS3
   - Sass
   - Theme
   - Theming
-  - triton
-url: 694.html
-id: 694
+  - Triton
+  - Spotify
 categories:
-  - CSS
-  - Sass
+  - Theming
 date: 2015-08-02 11:21:15
+alias: /developer/how-to-create-a-dark-ext-js-theme-part-2/
 ---
 
-I’ve been showing you how to develop a fancy dark theme, which kind of looks like Spotify. In [Part 1](https://www.sencha.com/blog/how-to-create-a-dark-ext-js-theme-part-1/) of the article, you learned about Fashion, Sencha Inspector, Themes, and variables. In Part 2, I’ll focus on more advanced concepts including: making unique components with Ext JS UIs, CSS overrides, and how to incorporate custom fonts or icons.
+I’ve been showing you how to develop a fancy dark theme, which kind of looks like Spotify. In [Part 1](/Theming/how-to-create-a-dark-ext-js-theme-part-1/) of the article, you learned about Fashion, Sencha Inspector, Themes, and variables. In Part 2, I’ll focus on more advanced concepts including: making unique components with Ext JS UIs, CSS overrides, and how to incorporate custom fonts or icons.
 
-You can use this tutorial to help you build your theme for the Sencha Application Theming Contest.  
-The first prize winner gets $2,500!
-
-[Sign up now](http://pages.sencha.com/App-Theming-Contest-2015.html)
+<!--more-->
 
 ### Custom CSS Rules and Mixins
 
@@ -29,46 +26,52 @@ With the variables I described earlier, you can change the overall look and feel
 
 Here’s an example Sass mixin:
 
+``` SCSS
 @mixin my-border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+```
 
 The above Sass mixin can be used to create rounded corners. I need to write experimental browser prefixes, so I can support this CSS3 feature across all browsers. Instead of writing every CSS rule myself, I can just include the **my-border-radius** mixin and pass in an argument, so all the CSS rules will be available after compilation:
 
-.box { @include border-radius(10px); }
+`.box { @include border-radius(10px); }`
 
 In the compiled CSS, it will look like this (but minified):
 
+``` SCSS
 .box {
 -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
       -ms-border-radius: 10px;
           border-radius: 10px;
 }
+```
 
 Sass mixins are a great concept that can be used in Ext JS as well. We call them UIs, and they’re basically skins. Ext JS includes out-of-the-box UIs. For example, in the modern toolkit, we have UIs for back buttons, round buttons, and more, and it provides UIs you can reuse with your own parameters.
 
 You can find these mixins in the Sencha API Docs. For example, look at Ext.button.Button, you’ll see Sass Mixins in all different states for buttons. To implement these mixins, you’ll use @include, then the mixin name in Ext JS, and then pass in the arguments.
 
-[![Ext.button.Button](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img1.png)](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img1.png)
+![Ext.button.Button](/images/20150721-theming-tutorial-part2-img1.png)
 
 To create the nice rounded buttons, take a look [here](https://github.com/savelee/sencha-theming-tutorial/blob/master/packages/local/theme-spotifext/sass/src/button/Button.scss).
 
 I used the below mixin code to create a new “scale: small” button. For arguments, I passed in the UI name: “round”, which I used in my view as ui: `‘round’`), a font-weight, padding and a background color:
 
+``` SCSS
 @include extjs-button-small-ui(
 	$ui: 'round',
 	$font-weight: bold,
 	$padding: 5px,
 	$background-color: $highlight-color 
 );
+```
 
 You might have noticed that the buttons are animated, and the tab panel that looks like Spotify is a lot different from the provided Ext JS mixins. Take a look at my **sass/src** folder. In this directory, I’ve written all Ext JS mixins and custom Sass rules.
 
-[![Buttons](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img2b.png)](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img2b.png)
+![Buttons](/images/20150721-theming-tutorial-part2-img2b.png)
 
 ### Unique Buttons
 
@@ -76,6 +79,7 @@ As you can see in my application, my buttons are more custom than the configurat
 
 Take a look:
 
+``` SCSS
 .x-btn-round-large,
 .x-btn-round-medium,
 .x-btn-round-small {
@@ -87,10 +91,11 @@ Take a look:
 	  transition: background-color 2s ease-out;
 	}
 }
+```
 
 The CSS class names come from the mixin. I gave my small button the ui name: “round”. After I wire up this UI to my view code, I see in my browser DOM that the UI gave the component this class name: `.x-btn-‹ui-name›-small`.
 
-All Sencha components get CSS class names by default with the .x- prefix. After that, it names the component (btn), then the UI name. For a button, it will also include the scale – or, if it’s in a toolbar. See mixin extjs-button-toolbar-small-ui.
+All Sencha components get CSS class names by default with the .x- prefix. After that, it names the component (btn), then the UI name. For a button, it will also include the scale – or, if it’s in a toolbar. See mixin `extjs-button-toolbar-small-ui`.
 
 The custom code I provided listens to the button hover. When I roll my mouse over the button, it will transition the background-color from the default background color (in my case black) to a new color (the green that I set in the background-color rule).
 
@@ -100,7 +105,7 @@ Sometimes you don’t want to use custom CSS code to add more functionality but 
 
 I did this to create unique-looking tabs. See the screenshot:
 
-![](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img3.png "Tabs")
+![](/images/20150721-theming-tutorial-part2-img3.png "Tabs")
 
 The code I used can be found [here](https://github.com/savelee/sencha-theming-tutorial/blob/master/packages/local/theme-spotifext/sass/src/tab/Panel.scss). Take a look at the **.x-tab-bar-alternative** CSS class.
 
@@ -120,15 +125,16 @@ The google font was really easy because Sencha provides a global UI mixin. This 
 
 Once your font is correctly imported, you can start using it. I’m using the Google font by pointing the `$font-family` variable to it [here](https://github.com/savelee/sencha-theming-tutorial/blob/master/packages/local/theme-spotifext/sass/var/_config.scss).
 
-Conclusion  
+## Conclusion  
+
 That’s it! Now, I’ve explained everything you need to know to create an awesome theme, such as the Spotifext theme. Check out the screenshot below to see how it might look in a real-life application.
 
 Don’t forget to [sign up](http://pages.sencha.com/App-Theming-Contest-2015.html) for the Sencha Application Theming Contest. The first prize winner gets $2,500!
 
-[![Spotifext theme](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img4.png)](//cdn.sencha.com/img/20150721-theming-tutorial-part2-img4.png)
+![Spotifext theme](/images/20150721-theming-tutorial-part2-img4.png)
 
-#### Resources:
+### Resources:
 
-[Ext JS Theming Guide](http://docs.sencha.com/extjs/6.0/core_concepts/theming.html)  
-[My SenchaCon Presentation](https://speakerdeck.com/savelee/advanced-theming-with-sencha-cmd)  
-[Tutorial Demo Files](https://github.com/savelee/sencha-theming-tutorial/)
+* [Ext JS Theming Guide](http://docs.sencha.com/extjs/6.0/core_concepts/theming.html)  
+* [My SenchaCon Presentation](https://speakerdeck.com/savelee/advanced-theming-with-sencha-cmd)  
+* [Tutorial Demo Files](https://github.com/savelee/sencha-theming-tutorial/)

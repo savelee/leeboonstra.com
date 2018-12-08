@@ -1,52 +1,47 @@
 ---
 title: How to Create a Dark Ext JS Theme (part 1)
+description: I will share with your how I created a dark Spotify -like dark Ext JS theme.
 tags:
   - CSS
   - fashion
   - Sass
   - Theming
-url: 692.html
-id: 692
+  - Spotify
 categories:
-  - CSS
-  - Sass
+  - Theming
 date: 2015-08-01 11:18:13
+alias: /developer/how-to-create-a-dark-ext-js-theme-part-1/
 ---
-
-### Introduction
 
 Every now and then, I demo my [Spotifinder Ext JS app](https://chrome.google.com/webstore/detail/spotifinder-spotify-and-y/eihejbblncmfbklmoadloifongaomcaa). It’s a really cool app that connects to LastFm and Spotify. I created it, to demo Ext JS concepts in my training classes. It also shows off the great theming capabilities in Ext JS.
 
 This year, I presented advanced theming at SenchaCon and I received lots of questions about how I created the Spotifinder app theme. So I decided to write a tutorial on how to create a really cool, good looking dark theme.
 
-You can use this tutorial to help you build your theme for the Sencha Application Theming Contest.  
-The first prize winner gets $2,500!
-
-[Sign up now](http://pages.sencha.com/App-Theming-Contest-2015.html)
+<!--more-->
 
 The tutorial files I used for this tutorial can be found [here](https://github.com/savelee/sencha-theming-tutorial). It’s basically just a simple Ext JS app (view) with many components, like a grid, and some other components. You can use any other Ext JS (4, 5 or 6) application as well, but I used this as a reference point, and I used Ext JS 6. What’s great about theming an “all-component” -app, is that you see on the fly how your new theme looks like, without clicking through a real-life app.
 
 Another prerequisite: Sencha Cmd needs to run on your command line. Test with this command: sencha which. It should output a version number – for Ext JS 6, the Cmd version should be 6.x.
 
-[![Neptune theme](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img1.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img1.png)
+![Neptune theme](/images/20150716-theming-tutorial-part1-img1.png)
 
 Ext JS themes use Sass, which stands for syntactically awesome stylesheets, and yes, it’s indeed awesome. Its a more dynamic way to write CSS code. For example, you can use variables and calculations in your stylesheets. A browser doesn’t understand Sass, only CSS. Therefore, these Sass themes need to be compiled to production-ready CSS code, so your browser can understand it. The compilation process of themes in Ext JS apps runs via Sencha Cmd.
 
 Ext JS ships with a couple of out-of-the-box themes. You can directly switch to one of these themes and use it, or you can extend one of them and modify it. That’s how you create custom themes. The best theme to modify is Neptune or the new Triton. It provides lots of variables you can use to change the look and feel, and because it’s color background and white text on the front, it’s the ideal theme to use to create good looking dark themes. Alright, enough theory, let’s try it out.
 
-[![Triton theme](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img2.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img2.png)
+![Triton theme](/images/20150716-theming-tutorial-part1-img2.png)
 
-[![Crisp theme](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img3.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img3.png)
+![Crisp theme](/images/20150716-theming-tutorial-part1-img3.png)
 
 We’ll start by generating a new theme. We’ll just generate a theme package, so you can reuse it in other projects.
 
 Open Sencha Cmd and run the following command:
 
-sencha generate theme theme-spotifext
+`sencha generate theme theme-spotifext`
 
 This will generate a theme package, in my workspace **packages/local** folder. It will contain a **sass/var** folder, which will contain a Sass stylesheet with variables. It will be first in the compile order), and it will also contain a **sass/src** folder, which is the folder that contains Sass stylesheets with mixins and CSS rules. These files will be compiled last, so the pre-defined variables are used. The theme package also contains a **resources** folder – it can be handy to save assets such as images or fonts in this folder. The package will also contain a **package.json** file. It has meta info for your theme package. For example, it sets the type of the package to a “theme”. Also, you can write your contact information and description. There is one thing here that you’ll need to change. To create a theme variant of the new Triton theme, change the extend line to:
 
-    "extend": "theme-triton",
+`"extend": "theme-triton",`
 
 Note that themes in Ext JS 6 don’t have the `"ext-"` prefix anymore.
 
@@ -58,11 +53,12 @@ I mentioned “the correct way” on purpose because in traditional web design y
 
 You can wire up your new Spotifext theme by opening **app.json** of the demo app and changing the `"theme"` line to:
 
-"theme": "theme-spotifext"
+`"theme": "theme-spotifext"`
 
 The next step is to build your application with **sencha app build** or **sencha app build development** (which only builds the theme instead of the full app), and you’re good to go.  
 In case you’re running a universal app and you want to use the Spotifext theme for the classic toolkit, you should wire up the theme to a **build profile**. For example:
 
+``` JavaScript
 "builds": {
    "myclassicprofile": {
       "toolkit": "classic",
@@ -74,19 +70,20 @@ In case you’re running a universal app and you want to use the Spotifext theme
       "theme": "theme-cupertino"
    }
  },
+```
 
 ### Variables
 
 The first thing you’ll need to do is create some files. You can create the following file structure, in your package folder **(packages/local/theme-spotifext)**:
 
-**  
+``` txt 
 sass/var/_config.scss  
 sass/var/Component.scss  
 sass/var/button/Button.scss  
 sass/var/form/field/Base.scss  
 sass/var/grid/Panel.scss  
 sass/var/tab/Panel.scss  
-**
+```
 
 Notice the naming of the files. Everything, except **_config.scss**, maps to the framework components. Component.scss – > Ext.Component, and grid/Panel.scss to Ext.grid.Panel.scss. This mapping is set up in the **app.json** file as a sass namespace. You don’t need to change that.
 
@@ -99,6 +96,7 @@ Try this out. In the **Component.scss** file, you will include your own color co
 
 Now in the **_config.scss** file, define a couple of vars which you can use though the full stylesheet. You can define these variables at the top of the file:
 
+``` SCSS
 //my own variables
 $dark-bg: #000;
 $dark-bg2: #121314;
@@ -114,6 +112,7 @@ $highlight-color3: darken($highlight-color, 20%);
  
 $font-family: 'Montserrat', helvetica , arial , verdana , sans-serif;
 $font-size: 12px;
+```
 
 Note the `$highlight-color2` and `3`, these use built-in Sass functions to change the highlight-color to a 20% lighter or darker tone of the color.
 
@@ -127,11 +126,13 @@ You can find all the Global variables in the API docs by searching for **Global_
 
 For your theme, you can use these global vars and put them in **var/Component.scss**:
 
+``` SCSS
 $base-color: #639000;
  
 $body-background-color: $dark-bg3;
 $color: $front-color;
 $enable-font-smoothing: true;
+```
 
 #### Component Variables
 
@@ -139,7 +140,7 @@ Inside **Component.scss**, I have set a bunch of component variables too. Take a
 
 I moved some of these component variables to their own scss file, as I did for **grid/Panel.scss**. That’s just so I can maintain smaller files. By using variables, you’ll notice that I styled about 80% of my application, and I don’t have any problems with CSS overrides. You can find Component Sass variables in the API docs for the component you want to style. For example, search for grids and then click on the CSS vars button. There are a lot of variables to choose from. Before Ext JS 6, you had to use trial and error. But, with Ext JS 6 and App Inspector, it’s a piece of cake to figure out which variable you should use.
 
-[![Ext.grid.Panel](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img4.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img4.png)
+![Ext.grid.Panel](/images/20150716-theming-tutorial-part1-img4.png)
 
 ### Sencha Inspector
 
@@ -151,7 +152,7 @@ For this tutorial, you can try out the awesome theming feature. [Download](http:
 
 When you search for an Ext JS 6 component in the theme panel, it will expose all the available Sass variables. This will save you from manually browsing through all the docs.
 
-[![Theme panel](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img5.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img5.png)
+![Theme panel](/images/20150716-theming-tutorial-part1-img5.png)
 
 With Fashion (read more below), you can enter values for all these variables, and you’ll see the result immediately on your screen. This is great for testing when you don’t know which Sass variable you need to use. Because you no longer need to wait for app builds or theme compilations, this really speeds up your theme development time. I work with my IDE and Inspector on one screen, and my application running in a browser on another monitor. As soon as I find the right Sass variable with Sencha Inspector, I copy it over to my theme package.
 
@@ -168,15 +169,17 @@ sencha app watch
 
 After **sencha app watch** starts the web server (by default it’s on port **1841**), Sencha Cmd polls for changes. Next, open the following URL in your browser:
 
-http://localhost:1841/extthemingapp/?**platformTags=fashion:true**
+`http://localhost:1841/extthemingapp/?**platformTags=fashion:true`
 
 Once the app is loaded and finishes compiling the theme for the first time, you’ll have to copy and paste the following bookmarklet in your browser console to create a connection between App Inspector and your app.
 
+``` JavaScript
 javascript:!function(a,b){var a=a||3e3,b=b||"http://localhost",c=b+":"+a+"/inspector.js",d=function(a,c){var d=document.createElement("script");d.type="text/javascript",d.src=a,document.addEventListener("load",function(){"undefined"!=typeof Ext&&"undefined"!=typeof Ext.onReady&&Ext.onReady(function(){if(window.SenchaInspector){var a=document.head.getAttribute(“data-senchainspectorport");SenchaInspector.init(b+":"+a)}})},!0),c?document.head.insertBefore(d,document.head.firstChild):document.body.appendChild(d)};document.head.setAttribute("data-senchainspectorport",a),d(c,!0)}();
+```
 
 If you’re interested in what’s going on under the hood, App Inspector uses WebSockets. The App inspector script is running on port 3000. That’s how the standalone app can inspect your application code. Now, we’ll look at compiling the themes.
 
-[![Sencha App Inspector](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img6.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img6.png)
+![Sencha App Inspector](/images/20150716-theming-tutorial-part1-img6.png)
 
 ### Fashion
 
@@ -198,25 +201,23 @@ The magic all happens under the hood. Sencha Cmd is running PhantomJS in the bac
 
 To get this up and running, you’ll need to run sencha app watch classic from your command line and run the following arguments in your URL: **?platformTags=fashion:true** and then you are good to go:
 
-http://localhost:1841/extthemingapp/?platformTags=fashion:true
+`http://localhost:1841/extthemingapp/?platformTags=fashion:true`
 
-### Coming Up
+## Coming Up
 
 There are a few more things I did in my spotifext theme to make it look awesome. I wrote some CSS rules to animate the button hovers, used custom fonts, and created my own button and tab panel variants to make it look unique.
 
-In part 2 of this article, I will explain mixins versus css overrides as well as fonts and icons.
+In [part 2 of this article](/Theming/how-to-create-a-dark-ext-js-theme-part-2/), I will explain mixins versus css overrides as well as fonts and icons.
 
 With this information, you should be able to create good looking themes.
 
-[Sign up](http://pages.sencha.com/App-Theming-Contest-2015.html) for the Sencha Application Theming Contest. The first prize winner gets $2,500!
+![Dark theme](/images/20150716-theming-tutorial-part1-img7.png)
 
-[![Dark theme](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img7.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img7.png)
+![Dark theme](/images/20150716-theming-tutorial-part1-img8.png)
 
-[![Dark theme](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img8.png)](//cdn.sencha.com/img/20150716-theming-tutorial-part1-img8.png)
+### Resources:
 
-#### Resources:
-
-[Sencha Theming Guide](http://docs.sencha.com/extjs/6.0/core_concepts/theming.html)  
-[My SenchaCon Presentation](https://speakerdeck.com/savelee/advanced-theming-with-sencha-cmd)  
-[Download Sencha App Inspector Early Access](http://pages.sencha.com/Inspector-early-access.html)  
-[Tutorial demo files](https://github.com/savelee/sencha-theming-tutorial/)
+* [Sencha Theming Guide](http://docs.sencha.com/extjs/6.0/core_concepts/theming.html)  
+* [My SenchaCon Presentation](https://speakerdeck.com/savelee/advanced-theming-with-sencha-cmd)  
+* [Download Sencha App Inspector Early Access](http://pages.sencha.com/Inspector-early-access.html)  
+* [Tutorial demo files](https://github.com/savelee/sencha-theming-tutorial/)
