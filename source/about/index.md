@@ -8,7 +8,7 @@ nocomments: true
 
 <img src="/images/profile.jpg" class="float-right border">
 
-I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) from the Netherlands and I work for Google as a Google Cloud sales engineer.
+I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) from Amsterdam, the Netherlands and I'm a Googler. I work as a sales engineer in the Google Cloud team where I assist the sales team with technical knowledge about cloud computing and machine learning for the financial industry.
 
 I studied Art & Technology in 2004 and during my last year of my study I worked for Accenture as a senior Java developer. I worked for clients such as UPC and KLM (Dutch Royal Airlines). Started my own webdev company when I was 19 years old.
 
