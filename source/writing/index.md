@@ -1,5 +1,6 @@
 ---
 title: Writing
+description: Lee Boonstra is a published writer and author for O'Reilly.
 date: 2015-07-06 20:46:06
 nocomments: true
 ---
