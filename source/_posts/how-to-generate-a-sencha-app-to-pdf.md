@@ -1,5 +1,6 @@
 ---
 title: How to generate a PDF from an Ext JS app
+description: Learn how to generate a PDF from an Ext JS app.
 tags:
   - express
   - node
@@ -8,21 +9,16 @@ tags:
   - pdf generation
   - PhantomJS
   - screencapture
-url: 735.html
-id: 735
 categories:
-  - Environment
   - Ext JS
-  - Ext JS 5
-  - Ext JS 6
-  - Node JS
 date: 2015-11-26 13:23:02
+alias: /developer/how-to-generate-a-sencha-app-to-pdf/
 ---
 
 Often I get the question if it’s possible to generate a PDF from a Sencha app. Well yes that’s possible, but not with Ext JS code only. Though, Ext JS has an exporter, to export grid/pivot data into an XML or Excel file, and you can export charts to images. Out of the box we can’t generate PDFs from full Sencha apps, with the framework.
 
 What you will need is an additional script, often these solutions are handled on the backend, but there are also solutions which can do this client-side.
-
+<!-- more-->
 To name few, see the list below. I didn’t use them all. But I’ve done it before on the client-side with JavaScript, with PHP and back in the days also once in Java.
 
 *   You can generate PDFs with Node and [PhantomJS](http://phantomjs.org)
@@ -43,59 +39,62 @@ Nowadays, I love Node JS! So I’ll show you how I recently created a generator 
 *   **Screen capturing**  
     Programmatically capture web contents, including SVG and Canvas. Create web site screenshots with thumbnail preview etc
 
-The last usecase, is where I am using it for. To let PhantomJS visit my Ext JS app, and capture the screen, by generating it to a PDF. You can run a working example via this URL: [http://ladysign.nl/pdfgenerator?page=https://www.leeboonstra.com/senchaplaces](http://ladysign.nl/pdfgenerator?page=https://www.leeboonstra.com/senchaplaces) (I’m creating a PDF of [this simple Ext app](https://www.leeboonstra.com/senchaplaces/).)
+The last usecase, is where I am using it for. To let PhantomJS visit my Ext JS app, and capture the screen, by generating it to a PDF.
 
 Nice to know, Sencha is using PhantomJS inside Sencha Cmd, for example we use it to generate images from CSS3 features that aren’t supported in legacy browsers and recently we compile Sass stylesheets with JavaScript, to production ready CSS (Fashion). How did I do this?
 
-1.  Let’s say you have an environment with Node JS and a web server with Express installed, how can you make a PDF from an Ext JS app? I’m not an Node/PhantomJS expert, but I can show you some simple steps, which you can do too!
+1. Let’s say you have an environment with Node JS and a web server with Express installed, how can you make a PDF from an Ext JS app? I’m not an Node/PhantomJS expert, but I can show you some simple steps, which you can do too!
     
-    You will need to create a route that listens to an URL that should invoke PhantomJS. For example:
+You will need to create a route that listens to an URL that should invoke PhantomJS. For example:
+
+``` JavaScript
+var PdfHelp = require('./libs/pdfgenerator-help');
+router.get('/pdfgenerator/', function(req, res){
+  var pdf = new PdfHelp();
+  pdf.generatePdf(req, res);
+});
+```
+
+
+2. On your environment (dev and production), you will need to install PhantomJs, you can install it via the [npm package manager](https://www.npmjs.com/package/phantomjs): `npm install phantomjs -s`.
+
+Once it’s installed, you can run PhantomJS JavaScript pages, by running: `phantomjs scriptname.js` from the command-line.
     
-    var PdfHelp = require('./libs/pdfgenerator-help');
-    router.get('/pdfgenerator/', function(req, res){
-    	var pdf = new PdfHelp();
-    	pdf.generatePdf(req, res);
-    });
+3. I created a simple helper script which can listen to an argument that passes in a URL of my Sencha app. This probably doesn’t make much sense for your own app, but you will get the idea on how to do this.
     
-2.  On your environment (dev and production), you will need to install PhantomJs, you can install it via the [npm package manager](https://www.npmjs.com/package/phantomjs): `npm install phantomjs -s`
+I use a Node child process, to execute PhantomJS from my environment. It passes in two arguments; the phantomjs script to execute (generate.js - see below), and in my case the URL to the Sencha app.
+
+``` JavaScript
+var path = require('path');
+var childProcess = require('child_process');
+var phantomjs = require('phantomjs');
+var binPath = phantomjs.path;
+var childArgs = [
+  path.join(__dirname, 'phantomjs-script.js'),
+  'some other argument (passed to phantomjs script)'
+];
+
+childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+  // handle results
+});
+```
+
+4. What’s important to know when working with PhantomJS
     
-    Once it’s installed, you can run PhantomJS JavaScript pages, by running: `phantomjs scriptname.js` from the command-line.
+* I’m configuring the page, like paper size, margins, and headers and footers: [http://phantomjs.org/api/webpage/property/paper-size.html](http://phantomjs.org/api/webpage/property/paper-size.html)
+* Then I let PhantomJS open the URL to my Sencha app: [http://phantomjs.org/api/webpage/method/open.html](http://phantomjs.org/api/webpage/method/open.html)
+
+5. The big magic trick here, is that you’ll need to wait till the headless browser loaded the Sencha app with the framework completely in its memory. Otherwise you would print an empty page, (because index.html files in Sencha apps are usually pretty empty, since Ext JS generates the browser DOM elements).
     
-3.  I created a simple helper script which can listen to an argument that passes in a URL of my Sencha app. This probably doesn’t make much sense for your own app, but you will get the idea on how to do this.
+Take a look into the `waitFor()` method I used. The first argument is a test function. This test function, (see line 94), tries to find the **Ext** namespace in my Sencha app. When it’s there, I still don’t want to immediately make the screenshot, because maybe my stores are not loaded yet. So I wrote another evaluation: `Ext.ComponentQuery.query('grid')[0].getStore().count();` If there is data in my store, then go ahead and generate the PDF.
     
-    I use a Node child process, to execute PhantomJS from my environment. It passes in two arguments; the phantomjs script to execute (generate.js - see below), and in my case the URL to the Sencha app.
+Again, this probably doesn’t make sense for your application, but you will get the idea.
     
-    var path = require('path');
-    var childProcess = require('child_process');
-    var phantomjs = require('phantomjs');
-    var binPath = phantomjs.path;
-    var childArgs = \[
-    	path.join(__dirname, 'phantomjs-script.js'),
-    	'some other argument (passed to phantomjs script)'
-    \];
+6. You render the page with `page.render('my-pdf-name.pdf');` and then you exit the phantomjs process ( `phantom.exit()`).
     
-    childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-    	// handle results
-    });
-    
-    You can find [my code here](https://github.com/savelee/ladysignapis/blob/master/libs/pdfgenerator-help/index.js)
-    
-4.  Here’s the phantomjs [generate](https://github.com/savelee/ladysignapis/blob/master/libs/pdfgenerator-help/libs/generate.js) script that I used:
-    
-    What’s important to know:
-    
-    *   I’m configuring the page, like paper size, margins, and headers and footers: [http://phantomjs.org/api/webpage/property/paper-size.html](http://phantomjs.org/api/webpage/property/paper-size.html)
-    *   Then I let PhantomJS open the URL to my Sencha app: [http://phantomjs.org/api/webpage/method/open.html](http://phantomjs.org/api/webpage/method/open.html)
-5.  The big magic trick here, is that you’ll need to wait till the headless browser loaded the Sencha app with the framework completely in its memory. Otherwise you would print an empty page, (because index.html files in Sencha apps are usually pretty empty, since Ext JS generates the browser DOM elements).
-    
-    Take a look into the `waitFor()` method I used. The first argument is a test function. This test function, (see line 94), tries to find the **Ext** namespace in my Sencha app. When it’s there, I still don’t want to immediately make the screenshot, because maybe my stores are not loaded yet. So I wrote another evaluation: `Ext.ComponentQuery.query('grid')[0].getStore().count();` If there is data in my store, then go ahead and generate the PDF.
-    
-    Again, this probably doesn’t make sense for your application, but you will get the idea.
-    
-6.  You render the page with `page.render('my-pdf-name.pdf');` and then you exit the phantomjs process ( `phantom.exit()`).
-    
-7.  Back into my PDF helper class, I wrote the following lines, to set the filename of the PDF and directly open it in my browser. It’s important that you set the page headers and content type to application/pdf:
-    
+7. Back into my PDF helper class, I wrote the following lines, to set the filename of the PDF and directly open it in my browser. It’s important that you set the page headers and content type to application/pdf:
+
+``` JavaScript
     var filename = "test.pdf";
     filename = encodeURIComponent(filename);
     
@@ -107,7 +106,7 @@ Nice to know, Sencha is using PhantomJS inside Sencha Cmd, for example we use it
     		res.contentType("application/pdf");
     		res.end(data);
     });
-    
+```
 
 And that’s it! As you can see when using PhantomJS for visiting your Sencha app, you might want to deal with the timing issues. As by default the index.html in a Sencha app is empty, and a Sencha app is generated in the DOM.
 
