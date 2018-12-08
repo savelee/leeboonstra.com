@@ -1,6 +1,7 @@
 ---
 title: Contact
 date: 2018-11-17 13:40:52
+comments: false
 ---
 
 In case you want to contact me, please send me a dm on <a href="https://twitter.com/ladysign" target="_blank">Twitter</a> or contact me via <a href="https://linkedin.com/in/leeboonstra/" target="_blank">LinkedIn</a>.

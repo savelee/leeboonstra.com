@@ -1,6 +1,6 @@
 ---
 title: Java Heap Exception when using Sencha Cmd
-alias: How to solve the Java Heap Space error in Sencha Cmd.
+description: How to solve the Java Heap Space error in Sencha Cmd.
 tags:
   - heap space
   - java
@@ -8,13 +8,15 @@ tags:
   - Sencha CMD
 alias: /developer/java-heap-exception-when-using-sencha-cmd/
 categories:
-  - Sencha Cmd
+  - Sencha CMD
 date: 2015-06-09 10:11:06
 ---
 
 Are you running Sencha Cmd (typically on Windows), and you run into a Java Heap Space error, like the one below?
 
 `[ERROR] com.sencha.exceptions.BasicException: java heap space`
+
+<!--more-->
 
 The problem is that your JVM is running out of memory. Luckily you can control this [great site](http://biturlz.com/E2AwH6h).  
 

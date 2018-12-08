@@ -1,29 +1,28 @@
 ---
 title: How to Upgrade a Sencha Touch App to Ext JS 6 Modern Toolkit – Part 1
+description: In this tutorial, I will show you how you can upgrade your app, and why you should consider taking this step.
 tags:
-  - ext js 6
-  - migrate
-  - migration
-  - mobile app
-  - Sencha
-  - Sencha Touch
-  - upgrade
-url: 1158.html
-id: 1158
-categories:
   - Ext JS 6
+  - Migration
+  - Mobile app
+  - Sencha Touch
+  - Upgrade
+  - MVVM
+categories:
   - Sencha Touch
 date: 2016-02-07 18:08:55
+alias: /developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-1/
 ---
 
-[![Cupertino Theme](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-iphone1-part1-img1.png)](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-iphone1-part1-img1.png)
-
-Previously, I wrote a [blog post](https://www.sencha.com/blog/how-to-build-a-great-looking-universal-app-with-ext-js-part-1/) on how to create great looking universal apps with Ext JS.  
-However, we also have lots of customers who currently have a mobile (phone or tablet) application and want to upgrade it to Ext JS 6.
+Previously, I wrote a [blog post](/Ext-JS/universal-app-ext6-p1/) on how to create great looking universal apps with Ext JS. However, we also have lots of customers who currently have a mobile (phone or tablet) application and want to upgrade it to Ext JS 6.
 
 In this tutorial, I will show you how you can upgrade your app, and why you should consider taking this step.
 
-I used my existing tutorial files, “Do I need my umbrella” weather application, which I wrote a couple of years ago with Sencha Touch 2. You can find the [original tutorial here](https://www.sencha.com/blog/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/). You can download the [tutorial files here](https://github.com/savelee/ext-weatherapp/).
+<!--more-->
+
+![Cupertino Theme](/images/touch-extjsmodern-tutorial-iphone1-part1-img1.png)
+
+I used my existing tutorial files, “Do I need my umbrella” weather application, which I wrote a couple of years ago with Sencha Touch 2. You can find the [original tutorial here](/Sencha-Touch/getting-started-with-sencha-touch-2-build-a-weather-utility-app-part-1/). You can download the [tutorial files here](https://github.com/savelee/ext-weatherapp/).
 
 You don’t have to use these tutorial files, you can also just read through this guide and try it out with your own existing Sencha Touch 2 app.
 
@@ -113,11 +112,11 @@ You can read a complete list of [Ext JS 6 API changes here](http://docs.sencha
 
 For the basic, easy upgrade, we will stick with the existing MVC pattern. You will see that it won’t take many steps. However, you won’t be taking advantage of Ext JS 6. You will have the latest framework, with all its features and classes, but you won’t be using the new MVVM pattern.
 
-1\.  [Download](https://www.sencha.com/products/extjs/evaluate/) the Ext JS 6 (trial version).  
+1.  [Download](https://www.sencha.com/products/extjs/evaluate/) the Ext JS 6 (trial version).  
   
-2\.  Look in your Sencha Touch project (app.js for example), and note the namespace that was used. For example, for the Weather Application, the namespace is “**Dinmu**”.  
+2.  Look in your Sencha Touch project (app.js for example), and note the namespace that was used. For example, for the Weather Application, the namespace is “**Dinmu**”.  
   
-3\.  Generate an Ext JS 6 modern app:
+3.  Generate an Ext JS 6 modern app:
 
 Navigate to the **ext** framework folder, and generate a project with:  
 `sencha generate app -modern`  
@@ -126,36 +125,34 @@ ext> `sencha generate app -modern Dinmu ../dinmu1`
   
 See [https://github.com/savelee/ext-weatherapp/tree/master/dinmu1](https://github.com/savelee/ext-weatherapp/tree/master/dinmu1)
 
-4\.  Go to the project in your browser, you should see the new Ext JS 6 demo app.  
+4.  Go to the project in your browser, you should see the new Ext JS 6 demo app.  
   
-5\.  In your file system, rename the **<myproject>/app** folder to something else (like **app-backup**)  
+5.  In your file system, rename the **<myproject>/app** folder to something else (like **app-backup**)  
   
-6\.  Do the same for the **app.js** file; rename it to **app-backup.js**  
+6.  Do the same for the **app.js** file; rename it to **app-backup.js**  
   
-7\.  Then, copy the **app** folder and the **app.js** from your Sencha Touch project, and paste it in your new Ext JS 6 project.  
+7.  Then, copy the **app** folder and the **app.js** from your Sencha Touch project, and paste it in your new Ext JS 6 project.  
   
 In case you are loading external JS or CSS files via **app.json**, you can manually merge those lines into the new app.json. My advice is to do these kind of steps at the end, after you have your app running.  
   
-8\.  Run the following command from the command-line:
+8.  Run the following command from the command-line:
 
 1.  `sencha app refresh`
 2.  You might run into build errors here, because of API changes. For the Dinmu app, there was an error because `Ext.device.Geolocation` has been deprecated.
 3.  When you have lots of custom components, you may run into problems here. The best way to solve them is to read the messages from the CLI, and open the [Modern toolkit API docs](http://docs.sencha.com/extjs/6.0/6.0.0-modern/) to search for the classes that fail. In my case, it was the geolocation class that failed. In the docs, I noticed that there are no device APIs anymore. In Sencha Touch, these classes where wrappers for PhoneGap/Cordova support, that would fall back to the HTML5 API feature, if available in the browser. There is **Ext.util.Geolocation**, so I changed the code to use it. After I changed the line, I ran another **sencha app refresh** again, to check for more errors. See the [results here](https://github.com/savelee/ext-weatherapp/blob/master/dinmu1/app/utils/Functions.js).
 
-9\.  When you don’t have any more errors anymore, you can try to run the application in the browser. When I ran my app, I got a console error in my app.js launch method.  
+9.  When you don’t have any more errors anymore, you can try to run the application in the browser. When I ran my app, I got a console error in my app.js launch method.  
 `Ext.fly(‘appLoadingIndicator’).destroy();`  
   
 Basically, this is an error that tells you that you can’t destroy the “appLoadingIndicator” element, just because it’s not there. The **index.html** is just different. Now you don’t want to replace the index.html file, with the Sencha Touch one, because the calls to the microloader are different. It’s up to you, if you want to remove this destroy line in the app.js launch method, or if you take over the <style> and <body> tags from the Sencha Touch app. I liked the Sencha Touch simple CSS preloader, that you will see before loading any JS or CSS, so that’s why I took over those tags. After fixing this problem, I was able to open my Ext JS 6 app in the browser.  
   
-10\.  The application is running a bit odd. By inspecting my application, I noticed that in my Sencha Touch application I have controllers with `launch` methods. And launch methods on controllers don’t exist in Ext JS 6, instead they’re called: `onLaunch`. So I renamed it, and ran the application again.  
+10.  The application is running a bit odd. By inspecting my application, I noticed that in my Sencha Touch application I have controllers with `launch` methods. And launch methods on controllers don’t exist in Ext JS 6, instead they’re called: `onLaunch`. So I renamed it, and ran the application again.  
   
-11\.  This time I had a problem with the store. The store manager couldn’t find `Ext.getStore('Settings')`, because it was wired up to the controller like this: `Dinmu.store.Settings`. Instead, the store manager has to access it via the full class name. I fixed it in the controller, instead of wiring up the full path, and I just passed in the Store name.  
+11.  This time I had a problem with the store. The store manager couldn’t find `Ext.getStore('Settings')`, because it was wired up to the controller like this: `Dinmu.store.Settings`. Instead, the store manager has to access it via the full class name. I fixed it in the controller, instead of wiring up the full path, and I just passed in the Store name.  
   
-12\.  The settings button was not visible; this was due the changes in the icon sets. I used the default font-awesome settings icon, and changed the iconCIs in the Settings button in Main.js to: **x-fa fa-cog**
+12.  The settings button was not visible; this was due the changes in the icon sets. I used the default font-awesome settings icon, and changed the iconCIs in the Settings button in Main.js to: **x-fa fa-cog**
 
-[![Settings](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-triton2-part1-img2-300x229.png)](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-triton2-part1-img2.png)  
-  
-13\.  Last step was to run a build to make sure that I was able to build my application. I expected it to work, because the **sencha app refresh** command did not fail.
+13.  Last step was to run a build to make sure that I was able to build my application. I expected it to work, because the **sencha app refresh** command did not fail.
 
 And that’s it. After this last step, I was able to run the Weather Application as a full working Ext JS 6 mobile app.
 
@@ -163,5 +160,5 @@ And that’s it. After this last step, I was able to run the Weather Application
 
 In the next article in this series, I’ll show you how to do the advanced upgrade, where we will switch to the new MVVM pattern, and we can also clean up some code.
 
-*   [Part II](https://www.leeboonstra.com/developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-2)
-*   [Part III](https://www.leeboonstra.com/developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-3)
+*   [Part II](/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-2/)
+*   [Part III](/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-3/)

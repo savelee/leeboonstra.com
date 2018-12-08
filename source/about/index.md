@@ -1,6 +1,7 @@
 ---
 title: About me
 date: 2015-07-06 20:44:54
+comments: false
 ---
 
 > “I love creating technology, instead of just consuming technology.”

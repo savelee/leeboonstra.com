@@ -2,6 +2,7 @@
 title: Speaking
 date: 2015-07-06 20:45:21
 event: true
+comments: false
 ---
 
 <img src="/images/lee-speaking2.png" width="400" class="float-right border" alt="Lee Speaking">

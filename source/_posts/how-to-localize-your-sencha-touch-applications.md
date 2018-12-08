@@ -1,5 +1,6 @@
 ---
 title: How to localize your Sencha Touch applications
+description: Learn how to localize your Sencha Touch applications
 tags:
   - l8n
   - languages
@@ -7,39 +8,39 @@ tags:
   - overwrites
   - Sencha Touch
   - translation
-url: 573.html
-id: 573
 categories:
-  - Sencha
   - Sencha Touch
 date: 2014-11-25 10:25:11
+alias: /developer/how-to-localize-your-sencha-touch-applications/
 ---
 
 I live in Europe; in Europe they speak about 23 languages. In some countries it is even common to speak more than 2 or 3 languages. Especially for these countries localisation of applications and websites is very important.
 
 So you need to come up with a strategy on how to localize all your views.  
 In Sencha Touch localization works a little different than in Ext JS, since there are no packages; but overall the basic idea is the same:
+<!--more-->
 
 “All your views shouldn’t contain text literals, but variables.” and “all your views are built dynamically.  
 You will create a view class override, to “`override`” the variables with language translation.
 
+``` JavaScript
 Ext.define('MyApp.view.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'main',
-    requires: \[
+    requires: [
         'Ext.TitleBar',
         'Ext.Video'
-    \],
-    TAB\_ONE\_TITLE_SHORT: 'Hello',
-    TAB\_ONE\_TITLE: 'Hello Sencha Touch 2',
-    TAB\_ONE\_HTML: 'This app was written in English.',
+    ],
+    TAB_ONE_TITLE_SHORT: 'Hello',
+    TAB_ONE_TITLE: 'Hello Sencha Touch 2',
+    TAB_ONE_HTML: 'This app was written in English.',
     config: {
         tabBarPosition: 'bottom',
     },
     initialize: function() {
 
-        var items = \[{
-                title: this.TAB\_ONE\_TITLE_SHORT,
+        var items = [{
+                title: this.TAB_ONE_TITLE_SHORT,
                 iconCls: 'home',
 
                 styleHtmlContent: true,
@@ -48,17 +49,18 @@ Ext.define('MyApp.view.Main', {
                 items: {
                     docked: 'top',
                     xtype: 'titlebar',
-                    title: this.TAB\_ONE\_TITLE
+                    title: this.TAB_ONE_TITLE
                 },
 
-                html: this.TAB\_ONE\_HTML
+                html: this.TAB_ONE_HTML
             }
-        \];
+        ];
 
         this.add(items);
         this.callParent();
     }
 });
+```
 
 I uploaded my code to Github:  
 [  
@@ -77,13 +79,15 @@ In this folder, you can create another folder, with the name of your language tr
 For this example, I’m using Dutch translation; so my path will look like: **app/utils/nl/Main.js**  
 Here’s the override class:
 
+``` JavaScript
 Ext.define('MyApp.utils.nl.Main', {
 	override: 'MyApp.view.Main',
 
-    TAB\_ONE\_TITLE_SHORT: 'Hallo',
-    TAB\_ONE\_TITLE: 'Hallo Sencha Touch 2',
-    TAB\_ONE\_HTML: 'Deze app is geschreven in het Nederlands.',
+    TAB_ONE_TITLE_SHORT: 'Hallo',
+    TAB_ONE_TITLE: 'Hallo Sencha Touch 2',
+    TAB_ONE_HTML: 'Deze app is geschreven in het Nederlands.',
 });
+```
 
 As soon as it loads this file, it will override the previews defined Main view.  
 Ok, so now we have a dynamic view and a view override with language translations. How do you load this in your app? Just add it to the requires!
@@ -103,6 +107,7 @@ The code for loading should be something like this:
 
 **app.js:**
 
+``` JavaScript
     launch: function() {
         onCallback = function(){
             Ext.Viewport.add(Ext.create('MyApp.view.Main'));
@@ -110,13 +115,15 @@ The code for loading should be something like this:
 
         Ext.require(localStorage.getItem('language'), onCallback);
     }
+```
 
 For my demo I created a Toggle pirate language button; this button sets the localstorage and refreshes the page:
 
+``` JavaScript
 {
 docked: 'top',
 xtype: 'toolbar',
-items: \[{
+items: [{
     xtype: 'button',
     text: 'Toggle pirate language',
     handler: function(){
@@ -128,18 +135,21 @@ items: \[{
         window.location.reload();
     }
 }
+```
 
 With this pirate language file:
 
 **app/utils/pirate/Main.js**
 
+``` JavaScript
 Ext.define('MyApp.utils.pirate.Main', {
 	override: 'MyApp.view.Main',
 
-    TAB\_ONE\_TITLE_SHORT: 'Ahoy!',
-    TAB\_ONE\_TITLE: 'Ahoy! Sencha Touch 2',
-    TAB\_ONE\_HTML: 'Tis app be written in scurvy pirate language, matey!',
+    TAB_ONE_TITLE_SHORT: 'Ahoy!',
+    TAB_ONE_TITLE: 'Ahoy! Sencha Touch 2',
+    TAB_ONE_HTML: 'Tis app be written in scurvy pirate language, matey!',
 });
+```
 
 And that’s the trick!
 

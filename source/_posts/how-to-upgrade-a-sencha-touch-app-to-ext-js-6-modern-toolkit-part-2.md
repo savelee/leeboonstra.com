@@ -1,21 +1,25 @@
 ---
 title: How to Upgrade a Sencha Touch App to Ext JS 6 Modern Toolkit – Part 2
+description: In this tutorial, I will show you how you can upgrade your app, and why you should consider taking this step.
 tags:
-  - ext 6
-  - migrate
-  - mvvm
-  - Sencha Touch
-url: 1168.html
-id: 1168
-categories:
   - Ext JS 6
+  - Migration
+  - Mobile app
+  - Sencha Touch
+  - Upgrade
+  - MVVM
+categories:
   - Sencha Touch
 date: 2016-02-08 17:13:25
+alias: /developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-2/
 ---
 
-[![Cupertino Theme](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-iphone1-part1-img1-e1452135006662-143x300.png)](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-iphone1-part1-img1-e1452135006662.png)
+In [part 1](/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-1/) of this blog post series, I discussed the changes in Ext JS 6 Modern Toolkit and showed you how to do a basic mobile upgrade of your Sencha Touch app. In this article, I’ll show you how to do an advanced mobile upgrade.
 
-In [part 1](https://www.sencha.com/blog/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-1/) of this blog post series, I discussed the changes in Ext JS 6 Modern Toolkit and showed you how to do a basic mobile upgrade of your Sencha Touch app. In this article, I’ll show you how to do an advanced mobile upgrade.
+<!--more-->
+
+![Cupertino Theme](/images/touch-extjsmodern-tutorial-iphone1-part1-img1-e1452135006662-143x300.png)
+
 
 ### Advanced Mobile Upgrade
 
@@ -41,8 +45,7 @@ I’ve cloned this **dinmu1** folder to a [new folder](https://github.com/savele
     5.  In **Main.js**, change the `requires` for the Settings View to `'Dinmu.view.settings.Settings'`
 5.  To confirm that nothing breaks after this fix, you can run a **sencha app refresh**, and you shouldn’t see any errors.
     
-    [![Files](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-files-part2-img2-1024x469.png)](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-files-part2-img2.png)
-    
+![Files](/images/touch-extjsmodern-tutorial-files-part2-img2-1024x469.png)
 
 #### Migrate the Controllers to View Controllers
 
@@ -50,6 +53,7 @@ I’ve cloned this **dinmu1** folder to a [new folder](https://github.com/savele
     **app/view/main/MainController.js**
 2.  Create the following class definition:  
     
+``` JavaScript
     Ext.define('Dinmu.view.main.MainController', {
         extend: 'Ext.app.ViewController',
         alias: 'controller.main',
@@ -60,6 +64,7 @@ I’ve cloned this **dinmu1** folder to a [new folder](https://github.com/savele
         }
      
     });
+```
     
 3.  Wire up the view controller to the main view:  
     In Main.js, add the following line: `controller: 'main',`
@@ -78,35 +83,45 @@ I’ve cloned this **dinmu1** folder to a [new folder](https://github.com/savele
     *   onRefresh – executed on tap of the refresh button
     
     In the **Main.js** view class, you will create the activeitem change listener:  
-    
-    listeners: {
-       'activeitemchange': 'onCarouselChange'
-    },
-    
+
+    ``` JavaScript
+        listeners: {
+        'activeitemchange': 'onCarouselChange'
+        },
+    ```
+
     On the back button in Main.js, you will create a tap listener:  
-    
+
+    ``` JavaScript
     listeners: {
-       'tap': 'onBackBtnTap'
+        'tap': 'onBackBtnTap'
     },
-    
+    ```
+
     On the settings button in Main.js, you will create a tap listener:  
-    
+
+    ``` JavaScript
     listeners: {
        'tap': 'onSettingsBtnTap'
     },
-    
+    ```
+
     On the toggle button in Settings.js, you will create a toggle listener:  
-    
+
+    ``` JavaScript
     listeners: {
        'change': 'onToggle'
     },
-    
+    ```
+
     On the refresh button in Settings.js, you will create a tap listener:  
-    
+
+    ``` JavaScript
     listeners: {
        'tap': 'onRefresh'
     },
-    
+    ```
+
 9.  When you run the application in your browser, you will notice various event errors. The references with component queries are broken. You will fix these now.
 
 All the references to `this.getMainView()` can be replaced for `this.getView()`. Because the view controller now knows about the view, you can fix this one easily. I replaced it on 3 places.  
@@ -117,19 +132,21 @@ In the MainController, replace `this.getSettingsView()` with `this.lookupReferen
   
 You can fix the `onToggle` Method like this:  
 
+``` JavaScript
 var s = this.lookupReference('settings');
  
 if (!newVal) {
-   s.down('field\[name="city"\]').enable();
-   s.down('field\[name="country"\]').enable();
-   s.down('field\[name="units"\]').enable();
+   s.down('field[name="city"]').enable();
+   s.down('field[name="country"]').enable();
+   s.down('field[name="units"]').enable();
 } else {
-   s.down('field\[name="city"\]').disable();
-   s.down('field\[name="country"\]').disable();
-   s.down('field\[name="units"\]').disable();
-   s.down('field\[name="city"\]').reset();
-   s.down('field\[name="country"\]').reset();
+   s.down('field[name="city"]').disable();
+   s.down('field[name="country"]').disable();
+   s.down('field[name="units"]').disable();
+   s.down('field[name="city"]').reset();
+   s.down('field[name="country"]').reset();
 }
+```
 
 In the Main.js view, put a reference in the **titlebar** configuration:  
   
@@ -137,19 +154,21 @@ In the Main.js view, put a reference in the **titlebar** configuration:
   
 Then replace the `onCarouselChange` method with:  
 
+``` JavaScript
 onCarouselChange: function(carousel, newVal, oldVal) {
    var t = this.lookupReference('titlebar');
  
    if (newVal.getItemId() == "mainview") {
-      t.down('button\[action=back\]').hide();
-      t.down('button\[action=settings\]').show();
+      t.down('button[action=back]').hide();
+      t.down('button[action=settings]').show();
       t.setTitle('Do I need my Umbrella?');
    } else {
-      t.down('button\[action=back\]').show();
-      t.down('button\[action=settings\]').hide();
+      t.down('button[action=back]').show();
+      t.down('button[action=settings]').hide();
       t.setTitle('Settings');
    }
 },
+```
 
 15.  Change the `onLaunch` method to `init`. Note, this will break the application because `Dinmu.utils.Functions.loadData()`, uses the Settings store, which is not wired up to a controller anymore. For now, comment the line with `Dinmu.utils.Functions.loadData()` out.
 16.  Run another **sencha app refresh** and test the app in the browser. Everything except the refresh button should work. The refresh button requires the store, which is not linked yet.
@@ -159,20 +178,22 @@ onCarouselChange: function(carousel, newVal, oldVal) {
 1.  Create the following new file:  
     **app/view/main/MainModel.js**
 2.  Create the following class definition:  
-    
+
+``` JavaScript
     Ext.define('Dinmu.view.main.MainModel', {
         extend: 'Ext.app.ViewModel',
      
         alias: 'viewmodel.main',
      
-        requires: \[
+        requires: [
      
-        \],
+        ],
      
         stores: {
      
         }
     });
+```
     
 3.  Wire up the view model to the the main view:  
     In **Main.js**, add the following line: `viewModel: 'main',`  
@@ -182,9 +203,11 @@ onCarouselChange: function(carousel, newVal, oldVal) {
 6.  In Ext JS 6, Stores don’t automatically set the storeId to the name of the class, therefore set the `storeId` to `Settings`, so the store manager can find the store via `Ext.getStore('Settings')`
 7.  After that, add the following store to the stores object, (the type points to the settings alias):
 
+``` JavaScript
 'settings': {
    type: 'settings'
 },
+```
 
 10.  Enable the `Dinmu.utils.Functions.loadData()` line, which you commented out before in the MainController. Then run another **sencha app refresh** and test your app.
 
@@ -213,15 +236,14 @@ With Ext JS 6, you can do this because it supports promises and deferreds, which
     *   theme-windows (windows theme)
     *   theme-neptune
     *   theme-triton (default)
-    
-    [![Cupertino Theme](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-triton1-part2-img3.png)](https://wp-test.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-triton1-part2-img3.png)  
-    
-    Triton Theme
-    
+
+    ![Cupertino Theme](/images/touch-extjsmodern-tutorial-triton1-part2-img3.png)
+
     After switching the theme, you will need to run **sencha app build**.
     
 2.  The platform switcher in Ext JS is renewed. Instead, you will now use the profiles **build** block in **app.json**. To set this up, write in app.json:
 
+``` JavaScript
 "builds": {
   "ios": {
     "toolkit": "modern",
@@ -248,9 +270,11 @@ With Ext JS 6, you can do this because it supports promises and deferreds, which
     "theme": "theme-triton"
   }
 },
+```
 
 To enable the multiple themes on your development machine, add these lines to the **app.json** bootstrap block:  
 
+``` JavaScript
 "bootstrap": {
   "base": "${app.dir}",
  
@@ -259,9 +283,11 @@ To enable the multiple themes on your development machine, add these lines to th
  
   "manifest": "${build.id}.json" //this is the magic, which generates a manifest file, to load on local.
 },
+```
 
 To enable the multiple themes on your production build, add these lines to the **app.json** `output` block:
 
+``` JavaScript
 "output": {
    "base": "${workspace.build.dir}/${build.environment}/${app.name}",
    "appCache": {
@@ -274,23 +300,25 @@ To enable the multiple themes on your production build, add these lines to the *
      "shared": "resources"
     }
 },
+```
 
 In **index.html** you write:
 
+``` JavaScript
 Ext.beforeLoad = function (tags) {
     var s = location.search,  // the query string (ex "?foo=1&bar")
         profile;
 
-    if (s.match(/\\bios\\b/) || tags.ios !==0) {
+    if (s.match(/biosb/) || tags.ios !==0) {
         profile = 'ios';
     }
-    else if (s.match(/\\bandroid\\b/) || tags.android !==0) {
+    else if (s.match(/bandroidb/) || tags.android !==0) {
         profile = 'android';
     }
-    else if (s.match(/\\bwindows\\b/) || tags.windows !==0) {
+    else if (s.match(/bwindowsb/) || tags.windows !==0) {
         profile = 'windows';
     }
-    else if (s.match(/\\bbb\\b/) || tags.bb !==0 ) {
+    else if (s.match(/bbbb/) || tags.bb !==0 ) {
         profile = 'bb';
     }
     else {
@@ -299,18 +327,19 @@ Ext.beforeLoad = function (tags) {
 
     Ext.manifest = profile; // this name must match a build profile name
 };
+```
 
 You will need to run **sencha app refresh** and **sencha app build**, which builds all profiles, to get it up and running.
 
 12.  Themes for Ext JS 6 Modern toolkit use the same packages structure as Ext JS did. This is great, because it means that you can extend from your own theme packages, and you can generate custom themes with Sencha Cmd:
 
-**sencha generate theme theme-MyTheme**
+`sencha generate theme theme-MyTheme`
 
 Even if you don’t plan to create custom theme packages, theming is more advanced. To upgrade an existing theme, you have to put all the variables in the **sass/var/** folder.
 
 Take a look at my [**sass/var/all.scss**](https://github.com/savelee/ext-weatherapp/blob/master/dinmu2/sass/var/all.scss) which I used for the weather app application. The custom Sass / CSS classes will be stored in the **sass/src/** folder. For an application (without custom theme packages), you have to map the folder structure of your JS applications. In other words, app/view/main/Main.js has a Sass file in this location: **sass/src/view/main/Main.scss.**
 
-[![Mountainview Theme](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-android-part2-img4.png)](https://www.sencha.com/wp-content/uploads/2016/01/touch-extjsmodern-tutorial-android-part2-img4.png)  
+![Mountainview Theme](/images/touch-extjsmodern-tutorial-android-part2-img4.png)
 
 I could take most of my styling directly from my Sencha Touch application. However, there is no “default” Sencha Touch theme anymore, instead there’s the Neptune & Triton themes, which both have different Sass variables and require different DOM.
 
@@ -318,5 +347,5 @@ This means that when you used custom styling for templates (tpls) etc, it won’
 
 In the next article in this series, I will show you how to do an advanced universal upgrade.
 
-*   [Part I](https://www.leeboonstra.com/developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-1)
-*   [Part III](https://www.leeboonstra.com/developer/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-3)
+*   [Part I](/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-1/)
+*   [Part III](/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-3/)

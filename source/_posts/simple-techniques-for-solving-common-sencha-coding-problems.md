@@ -1,24 +1,22 @@
 ---
 title: Simple Techniques for Solving Common Sencha Coding Problems
+description: Learn some tricks and techniques from a Sencha trainer to debug and solve coding problems.
 tags:
   - Ext JS
   - problem solving
   - Sencha
   - Sencha Touch
-  - troubleshooting
-url: 436.html
-id: 436
+  - Troubleshooting
+  - TDD
 categories:
   - Ext JS
-  - JavaScript
-  - Sencha
-  - Sencha Components
-  - Sencha Touch
-  - TDD
 date: 2014-05-22 11:01:55
+alias: /developer/simple-techniques-for-solving-common-sencha-coding-problems/
 ---
 
 Often when I’m teaching a Sencha Training class, students ask me to look at their apps because there’s a problem they don’t know how to fix. Since I didn’t write the code, it’s hard sometimes for me to give them a quick answer. However, I do have a set of simple techniques that filter out the most obvious problems.
+
+<!--more-->
 
 In this tip, I’ll categorize a couple of most common problems and tackle them with some simple but effective strategies.
 
@@ -30,7 +28,7 @@ You are browsing through your app, but the data is not visible. Often, this prob
 
 First, try to inspect the Store. You can do this from the browser console by running:
 
-Ext.getStore(‘MyStore’).load();
+`Ext.getStore(‘MyStore’).load();`
 
 This returns the Store object. You can drill through the data config and see if the array length is greater than zero.
 
@@ -50,7 +48,7 @@ Sencha Cmd won’t build your app. Most of the time, Sencha Cmd gives a clear ex
 
 This trick is pretty radical, but most of the time it works. Generate a new application with the same namespace from the command line:
 
-sencha generate app App ../myapp
+`sencha generate app App ../myapp`
 
 Next, copy over the app folder, and make sure you take the changes over from app.js. Now try it again!
 
@@ -62,13 +60,13 @@ These types of problems are always the hardest ones. For example, suddenly multi
 
 A common problem-solving technique for developers is to isolate the problem into smaller, more manageable chunks.
 
-##### Isolate the problem
+#### Isolate the problem
 
 Let’s generate a new application with Sencha Cmd, again with the same namespace. Now, copy over the Class that contains the problems and test it. Do you see the same bugs? You can try to solve it in this test app. You can isolate it even further by trying to re-build your class from the ground up. Start with only the necessary code.
 
 Did it work? There is nothing wrong with the framework, and there is nothing wrong with this Class. Something else must be wrong.
 
-##### Switch to the default theme
+#### Switch to the default theme
 
 Go back to your own app and try to switch to one of the Sencha default stylesheets. (Sencha Default StyleSheet in Sencha Touch, Neptune Theme in Ext JS) Does it finally work? Then there is something wrong in your custom StyleSheet. Is it still not working? At least now you know that your custom StyleSheet is correct. There might be something wrong with your nesting. Or maybe you used the wrong layout?
 
@@ -76,7 +74,7 @@ Go back to your own app and try to switch to one of the Sencha default styleshee
 
 Do you have problems with querying for Components? You can easily query components from your browsers dev console:
 
-Ext.ComponentQuery.query('button\[action=”test”\]');
+`Ext.ComponentQuery.query('button[action="test"]');`
 
 Does it return an empty array? Then there you go! Or maybe it does return the components, but you made a timing mistake. That can often be the case when you’re working with callbacks. When your code is executed, the component may not be rendered on the screen.
 
@@ -88,11 +86,13 @@ Aside from the above mentioned techniques, there are also a couple of standard t
 
 Switch to one of the debugging frameworks. The advantage is that it often shows extra log messages, and you can directly read through the framework code. For Sencha Touch projects, open app.json and change the framework temporarily:
 
-"js": \[
+``` JavaScript
+"js": [
 {
 "path": "../touch/sencha-touch-all-debug.js",
 "x-bootstrap": true
 },
+```
 
 For Ext JS projects, open **index.html** and change the framework temporarily:
 
@@ -101,5 +101,3 @@ Your browser dev tools can help (Google Chrome or Firebug). Also, there are some
 Do you quickly want to prototype something? Try [Sencha Fiddle](http://fiddle.sencha.com). There are great tools for testing available, such as [Siesta](http://www.bryntum.com/products/siesta/).
 
 And last but not least, if none of these techniques help you and you are staring at your code for hours (or even days)... take a break! Often, when you take a break and free your mind, you can solve it right away. Especially if you’ve made spelling mistakes or (case sensitive) typos that can cause hours of frustration because you just don’t see them.
-
-Looking for more help? Check out one of the Sencha Ext JS and Sencha Touch [training classes](http://www.sencha.com/training) located around the world, or join an online class.
