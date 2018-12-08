@@ -10,6 +10,7 @@ tags:
   - Native
 categories:
   - Ext JS
+date: 2015-06-05 10:00:28
 alias: /developer/How-to-integrate-the-ext-electron-package-with-your-own-project/
 ---
 

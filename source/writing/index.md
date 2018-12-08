@@ -1,7 +1,7 @@
 ---
 title: Writing
 date: 2015-07-06 20:46:06
-comments: false
+nocomments: true
 ---
 
 Beside writing this blog, I’ve also published my work elsewhere. Below is a list of my publications:

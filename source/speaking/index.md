@@ -1,18 +1,18 @@
 ---
 title: Speaking
-date: 2015-07-06 20:45:21
+description: I'm a public speaker, topics I love to talk about; Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, How Google Works, Building software at Google scale, Diversity, Women in Tech
 event: true
-comments: false
+nocomments: true
 ---
 
 <img src="/images/lee-speaking2.png" width="400" class="float-right border" alt="Lee Speaking">
 
 
-Worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of my past sessions.
+Worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of past sessions.
 
 Check out my Speaker Deck, for an overview of all my presentations: [Speaker Deck](https://speakerdeck.com/savelee/).
 
-Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning for Developers, Chatbots, Building software at Google scale, (Mobile) app development and deployment, JavaScript, HTML5 app development (Cordova / PhoneGap / HTML5 frameworks) & advanced theming (Sass/CSS3).
+Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, Node JS, Ext JS, Sencha Touch, Angular, HTML5, Sass, CSS, How Google Works, building software at Google scale, Diversity, Women in Tech**
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -240,6 +240,8 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
     4 April 2018 | **Amsterdam** | Learn about DevOps at Google
     
 
+<img src="/images/speaking1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker." />
+
 2017
 ----
 
@@ -305,9 +307,6 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
     
     Workshop: Create the TV guide action for the Google Assistant with API.AI and Cloud Functions.
     
-
-
-<img src="/images/leeboonstra-speaker-500x351.png" width="400" class="float-right border" alt="Lee Speaking">
 
 2016
 ----
