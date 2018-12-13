@@ -172,7 +172,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
         },
         "location": {
           "@type": "Place",
-          "name": "Kaf",
+          "name": "KSF",
           "address": {
             "addressLocality": "Almere",
             "addressCountry": "NL"
