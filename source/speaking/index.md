@@ -109,6 +109,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
         },
         "location": {
           "@type": "Place",
+          "name": "NetApp",
           "address": {
             "addressLocality": "Schipholrijk",
             "addressCountry": "NL"
@@ -291,7 +292,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
         },
         "location": {
           "@type": "Place",
-          "name": "Excel",
+          "name": "ExCel",
           "address": {
             "addressLocality": "London",
             "addressCountry": "UK"
