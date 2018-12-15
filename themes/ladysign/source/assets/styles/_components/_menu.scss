@@ -13,6 +13,7 @@
 
 	li {
 		display: inline-block;
+		padding: 8px 0;
 	}
 }
 
@@ -63,6 +64,13 @@
 
 		a {
 			font-size: 14px;
+			display: inline-block;
+			width: 100%;
+		}
+
+		.sidebar-module-list-item {
+			padding: 10px 5px;
+			width: 100%;
 		}
 
 		.sidebar-module-list-count {

@@ -8,6 +8,16 @@ In case you want to contact me, please send me a dm on <a href="https://twitter.
 
 * [Here's my resume: Lee Boonstra CV](/images/lee.boonstra-resume.pdf)
 
+<div class="vcard hidden">
+    <span class="fn">Lee Boonstra</span>
+    <span class="org">Google</span>
+    <span class="url">http://www.leeboonstra.com</span>
+    <div class="adr">
+        <span class="locality">Amsterdam</span>
+        <span class="country-name">The Netherlands</span>
+    </div>
+</div>
+
 <img src="/images/lee1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker.">
 
 <div class="row">
