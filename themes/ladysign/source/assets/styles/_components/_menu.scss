@@ -13,7 +13,6 @@
 
 	li {
 		display: inline-block;
-		padding: 8px 0;
 	}
 }
 
@@ -111,6 +110,11 @@
 }
 
 @media (max-width: 768px) {
+	.navbar-nav {
+		li {
+			padding: 8px 0;
+		}
+	}
 	.navbar-brand {
 		font-size: 20px !important;
 		line-height: 24px;

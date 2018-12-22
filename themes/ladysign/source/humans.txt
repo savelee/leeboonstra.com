@@ -1,0 +1,13 @@
+# humanstxt.org/
+
+Thank you for visiting my blog!
+
+Lee Boonstra
+Sales Engineer at Google
+Twitter: @ladysign
+https://github.com/savelee/leeboonstra.com
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, Sass, HTML5, JavaScript
+    Hexo Site generator, Firebase Hosting, Travis CI, Github

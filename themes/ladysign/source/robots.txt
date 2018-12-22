@@ -4,7 +4,6 @@ Allow: /
 Allow: /archives/
 Allow: /categories/
 
-Disallow: /assets/js/
-Disallow: /assets/fonts/
+Disallow: /404.html
 
 Sitemap: https://www.leeboonstra.com/sitemap.xml
