@@ -52,6 +52,6 @@ Beside writing this blog, I’ve also published my work elsewhere. Below is a li
 
 <hr>
 
-<img src="/images/leeboonstra-book.png" width="500" class="border" alt="Lee Boonstra Author"/>
+<img src="/images/leeboonstra-book.png" width="500" class="border img-fluid" alt="Lee Boonstra Author"/>
 
 

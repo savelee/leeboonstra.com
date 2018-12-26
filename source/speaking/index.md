@@ -5,7 +5,7 @@ event: true
 nocomments: true
 ---
 
-<img src="/images/lee-speaking2.png" width="400" class="float-right border" alt="Lee Speaking">
+<img src="/images/lee-speaking2.png" width="400" class="float-right img-fluid border" alt="Lee Speaking">
 
 
 I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
@@ -353,7 +353,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
     4 April 2018 | **Amsterdam** | Learn about DevOps at Google
     
 
-<img src="/images/speaking1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker." />
+<img src="/images/speaking1.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker." />
 
 2017
 ----
