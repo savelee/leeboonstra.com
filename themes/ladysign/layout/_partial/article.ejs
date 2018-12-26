@@ -40,6 +40,11 @@
         </p>
       <% } %>
     <% } else { %>
+
+    <% if !(index) && (page.header){ %>
+      <img src="<%- page.header %>" alt="<%- post.title %>" />
+    <% } %>
+
       <%- post.content %>
     <% } %>
 

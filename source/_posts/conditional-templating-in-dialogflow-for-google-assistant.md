@@ -12,13 +12,9 @@ tags:
 categories:
   - Bots
 alias: /developer/conditional-templating-in-dialogflow-for-google-assistant/
+header: /images/articles/conditionaltemplating.jpg
 date: 2018-05-20 17:02:22
 ---
-
-<% if (!index){ %>
-  <img src="/images/articles/conditionaltemplating.jpg" alt="Conditional Templating in Dialogflow" />
-<% } %>
-
 
 What I like most about Dialogflow, (the tool to create Chatbots and Smart Assistants / Google Assistant apps), is that you can maintain your conversations within the Dialogflow UI. Many users write their complete FAQ content in intents and responses. You no longer need a developer to tweak your conversations or deploy your agent which makes it very scalable for large organizations. It's also possible to load data from external systems. In that case, you are hosting parts of the conversation elsewhere. You could store these parts in language files or databases. Some organizations prefer to write the full conversation in the Dialogflow UI. That way your copywriters can maintain the full conversation. 
 
