@@ -1,18 +1,18 @@
 ---
 title: Speaking
-date: 2015-07-06 20:45:21
+description: I'm a public speaker, topics I love to talk about; Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, How Google Works, Building software at Google scale, Diversity, Women in Tech
 event: true
-comments: false
+nocomments: true
 ---
 
 <img src="/images/lee-speaking2.png" width="400" class="float-right border" alt="Lee Speaking">
 
 
-Worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of my past sessions.
+I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
 
 Check out my Speaker Deck, for an overview of all my presentations: [Speaker Deck](https://speakerdeck.com/savelee/).
 
-Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning for Developers, Chatbots, Building software at Google scale, (Mobile) app development and deployment, JavaScript, HTML5 app development (Cordova / PhoneGap / HTML5 frameworks) & advanced theming (Sass/CSS3).
+Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, Node JS, Ext JS, Sencha Touch, Angular, HTML5, Sass, CSS, How Google Works, building software at Google scale, Diversity, Women in Tech**
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -30,7 +30,20 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@type": "Event",
         "name": "Friends of Search",
         "url": "https://friendsofsearch.nl/",
-        "startDate": "06/02/2019",
+        "performer": "Lee Boonstra",
+        "description":"Keynote: Google Assistant",
+        "startDate": "2019-02-06T09:30+01:00",
+        "endDate": "2019-02-06T17:00+01:00",
+        "image": "https://friendsofsearch.nl/wp-content/uploads/sites/6/2016/12/Friends-of-Search-RGB.svg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Friends of Search Tickets",
+          "url": "https://friendsofsearch.nl/tickets/",
+          "price": "498.27",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/InStock",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
           "name": "Kromhouthallen",
@@ -54,7 +67,20 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@type": "Event",
         "name": "Startup Roadshow",
         "url": "https://events.withgoogle.com/google-cloud-startup-roadshow-london/#content",
-        "startDate": "11/12/2018",
+        "startDate": "2018-12-11T09:30+00:00",
+        "endDate": "2018-12-11T17:30+00:00",
+        "performer": "Lee Boonstra",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "description":"Build real world applications with Google Cloud",
+        "offers": {
+          "@type": "Offer",
+          "description": "Startup Roadshow",
+          "url": "https://events.withgoogle.com/google-cloud-startup-roadshow-london/",
+          "price": "0.00",
+          "priceCurrency": "GBP",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
           "name": "Google Academy",
@@ -74,10 +100,24 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "Schiphol Developers Group",
+        "description":"Machine Learning for JavaScript Developers",
+        "performer":"Lee Boonstra",
         "url": "https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/",
-        "startDate": "06/12/2018",
+        "startDate": "2018-12-06T18:30+01:00",
+        "endDate": "2018-12-06T21:30+01:00",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Schiphol Developers Meetup",
+          "url": "https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
+          "name": "NetApp",
           "address": {
             "addressLocality": "Schipholrijk",
             "addressCountry": "NL"
@@ -98,7 +138,21 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@type": "Event",
         "name": "Google Cloud Summit Amsterdam",
         "url": "https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html",
-        "startDate": "28/11/2018",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "startDate": "2018-11-16T09:30+01:00",
+        "endDate": "2018-11-16T17:30+01:00",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "performer":"Lee Boonstra",
+        "description": "Keynote: AutoML Demo + Contact Center AI Breakout session",
+        "offers": {
+          "@type": "Offer",
+          "description": "Google Cloud Summit Amsterdam",
+          "url": "https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html",
+          "price": "378.72,
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-08-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
           "name": "Taets Gallery",
@@ -118,10 +172,23 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@type": "Event",
         "name": "KSF Jaarcongres 2018",
         "url": "https://klantenservicefederatie.nl/",
-        "startDate": "20/11/2018",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "startDate": "2018-11-20T12:30+01:00",
+        "endDate": "2018-11-20T17:30+01:00",
+        "performer": "Lee Boonstra",
+        "description":"Session about Contact Center AI",
+        "offers": {
+          "@type": "Offer",
+          "description": "KSF Jaarcongres 2018",
+          "url": "https://www.ksfjaarcongres.nl/",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-10-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
-          "name": "Kaf",
+          "name": "KSF",
           "address": {
             "addressLocality": "Almere",
             "addressCountry": "NL"
@@ -138,8 +205,21 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "FrontMania Conference",
+        "performer": "Lee Boonstra",
+        "description": "Keynote: Machine Learning for JavaScript developers",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
         "url": "https://frontmania.com/",
-        "startDate": "16/11/2018",
+        "startDate": "2018-11-16T09:30+01:00",
+        "endDate": "2018-11-16T17:30+01:00",
+        "offers": {
+          "@type": "Offer",
+          "description": "Front Mania 2018",
+          "url": "https://frontmania.com/",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-10-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
           "name": "Rabobank",
@@ -158,8 +238,22 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
       {
         "@context": "http://www.schema.org",
         "@type": "Event",
-        "name": "Chatbot Hackathon",
-        "startDate": "28/10/2018",
+        "name": "Chatbothon",
+        "description": "Chatbothon - trainer Google Assistant & Dialogflow",
+        "performer": "Lee Boonstra",
+        "startDate": "2018-10-28T09:30+01:00",
+        "endDate": "2018-10-28T17:30+01:00",
+        "url": "https://fourcast.io/events/",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Chatbot Hackathon 2018",
+          "url": "https://fourcast.io/events/",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-08-01T09:30+01:00"
+        },
         "location": {
           "@type": "Place",
           "name": "Google Brussel",
@@ -179,8 +273,18 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "GoDataFest 2018",
+        "description: "Learn about Dialogflow and the Google Assistant",
+        "performer": "Lee Boonstra",
         "url": "https://www.godatafest.com/",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
         "startDate": "18/10/2018",
+        "endDate": "18/10/2018",
+        "offers": {
+          "@type": "Offer",
+          "description": "GoDataFest 2018",
+          "url": "https://www.godatafest.com/",
+          "price": "Free"
+        },
         "location": {
           "@type": "Place",
           "name": "GoDataDriven",
@@ -200,10 +304,19 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "Google Cloud Next 2018",
+        "description: "Diversity at Google Panel",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "performer": "Lee Boonstra",
         "startDate": "11/10/2018",
+        "endDate": "11/10/2018",
+        "offers": {
+          "@type": "Offer",
+          "description": "Google Cloud Next",
+          "price": "Free"
+        },
         "location": {
           "@type": "Place",
-          "name": "Excel",
+          "name": "ExCel",
           "address": {
             "addressLocality": "London",
             "addressCountry": "UK"
@@ -239,6 +352,8 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
     
     4 April 2018 | **Amsterdam** | Learn about DevOps at Google
     
+
+<img src="/images/speaking1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker." />
 
 2017
 ----
@@ -305,9 +420,6 @@ Topics I speak about: Google, Google Cloud, Cloud Computing, Machine Learning fo
     
     Workshop: Create the TV guide action for the Google Assistant with API.AI and Cloud Functions.
     
-
-
-<img src="/images/leeboonstra-speaker-500x351.png" width="400" class="float-right border" alt="Lee Speaking">
 
 2016
 ----

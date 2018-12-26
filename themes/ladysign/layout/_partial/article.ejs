@@ -136,7 +136,7 @@
   </section>
 <% } %>
 
-<% if (!index && config.disqus_enabled && config.disqus_shortname){ %>
+<% if (!index && !page.nocomments && config.disqus_enabled && config.disqus_shortname){ %>
 <section id="comments" class="comments containerfluid">
      
     <div class="container">

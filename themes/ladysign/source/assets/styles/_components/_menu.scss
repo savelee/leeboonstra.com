@@ -63,6 +63,13 @@
 
 		a {
 			font-size: 14px;
+			display: inline-block;
+			width: 100%;
+		}
+
+		.sidebar-module-list-item {
+			padding: 10px 5px;
+			width: 100%;
 		}
 
 		.sidebar-module-list-count {
@@ -103,6 +110,11 @@
 }
 
 @media (max-width: 768px) {
+	.navbar-nav {
+		li {
+			padding: 8px 0;
+		}
+	}
 	.navbar-brand {
 		font-size: 20px !important;
 		line-height: 24px;

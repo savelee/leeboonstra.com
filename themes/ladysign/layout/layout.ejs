@@ -66,6 +66,7 @@
   <link rel="preload" href="/assets/js/vendor/vendors.min.js" as="script">
 
   <link rel="manifest" href="/manifest.json">
+  <link type="text/plain" rel="author" href="<%- config.url %>/humans.txt" />
 
   <meta property="og:image" content="<%- config.url %>/images/screen.png"/>
   <meta name="twitter:image" content="<%- config.url %>/images/screen.png"/>
@@ -85,7 +86,7 @@
         <span class="iconmenu"></span>
       </button>
       <a class="navbar-brand" href="/" title="<%-config.title %>">DevTricks</a>
-        
+            
       <div class="collapse navbar-collapse" id="navbarTogglerDemo">
         
         <ul class="nav navbar-nav">
@@ -98,8 +99,6 @@
                 <%- partial('_widget/category') %>
             </li>
         </ul>
-
-  
 
 
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
