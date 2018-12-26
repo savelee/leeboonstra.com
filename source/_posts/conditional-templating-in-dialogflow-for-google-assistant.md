@@ -15,8 +15,8 @@ alias: /developer/conditional-templating-in-dialogflow-for-google-assistant/
 date: 2018-05-20 17:02:22
 ---
 
-<% if !(index){ %>
-  <img src="images/articles/conditionaltemplating.jpg" alt="Conditional Templating in Dialogflow" />
+<% if (!index){ %>
+  <img src="/images/articles/conditionaltemplating.jpg" alt="Conditional Templating in Dialogflow" />
 <% } %>
 
 
