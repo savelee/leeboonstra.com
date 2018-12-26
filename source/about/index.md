@@ -1,12 +1,11 @@
 ---
 title: About me
+header: /images/profile.jpg
 nocomments: true
 ---
 
 
 > “I love <strong>creating</strong>, instead of just consuming technology.”
-
-<img src="/images/profile.jpg" class="float-right border">
 
 I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) from Amsterdam, the Netherlands and I'm a Googler. I work as a sales engineer in the Google Cloud team where I assist the sales team with technical knowledge about cloud computing and machine learning for the financial industry.
 
