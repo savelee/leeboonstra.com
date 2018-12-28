@@ -8,7 +8,8 @@
   "scripts": {
     "sw": "workbox injectManifest themes/ladysign/source/sw-dev.js",
     "serve": "workbox generateSW && hexo serve",
-    "build": "workbox generateSW && hexo generate"
+    "build": "workbox generateSW && hexo generate",
+    "crosspost": "node scripts/crosspost/index.js"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
@@ -33,8 +34,15 @@
     "hexo-server": "^0.3.1",
     "hexo-tag-fontawesome": "^1.0.0",
     "hexo-uglify": "0.0.5"
+
   },
   "devDependencies": {
-    "workbox-cli": "^3.6.3"
+    "workbox-cli": "^3.6.3",
+    "medium-sdk": "0.0.4",
+    "prettier": "^1.8.2",
+    "remark-frontmatter": "^1.2.0",
+    "yargs": "^10.0.3",
+    "to-vfile": "^2.1.2",
+    "js-yaml": "^3.10.0"
   }
 }

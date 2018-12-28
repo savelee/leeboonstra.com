@@ -3,7 +3,8 @@
     "public": "public",
     "ignore": [
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "**/crosspost/**
     ],
     "redirects": [ {
       "source": "/developer/category/:post*",
