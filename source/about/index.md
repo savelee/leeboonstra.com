@@ -6,7 +6,8 @@ nocomments: true
 
 > “I love <strong>creating</strong>, instead of just consuming technology.”
 
-<img src="/images/profile.jpg" class="float-right border">
+<img src="/images/profile.jpg" class="border img-fluid float-right" alt="Lee Boonstra, Sales Engineer at Google and book author." />
+
 
 I’m [Lee Boonstra](https://plus.google.com/117712452932146916020) from Amsterdam, the Netherlands and I'm a Googler. I work as a sales engineer in the Google Cloud team where I assist the sales team with technical knowledge about cloud computing and machine learning for the financial industry.
 
@@ -24,4 +25,4 @@ Beside technology I love (alternative) music, concerts and I’m a videogames ad
 
 * [Here's my resume: Lee Boonstra CV](/images/lee.boonstra-resume.pdf)
 
-<img src="/images/aboutme1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker.">
+<img src="/images/aboutme1.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker.">

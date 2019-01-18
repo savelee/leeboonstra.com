@@ -18,7 +18,7 @@ In case you want to contact me, please send me a dm on <a href="https://twitter.
     </div>
 </div>
 
-<img src="/images/lee1.jpg" class="border" alt="Lee Boonstra, Googler and public speaker.">
+<img src="/images/lee1.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker.">
 
 <div class="row">
     <div class="col col-sm-8"> <a class="twitter-timeline" href="https://twitter.com/ladysign"> Tweets by @ladysign</a>

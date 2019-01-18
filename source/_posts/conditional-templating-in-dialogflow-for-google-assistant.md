@@ -12,6 +12,7 @@ tags:
 categories:
   - Bots
 alias: /developer/conditional-templating-in-dialogflow-for-google-assistant/
+header: /images/articles/conditionaltemplating.jpg
 date: 2018-05-20 17:02:22
 ---
 
