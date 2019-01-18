@@ -7,6 +7,11 @@ nocomments: true
 
 Beside writing this blog, I’ve also published my work elsewhere. Below is a list of my publications:
 
+*   Articles on cloud.google.com
+    -----------------------------
+
+    2019 | **Google** | A simple blueprint for building AI-powered customer service on GCP [Link](https://cloud.google.com/blog/products/ai-machine-learning/simple-blueprint-for-building-ai-powered-customer-service-on-gcp)
+
 *   Various official Sencha blogs
     -----------------------------
     
