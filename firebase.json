@@ -4,7 +4,7 @@
     "ignore": [
       "**/.*",
       "**/node_modules/**",
-      "**/crosspost/**
+      "**/crosspost/**"
     ],
     "redirects": [ {
       "source": "/developer/category/:post*",
