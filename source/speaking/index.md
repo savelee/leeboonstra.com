@@ -5,7 +5,7 @@ event: true
 nocomments: true
 ---
 
-<img src="/images/lee-speaking2.png" width="400" class="float-right img-fluid border" alt="Lee Speaking">
+<img src="/images/lee-fos.jpg" width="400" class="float-right img-fluid border" alt="Lee Speaking">
 
 
 I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
@@ -20,6 +20,110 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 2019
 ----
+
+*   ### Verbond van Verzekeraars 
+
+*   ### Google Cloud Next 2019
+
+  9 April 2019 | **Moscone Center, San Francisco | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
+
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Google Cloud Next 2019",
+        "url": "https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224",
+        "performer": "Lee Boonstra",
+        "description":"Google Cloud Next, Customer Stories: AI in Financial Services",
+        "startDate": "2019-05-09T09:30+01:00",
+        "endDate": "2019-05-09T17:00+01:00",
+        "image": "https://techcrunch.com/wp-content/uploads/2018/07/google-cloud-next-2018-banner.png",
+        "offers": {
+          "@type": "Offer",
+          "description": "Google Cloud Next Tickets",
+          "url": "https://cloud.withgoogle.com/next/sf",
+          "price": "1699",
+          "priceCurrency": "USD",
+          "availability": "http://schema.org/InStock",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Moscone Center",
+          "address": {
+            "addressLocality": "San Francisco",
+            "addressCountry": "USA"
+          }
+        }
+      }</script>
+
+*   ### WTM Event: International Women's Day
+  
+    20 March 2019 | **Google, Amsterdam** | [Website](https://www.meetup.com/en-AU/gdg-nl/events/259060131/) | WTM Event: Internation Women's Day
+
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "WTM Event: Internation Women's Day",
+        "url": "https://www.meetup.com/en-AU/gdg-nl/events/259060131/",
+        "performer": "Lee Boonstra",
+        "description":"AutoML session",
+        "startDate": "2019-04-20T17:30+01:00",
+        "endDate": "2019-04-20T21:30+01:00",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Register for free",
+          "url": "https://www.meetup.com/en-AU/gdg-nl/events/259060131/",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Google",
+          "address": {
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
+
+*   ### Verbond van Verzekeraars 
+
+    6 March 2019 | **Google, Amsterdam | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Verbond van Verzekeraars: Google je beste vriend",
+        "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+        "performer": "Lee Boonstra",
+        "description":"AutoML session",
+        "startDate": "2019-04-6T14:00+01:00",
+        "endDate": "2019-04-6T17:30+01:00",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Register for free",
+          "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Google",
+          "address": {
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
 
 *   ### Friends of Search
     
@@ -54,6 +158,39 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
         }
       }</script>
 
+*   ### Verbond van Verzekeraars 
+
+    20 Jan 2019 | **Google, Amsterdam | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+
+      <script type='application/ld+json'> 
+      {
+        "@context": "http://www.schema.org",
+        "@type": "Event",
+        "name": "Verbond van Verzekeraars: Google je beste vriend",
+        "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+        "performer": "Lee Boonstra",
+        "description":"AutoML session",
+        "startDate": "2019-01-20T14:00+01:00",
+        "endDate": "2019-01-20T17:30+01:00",
+        "image": "https://www.leeboonstra.com/images/profile.jpg",
+        "offers": {
+          "@type": "Offer",
+          "description": "Register for free",
+          "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+          "price": "0.00",
+          "priceCurrency": "EUR",
+          "availability": "http://schema.org/SoldOut",
+          "validFrom": "2018-11-01T09:30+01:00"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Google",
+          "address": {
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        }
+      }</script>
 
 2018
 ----
