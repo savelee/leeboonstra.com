@@ -25,7 +25,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Google Cloud Next 2019
 
-  9 April 2019 | **Moscone Center, San Francisco | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
+  9 April 2019 | **Moscone Center, San Francisco** | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
 
       <script type='application/ld+json'> 
       {
@@ -93,7 +93,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Verbond van Verzekeraars 
 
-    6 March 2019 | **Google, Amsterdam | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+    6 March 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
 
       <script type='application/ld+json'> 
       {
@@ -160,7 +160,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Verbond van Verzekeraars 
 
-    20 Jan 2019 | **Google, Amsterdam | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+    20 Jan 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
 
       <script type='application/ld+json'> 
       {
