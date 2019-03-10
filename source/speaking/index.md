@@ -23,7 +23,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Google Cloud Next 2019
 
-  9 April 2019 | **Moscone Center, San Francisco** | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
+  9 April 2019 | **Moscone Center, San Francisco USA** | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
 
       <script type='application/ld+json'> 
       {
@@ -57,7 +57,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### WTM Event: International Women's Day
   
-    20 March 2019 | **Google, Amsterdam** | [Website](https://www.meetup.com/en-AU/gdg-nl/events/259060131/) | WTM Event: Internation Women's Day
+    20 March 2019 | **Google, Amsterdam, NL** | [Website](https://www.meetup.com/en-AU/gdg-nl/events/259060131/) | WTM Event: Internation Women's Day
 
       <script type='application/ld+json'> 
       {
@@ -125,7 +125,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Friends of Search
     
-     6 Feb 2019 | **Kromhouthallen, Amsterdam** | [Website](https://friendsofsearch.nl/) | Keynote: Google Assistant
+     6 Feb 2019 | **Kromhouthallen, Amsterdam, NL** | [Website](https://friendsofsearch.nl/) | Keynote: Google Assistant
       <script type='application/ld+json'> 
       {
         "@context": "http://www.schema.org",
@@ -158,7 +158,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Verbond van Verzekeraars 
 
-    20 Jan 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+    20 Jan 2019 | **Google, Amsterdam, NL** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
 
       <script type='application/ld+json'> 
       {
@@ -228,7 +228,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Schiphol Developers Group
     
-    06 Dec 2018 | **Amsterdam** | [Website](https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/) | Machine Learning for JavaScript Developers
+    06 Dec 2018 | **Amsterdam, NL** | [Website](https://www.meetup.com/nl-NL/schiphol-developers/events/256537947/) | Machine Learning for JavaScript Developers
 
       <script type='application/ld+json'> 
       {
@@ -262,11 +262,11 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Dialogflow Day
     
-     04 Dec 2018 | **Amsterdam** | Contact Center AI
+     04 Dec 2018 | **Amsterdam, NL** | Contact Center AI
 
 *   ### Google Cloud Summit Amsterdam
     
-     28 Nov 2018 | **Zaandam** | [Website](https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html) | Keynote: AutoML Demo + Contact Center AI Breakout session
+     28 Nov 2018 | **Zaandam, NL** | [Website](https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html) | Keynote: AutoML Demo + Contact Center AI Breakout session
       <script type='application/ld+json'> 
       {
         "@context": "http://www.schema.org",
@@ -300,7 +300,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
   
 *   ### KSF Jaarcongres 2018
     
-    20 Nov 2018 | **Almere** | [Website](https://klantenservicefederatie.nl/) | Session about Contact Center AI
+    20 Nov 2018 | **Almere, NL** | [Website](https://klantenservicefederatie.nl/) | Session about Contact Center AI
      <script type='application/ld+json'> 
       {
         "@context": "http://www.schema.org",
@@ -333,7 +333,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### FrontMania Conference 
     
-    16 Nov 2018 | **Utrecht** | [Website](https://frontmania.com/) | Keynote: Machine Learning for JavaScript developers
+    16 Nov 2018 | **Utrecht, NL** | [Website](https://frontmania.com/) | Keynote: Machine Learning for JavaScript developers
 
     <script type='application/ld+json'> 
       {
@@ -367,7 +367,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
     
 *   ### Chatathon
     
-    28 Oct 2018 | **Brussel** | Chatbot hackathon - trainer
+    28 Oct 2018 | **Brussel, BE** | Chatbot hackathon - trainer
 
      <script type='application/ld+json'> 
       {
@@ -401,7 +401,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### GoDataFest 2018
     
-    18 Oct 2018 | **Amsterdam** | [Website](https://www.godatafest.com/) | Learn about Dialogflow and the Google Assistant
+    18 Oct 2018 | **Amsterdam, NL** | [Website](https://www.godatafest.com/) | Learn about Dialogflow and the Google Assistant
 
     <script type='application/ld+json'> 
       {
@@ -432,7 +432,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Google Cloud Next
     
-    11 Oct 2018 | **London** | Diversity at Google Panel
+    11 Oct 2018 | **London, UK** | Diversity at Google Panel
 
     <script type='application/ld+json'> 
       {
@@ -461,31 +461,31 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### YSE Digital Now
     
-    05 Oct 2018 | **Amsterdam** | Machine Learning at Google
+    05 Oct 2018 | **Amsterdam*, NL* | Machine Learning at Google
     
 *   ### Digital Wednesday
     
-    26 Sept 2018 | **Eindhoven** | [Website](https://www.eventbrite.nl/e/tickets-digital-wednesday-siri-alexa-voice-marketing-gaat-nu-echt-beginnen-49869024595) | Learn about Dialogflow and the Google Assistant
+    26 Sept 2018 | **Eindhoven, NL** | [Website](https://www.eventbrite.nl/e/tickets-digital-wednesday-siri-alexa-voice-marketing-gaat-nu-echt-beginnen-49869024595) | Learn about Dialogflow and the Google Assistant
     
 *   ### Hackademy
     
-    20 July 2018 | [](https://t.co/K8MPbfQ3fG)**Amsterdam** | Chatbot Hackathon
+    20 July 2018 | [](https://t.co/K8MPbfQ3fG)**Amsterdam, NL** | Chatbot Hackathon
     
 *   ### DDMA
     
-    26 June 2018 | **Amsterdam** | Learn about Dialogflow and the Google Assistant
+    26 June 2018 | **Amsterdam, NL** | Learn about Dialogflow and the Google Assistant
     
 *   ### GHG Chatbot event
     
-    21 June 2018 | **Amsterdam** | Learn about Dialogflow and the Google Assistant
+    21 June 2018 | **Amsterdam, NL** | Learn about Dialogflow and the Google Assistant
     
 *   ### Women Tech Makers event
     
-    3 May 2018 | **Amsterdam** | About Public Speaking
+    3 May 2018 | **Amsterdam, NL** | About Public Speaking
     
 *   ### CSA Security event
     
-    4 April 2018 | **Amsterdam** | Learn about DevOps at Google
+    4 April 2018 | **Amsterdam, NL** | Learn about DevOps at Google
     
 
 <img src="/images/speaking1.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker." />
@@ -495,7 +495,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Google Cloud Summit Munich
     
-    6 Dec 2017 | **Munich, Germany** | [Website](https://cloudplatformonline.com/Summit-Munich-2017.html) | Keynote: Machine Learning Vision API and DLP Demo.
+    6 Dec 2017 | **Munich, DE** | [Website](https://cloudplatformonline.com/Summit-Munich-2017.html) | Keynote: Machine Learning Vision API and DLP Demo.
     
 *   ### Dutch Search Awards
     
@@ -521,7 +521,7 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
     
 *   ### Financial Services Lighthouse
     
-    13 Oct 2017 | **Amsterdam, FR** | [Website](https://cloudtricks.eu)
+    13 Oct 2017 | **Amsterdam, NL** | [Website](https://cloudtricks.eu)
     
     Introduction to Google Cloud
     
