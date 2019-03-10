@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Google Cloud DevTricks</title>
+  <title>LeeBoonstra.com | DevTricks for developers</title>
   
-  <subtitle>&lt;span&gt;Hi my name is &lt;b&gt;Lee&lt;/b&gt;.&lt;/span&gt;&lt;br&gt;&lt;span&gt;I&#39;m a writer an engineer a trainer and a public speaker.&lt;/span&gt;&lt;br&gt; &lt;span&gt;I create fixes &amp; I fix headaches...&lt;/span&gt;&lt;br&gt; &lt;span&gt;Welcome to my &lt;b&gt;dev blog&lt;/b&gt;.&lt;/span&gt;</subtitle>
+  <subtitle>&lt;span&gt;&quot;&lt;/span&gt; &lt;span&gt;Hi my name is &lt;b&gt;Lee&lt;/b&gt;.&lt;/span&gt;&lt;br&gt;&lt;span&gt;I&#39;m a writer an engineer a trainer and a public speaker.&lt;/span&gt;&lt;br&gt; &lt;span&gt;I create fixes &amp; I fix headaches...&lt;/span&gt;&lt;br&gt; &lt;span&gt;Welcome to my &lt;b&gt;dev blog&lt;/b&gt;.&lt;/span&gt;&lt;span&gt;&quot;&lt;/span&gt;</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://devtricks-45484.firebaseapp.com/"/>
-  <updated>2018-11-25T11:29:56.085Z</updated>
-  <id>https://devtricks-45484.firebaseapp.com/</id>
+  <link href="https://www.leeboonstra.com/"/>
+  <updated>2018-12-12T17:45:26.713Z</updated>
+  <id>https://www.leeboonstra.com/</id>
   
   <author>
     <name>Lee Boonstra</name>
@@ -17,80 +17,135 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Keynote Frontmania: Machine Learning for JavaScript developers</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-frontmania/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-frontmania/</id>
-    <published>2018-11-20T10:45:17.000Z</published>
-    <updated>2018-11-25T11:29:56.085Z</updated>
+    <title>Schiphol Developers Group: Machine Learning for JavaScript developers</title>
+    <link href="https://www.leeboonstra.com/Videos/video-schiphol-developers/"/>
+    <id>https://www.leeboonstra.com/Videos/video-schiphol-developers/</id>
+    <published>2018-12-06T19:00:00.000Z</published>
+    <updated>2018-12-12T17:45:26.713Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;At Frontmania in Utrecht I presented during the keynote, about machine
-  learning for JavaScript developers:
+      Lee Boonstra speaking at Schiphol Developers Group
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="AutoML" scheme="https://devtricks-45484.firebaseapp.com/tags/AutoML/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="AutoML" scheme="https://www.leeboonstra.com/tags/AutoML/"/>
+    
+      <category term="Tensorflow" scheme="https://www.leeboonstra.com/tags/Tensorflow/"/>
+    
+      <category term="Pre-trained Models" scheme="https://www.leeboonstra.com/tags/Pre-trained-Models/"/>
+    
+      <category term="ML APIs" scheme="https://www.leeboonstra.com/tags/ML-APIs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Keynote Frontmania: Machine Learning for JavaScript developers</title>
+    <link href="https://www.leeboonstra.com/Videos/video-frontmania/"/>
+    <id>https://www.leeboonstra.com/Videos/video-frontmania/</id>
+    <published>2018-11-20T10:45:17.000Z</published>
+    <updated>2018-12-12T17:45:26.712Z</updated>
+    
+    <summary type="html">
+    
+      Lee Boonstra speaking at Frontmania about Machine Learning
+    
+    </summary>
+    
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="AutoML" scheme="https://www.leeboonstra.com/tags/AutoML/"/>
+    
+      <category term="Tensorflow" scheme="https://www.leeboonstra.com/tags/Tensorflow/"/>
+    
+      <category term="Pre-trained Models" scheme="https://www.leeboonstra.com/tags/Pre-trained-Models/"/>
+    
+      <category term="ML APIs" scheme="https://www.leeboonstra.com/tags/ML-APIs/"/>
+    
+      <category term="Frontmania" scheme="https://www.leeboonstra.com/tags/Frontmania/"/>
     
   </entry>
   
   <entry>
     <title>Google Cloud Next London Teaser</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-london/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-london/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-google-cloud-next-london/"/>
+    <id>https://www.leeboonstra.com/Videos/video-google-cloud-next-london/</id>
     <published>2018-11-08T16:25:28.000Z</published>
-    <updated>2018-11-25T11:30:21.619Z</updated>
+    <updated>2018-12-12T17:45:26.713Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;At the Google Cloud Next event in London, I presented my customer care
-  solution during the demo derby!
+      Lee Boonstra featured in the Google Cloud Next London teaser showing a Customer Care demo.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
     
-      <category term="Machine Learning" scheme="https://devtricks-45484.firebaseapp.com/tags/Machine-Learning/"/>
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
     
-      <category term="Chatbots" scheme="https://devtricks-45484.firebaseapp.com/tags/Chatbots/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
     
-      <category term="BigQuery" scheme="https://devtricks-45484.firebaseapp.com/tags/BigQuery/"/>
+      <category term="Google Cloud Next" scheme="https://www.leeboonstra.com/tags/Google-Cloud-Next/"/>
+    
+      <category term="BigQuery" scheme="https://www.leeboonstra.com/tags/BigQuery/"/>
+    
+      <category term="AI Customer Care platform" scheme="https://www.leeboonstra.com/tags/AI-Customer-Care-platform/"/>
+    
+      <category term="Customer Care" scheme="https://www.leeboonstra.com/tags/Customer-Care/"/>
     
   </entry>
   
   <entry>
     <title>Digital Wednesday Building agents for the Google Assistant (Dutch)</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-digitalwednesday/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-digitalwednesday/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-digitalwednesday/"/>
+    <id>https://www.leeboonstra.com/Videos/video-digitalwednesday/</id>
     <published>2018-10-01T09:45:17.000Z</published>
-    <updated>2018-11-25T11:29:30.294Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;I’ve presented in Eindhoven during Digital Wednesday about Dialogflow and
-  Google Assistant:
+      Lee Boonstra speaks at Digital Wednesday about Building actions for the Dutch Google Assistant.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Video Intelligence API" scheme="https://devtricks-45484.firebaseapp.com/tags/Video-Intelligence-API/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
+    
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
+    
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
+    
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="Digital Wednesday" scheme="https://www.leeboonstra.com/tags/Digital-Wednesday/"/>
     
   </entry>
   
   <entry>
     <title>Conditional Templating in Dialogflow for Google Assistant</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Bots/conditional-templating-in-dialogflow-for-google-assistant/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Bots/conditional-templating-in-dialogflow-for-google-assistant/</id>
+    <link href="https://www.leeboonstra.com/Bots/conditional-templating-in-dialogflow-for-google-assistant/"/>
+    <id>https://www.leeboonstra.com/Bots/conditional-templating-in-dialogflow-for-google-assistant/</id>
     <published>2018-05-20T15:02:22.000Z</published>
-    <updated>2018-11-25T16:20:11.527Z</updated>
+    <updated>2019-01-18T17:33:37.316Z</updated>
     
     <summary type="html">
     
@@ -111,29 +166,33 @@
     
     </summary>
     
-      <category term="Bots" scheme="https://devtricks-45484.firebaseapp.com/categories/Bots/"/>
+      <category term="Bots" scheme="https://www.leeboonstra.com/categories/Bots/"/>
     
     
-      <category term="Actions on Google" scheme="https://devtricks-45484.firebaseapp.com/tags/Actions-on-Google/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
     
-      <category term="Conditionals" scheme="https://devtricks-45484.firebaseapp.com/tags/Conditionals/"/>
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
     
-      <category term="Google Assistant" scheme="https://devtricks-45484.firebaseapp.com/tags/Google-Assistant/"/>
+      <category term="Dialogflow Enterprise" scheme="https://www.leeboonstra.com/tags/Dialogflow-Enterprise/"/>
     
-      <category term="Pug" scheme="https://devtricks-45484.firebaseapp.com/tags/Pug/"/>
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
     
-      <category term="Templating" scheme="https://devtricks-45484.firebaseapp.com/tags/Templating/"/>
+      <category term="Conditionals" scheme="https://www.leeboonstra.com/tags/Conditionals/"/>
+    
+      <category term="Pug" scheme="https://www.leeboonstra.com/tags/Pug/"/>
+    
+      <category term="Templating" scheme="https://www.leeboonstra.com/tags/Templating/"/>
     
   </entry>
   
   <entry>
     <title>Custom greeting Google Assistant app with Dialogflow and Actions on Google</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/</id>
+    <link href="https://www.leeboonstra.com/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/"/>
+    <id>https://www.leeboonstra.com/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/</id>
     <published>2018-05-20T06:20:08.000Z</published>
-    <updated>2018-11-25T16:13:44.141Z</updated>
+    <updated>2018-12-12T17:45:26.701Z</updated>
     
     <summary type="html">
     
@@ -141,23 +200,29 @@
     
     </summary>
     
-      <category term="Bots" scheme="https://devtricks-45484.firebaseapp.com/categories/Bots/"/>
+      <category term="Bots" scheme="https://www.leeboonstra.com/categories/Bots/"/>
     
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
     
-      <category term="Google Assistant" scheme="https://devtricks-45484.firebaseapp.com/tags/Google-Assistant/"/>
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
     
-      <category term="Custom Welcome Intent" scheme="https://devtricks-45484.firebaseapp.com/tags/Custom-Welcome-Intent/"/>
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
+    
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
+    
+      <category term="Custom Welcome Intent" scheme="https://www.leeboonstra.com/tags/Custom-Welcome-Intent/"/>
+    
+      <category term="Greeting" scheme="https://www.leeboonstra.com/tags/Greeting/"/>
     
   </entry>
   
   <entry>
-    <title>Actions on Google for Google Cloud Functions</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Bots/actions-on-google-for-google-cloud-functions/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Bots/actions-on-google-for-google-cloud-functions/</id>
+    <title>Actions on Google with Google Cloud Functions</title>
+    <link href="https://www.leeboonstra.com/Bots/actions-on-google-for-google-cloud-functions/"/>
+    <id>https://www.leeboonstra.com/Bots/actions-on-google-for-google-cloud-functions/</id>
     <published>2018-05-19T12:41:36.000Z</published>
-    <updated>2018-11-24T18:55:06.213Z</updated>
+    <updated>2019-01-18T17:33:37.316Z</updated>
     
     <summary type="html">
     
@@ -165,237 +230,287 @@
     
     </summary>
     
-      <category term="Bots" scheme="https://devtricks-45484.firebaseapp.com/categories/Bots/"/>
+      <category term="Bots" scheme="https://www.leeboonstra.com/categories/Bots/"/>
     
     
-      <category term="Actions on Google" scheme="https://devtricks-45484.firebaseapp.com/tags/Actions-on-Google/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
     
-      <category term="Cloud Functions" scheme="https://devtricks-45484.firebaseapp.com/tags/Cloud-Functions/"/>
+      <category term="Cloud Functions" scheme="https://www.leeboonstra.com/tags/Cloud-Functions/"/>
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
     
-      <category term="Node JS" scheme="https://devtricks-45484.firebaseapp.com/tags/Node-JS/"/>
+      <category term="Node JS" scheme="https://www.leeboonstra.com/tags/Node-JS/"/>
+    
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
+    
+      <category term="Dialogflow Enterprise" scheme="https://www.leeboonstra.com/tags/Dialogflow-Enterprise/"/>
+    
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
     
   </entry>
   
   <entry>
     <title>DLP &amp; Vision API demo @ Google Cloud Summit Munich</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-dlp-vision-api-demo-google-cloud-summit-munich/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-dlp-vision-api-demo-google-cloud-summit-munich/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-dlp-vision-api-demo-google-cloud-summit-munich/"/>
+    <id>https://www.leeboonstra.com/Videos/video-dlp-vision-api-demo-google-cloud-summit-munich/</id>
     <published>2018-02-14T09:52:59.000Z</published>
-    <updated>2018-11-25T11:29:39.500Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;At the Google Cloud Summit event in Munich, I presented the Vision API and
-  DLP API for 3000+ IT professionals:
+      Lee Boonstra speaks during the Google Cloud Summit Munich 2017 about the DLP API and Vision API.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Machine Learning" scheme="https://devtricks-45484.firebaseapp.com/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
     
-      <category term="DLP API" scheme="https://devtricks-45484.firebaseapp.com/tags/DLP-API/"/>
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
     
-      <category term="GDPR" scheme="https://devtricks-45484.firebaseapp.com/tags/GDPR/"/>
+      <category term="DLP API" scheme="https://www.leeboonstra.com/tags/DLP-API/"/>
     
-      <category term="Vision API" scheme="https://devtricks-45484.firebaseapp.com/tags/Vision-API/"/>
+      <category term="GDPR" scheme="https://www.leeboonstra.com/tags/GDPR/"/>
+    
+      <category term="Vision API" scheme="https://www.leeboonstra.com/tags/Vision-API/"/>
+    
+      <category term="Google Cloud Summit" scheme="https://www.leeboonstra.com/tags/Google-Cloud-Summit/"/>
     
   </entry>
   
   <entry>
     <title>Google Cloud Summit Paris, Keynote: Video Intelligence</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-summit-paris-keynote-video-intelligence/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-summit-paris-keynote-video-intelligence/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-google-cloud-summit-paris-keynote-video-intelligence/"/>
+    <id>https://www.leeboonstra.com/Videos/video-google-cloud-summit-paris-keynote-video-intelligence/</id>
     <published>2017-12-01T10:45:17.000Z</published>
-    <updated>2018-11-25T11:30:12.770Z</updated>
+    <updated>2018-12-12T17:45:26.713Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;At the Google Cloud Summit event in Paris, I presented the Video
-  Intelligence API for 3000+ IT professionals:
+      Lee Boonstra speaking at Google Cloud Summit Paris about the Video Intelligence API
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Video Intelligence API" scheme="https://devtricks-45484.firebaseapp.com/tags/Video-Intelligence-API/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="Tensorflow" scheme="https://www.leeboonstra.com/tags/Tensorflow/"/>
+    
+      <category term="Pre-trained Models" scheme="https://www.leeboonstra.com/tags/Pre-trained-Models/"/>
+    
+      <category term="ML APIs" scheme="https://www.leeboonstra.com/tags/ML-APIs/"/>
+    
+      <category term="Google Cloud Next" scheme="https://www.leeboonstra.com/tags/Google-Cloud-Next/"/>
+    
+      <category term="Video Intelligence API" scheme="https://www.leeboonstra.com/tags/Video-Intelligence-API/"/>
     
   </entry>
   
   <entry>
     <title>Cloud on air webinar: Create custom conversations with Dialogflow</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-cloud-on-air-webinar-create-custom-conversations-with-dialogflow/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-cloud-on-air-webinar-create-custom-conversations-with-dialogflow/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-cloud-on-air-webinar-create-custom-conversations-with-dialogflow/"/>
+    <id>https://www.leeboonstra.com/Videos/video-cloud-on-air-webinar-create-custom-conversations-with-dialogflow/</id>
     <published>2017-11-06T07:43:23.000Z</published>
-    <updated>2018-11-25T11:29:21.193Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;On the 17th of October, I run a global webinar for Google, about custom
-  conversations and chatbots. This was really exiting as we recorded this
-  together with a full professional film crew!(&lt;a href=&quot;https://cloudplatformonline.com/onair-emea.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://cloudplatformonline.com/onair-emea.html&lt;/a&gt;)
-  Enjoy!
+      Training Session by Lee Boonstra. Learn about Dialogflow and Chatbots.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
+    
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
+    
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
+    
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
+    
+      <category term="API.ai" scheme="https://www.leeboonstra.com/tags/API-ai/"/>
+    
+      <category term="Conversation Engine" scheme="https://www.leeboonstra.com/tags/Conversation-Engine/"/>
+    
+      <category term="Webinar" scheme="https://www.leeboonstra.com/tags/Webinar/"/>
+    
+      <category term="Dialogflow Training" scheme="https://www.leeboonstra.com/tags/Dialogflow-Training/"/>
     
   </entry>
   
   <entry>
     <title>Google Cloud Next Amsterdam Keynote - Video Intelligence API</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-amsterdam-keynote-video-intelligence-api/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-google-cloud-next-amsterdam-keynote-video-intelligence-api/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-google-cloud-next-amsterdam-keynote-video-intelligence-api/"/>
+    <id>https://www.leeboonstra.com/Videos/video-google-cloud-next-amsterdam-keynote-video-intelligence-api/</id>
     <published>2017-09-26T08:24:57.000Z</published>
-    <updated>2018-11-25T11:30:04.341Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;At the Google Cloud Next event in Amsterdam, I presented the Video
-  Intelligence API for 3000+ IT professionals:
+      Lee Boonstra speaking at the Google Cloud Next Amsterdam 2017 keynote about the Video Intelligence API
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Video Intelligence API" scheme="https://devtricks-45484.firebaseapp.com/tags/Video-Intelligence-API/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="Tensorflow" scheme="https://www.leeboonstra.com/tags/Tensorflow/"/>
+    
+      <category term="Pre-trained Models" scheme="https://www.leeboonstra.com/tags/Pre-trained-Models/"/>
+    
+      <category term="ML APIs" scheme="https://www.leeboonstra.com/tags/ML-APIs/"/>
+    
+      <category term="Google Cloud Next" scheme="https://www.leeboonstra.com/tags/Google-Cloud-Next/"/>
+    
+      <category term="Video Intelligence API" scheme="https://www.leeboonstra.com/tags/Video-Intelligence-API/"/>
     
   </entry>
   
   <entry>
     <title>Create custom chat agents for Google Home with Dialogflow</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-create-custom-chat-agents-for-google-home-with-api-ai/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-create-custom-chat-agents-for-google-home-with-api-ai/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-create-custom-chat-agents-for-google-home-with-api-ai/"/>
+    <id>https://www.leeboonstra.com/Videos/video-create-custom-chat-agents-for-google-home-with-api-ai/</id>
     <published>2017-09-26T08:21:28.000Z</published>
-    <updated>2018-11-25T11:42:29.116Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;During Google Cloud Next in Amsterdam, I spoke for the Leader Circle
-  (c-level discussions for Dutch companies) about chatbots, and smart
-  conversation agents. A talk about Google Home, and how you can create custom
-  agents with Dialogflow.&lt;/p&gt;
+      Lee Boonstra speaking during the Leader Circle at Google Cloud Next Amsterdam 2017 about chatbots.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Dialogflow" scheme="https://devtricks-45484.firebaseapp.com/tags/Dialogflow/"/>
+      <category term="Actions on Google" scheme="https://www.leeboonstra.com/tags/Actions-on-Google/"/>
     
-      <category term="Google Assistant" scheme="https://devtricks-45484.firebaseapp.com/tags/Google-Assistant/"/>
+      <category term="Dialogflow" scheme="https://www.leeboonstra.com/tags/Dialogflow/"/>
     
-      <category term="Alexa" scheme="https://devtricks-45484.firebaseapp.com/tags/Alexa/"/>
+      <category term="Google Assistant" scheme="https://www.leeboonstra.com/tags/Google-Assistant/"/>
     
-      <category term="Chat Agents" scheme="https://devtricks-45484.firebaseapp.com/tags/Chat-Agents/"/>
+      <category term="Chatbots" scheme="https://www.leeboonstra.com/tags/Chatbots/"/>
     
-      <category term="Chatbots" scheme="https://devtricks-45484.firebaseapp.com/tags/Chatbots/"/>
+      <category term="Alexa" scheme="https://www.leeboonstra.com/tags/Alexa/"/>
     
-      <category term="Google Home" scheme="https://devtricks-45484.firebaseapp.com/tags/Google-Home/"/>
+      <category term="Chat Agents" scheme="https://www.leeboonstra.com/tags/Chat-Agents/"/>
     
-      <category term="Siri" scheme="https://devtricks-45484.firebaseapp.com/tags/Siri/"/>
+      <category term="Google Home" scheme="https://www.leeboonstra.com/tags/Google-Home/"/>
+    
+      <category term="Siri" scheme="https://www.leeboonstra.com/tags/Siri/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
     
   </entry>
   
   <entry>
     <title>Extending G Suite with Business Applications</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/video-extending-g-suite-with-business-applications/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/video-extending-g-suite-with-business-applications/</id>
+    <link href="https://www.leeboonstra.com/Videos/video-extending-g-suite-with-business-applications/"/>
+    <id>https://www.leeboonstra.com/Videos/video-extending-g-suite-with-business-applications/</id>
     <published>2017-09-26T08:16:37.000Z</published>
-    <updated>2018-11-25T12:59:14.043Z</updated>
+    <updated>2018-12-12T17:45:26.712Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Summer 2017, I run a technical session about G Suite at Google Cloud Next,
-  in Amsterdam. This session is a G Suite technical talk on how companies can
-  extend on top of G Suite, whether it is on organization’s own application or
-  whether they want to write a code on top of G Suite. The talk is followed by
-  a live use case with CEO and Founder of VOGSY, Leo Koster. Enjoy watching!
+      Lee Boonstra speaking at Google Cloud Next Amsterdam about AppsMaker and AppScript
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="App Maker" scheme="https://devtricks-45484.firebaseapp.com/tags/App-Maker/"/>
+      <category term="Sencha Architect" scheme="https://www.leeboonstra.com/tags/Sencha-Architect/"/>
+    
+      <category term="Video" scheme="https://www.leeboonstra.com/tags/Video/"/>
+    
+      <category term="App Maker" scheme="https://www.leeboonstra.com/tags/App-Maker/"/>
+    
+      <category term="Google Cloud Next" scheme="https://www.leeboonstra.com/tags/Google-Cloud-Next/"/>
+    
+      <category term="G Suite" scheme="https://www.leeboonstra.com/tags/G-Suite/"/>
+    
+      <category term="Apps for Work" scheme="https://www.leeboonstra.com/tags/Apps-for-Work/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning APIs for Python Developers</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Videos/machine-learning-apis-for-python-developers/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Videos/machine-learning-apis-for-python-developers/</id>
+    <link href="https://www.leeboonstra.com/Videos/machine-learning-apis-for-python-developers/"/>
+    <id>https://www.leeboonstra.com/Videos/machine-learning-apis-for-python-developers/</id>
     <published>2017-08-08T07:16:56.000Z</published>
-    <updated>2018-11-25T13:08:50.239Z</updated>
+    <updated>2018-12-12T17:45:26.707Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;A couple of months ago, me and my co-worker &lt;a href=&quot;https://twitter.com/dnovakovskiy&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@dnovakovskiy&lt;/a&gt;
-  spoke on a Python event in the North of the Netherlands: Pygrunn. I forgot
-  that there were recordings made,and came by it today. What a nice surprise!
-  So in case you are a Python dev, here you can see a video of our keynote:
-  Machine Learning APIs for Python Developers.
+  spoke on a Python event in the North of the Netherlands: Pygrunn 2017. I
+  forgot that there were recordings made,and came by it today. What a nice
+  surprise! So in case you are a Python dev, here you can see a video of our
+  keynote: Machine Learning APIs for Python Developers.
     
     </summary>
     
-      <category term="Videos" scheme="https://devtricks-45484.firebaseapp.com/categories/Videos/"/>
+      <category term="Videos" scheme="https://www.leeboonstra.com/categories/Videos/"/>
     
     
-      <category term="Python" scheme="https://devtricks-45484.firebaseapp.com/tags/Python/"/>
+      <category term="Python" scheme="https://www.leeboonstra.com/tags/Python/"/>
     
-      <category term="Machine Learning" scheme="https://devtricks-45484.firebaseapp.com/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
     
-      <category term="Pygrunn 2017" scheme="https://devtricks-45484.firebaseapp.com/tags/Pygrunn-2017/"/>
+      <category term="Pygrunn 2017" scheme="https://www.leeboonstra.com/tags/Pygrunn-2017/"/>
+    
+      <category term="Conference" scheme="https://www.leeboonstra.com/tags/Conference/"/>
+    
+      <category term="Public Speaking" scheme="https://www.leeboonstra.com/tags/Public-Speaking/"/>
     
   </entry>
   
   <entry>
     <title>Introduction to the Video Intelligence API</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Machine-Learning/introduction-to-the-video-intelligence-api/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Machine-Learning/introduction-to-the-video-intelligence-api/</id>
+    <link href="https://www.leeboonstra.com/Machine-Learning/introduction-to-the-video-intelligence-api/"/>
+    <id>https://www.leeboonstra.com/Machine-Learning/introduction-to-the-video-intelligence-api/</id>
     <published>2017-04-10T13:59:18.000Z</published>
-    <updated>2018-11-30T14:05:49.091Z</updated>
+    <updated>2018-12-12T17:45:26.706Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Search-and-discover-your-media-content-with-powerful-Cloud-Video-Intelligence-API&quot;&gt;&lt;a href=&quot;#Search-and-discover-your-media-content-with-powerful-Cloud-Video-Intelligence-API&quot; class=&quot;headerlink&quot; title=&quot;Search and discover your media content with powerful Cloud Video Intelligence API&quot;&gt;&lt;/a&gt;Search
-  and discover your media content with powerful Cloud Video Intelligence API&lt;/h2&gt;
-&lt;p&gt;Google Cloud Video Intelligence API makes videos searchable, and
-  discoverable, by extracting metadata with an easy to use REST API. You can
-  now search every moment of every video file in your catalog and find every
-  occurrence as well as its significance. It quickly annotates videos stored in
-  Google &lt;a href=&quot;https://cloud.google.com/storage/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Cloud Storage&lt;/a&gt;, and
-  helps you identify key nouns entities of your video, and when they occur
-  within the video. Separate signal from noise, by retrieving relevant
-  information at the video, shot or per frame. You can try this out, yourself:&lt;/p&gt;
+      Learn how to use machine learning on videos and get insights with Google Cloud
     
     </summary>
     
-      <category term="Machine Learning" scheme="https://devtricks-45484.firebaseapp.com/categories/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/categories/Machine-Learning/"/>
     
     
-      <category term="Machine Learning" scheme="https://devtricks-45484.firebaseapp.com/tags/Machine-Learning/"/>
+      <category term="Google Cloud" scheme="https://www.leeboonstra.com/tags/Google-Cloud/"/>
     
-      <category term="Pre-trained Model" scheme="https://devtricks-45484.firebaseapp.com/tags/Pre-trained-Model/"/>
+      <category term="Machine Learning" scheme="https://www.leeboonstra.com/tags/Machine-Learning/"/>
     
-      <category term="Video Intelligence Api" scheme="https://devtricks-45484.firebaseapp.com/tags/Video-Intelligence-Api/"/>
+      <category term="Pre-trained Model" scheme="https://www.leeboonstra.com/tags/Pre-trained-Model/"/>
+    
+      <category term="Video Intelligence Api" scheme="https://www.leeboonstra.com/tags/Video-Intelligence-Api/"/>
+    
+      <category term="ML" scheme="https://www.leeboonstra.com/tags/ML/"/>
+    
+      <category term="AI" scheme="https://www.leeboonstra.com/tags/AI/"/>
     
   </entry>
   
   <entry>
     <title>Analyzing data with BigQuery and Machine Learning APIs</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/</id>
+    <link href="https://www.leeboonstra.com/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/"/>
+    <id>https://www.leeboonstra.com/Google-Cloud-Platform/analyzing-data-with-bigquery-and-machine-learning-apis/</id>
     <published>2017-03-18T07:00:31.000Z</published>
-    <updated>2018-11-25T16:00:28.886Z</updated>
+    <updated>2018-12-12T17:45:26.699Z</updated>
     
     <summary type="html">
     
@@ -403,31 +518,31 @@
     
     </summary>
     
-      <category term="Google Cloud Platform" scheme="https://devtricks-45484.firebaseapp.com/categories/Google-Cloud-Platform/"/>
+      <category term="Google Cloud Platform" scheme="https://www.leeboonstra.com/categories/Google-Cloud-Platform/"/>
     
     
-      <category term="BigQuery" scheme="https://devtricks-45484.firebaseapp.com/tags/BigQuery/"/>
+      <category term="BigQuery" scheme="https://www.leeboonstra.com/tags/BigQuery/"/>
     
-      <category term="Cloud launcher" scheme="https://devtricks-45484.firebaseapp.com/tags/Cloud-launcher/"/>
+      <category term="Cloud launcher" scheme="https://www.leeboonstra.com/tags/Cloud-launcher/"/>
     
-      <category term="Compute Engine" scheme="https://devtricks-45484.firebaseapp.com/tags/Compute-Engine/"/>
+      <category term="Compute Engine" scheme="https://www.leeboonstra.com/tags/Compute-Engine/"/>
     
-      <category term="GCP" scheme="https://devtricks-45484.firebaseapp.com/tags/GCP/"/>
+      <category term="GCP" scheme="https://www.leeboonstra.com/tags/GCP/"/>
     
-      <category term="Natural Language API" scheme="https://devtricks-45484.firebaseapp.com/tags/Natural-Language-API/"/>
+      <category term="Natural Language API" scheme="https://www.leeboonstra.com/tags/Natural-Language-API/"/>
     
-      <category term="Translate API" scheme="https://devtricks-45484.firebaseapp.com/tags/Translate-API/"/>
+      <category term="Translate API" scheme="https://www.leeboonstra.com/tags/Translate-API/"/>
     
-      <category term="Virtual Machines" scheme="https://devtricks-45484.firebaseapp.com/tags/Virtual-Machines/"/>
+      <category term="Virtual Machines" scheme="https://www.leeboonstra.com/tags/Virtual-Machines/"/>
     
   </entry>
   
   <entry>
     <title>Goodbye Sencha, Hello Google</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Sencha/goodbye-sencha-hello-google/</id>
+    <link href="https://www.leeboonstra.com/Sencha/goodbye-sencha-hello-google/"/>
+    <id>https://www.leeboonstra.com/Sencha/goodbye-sencha-hello-google/</id>
     <published>2016-12-22T08:57:48.000Z</published>
-    <updated>2018-11-25T16:23:28.024Z</updated>
+    <updated>2018-12-12T17:45:26.703Z</updated>
     
     <summary type="html">
     
@@ -435,126 +550,107 @@
   spoke at 38 webinars and events (including SenchaCon, FITC and O’Reilly).
   I’ve visited 15 countries and I’ve attended 3 SenchaCons. I’ve spoken with
   many customers. I’ve worked with every public, EA and beta version since
-  Sencha Touch 0.8, and Ext JS 4.1. I’ve created many applications like &lt;a href=&quot;https://www.leeboonstra.com/spotifinder/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.leeboonstra.com/spotifinder/&lt;/a&gt;
+  Sencha Touch 0.8, and Ext JS 4.1. I’ve created many applications like &lt;a href=&quot;https://www.leeboonstra.com/spotifinder/&quot;&gt;https://www.leeboonstra.com/spotifinder/&lt;/a&gt;
   and &lt;a href=&quot;https://github.com/savelee?page=1&amp;amp;tab=repositories&amp;amp;utf8=%E2%9C%93&amp;amp;q=sencha&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/savelee?page=1&amp;amp;tab=repositories&amp;amp;utf8=%E2%9C%93&amp;amp;q=sencha&lt;/a&gt;.
   Also I wrote a book about Sencha Touch for O’Reilly: &lt;a href=&quot;https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.amazon.com/Hands–Sencha-Touch-Real-World-Approach&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, all good things come to an end.
     
     </summary>
     
-      <category term="Sencha" scheme="https://devtricks-45484.firebaseapp.com/categories/Sencha/"/>
+      <category term="Sencha" scheme="https://www.leeboonstra.com/categories/Sencha/"/>
     
     
-      <category term="Sencha" scheme="https://devtricks-45484.firebaseapp.com/tags/Sencha/"/>
+      <category term="Sencha" scheme="https://www.leeboonstra.com/tags/Sencha/"/>
     
-      <category term="Google" scheme="https://devtricks-45484.firebaseapp.com/tags/Google/"/>
+      <category term="Google" scheme="https://www.leeboonstra.com/tags/Google/"/>
     
-      <category term="Google Cloud" scheme="https://devtricks-45484.firebaseapp.com/tags/Google-Cloud/"/>
+      <category term="Google Cloud" scheme="https://www.leeboonstra.com/tags/Google-Cloud/"/>
+    
+      <category term="Lee Boonstra" scheme="https://www.leeboonstra.com/tags/Lee-Boonstra/"/>
     
   </entry>
   
   <entry>
     <title>Universal Windows Apps for Microsoft Surface Pro Hybrids / MS Edge with Ext JS 6</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/</id>
+    <link href="https://www.leeboonstra.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/"/>
+    <id>https://www.leeboonstra.com/Ext-JS/universal-windows-apps-for-microsoft-surface-pro-hybrids-ms-edge-with-ext-js-6/</id>
     <published>2016-11-02T12:59:17.000Z</published>
-    <updated>2018-11-30T18:59:05.925Z</updated>
+    <updated>2018-12-12T17:45:26.711Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Now that hybrid touch pc’s / tablets, like the Windows Surface Pro, got
-  popular, I often hear people asking me, if it’s possible to create Ext JS
-  apps for Windows tablets? Ext JS 6 has support for Windows 10. The classic
-  toolkit supports IE8 and up, and the modern toolkit supports the Edge
-  browser. It even contains a Windows mobile theme!&lt;/p&gt;
+      Learn how to create universal apps for Microsoft Surface Pro Hybrids with Ext JS 6
     
     </summary>
     
-      <category term="Ext JS" scheme="https://devtricks-45484.firebaseapp.com/categories/Ext-JS/"/>
+      <category term="Ext JS" scheme="https://www.leeboonstra.com/categories/Ext-JS/"/>
     
     
-      <category term="Surface Pro" scheme="https://devtricks-45484.firebaseapp.com/tags/Surface-Pro/"/>
+      <category term="Universal App" scheme="https://www.leeboonstra.com/tags/Universal-App/"/>
     
-      <category term="Universal App" scheme="https://devtricks-45484.firebaseapp.com/tags/Universal-App/"/>
+      <category term="Surface Pro" scheme="https://www.leeboonstra.com/tags/Surface-Pro/"/>
+    
+      <category term="Microsoft Hybrid Apps" scheme="https://www.leeboonstra.com/tags/Microsoft-Hybrid-Apps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Custom UI Components with Sencha</title>
+    <link href="https://www.leeboonstra.com/Ext-JS/custom-ui-components-with-sencha/"/>
+    <id>https://www.leeboonstra.com/Ext-JS/custom-ui-components-with-sencha/</id>
+    <published>2016-11-01T12:20:00.000Z</published>
+    <updated>2018-12-12T17:45:26.701Z</updated>
+    
+    <summary type="html">
+    
+      Learn how to build custom UI components in Ext JS.
+    
+    </summary>
+    
+      <category term="Ext JS" scheme="https://www.leeboonstra.com/categories/Ext-JS/"/>
+    
+    
+      <category term="Custom UI Components" scheme="https://www.leeboonstra.com/tags/Custom-UI-Components/"/>
+    
+      <category term="HTML" scheme="https://www.leeboonstra.com/tags/HTML/"/>
+    
+      <category term="packages" scheme="https://www.leeboonstra.com/tags/packages/"/>
+    
+      <category term="XTemplate" scheme="https://www.leeboonstra.com/tags/XTemplate/"/>
+    
+      <category term="Angular" scheme="https://www.leeboonstra.com/tags/Angular/"/>
+    
+      <category term="React" scheme="https://www.leeboonstra.com/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (8)</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/</id>
+    <link href="https://www.leeboonstra.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/"/>
+    <id>https://www.leeboonstra.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-8/</id>
     <published>2016-08-23T12:00:30.000Z</published>
-    <updated>2018-11-30T13:34:57.585Z</updated>
+    <updated>2018-12-12T17:45:26.710Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;em&gt;This is the last part of this tutorial series, it will cover Github and
-    the Docker Hub.&lt;/em&gt;&lt;/p&gt;
+      Part 8 of the tutorial full stack JS development with Ext JS, Node.js, MongoDB and Docker
     
     </summary>
     
-      <category term="Containers" scheme="https://devtricks-45484.firebaseapp.com/categories/Containers/"/>
+      <category term="Containers" scheme="https://www.leeboonstra.com/categories/Containers/"/>
     
     
-      <category term="Ext JS" scheme="https://devtricks-45484.firebaseapp.com/tags/Ext-JS/"/>
+      <category term="Ext JS" scheme="https://www.leeboonstra.com/tags/Ext-JS/"/>
     
-      <category term="Docker" scheme="https://devtricks-45484.firebaseapp.com/tags/Docker/"/>
+      <category term="Node.js" scheme="https://www.leeboonstra.com/tags/Node-js/"/>
     
-      <category term="Node.js" scheme="https://devtricks-45484.firebaseapp.com/tags/Node-js/"/>
+      <category term="Docker" scheme="https://www.leeboonstra.com/tags/Docker/"/>
     
-      <category term="MongoDB" scheme="https://devtricks-45484.firebaseapp.com/tags/MongoDB/"/>
+      <category term="MongoDB" scheme="https://www.leeboonstra.com/tags/MongoDB/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (7)</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-7/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-7/</id>
-    <published>2016-08-22T14:30:10.000Z</published>
-    <updated>2018-11-30T13:34:52.815Z</updated>
+      <category term="Docker Hub" scheme="https://www.leeboonstra.com/tags/Docker-Hub/"/>
     
-    <summary type="html">
-    
-      &lt;p&gt;&lt;em&gt;This is part VII of the tutorial, and covers: Docker Compose&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Containers" scheme="https://devtricks-45484.firebaseapp.com/categories/Containers/"/>
-    
-    
-      <category term="Ext JS" scheme="https://devtricks-45484.firebaseapp.com/tags/Ext-JS/"/>
-    
-      <category term="Docker" scheme="https://devtricks-45484.firebaseapp.com/tags/Docker/"/>
-    
-      <category term="Node.js" scheme="https://devtricks-45484.firebaseapp.com/tags/Node-js/"/>
-    
-      <category term="MongoDB" scheme="https://devtricks-45484.firebaseapp.com/tags/MongoDB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tutorial: Full-stack JavaScript for the Enterprise Getting started with: Ext JS, Node.js, Express, MongoDB and Docker. (6)</title>
-    <link href="https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-6/"/>
-    <id>https://devtricks-45484.firebaseapp.com/Containers/tutorial-full-stack-javascript-for-the-enterprise-getting-started-with-ext-js-node-js-express-mongodb-and-docker-6/</id>
-    <published>2016-08-21T14:30:53.000Z</published>
-    <updated>2018-11-30T13:41:26.002Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;em&gt;This is part VI of the tutorial, and covers Docker.&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Containers" scheme="https://devtricks-45484.firebaseapp.com/categories/Containers/"/>
-    
-    
-      <category term="Ext JS" scheme="https://devtricks-45484.firebaseapp.com/tags/Ext-JS/"/>
-    
-      <category term="Docker" scheme="https://devtricks-45484.firebaseapp.com/tags/Docker/"/>
-    
-      <category term="Node.js" scheme="https://devtricks-45484.firebaseapp.com/tags/Node-js/"/>
-    
-      <category term="MongoDB" scheme="https://devtricks-45484.firebaseapp.com/tags/MongoDB/"/>
+      <category term="Container Registry" scheme="https://www.leeboonstra.com/tags/Container-Registry/"/>
     
   </entry>
   

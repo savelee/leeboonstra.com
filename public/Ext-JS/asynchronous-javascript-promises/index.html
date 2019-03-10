@@ -1,53 +1,62 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Blog">
+<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="https://schema.org/Blog">
 
 <head>
   <meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   <meta name="robots" content="all">
-  <meta name="google-site-verification" content="jv8JHFCeqmxANKM3mXBtnW1KMtnYR2HJbTh60FEO9eE">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="640">
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <meta name="yandex-verification" content="adf3dcb0d559ea5a">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title itemprop="name">Asynchronous JavaScript: Promises | Google Cloud
-    DevTricks</title>
+  <title itemprop="name">Asynchronous JavaScript: Promises | LeeBoonstra.com |
+    DevTricks for developers</title>
   <meta itemprop="author" content="Lee Boonstra">
   <meta itemprop="creator" content="Lee Boonstra">
   <meta itemprop="publisher" content="Lee Boonstra">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <link rel="canonical" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="canonical" href="https://www.leeboonstra.com/ext-js/asynchronous-javascript-promises/">
   <link href="//plus.google.com/117712452932146916020" rel="author">
-  <link rel="image_src" type="image/png" href="https://devtricks-45484.firebaseapp.com/images/screen.png">
+  <link rel="image_src" type="image/png" href="https://www.leeboonstra.com/images/screen.png">
   <link rel="profile" href="//gmpg.org/xfn/11">
-  <link rel="pingback" href="https://devtricks-45484.firebaseapp.com">
-  <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com">
+  <link rel="pingback" href="https://www.leeboonstra.com">
+  <link itemprop="mainEntityOfPage" href="https://www.leeboonstra.com">
   <meta name="description" content="JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.">
-  <meta name="keywords" content="Sencha,async,ecmascript6,es6,JavaScript,promises,ExtJS6">
+  <meta name="keywords" content="Sencha,async,ecmascript6,es6,JavaScript,promises,ExtJS6,Ext JS 6">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Asynchronous JavaScript: Promises">
-  <meta property="og:url" content="https://devtricks-45484.firebaseapp.com/Ext-JS/asynchronous-javascript-promises/index.html">
-  <meta property="og:site_name" content="Google Cloud DevTricks">
+  <meta property="og:url" content="https://www.leeboonstra.com/Ext-JS/asynchronous-javascript-promises/index.html">
+  <meta property="og:site_name" content="LeeBoonstra.com | DevTricks for developers">
   <meta property="og:description" content="JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.">
   <meta property="og:locale" content="en">
   <meta property="og:image" content="https://wp-test.sencha.com/wp-content/uploads/2016/02/asynch-javascript-promises-img2-300x210.png">
   <meta property="og:image" content="https://wp-test.sencha.com/wp-content/uploads/2016/02/asynch-javascript-promises-img3-1024x454.png">
-  <meta property="og:updated_time" content="2018-11-25T11:45:32.656Z">
+  <meta property="og:updated_time" content="2018-12-12T17:45:26.699Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Asynchronous JavaScript: Promises">
   <meta name="twitter:description" content="JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.">
   <meta name="twitter:image" content="https://wp-test.sencha.com/wp-content/uploads/2016/02/asynch-javascript-promises-img2-300x210.png">
-  <link rel="alternate" href="/atom.xml" title="Google Cloud DevTricks" type="application/atom+xml">
-  <link rel="preconnect" href="https://devtricks-45484.firebaseapp.com">
-  <link rel="preload" href="/assets/styles/main.css" as="style" type="text/css"
-                                                                                  onload='this.rel="stylesheet"'><noscript>
-    <link rel="stylesheet" href="/assets/styles/main.css"></noscript>
-  <link rel="preload" href="/assets/js/vendor/modernizr-3.6.0.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/jquery-3.3.1.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/popper.min.js" as="script">
-  <link rel="preload" href="/assets/js/vendor/bootstrap.min.js" as="script">
-  <link rel="preload" href="/assets/js/disqus-lazy-min.js" as="script">
+  <link rel="alternate" href="/atom.xml" title="LeeBoonstra.com | DevTricks for developers"
+                                                                                  type="application/atom+xml">
+  <link rel="preconnect" href="https://www.leeboonstra.com">
+  <link rel="preload" href="/assets/js/vendor/vendors.min.js" as="script">
   <link rel="manifest" href="/manifest.json">
+  <link type="text/plain" rel="author" href="https://www.leeboonstra.com/humans.txt">
+  <meta property="og:image" content="https://www.leeboonstra.com/images/screen.png">
+  <meta name="twitter:image" content="https://www.leeboonstra.com/images/screen.png">
+  <meta name="twitter:creator" content="@ladysign">
 </head>
 
 <body>
@@ -66,7 +75,7 @@
                                                                                         aria-expanded="false"
                                                                                         aria-label="Toggle navigation"><span
                                                                                           class="iconmenu"></span></button>
-        <a class="navbar-brand" href="/" title="Google Cloud DevTricks">DevTricks</a>
+        <a class="navbar-brand" href="/" title="LeeBoonstra.com | DevTricks for developers">DevTricks</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
           <ul class="nav navbar-nav">
             <li><a class="iconHome" href="/index.html">Home</a></li>
@@ -96,7 +105,7 @@
                                                                                                     class="sidebar-module-list-count">2</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Ext-JS/">Ext
-                      JS</a><span class="sidebar-module-list-count">8</span></li>
+                      JS</a><span class="sidebar-module-list-count">16</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Google-Cloud-Platform/">Google
                       Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
@@ -114,16 +123,16 @@
                       Architect</a><span class="sidebar-module-list-count">2</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Sencha-CMD/">Sencha
-                      CMD</a><span class="sidebar-module-list-count">4</span></li>
+                      CMD</a><span class="sidebar-module-list-count">5</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Sencha-Touch/">Sencha
-                      Touch</a><span class="sidebar-module-list-count">3</span></li>
+                      Touch</a><span class="sidebar-module-list-count">8</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Theming/">Theming</a><span
-                                                                                                    class="sidebar-module-list-count">2</span></li>
+                                                                                                    class="sidebar-module-list-count">5</span></li>
                   <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                     href="/categories/Videos/">Videos</a><span
-                                                                                                    class="sidebar-module-list-count">13</span></li>
+                                                                                                    class="sidebar-module-list-count">14</span></li>
                 </ul>
               </div>
             </li>
@@ -136,7 +145,7 @@
                                                                                             placeholder="Search...">
             <button type="submit" class="btn btn-primary search-form-submit"><span
                                                                                               class="iconsearch"></span></button>
-            <input type="hidden" name="sitesearch" value="https://devtricks-45484.firebaseapp.com"></form>
+            <input type="hidden" name="sitesearch" value="https://www.leeboonstra.com"></form>
         </div>
       </nav>
     </header>
@@ -146,7 +155,7 @@
                                                                                       itemprop="blogPosts"
                                                                                       itemscope
                                                                                       itemtype="http://schema.org/BlogPosting">
-        <link itemprop="mainEntityOfPage" href="https://devtricks-45484.firebaseapp.com/Ext-JS/asynchronous-javascript-promises/">
+        <link itemprop="mainEntityOfPage" href="https://www.leeboonstra.com/Ext-JS/asynchronous-javascript-promises/">
         <div class="col col-sm-9 article-inner contentpage"><a class="twitter-share-button btn"
                                                                                           href="https://twitter.com/intent/tweet"
                                                                                           data-size="large"
@@ -160,9 +169,9 @@
                                                                                             class="article-date"><time
                                                                                               datetime="2016-04-01T08:14:56.000Z"
                                                                                               itemprop="datePublished">Apr
-                1st 2016</time> <time class="hidden" datetime="2018-11-25"
-                                                                                              itemprop="dateModified">Nov
-                25th 2018</time></a> in&nbsp;<div class="article-category"><a
+                1st 2016</time> <time class="hidden" datetime="2018-12-12T17:45:26.699Z"
+                                                                                              itemprop="dateModified">Dec
+                12th 2018</time></a> in&nbsp;<div class="article-category"><a
                                                                                               class="badge badge-primary-link"
                                                                                               href="/categories/Ext-JS/">Ext
                 JS</a></div>
@@ -171,8 +180,8 @@
                 Boonstra</span></div>
             <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
               <meta itemprop="name" content="Ladysign">
-              <meta itemprop="logo" content="https://devtricks-45484.firebaseapp.com/images/screen.png">
-            </div><img class="hidden" itemprop="image" src="https://devtricks-45484.firebaseapp.com/images/screen.png"
+              <meta itemprop="logo" content="https://www.leeboonstra.com/images/screen.png">
+            </div><img class="hidden" itemprop="image" src="https://www.leeboonstra.com/images/screen.png"
                                                                                             alt="Screenshot">
           </header>
           <p>JavaScript is single threaded, causing code to execute from top to
@@ -347,17 +356,17 @@
               "@type": "BlogPosting",
               "headline": "Asynchronous JavaScript: Promises",
               "genre": "technology",
-              "datePublished": "2016-04-01",
-              "dateCreated": "2016-04-01",
-              "dateModified": "2016-04-01",
+              "datePublished": "2016-04-01T08:14:56.000Z",
+              "dateCreated": "2016-04-01T08:14:56.000Z",
+              "dateModified": "2016-04-01T08:14:56.000Z",
               "publisher": {
                 "@type": "Organization",
                 "name": "Ladysign",
-                "logo": "https://devtricks-45484.firebaseapp.com/images/screen.png"
+                "logo": "https://www.leeboonstra.com/images/screen.png"
               },
               "description": "DevTricks Lee Boonstra's blog. JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.",
-              "mainEntityOfPage": "https://devtricks-45484.firebaseapp.com/Ext-JS/asynchronous-javascript-promises/",
-              "image": "https://devtricks-45484.firebaseapp.com/images/screen.png",
+              "mainEntityOfPage": "https://www.leeboonstra.com/Ext-JS/asynchronous-javascript-promises/",
+              "image": "https://www.leeboonstra.com/images/screen.png",
               "articleBody": "DevTricks Lee Boonstra's blog. JavaScript is single threaded, causing code to execute from top to bottom. Instead of blocking the thread, there are ways you can streamline this code execution by using asynchronous JavaScript.",
               "author": {
                 "@type": "Person",
@@ -368,7 +377,8 @@
 
           </script>
           <footer class="article-foot"><a class="badge badge-primary tag-link"
-                                                                                            href="/tags/ExtJS6/">ExtJS6</a><a
+                                                                                            href="/tags/Ext-JS-6/">Ext
+              JS 6</a><a class="badge badge-primary tag-link" href="/tags/ExtJS6/">ExtJS6</a><a
                                                                                             class="badge badge-primary tag-link"
                                                                                             href="/tags/JavaScript/">JavaScript</a><a
                                                                                             class="badge badge-primary tag-link"
@@ -414,17 +424,17 @@
                   <p><a href="https://plus.google.com/117712452932146916020/"
                                                                                                     rel="author me"
                                                                                                     target="_blank">Lee
-                      Boonstra</a> is a customer engineer at Google, at the
-                    Google Cloud team where she assist the sales team with
-                    technical knowledge for the financial industry.</p>
+                      Boonstra</a> is author of the O'Reilly book: "Hands-on
+                    Sencha Touch 2" and works as a sales engineer for Google,
+                    at the Google Cloud team where she assist the sales team
+                    with technical knowledge.</p>
                   <p>Lee lives in Amsterdam and has experience in application
                     development. She spends her spare time developing web and
                     mobile apps. Before Google, she worked for Sencha, where
                     she traveled all the world as sales engineer and technical
                     trainer. Further more, she speaks regularly at seminars and
                     conferences and writes blogposts and articles for various
-                    magazines and websites. Also, she wrote a book for
-                    O'Reilly: Hands-on Sencha Touch 2.</p>
+                    magazines and websites.</p>
                 </div>
                 <script type="application/ld+json">
                   {
@@ -432,6 +442,7 @@
                     "@type": "Person",
                     "image": "https://www.leeboonstra.com/images/profile.jpg",
                     "jobTitle": "Sales Engineer",
+                    "description": "Lee Boonstra is author of the O'Reilly book: 'Hands-on Sencha Touch 2' and works as a sales engineer for Google, at the Google Cloud team where she assist the sales team with technical knowledge. Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites.",
                     "address": {
                       "@type": "PostalAddress",
                       "addressCountry": "Netherlands",
@@ -443,7 +454,7 @@
                       "name": "Google"
                     },
                     "name": "Lee Boonstra",
-                    "birthDate": "1983.06.16",
+                    "birthDate": "1983-06-16T00:00+01:00",
                     "gender": "female",
                     "nationality": "Dutch",
                     "url": "http://www.leeboonstra.com",
@@ -459,9 +470,9 @@
                 <h2>Hands-on Sencha Touch 2</h2><a href="//shop.oreilly.com/product/0636920030058.do"
                                                                                                 class="book"><img
                                                                                                   height="100"
-                                                                                                  src="/images/book.gif"
+                                                                                                  src="/images/leeboonstra-book.jpg"
                                                                                                   class="thumb"
-                                                                                                  alt="My book."></a>
+                                                                                                  alt="My book: Hands-on Sencha Touch 2"></a>
                 <p>Build snappy web apps for mobile devices with Sencha Touch
                   2, the user interface JavaScript framework built specifically
                   for the mobile Web.</p>
@@ -476,36 +487,69 @@
                 </ul>
                 <script type="application/ld+json">
                   {
-                    "@context": "http://schema.org/",
-                    "@type": "Review",
-                    "itemReviewed": {
-                      "@type": "Book",
-                      "name": "Hands-on Sencha Touch 2",
-                      "author": {
-                        "@type": "Organization",
-                        "name": "Amazon",
-                        "sameAs": "https://www.amazon.com"
-                      },
-                      "isbn": "144936652X"
-                    },
+                    "@context": "http://schema.org",
+                    "@type": "Book",
+                    "name": "Hands-on Sencha Touch 2",
+                    "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web.",
                     "author": {
                       "@type": "Person",
-                      "name": "Amazon",
-                      "homeLocation": "Amsterdam",
-                      "sameAs": "https://www.leeboonstra.com"
+                      "name": "Lee Boonstra",
+                      "jobTitle": "Sales Engineer",
+                      "description": "Lee Boonstra is author of the O'Reilly book: 'Hands-on Sencha Touch 2' and works as a sales engineer for Google, at the Google Cloud team where she assist the sales team with technical knowledge. Lee lives in Amsterdam and has experience in application development. She spends her spare time developing web and mobile apps. Before Google, she worked for Sencha, where she traveled all the world as sales engineer and technical trainer. Further more, she speaks regularly at seminars and conferences and writes blogposts and articles for various magazines and websites."
                     },
-                    "reviewRating": {
-                      "@type": "Rating",
-                      "ratingValue": "5",
-                      "bestRating": "5"
+                    "review": {
+                      "@type": "Review",
+                      "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": "5",
+                        "bestRating": "5"
+                      },
+                      "name": "Hands-on Sencha Touch 2",
+                      "author": {
+                        "@type": "Person",
+                        "name": "Amazon Customer"
+                      },
+                      "datePublished": "2015-03-15T00:00+01:00",
+                      "reviewBody": "This is the book you want to study if you want to Grok Sencha Touch.. The author is a trainer for Sencha. If you're struggling with Sencha, this is the one to read. She knows her stuff !!!",
+                      "publisher": {
+                        "@type": "Organization",
+                        "name": "Amazon"
+                      }
                     },
-                    "publisher": {
-                      "@type": "Organization",
-                      "name": "O'Reilly Media"
-                    },
-                    "datePublished": "July 31, 2014",
-                    "url": "https://www.amazon.com/Hands--Sencha-Touch-Real-World-Approach/dp/144936652X/ref=sr_1_1?ie=UTF8&qid=1475523336&sr=8-1&keywords=hands-on+sencha+touch",
-                    "description": "Get hands-on experience building speedy mobile web apps with Sencha Touch 2.4, the user interface JavaScript framework built specifically for the mobile Web. "
+                    "isbn": "144936652X",
+                    "url": "http://shop.oreilly.com/product/0636920030058.do",
+                    "workExample": [{
+                      "@type": "Book",
+                      "isbn": "144936652X",
+                      "numberOfPages": "334",
+                      "image": "https://www.leeboonstra.com/images/leeboonstra-book.jpg",
+                      "inLanguage": "English",
+                      "bookEdition": "1nd Edition",
+                      "publisher": "O'Reilly Media",
+                      "bookFormat": "http://schema.org/Paperback",
+                      "potentialAction": {
+                        "@type": "ReadAction",
+                        "target": {
+                          "@type": "EntryPoint",
+                          "urlTemplate": "https://www.amazon.com/_/dp/144936652X?tag=oreilly20-20",
+                          "actionPlatform": [
+                            "http://schema.org/DesktopWebPlatform",
+                            "http://schema.org/IOSPlatform",
+                            "http://schema.org/AndroidPlatform"
+                          ]
+                        },
+                        "expectsAcceptanceOf": {
+                          "@type": "Offer",
+                          "Price": 19.99,
+                          "priceCurrency": "USD",
+                          "eligibleRegion": {
+                            "@type": "Country",
+                            "name": "US"
+                          },
+                          "availability": "http://schema.org/InStock"
+                        }
+                      }
+                    }]
                   }
 
                 </script>
@@ -531,7 +575,7 @@
                                                                                                   class="sidebar-module-list-count">2</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Ext-JS/">Ext
-                    JS</a><span class="sidebar-module-list-count">8</span></li>
+                    JS</a><span class="sidebar-module-list-count">16</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Google-Cloud-Platform/">Google
                     Cloud Platform</a><span class="sidebar-module-list-count">1</span></li>
@@ -549,16 +593,16 @@
                     Architect</a><span class="sidebar-module-list-count">2</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Sencha-CMD/">Sencha
-                    CMD</a><span class="sidebar-module-list-count">4</span></li>
+                    CMD</a><span class="sidebar-module-list-count">5</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Sencha-Touch/">Sencha
-                    Touch</a><span class="sidebar-module-list-count">3</span></li>
+                    Touch</a><span class="sidebar-module-list-count">8</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Theming/">Theming</a><span
-                                                                                                  class="sidebar-module-list-count">2</span></li>
+                                                                                                  class="sidebar-module-list-count">5</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/categories/Videos/">Videos</a><span
-                                                                                                  class="sidebar-module-list-count">13</span></li>
+                                                                                                  class="sidebar-module-list-count">14</span></li>
               </ul>
             </div>
           </aside>
@@ -571,14 +615,21 @@
               <h2>Related Posts</h2>
               <ul class="related-posts">
                 <li class="related-posts-item"><a class="related-posts-link"
-                                                                                                  href="/Robotics/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/">Connect
-                    & play around with BB-8 by Sphero with JavaScript on a Mac</a></li>
+                                                                                                  href="/Sencha/goodbye-sencha-hello-google/">Goodbye
+                    Sencha, Hello Google</a></li>
                 <li class="related-posts-item"><a class="related-posts-link"
-                                                                                                  href="/App-Cache/make-your-mobile-webapp-work-offline-with-application-cache/">Make
-                    your mobile webapp work offline with application cache</a></li>
+                                                                                                  href="/Sencha-Touch/how-to-upgrade-a-sencha-touch-app-to-ext-js-6-modern-toolkit-part-2/">How
+                    to Upgrade a Sencha Touch App to Ext JS 6 Modern Toolkit –
+                    Part 2</a></li>
                 <li class="related-posts-item"><a class="related-posts-link"
                                                                                                   href="/Sencha-CMD/advanced-sencha-cmd-dealing-with-a-multi-ext-js-app-infrastructure/">Advanced
                     Sencha Cmd: Dealing with a multi Ext JS app infrastructure</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Ext-JS/how-to-modify-sencha-builds/">Advanced
+                    Cmd: How to modify Sencha builds</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/App-Cache/make-your-mobile-webapp-work-offline-with-application-cache/">Make
+                    your mobile webapp work offline with application cache</a></li>
                 <li class="related-posts-item"><a class="related-posts-link"
                                                                                                   href="/Sencha-CMD/advanced-cmd-how-to-integrate-ext-js-with-maven/">Advanced
                     Cmd: How to integrate Ext JS with Maven</a></li>
@@ -586,8 +637,15 @@
                                                                                                   href="/Ext-JS/working-with-sencha-app-templates-boilerplate-ext-js-6-code/">Working
                     With Sencha App Templates: Boilerplate Ext JS 6 code.</a></li>
                 <li class="related-posts-item"><a class="related-posts-link"
-                                                                                                  href="/Sencha/goodbye-sencha-hello-google/">Goodbye
-                    Sencha, Hello Google</a></li>
+                                                                                                  href="/Ext-JS/simple-techniques-for-solving-common-sencha-coding-problems/">Simple
+                    Techniques for Solving Common Sencha Coding Problems</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Robotics/connect-play-around-with-bb-8-by-sphero-with-javascript-on-a-mac/">Connect
+                    & play around with BB-8 by Sphero with JavaScript on a Mac</a></li>
+                <li class="related-posts-item"><a class="related-posts-link"
+                                                                                                  href="/Theming/reverse-engineer-the-sencha-fontawesome-package-to-get-an-overview-of-icons/">Reverse
+                    Engineer the Sencha FontAwesome package to get an overview
+                    of icons.</a></li>
               </ul>
             </div>
             <div class="col col-sm-3"></div>
@@ -616,22 +674,25 @@
               <ul class="sidebar-module-list">
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2018/">2018</a><span
-                                                                                                  class="sidebar-module-list-count">7</span></li>
+                                                                                                  class="sidebar-module-list-count">8</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2017/">2017</a><span
                                                                                                   class="sidebar-module-list-count">8</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2016/">2016</a><span
-                                                                                                  class="sidebar-module-list-count">18</span></li>
+                                                                                                  class="sidebar-module-list-count">24</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2015/">2015</a><span
-                                                                                                  class="sidebar-module-list-count">5</span></li>
+                                                                                                  class="sidebar-module-list-count">14</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2014/">2014</a><span
-                                                                                                  class="sidebar-module-list-count">11</span></li>
+                                                                                                  class="sidebar-module-list-count">13</span></li>
+                <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
+                                                                                                  href="/archives/2013/">2013</a><span
+                                                                                                  class="sidebar-module-list-count">1</span></li>
                 <li class="sidebar-module-list-item"><a class="sidebar-module-list-link"
                                                                                                   href="/archives/2012/">2012</a><span
-                                                                                                  class="sidebar-module-list-count">3</span></li>
+                                                                                                  class="sidebar-module-list-count">2</span></li>
               </ul>
             </div>
           </div>
@@ -652,6 +713,9 @@
             <div class="sidebar-module">
               <h4>Recents</h4>
               <ul class="sidebar-module-list">
+                <li><a href="/Videos/video-schiphol-developers/">Schiphol
+                    Developers Group: Machine Learning for JavaScript
+                    developers</a></li>
                 <li><a href="/Videos/video-frontmania/">Keynote Frontmania:
                     Machine Learning for JavaScript developers</a></li>
                 <li><a href="/Videos/video-google-cloud-next-london/">Google
@@ -660,9 +724,6 @@
                     Building agents for the Google Assistant (Dutch)</a></li>
                 <li><a href="/Bots/conditional-templating-in-dialogflow-for-google-assistant/">Conditional
                     Templating in Dialogflow for Google Assistant</a></li>
-                <li><a href="/Bots/custom-greeting-google-assistant-app-with-dialogflow-and-actions-on-google/">Custom
-                    greeting Google Assistant app with Dialogflow and Actions
-                    on Google</a></li>
               </ul>
             </div>
           </div>
@@ -670,7 +731,7 @@
       </div>
     </footer>
     <footer class="bottom">
-      <div class="row">&copy; 2018 Lee Boonstra</div>
+      <div class="row">&copy; 2019 Lee Boonstra</div>
     </footer>
   </div>
   <script>
@@ -690,11 +751,7 @@
     }
 
   </script>
-  <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
-  <script src="/assets/js/vendor/popper.min.js"></script>
-  <script src="/assets/js/vendor/bootstrap.min.js"></script>
-  <script src="/assets/js/disqus-lazy-min.js"></script>
+  <script src="/assets/js/vendor/vendors.min.js"></script>
   <script>
     window.twttr = function(t, e, r) {
       var n, i = t.getElementsByTagName(e)[0],
@@ -713,7 +770,7 @@
     })
 
   </script>
-  <script type="text/javascript">
+  <script>
     ! function(e, a, t, n, g, c, o) {
       e.GoogleAnalyticsObject = "ga", e.ga = e.ga || function() {
           (e.ga.q = e.ga.q || []).push(arguments)

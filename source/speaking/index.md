@@ -21,8 +21,6 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 2019
 ----
 
-*   ### Verbond van Verzekeraars 
-
 *   ### Google Cloud Next 2019
 
   9 April 2019 | **Moscone Center, San Francisco** | [Website](https://cloud.withgoogle.com/next/sf/sessions?session=MLAI224) | Google Cloud Next, Customer Stories: AI in Financial Services
