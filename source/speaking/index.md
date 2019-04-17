@@ -12,7 +12,7 @@ I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a
 
 Check out my Speaker Deck, for an overview of all my presentations: [Speaker Deck](https://speakerdeck.com/savelee/).
 
-Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, Node JS, Ext JS, Sencha Touch, Angular, HTML5, Sass, CSS, How Google Works, building software at Google scale, Diversity, Women in Tech**
+Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Google Cloud, Machine Learning APIs, JavaScript, Node JS, Ext JS, Sencha Touch, Angular, HTML5, Sass, CSS, How Google Works, building software at Google scale, Diversity, Women in Tech**
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -24,37 +24,37 @@ Topics I speak about: **Google Cloud, Cloud Computing, Machine Learning, Chatbot
 
 *   ### Verbond van Verzekeraars 
 
-15 April 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+    15 April 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
 
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "Verbond van Verzekeraars: Google je beste vriend",
-"url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
-"performer": "Lee Boonstra",
-"description":"AutoML session",
-"startDate": "2019-04-15T14:00+01:00",
-"endDate": "2019-04-15T17:30+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"offers": {
-"@type": "Offer",
-"description": "Register for free",
-"url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
-"price": "0.00",
-"priceCurrency": "EUR",
-"availability": "http://schema.org/SoldOut",
-"validFrom": "2018-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Google",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
-}
-}</script>
+      <script type='application/ld+json'> 
+      {
+      "@context": "http://www.schema.org",
+      "@type": "Event",
+      "name": "Verbond van Verzekeraars: Google je beste vriend",
+      "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+      "performer": "Lee Boonstra",
+      "description":"AutoML session",
+      "startDate": "2019-04-15T14:00+01:00",
+      "endDate": "2019-04-15T17:30+01:00",
+      "image": "https://www.leeboonstra.com/images/profile.jpg",
+      "offers": {
+      "@type": "Offer",
+      "description": "Register for free",
+      "url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+      "price": "0.00",
+      "priceCurrency": "EUR",
+      "availability": "http://schema.org/SoldOut",
+      "validFrom": "2018-11-01T09:30+01:00"
+      },
+      "location": {
+      "@type": "Place",
+      "name": "Google",
+      "address": {
+      "addressLocality": "Amsterdam",
+      "addressCountry": "NL"
+      }
+      }
+  }</script>
 
 *   ### Google Cloud Next 2019
 

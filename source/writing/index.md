@@ -48,6 +48,8 @@ Beside writing this blog, I’ve also published my work elsewhere. Below is a li
  *   Lee Boonstra Press Releases
      ---------------------------
 
+    04-2019 | [Techzine: Google AutoML - Doe het zelf Machine Learning](https://www.techzine.nl/blogs/421762/google-automl-doe-het-zelf-machine-learning.html)
+
     12-2018 | [MarketingFacts.nl - Google wil het platform worden voor voice en chatbots](https://www.marketingfacts.nl/berichten/google-wil-het-platform-worden-voor-voice-en-chatbots)
 
     12-2018 | [Customertalk.nl - De ontwikkeling van een chatbot was nog nimmer zo eenvoudig](https://www.customertalk.nl/nieuws/de-ontwikkeling-van-een-chatbot-was-nog-nimmer-zo-eenvoudig/)
