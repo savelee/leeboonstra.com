@@ -21,6 +21,73 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Google Cloud, Ma
 2019
 ----
 
+*   ### Startup Roadshow
+
+2 May 2019 | **TQ, Amsterdam** | [Website](https://events.withgoogle.com/google-cloud-startup-roadshow-amsterdam/) | Google Cloud examples
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Startup Roadshow",
+"url": "https://events.withgoogle.com/google-cloud-startup-roadshow-amsterdam",
+"performer": "Lee Boonstra",
+"description":"Google Cloud session",
+"startDate": "2019-05-2T09:00+01:00",
+"endDate": "2019-05-2T18:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"description": "Register for free",
+"url": "https://events.withgoogle.com/google-cloud-startup-roadshow-amsterdam",
+"price": "0.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2018-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "TQ",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+*   ### Verbond van Verzekeraars 
+
+15 April 2019 | **Google, Amsterdam** | [Website](https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend) | Google je beste vriend
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Verbond van Verzekeraars: Google je beste vriend",
+"url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+"performer": "Lee Boonstra",
+"description":"AutoML session",
+"startDate": "2019-04-15T14:00+01:00",
+"endDate": "2019-04-15T17:30+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"description": "Register for free",
+"url": "https://www.verzekeraars.nl/academy/activiteitenoverzicht/bijeenkomst-google-home-je-nieuwe-beste-vriend",
+"price": "0.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2018-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Google",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
 
 *   ### Verbond van Verzekeraars 
 
