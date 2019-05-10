@@ -5,7 +5,7 @@ event: true
 nocomments: true
 ---
 
-<img src="/images/lee-fos.jpg" width="400" class="float-right img-fluid border" alt="Lee Speaking">
+<img src="/images/lee-fos.jpg" width="400" class="float-right img-fluid border" alt="Lee Speaking" loading="lazy">
 
 
 I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
@@ -556,7 +556,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Google Cloud, Ma
     4 April 2018 | **Amsterdam, NL** | Learn about DevOps at Google
     
 
-<img src="/images/leenext2019.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker." />
+<img src="/images/leenext2019.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker." loading="lazy" />
 
 2017
 ----
