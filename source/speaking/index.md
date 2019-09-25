@@ -21,6 +21,46 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Google Cloud, Ma
 2019
 ----
 
+* ### Dare - Voice Emmerce
+
+  15 October | **Pakhuis de Zwijger, Amsterdam** | Improving your customer care
+
+* ### Google Cloud Summit Amsterdam
+
+  10 October | **RAI, Amsterdam** | [Website](https://inthecloud.withgoogle.com/summit-ams-19-en/home.html) | Keynote: AutoML Tables & Breakout Session: Machine Learning for app developers
+
+* ### SheSharp Meetup
+
+  9 October | **Google, Amsterdam** | [Website](https://www.meetup.com/SheSharp/events/264700623/) | Machine Learning Fairness - The things we can do, to create smarter and more inclusive products.
+
+* ### Greenhouse Group Conversational Event
+
+  8 October | **Eindhoven** | About Contact Center AI
+
+* ### Travel & Transportation Event
+
+  27 Sept | **Google, Amsterdam** | Machine Learning Demos: How do people think of my brand (Twitter Sentiment), How to collect insights from chatbots (Dialogflow / BigQuery) and how to calculate wait times at the airport (AutoML Tables).
+
+* ### Google Cloud Summit Stockholm
+
+  3 September | **Stockholm Denmark** | Machine Learning for app developers
+
+* ### Pride Week at TQ 
+  
+  1 & 4 August | **TQ Startup Scene, Amsterdam** | Diversity Panel Discussion & Session: Building inclusive products / Maching Learning Fairness
+
+* ### Women Tech Makers Amsterdam
+
+  21 May 2019 | **Google, Amsterdam** | Engineering at Google
+
+* ### GOTO Conference 2019
+  
+  19 May 2019 | **Beurs van Berlage, Amsterdam** | [Website](https://gotoams.nl/2019/speakers) | How we built Google Tulip using Serverless, AutoML Vision and Dialogflow
+
+* ### Artefact Openings Event
+  
+  14 May 2019 | **Artefact, Utrecht** | Keynote: Dialogflow & Google Assistant
+
 *   ### Startup Roadshow
 
   2 May 2019 | **TQ, Amsterdam** | [Website](https://events.withgoogle.com/google-cloud-startup-roadshow-amsterdam/) | Google Cloud examples
