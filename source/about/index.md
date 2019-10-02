@@ -8,6 +8,8 @@ nocomments: true
 ## Dialogflow Developer Advocate @ Google
 @ladysign
 
+## Bio
+
 <img src="/images/profile.jpg" class="border img-fluid float-left" alt="Lee Boonstra, Developer Advocate at Google and book author." loading="lazy" />
 
 [Lee Boonstra](https://plus.google.com/117712452932146916020) is a Developer Advocate for Dialogflow and Contact Center AI @ Google based in Amsterdam.
