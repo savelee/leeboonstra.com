@@ -1,10 +1,9 @@
 ---
-title: About me
+title: Lee Boonstra
 description: Lee Boonstra is a Developer Advocate for Dialogflow and Contact Center AI @ Google based in Amsterdam and an O'Reilly book author. @ladysign
 nocomments: true
 ---
 
-# Lee Boonstra
 ## Dialogflow Developer Advocate @ Google
 @ladysign
 
