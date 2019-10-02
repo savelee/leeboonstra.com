@@ -5,6 +5,7 @@ nocomments: true
 
 # Lee Boonstra
 ## Dialogflow Developer Advocate @ Google
+@ladysign
 
 <img src="/images/profile.jpg" class="border img-fluid float-right" alt="Lee Boonstra, Sales Engineer at Google and book author." loading="lazy" />
 
@@ -12,7 +13,7 @@ nocomments: true
 
 Lee Boonstra is a Developer Advocate for Dialogflow and Contact Center AI @ Google.
 
-She has been working with different technologies in the past 15 years ranging from Web/Mobile Technology, Ext JS / Sencha Touch, Node.js, Conversational, Dialogflow, Actions on Google and Contact Centers. 
+She has been working with different technologies in the past 15 years ranging from Web/Mobile Technology, Ext JS,  Sencha Touch, Node.js, Conversational AI, Dialogflow, Actions on Google and Contact Centers. 
 
 Over the years she has helped many brands & enterprises to build and deploy Conversational AI (chatbots and voice assistants) solutions at enterprise scale. Wearing different hats from Engineer, to Technical Trainer. From Sales Engineer to Developer Advocate.
 Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.
@@ -26,7 +27,7 @@ Also, she wrote a book for O'Reilly: Hands-on Sencha Touch 2.
 
 ## Speaking Topics
 
-I love technology, especially Chatbots, Customer & Web, and I love writing and speaking about it!
+I love technology, especially Chatbots, Customer Care & Web, and I love writing and speaking about it!
 
 Topics include: **Dialogflow, Chatbots, Customer Care, The Future of the Contact Center (CCAI), Machine Learning for Developers, Diversity, LGBTQ+, Women in Tech**
 
