@@ -27,13 +27,15 @@ Also, she wrote a book for [O'Reilly: Hands-on Sencha Touch 2](http://shop.oreil
 * Blog: [http://www.leeboonstra.dev](http://www.leeboonstra.dev)
 * LinkedIn: [https://www.linkedin.com/in/leeboonstra/](https://www.linkedin.com/in/leeboonstra/)
 
-## Speaking Topics
+>“Every presentation needs a live demo! I'm an engineer and I love to show what I have built!”
+
+<hr>
+
+## Speaking & Article Topics
 
 I love technology, especially Chatbots, Customer Care & Web, and I love writing and speaking about it!
 
 Topics include: **Dialogflow, Chatbots, Customer Care, The Future of the Contact Center (CCAI), Machine Learning for Developers, Diversity, LGBTQ+, Women in Tech**
-
->“Every presentation needs a live demo! I'm an engineer and I love to show what I have built!”
 
 * [Past speaking events](https://www.leeboonstra.com/speaker)
 * [Videos of me](https://www.leeboonstra.com/categories/Videos/)
@@ -48,4 +50,4 @@ Beside technology I love (alternative) music, concerts and I’m a videogames ad
 
 <img src="/images/aboutme1.jpg" class="img-fluid border" alt="Lee Boonstra, Googler and public speaker." loading="lazy">
 
-* [Here's my resume: Lee Boonstra CV](/images/lee.boonstra-resume.pdf)
+* [Lee Boonstra Resume](/images/lee.boonstra-resume.pdf)

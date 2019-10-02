@@ -5,7 +5,9 @@ date: 2015-07-06 20:46:06
 nocomments: true
 ---
 
-Beside writing this blog, I’ve also published my work elsewhere. Below is a list of my publications:
+Beside writing this blog, I’ve also published my work elsewhere. 
+
+Below is a list of my publications:
 
 *   Articles on cloud.google.com
     -----------------------------

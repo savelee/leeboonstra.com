@@ -1,6 +1,6 @@
 ---
 title: Contact
-description: Lee Boonstra is a sales engineer at Google, at the Google Cloud team where she assist the sales team with technical knowledge for the financial industry.
+description: Lee Boonstra is a Developer Advocate for Dialogflow and Contact Center AI @ Google based in Amsterdam.
 nocomments: true
 ---
 
@@ -10,6 +10,7 @@ In case you want to contact me, please send me a dm on <a href="https://twitter.
 
 <div class="vcard hidden">
     <span class="fn">Lee Boonstra</span>
+    <span class="title">Developer Advocate</span>
     <span class="org">Google</span>
     <span class="url">http://www.leeboonstra.com</span>
     <div class="adr">

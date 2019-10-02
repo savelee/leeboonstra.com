@@ -1,6 +1,6 @@
 ---
 title: Speaking
-description: I'm a public speaker, topics I love to talk about; Google Cloud, Cloud Computing, Machine Learning, Chatbots, Dialogflow, JavaScript, How Google Works, Building software at Google scale, Diversity, Women in Tech
+description: I'm a public speaker, topics I love to talk about include; Dialogflow, Chatbots, Customer Care, The Future of the Contact Center (CCAI), Machine Learning for Developers, Diversity, LGBTQ+, Women in Tech
 event: true
 nocomments: true
 ---
@@ -8,11 +8,11 @@ nocomments: true
 <img src="/images/lee-fos.jpg" width="400" class="float-right img-fluid border" alt="Lee Speaking" loading="lazy">
 
 
-I worked in the past as a technical trainer, now Sales Engineer at Google. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
+I worked in the past as a technical trainer, now I am a developer advocate at Google on Dialogflow & Contact Center AI. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
 
 Check out my Speaker Deck, for an overview of all my presentations: [Speaker Deck](https://speakerdeck.com/savelee/).
 
-Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Google Cloud, Machine Learning APIs, JavaScript, Node JS, Ext JS, Sencha Touch, Angular, HTML5, Sass, CSS, How Google Works, building software at Google scale, Diversity, Women in Tech**
+Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning for developers, JavaScript, Node JS, Diversity, LGBTQ+, Women in Tech**
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
