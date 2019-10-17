@@ -1,0 +1,23 @@
+---
+title: 'Hoe voice de verzekeringswereld verandert. - Dutch Webinar on Conversational'
+description: Lee Boonstra, developer advocate at Google, explains how the future will change for the insurance world. A talk in Dutch, about Chatbots, Voice Assistance and Customer Care. Video for Allianz.
+categories:
+  - Videos
+date: 2018-11-20 11:45:17
+youtube: Y9zOZ0EDDsE
+alias: /developer/video-allianz/
+tags:
+  - Google Assistant
+  - Dialogflow
+  - CCAI
+  - Customer Care
+  - Insurance
+  - FSI
+---
+
+
+
+Lee Boonstra, developer advocate at Google, explains how the future will change for the insurance world. A talk in Dutch, about Chatbots, Voice Assistance and Customer Care. Video for Allianz.
+
+<!--more-->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Y9zOZ0EDDsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
