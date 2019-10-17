@@ -3,7 +3,7 @@ title: 'Lee @ De Dataloog (Dutch) Podcast - Cloud Summit Special 1 - Dialogflow 
 description: Lee was interviewd for the Dataloog (Dutch) Podcast - Cloud Summit Special 1 - Dialogflow Contact Center AI en Auto ML voor developers
 categories:
   - Videos
-date: 2018-11-20 11:45:17
+date: 2019-10-17 11:45:17
 youtube: mTogdyzibGM
 alias: /developer/video-dataloog/
 tags:
