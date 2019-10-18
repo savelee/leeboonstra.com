@@ -21,6 +21,40 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 2019
 ----
 
+* ### Women in Cloud - Amsterdam 2019
+  
+  4 November | **Google, Amsterdam** | [Website](https://events.withgoogle.com/women-in-cloud-ams19/#content) | Hosting the Google Cloud hackathon
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Women in Cloud, Amsterdam 2019",
+"url": "https://events.withgoogle.com/women-in-cloud-ams19/#content",
+"performer": "Lee Boonstra",
+"description":"Google Cloud hackathon",
+"startDate": "2019-11-4T09:00+01:00",
+"endDate": "2019-11-4T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"description": "Register for free",
+"url": "https://events.withgoogle.com/women-in-cloud-ams19/#content",
+"price": "0.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2018-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Google",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
 * ### Dare - Voice Emmerce
 
   15 October | **Pakhuis de Zwijger, Amsterdam** | [Website](https://emerce.nl/event/dare/programme/) | Improving your customer care by creating conversations for smart assistants.
