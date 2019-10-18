@@ -23,7 +23,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Dare - Voice Emmerce
 
-  15 October | **Pakhuis de Zwijger, Amsterdam** | Improving your customer care
+  15 October | **Pakhuis de Zwijger, Amsterdam** | [Website](https://emerce.nl/event/dare/programme/) | Improving your customer care by creating conversations for smart assistants.
 
 * ### Google Cloud Summit Amsterdam
 
