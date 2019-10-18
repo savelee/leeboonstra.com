@@ -17,10 +17,11 @@ She has been working with different technologies in the past 15 years ranging fr
 
 Over the years she has helped many brands & enterprises to build and deploy Conversational AI solutions (chatbots and voice assistants) at enterprise scale. Wearing different hats from Engineer, to Technical Trainer. From Sales Engineer to Developer Advocate. Also, she wrote a book for [O'Reilly: Hands-on Sencha Touch 2](http://shop.oreilly.com/product/0636920030058.do).
 
+<a name="da"></a>
 ## What is a Developer Advocate?
 
 **TL;DR: A developer advocate is a developer’s best friend!**
-<a name="da"></a>
+
 A Developer Advocate's role is to act as a bridge between the engineering team and the developer community. Their job is to give feedback to both parties, equally, in both ways. 
 
 Also, a Developer Advocate is an engineer who has good communication and community-building skills.  The responsibilities of the role typically are some or all of the following: public speaking, writing public open source code, writing articles and creating (video) content.
