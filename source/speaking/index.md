@@ -8,7 +8,7 @@ nocomments: true
 <img src="/images/lee-fos.jpg" width="400" class="float-right img-fluid border" alt="Lee Speaking" loading="lazy">
 
 
-I worked in the past as a technical trainer, now I am a developer advocate at Google on Dialogflow & Contact Center AI. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
+I worked in the past as a technical trainer, now I am a developer advocate at Google on Conversational AI. I'm a public speaker at conferences and events. Below is a list of upcoming and past sessions.
 
 Check out my Speaker Deck, for an overview of all my presentations: [Speaker Deck](https://speakerdeck.com/savelee/).
 
@@ -18,8 +18,173 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 <p>&nbsp;</p>
 <hr>
 
+2020
+----
+
+* ### OmniChannelX 2020
+
+ 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/) | Improve your customer care by building an AI bot platform 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "OmniChannelX 2020",
+"url": "https://omnichannelx.digital/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-06-08T09:00+01:00",
+"endDate": "2020-06-08T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://omnichannelx.digital/",
+"price": "625.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Hotel Casa",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+
+* ### Codemotion Amsterdam 2020
+
+ 28 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | TBA Dialogflow 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Codemotion Amsterdam 2020",
+"url": "https://events.codemotion.com/conferences/amsterdam/2020/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-05-28T09:00+01:00",
+"endDate": "2020-05-28T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://events.codemotion.com/conferences/amsterdam/2020/",
+"price": "580.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "De Kromhouthal",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+* ### Emerce Next 2020
+
+  26 May | **Beurs van Berlage, Amsterdam NL** | [Website](https://emerce.nl/event/emercenext/) Future of Customer Care
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Emerce Next 2020",
+"url": "https://emerce.nl/event/emercenext/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-05-26T09:00+01:00",
+"endDate": "2020-05-26T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://emerce.nl/event/emercenext/",
+"price": "129.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Beurs van Berlage",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+* ### Google.IO 2020
+
+ 7-9 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | TBA 
+
+* ### Google Cloud Next 2020
+
+ 6-9 April | **Moscone Center, SFO, USA** | [Website](https://cloud.withgoogle.com/next/sf/) | TBA 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Google Cloud Next 2020",
+"url": "https://cloud.withgoogle.com/next/sf/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-04-6T09:00+01:00",
+"endDate": "2020-04-9T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://cloud.withgoogle.com/next/sf/",
+"price": "1699.00",
+"priceCurrency": "USD",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Moscone Center",
+"address": {
+"addressLocality": "San Francisco",
+"addressCountry": "USA"
+}
+}
+}</script>
+
+* ### Fourcast Women in Tech Event 2020
+
+  11 Feb | **Google Brussels, BE** | Dialogflow Workshop
+
+* ### Customer Service Cloud Event - Salesforce 2020
+
+  16 Jan | **Hilversum, NL** | CCAI - Future of Customer Care
+
+
 2019
 ----
+
+* ### Google Cloud Next London 2019
+
+  20 November | **ExCel, London, UK** | [Website](https://cloud.withgoogle.com/next/uk/) | Women in Tech Panel
+
+* ### Cloud Community Summit 2019
+
+  19 November | **Google, London, UK** | Dialogflow Session & Ask Me Anything about Developer Advocacy Panel
+
+* ### Frontmania 2019
+  
+  15 November | **Utrecht** | [Website](https://frontmania.com/conference/) | Machine Learning Fairness
+
+* ### Kennis Sessie Zakelijke Dienstverlening 2019
+
+  12 November | **The Circle, Amsterdam** | Future of Customer Care
 
 * ### Women in Cloud - Amsterdam 2019
   

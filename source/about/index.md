@@ -4,19 +4,20 @@ description: Lee Boonstra is a Developer Advocate for Dialogflow and Contact Cen
 nocomments: true
 ---
 
-## Dialogflow Developer Advocate @ Google
+## Applied AI Engineer and Developer Advocate @ Google
+(for Conversational AI; Dialogflow, CCAI & Speech Technology)
 @ladysign
 
 ## Biography
 
 <img src="/images/profile.jpg" class="border img-fluid float-left" alt="Lee Boonstra, Developer Advocate at Google and book author." loading="lazy" />
 
-[Lee Boonstra](https://plus.google.com/117712452932146916020) is a Conversational AI <a href="#da" title="What is a Developer Advocate, Lee Boonstra?">Developer Advocate</a> at Google. In this role she is focussing on Dialogflow, Contact Center AI & Speech technology.
-She is based in Amsterdam, and an O'Reilly published author.
+[Lee Boonstra](https://plus.google.com/117712452932146916020) is a Conversational AI <a href="#da" title="What is a Developer Advocate, Lee Boonstra?">Developer Advocate</a> at Google. In this role she is focussing on Dialogflow, Contact Center AI & Speech technology. She is based in Amsterdam, and an O'Reilly published author.
 
-She has been working with different technologies in the past 15 years ranging from Web/Mobile Technology, Ext JS,  Sencha Touch, Node.js, Conversational AI, Dialogflow, Actions on Google and Contact Centers. 
+She has been working with different technologies in the past 15 years, ranging from Web/Mobile Technology, Ext JS, Sencha Touch, Node.js, Conversational AI, Dialogflow, Actions on Google and Contact Centers.
 
-Over the years she has helped many brands & enterprises to build and deploy Conversational AI solutions (chatbots and voice assistants) at enterprise scale. Wearing different hats from Engineer, to Technical Trainer. From Sales Engineer to Developer Advocate. 
+Over the years she has helped many brands & enterprises to build and deploy Conversational AI solutions (chatbots and voice assistants) at enterprise scale. She's worn different hats from engineer to technical trainer to sales engineer to Developer Advocate.
+
 Prior to Google, Lee worked at Sencha Inc. and wrote a book for O'Reilly [Hands-on Sencha Touch 2](http://shop.oreilly.com/product/0636920030058.do).
 
 Lee has a bachelor's degree in arts & technology.
@@ -64,6 +65,7 @@ Topics include: **Dialogflow, Chatbots, Customer Care, The Future of the Contact
 <a href="/images/bio/leeboonstra3.jpg">
 <img src="/images/bio/leeboonstra3-small.jpg" class="img-fluid border" alt="Lee Boonstra, Google Developer Advocate and public speaker." loading="lazy">
 </a>
+<br/>
 <a href="/images/bio/leeboonstra4.jpg">
 <img src="/images/bio/leeboonstra4-small.jpg" class="img-fluid border" alt="Lee Boonstra, Google Developer Advocate and public speaker." loading="lazy">
 </a>
