@@ -160,7 +160,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### AppDevCon 2020 
 
- 13 Mar | **Spaces, Amsterdam** | [Website](https://appdevcon.nl/) | Raise your voice! 
+ 13 Mar | **Pathe Munt, Amsterdam** | [Website](https://appdevcon.nl/) | Raise your voice! 
 
 <script type='application/ld+json'> 
 {

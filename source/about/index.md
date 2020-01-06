@@ -12,7 +12,7 @@ nocomments: true
 
 <img src="/images/profile.jpg" class="border img-fluid float-left" alt="Lee Boonstra, Developer Advocate at Google and book author." loading="lazy" />
 
-[Lee Boonstra](https://plus.google.com/117712452932146916020) is a Conversational AI <a href="#da" title="What is a Developer Advocate, Lee Boonstra?">Developer Advocate</a> at Google. In this role she is focussing on Dialogflow, Contact Center AI & Speech technology. She is based in Amsterdam, and an O'Reilly published author.
+[Lee Boonstra](https://plus.google.com/117712452932146916020) is a Conversational AI <a href="#da" title="What is a Developer Advocate, Lee Boonstra?">Developer Advocate</a> at Google. In this role she is focusing on Dialogflow, Contact Center AI & Speech technology. She is based in Amsterdam, and an O'Reilly published author.
 
 She has been working with different technologies in the past 15 years, ranging from Web/Mobile Technology, Ext JS, Sencha Touch, Node.js, Conversational AI, Dialogflow, Actions on Google and Contact Centers.
 
