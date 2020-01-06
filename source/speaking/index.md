@@ -158,6 +158,57 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
+* ### AppDevCon 2020 
+
+ 13 Mar | **Spaces, Amsterdam** | [Website](https://appdevcon.nl/) | Raise your voice! 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "AppDevCon 2020",
+"url": "https://appdevcon.nl/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-03-13T09:00+01:00",
+"endDate": "2020-03-13T17:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "Pathe Munt",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+* ### AppDevCon 2020 Workshop
+
+ 12 Mar | **Spaces, Amsterdam** | [Website](https://appdevcon.nl/session/hands-on-create-a-tv-guide-action-for-the-google-assistant-with-dialogflow-and-actions-on-google) | Hands-on Workshop Dialogflow & Google Assistant 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "AppDevCon 2020",
+"url": "https://appdevcon.nl/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-03-12T13:00+01:00",
+"endDate": "2020-03-12T17:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "Spaces",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+
 * ### Fourcast Women in Tech Event 2020
 
   11 Feb | **Google Brussels, BE** | Dialogflow Workshop
