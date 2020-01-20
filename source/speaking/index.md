@@ -158,6 +158,32 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
+* ### Room 63 Talk BigData 
+
+ 19 Mar | **52DN, Enschede** | [Website](https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/) | BigData & Conversational AI 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Room 63 Talk BigData",
+"url": "https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-03-15T09:00+01:00",
+"endDate": "2020-03-19T18:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "52DN",
+"address": {
+"addressLocality": "Enschede",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+
 * ### AppDevCon 2020 
 
  13 Mar | **Pathe Munt, Amsterdam** | [Website](https://appdevcon.nl/) | Raise your voice! 
@@ -211,11 +237,54 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Fourcast Women in Tech Event 2020
 
-  11 Feb | **Google Brussels, BE** | Dialogflow Workshop
+  11 Feb | **Google Brussels, BE** | [Website](https://www.fourcast.io/events/womenintech-brussels-11february2020) | Dialogflow, Actions on Google Workshop
 
-* ### Customer Service Cloud Event - Salesforce 2020
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Fourcast Women in Tech Event 2020",
+"url": "https://www.fourcast.io/events/womenintech-brussels-11february2020",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-02-11T13:00+01:00",
+"endDate": "2020-02-11T17:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "Google BE",
+"address": {
+"addressLocality": "Brussels",
+"addressCountry": "BE"
+}
+}
+}</script>
 
-  16 Jan | **Hilversum, NL** | CCAI - Future of Customer Care
+
+* ### Salesforce Service Innovation Summit 2020
+
+  16 Jan | **Hilversum, NL** | [Website](https://www.salesforce.com/nl/events/service-innovation-summit/) | Future of Customer Care with Contact Center AI
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Salesforce Service Innovation Summit 2020",
+"url": "https://www.salesforce.com/nl/events/service-innovation-summit/",
+"performer": "Lee Boonstra",
+"description":"",
+"startDate": "2020-01-16T13:00+01:00",
+"endDate": "2020-01-16T17:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "Grand Hotel",
+"address": {
+"addressLocality": "Hilversum",
+"addressCountry": "NL"
+}
+}
+}</script>
 
 
 2019
