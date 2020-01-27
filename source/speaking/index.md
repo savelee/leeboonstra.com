@@ -121,9 +121,9 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
-* ### Google.IO 2020
+* ### Google I/O 2020
 
- 7-9 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | TBA 
+ 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | TBA 
 
 * ### Google Cloud Next 2020
 
