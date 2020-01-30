@@ -234,6 +234,30 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
+* ### Frontend Developer Love 2020
+
+  19 Feb | **Amsterdam Theater, NL** | [Website](https://www.frontenddeveloperlove.com/program) | Audio Streaming - Using WebRTC for building your own Voice AIs
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Frontend Developer Love 2020",
+"url": "https://www.frontenddeveloperlove.com/",
+"performer": "Lee Boonstra",
+"description":"Audio Streaming - Using WebRTC for building your own Voice AIs",
+"startDate": "2020-02-19T14:00+01:00",
+"endDate": "2020-02-19T17:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "Amsterdam Theatre",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
 
 * ### Fourcast Women in Tech Event 2020
 
