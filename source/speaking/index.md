@@ -236,7 +236,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Frontend Developer Love 2020
 
-  19 Feb | **Amsterdam Theater, NL** | [Website](https://www.frontenddeveloperlove.com/program) | Audio Streaming - Using WebRTC for building your own Voice AIs
+  19 Feb | **Amsterdam Theater, NL** | [Website](https://www.frontenddeveloperlove.com/program) | Audio Streaming - Using Dialogflow & WebRTC for building your own Voice AIs
 
 <script type='application/ld+json'> 
 {
