@@ -90,7 +90,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Emerce Next 2020
 
-  26 May | **Beurs van Berlage, Amsterdam NL** | [Website](https://emerce.nl/event/emercenext/) Future of Customer Care
+  26 May | **Beurs van Berlage, Amsterdam NL** | [Website](https://emerce.nl/event/emercenext/sprekers/) Future of Customer Care
 
 <script type='application/ld+json'> 
 {
@@ -99,7 +99,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Emerce Next 2020",
 "url": "https://emerce.nl/event/emercenext/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"https://emerce.nl/event/emercenext/sprekers/",
 "startDate": "2020-05-26T09:00+01:00",
 "endDate": "2020-05-26T22:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
