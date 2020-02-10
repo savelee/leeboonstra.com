@@ -32,7 +32,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "OmniChannelX 2020",
 "url": "https://omnichannelx.digital/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"Improve your customer care by building an AI bot platform ",
 "startDate": "2020-06-08T09:00+01:00",
 "endDate": "2020-06-08T22:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -57,7 +57,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Codemotion Amsterdam 2020
 
- 28 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | TBA Dialogflow 
+ 28 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | Dialogflow + ML Fairness
 
 <script type='application/ld+json'> 
 {
@@ -66,7 +66,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Codemotion Amsterdam 2020",
 "url": "https://events.codemotion.com/conferences/amsterdam/2020/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"Dialogflow and ML Fairness",
 "startDate": "2020-05-28T09:00+01:00",
 "endDate": "2020-05-28T22:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -123,11 +123,11 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Google I/O 2020
 
- 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | TBA 
+ 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo 
 
 * ### Google Cloud Next 2020
 
- 6-9 April | **Moscone Center, SFO, USA** | [Website](https://cloud.withgoogle.com/next/sf/) | TBA 
+ 6-9 April | **Moscone Center, SFO, USA** | [Website](https://cloud.withgoogle.com/next/sf/) | Chatbots for G-Suite Hangouts 
 
 <script type='application/ld+json'> 
 {
@@ -136,7 +136,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Google Cloud Next 2020",
 "url": "https://cloud.withgoogle.com/next/sf/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"Chatbots for G-Suite Hangouts ",
 "startDate": "2020-04-6T09:00+01:00",
 "endDate": "2020-04-9T22:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -169,7 +169,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Room 63 Talk BigData",
 "url": "https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"BigData & Conversational AI",
 "startDate": "2020-03-15T09:00+01:00",
 "endDate": "2020-03-19T18:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -195,9 +195,9 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "AppDevCon 2020",
 "url": "https://appdevcon.nl/",
 "performer": "Lee Boonstra",
-"description":"",
-"startDate": "2020-03-13T09:00+01:00",
-"endDate": "2020-03-13T17:00+01:00",
+"description":"Raise your voice!",
+"startDate": "2020-03-13T12:00+01:00",
+"endDate": "2020-03-13T12:30+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
 "location": {
 "@type": "Place",
@@ -220,7 +220,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "AppDevCon 2020",
 "url": "https://appdevcon.nl/",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"Hands-on Workshop Dialogflow & Google Assistant ",
 "startDate": "2020-03-12T13:00+01:00",
 "endDate": "2020-03-12T17:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -270,10 +270,18 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Fourcast Women in Tech Event 2020",
 "url": "https://www.fourcast.io/events/womenintech-brussels-11february2020",
 "performer": "Lee Boonstra",
-"description":"",
+"description":"Dialogflow, Actions on Google Workshop",
 "startDate": "2020-02-11T13:00+01:00",
 "endDate": "2020-02-11T17:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
+"@type": "Offer",
+"description": "Register for free",
+"url": "https://www.fourcast.io/events/womenintech-brussels-11february2020",
+"price": "0.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2018-11-01T09:30+01:00"
+},
 "location": {
 "@type": "Place",
 "name": "Google BE",
@@ -727,7 +735,6 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
         "image": "https://www.leeboonstra.com/images/profile.jpg",
         "startDate": "2018-11-16T09:30+01:00",
         "endDate": "2018-11-16T17:30+01:00",
-        "image": "https://www.leeboonstra.com/images/profile.jpg",
         "performer":"Lee Boonstra",
         "description": "Keynote: AutoML Demo + Contact Center AI Breakout session",
         "offers": {
@@ -859,7 +866,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "GoDataFest 2018",
-        "description: "Learn about Dialogflow and the Google Assistant",
+        "description": "Learn about Dialogflow and the Google Assistant",
         "performer": "Lee Boonstra",
         "url": "https://www.godatafest.com/",
         "image": "https://www.leeboonstra.com/images/profile.jpg",
@@ -890,7 +897,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
         "@context": "http://www.schema.org",
         "@type": "Event",
         "name": "Google Cloud Next 2018",
-        "description: "Diversity at Google Panel",
+        "description": "Diversity at Google Panel",
         "image": "https://www.leeboonstra.com/images/profile.jpg",
         "performer": "Lee Boonstra",
         "startDate": "11/10/2018",

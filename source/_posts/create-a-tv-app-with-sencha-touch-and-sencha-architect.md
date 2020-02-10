@@ -26,7 +26,8 @@ The Setup
 2. Choose **Sencha Touch 2.3** 
 3. Save Project: - TouchTunes - touchtunes 
 4. Configuration - http://localhost:1841/touchtunes 
-5. Create a new resolution: (Let's take this: http://www.samsungdforum.com/Devtools/Spec) **Samsung TV App 960x540** 
+5. Create a new resolution: (Let's take this: http://www.samsungdforum.com
+   /Devtools/Spec) **Samsung TV App 960x540** 
 6. **Switch the orientation**
 
 The Model
@@ -46,7 +47,8 @@ The Store
 1. Click in the project inspector on the **+ button** 
 2. Select **Store > JsonP Store** 
 3. Select the new Store 
-4. In the Config panel make the following settings: _- userClassName: Videos - model: Video - autoLoad: check - MyJsonPProxy: select - url: https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json - MyJsonReader: select - rootProperty: feed.entry_
+4. In the Config panel make the following settings: _- userClassName: Videos - model: Video - autoLoad: check - MyJsonPProxy: select - url: https://itunes.apple.com/us/rss
+   /topmusicvideos/limit=25/json - MyJsonReader: select - rootProperty: feed.entry_
 
 Test Feed
 ---------
@@ -55,7 +57,10 @@ Test Feed
 2. Press **Preview** 
 3. In your browser: Right Click: Inspect Element 
 4. Go to the Network tab 
-5. Review: https://itunes.apple.com/us/rss/topmusicvideos/limit=25/json?_dc=1392819371345&page=1&start=0&limit=25&callback=Ext.data.JsonP.callback1 It should return a JSON feed. 6. Run the following command in your browser console: _Ext.getStore('Videos').getCount();_ It should return 25.
+5. Review: https://itunes.apple.com/us/rss
+   /topmusicvideos/limit=25/json?_dc=1392819371345&
+   page=1&start=0&limit=25
+   &callback=Ext.data.JsonP.callback1 It should return a JSON feed. 6. Run the following command in your browser console: _Ext.getStore('Videos').getCount();_ It should return 25.
 
 Views
 -----
@@ -107,7 +112,8 @@ image.setSrc(record.get('image'));
 The Controller
 --------------
 
-We will map some keyboard keys, check out: http://wiki.xbmc.org/index.php?title=Keyboard_controls We will map the arrow keys, the spacebar and the enter key. 
+We will map some keyboard keys, check out: http://wiki.xbmc.org/index.php
+?title=Keyboard_controls We will map the arrow keys, the spacebar and the enter key. 
 1. Click in the project inspector on the **+ button** 
 2. Select **Controller** 
 3. In the Config Panel, set the following settings: _- userClassName: Navigation - Actions: Add - Choose a target type: Ext.dataview.List - Choose an event by name: initialize - Enter the following code:_
@@ -296,6 +302,7 @@ Build the app
 2. In the popup select the environment: **Production** 
 3. Click **Save** 
 4. Click **Run** 
-5. Test your application: http://localhost:1841/Architect/TunesTouch/build/production/TunesTouch/ 
+5. Test your application: http://localhost:1841/Architect
+   /TunesTouch/build/production/TunesTouch/ 
 
 And well done! How to run this app on your TV? First, upload the production package to some server online. In case you have a smart tv, you could open the browser app, and browse to the TunesTouch app. I tested it on my Raspbmc and on the Ouya XBMC browser app, and it runs great!
