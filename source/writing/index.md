@@ -50,6 +50,8 @@ Below is a list of my publications:
  *   Lee Boonstra Press Releases
      ---------------------------
 
+    02-2020 | [OmniChannelx Digital: Interview with Lee Boonstra](https://omnichannelx.digital/chatbots-en-omnichannel-interview-met-lee-boonstra-van-google/)
+
     04-2019 | [Techzine: Google AutoML - Doe het zelf Machine Learning](https://www.techzine.nl/blogs/421762/google-automl-doe-het-zelf-machine-learning.html)
 
     12-2018 | [MarketingFacts.nl - Google wil het platform worden voor voice en chatbots](https://www.marketingfacts.nl/berichten/google-wil-het-platform-worden-voor-voice-en-chatbots)

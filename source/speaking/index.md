@@ -741,7 +741,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
           "@type": "Offer",
           "description": "Google Cloud Summit Amsterdam",
           "url": "https://cloudplatformonline.com/2018-Summit-Amsterdam-EN-Home.html",
-          "price": "378.72,
+          "price": "378.72",
           "priceCurrency": "EUR",
           "availability": "http://schema.org/SoldOut",
           "validFrom": "2018-08-01T09:30+01:00"
@@ -839,7 +839,6 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
         "url": "https://fourcast.io/events/",
         "image": "https://www.leeboonstra.com/images/profile.jpg",
         "offers": {
-          "@type": "Offer",
           "description": "Chatbot Hackathon 2018",
           "url": "https://fourcast.io/events/",
           "price": "0.00",
