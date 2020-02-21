@@ -42,6 +42,6 @@
     "remark-frontmatter": "^1.2.0",
     "yargs": "^10.0.3",
     "to-vfile": "^2.1.2",
-    "js-yaml": "^3.10.0"
+    "js-yaml": "^3.13.1"
   }
 }
