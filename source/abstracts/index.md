@@ -18,11 +18,11 @@ Technical audience? I am not shy about sharing code or doing live coding.
 
 ### Topic 1: Improve your customer care by building an AI bot platform
 
-**Type**: Keynote / Breakout Talk 
-**Time**: 25min - 50min
-**Tags**: chatbots, voicebots, callbots, AI platform, contact centers, big data, analytics
-**Level**: Beginners
-**Audience**: Decision makers, Conversational AI practitioners, Developers
+<b>Type</b>: Keynote / Breakout Talk <br/>
+<b>Time</b>: 25min - 50min<br/>
+<b>Tags</b>: chatbots, voicebots, callbots, AI platform, contact centers, big data, analytics<br/>
+<b>Level</b>: Beginners<br/>
+<b>Audience</b>: Decision makers, Conversational AI practitioners, Developers<br/>
 
 Did you know, you can trim your business cost massively, by implementing bots? According to Juniper Research, enterprises can trim their business cost by more than 8 billion! Does this sound like magic to you? The key is, to build an AI platform which can support bots for various channels, which includes voice assistance and contact centers!
 
@@ -30,11 +30,11 @@ During this session, Developer Advocate, for Conversational AI; Lee Boonstra, wi
 
 ### Topic 2: A best practice for streaming WebRTC audio from a browser microphone to Speech APIs
 
-**Type**: Breakout Talk 
-**Time**: 25min - 50min
-**Tags**: chatbots, speech to text, text to speech, webrtc, Dialogflow
-**Level**: Advanced
-**Audience**: Conversational AI practitioners, Developers
+<b>Type</b>: Breakout Talk<br/> 
+<b>Time</b>: 25min - 50min<br/>
+<b>Tags</b>: chatbots, speech to text, text to speech, webrtc, Dialogflow<br/>
+<b>Level</b>: Advanced<br/>
+<b>Audience</b>: Conversational AI practitioners, Developers<br/>
 
 The Google Assistant is super popular. Businesses want their own voice AI. Unless you are a manufacturer for tv setup boxes or headphones, you probably don't need to use the Google Assistant, you can integrate a (voice supported) conversational AI within your own existing web/mobile app with the use of Dialogflow and Cloud Speech to Text (STT), Cloud Text to Speech (TTS). 
 
@@ -42,17 +42,17 @@ However, implementing audio streaming within (web) applications can become diffi
 
 Lee Boonstra, developer advocate for Conversational AI, (and author of the ultimate audio streaming to Speech APIs - guide), will guide you how to implement your own conversational AI within your web application.
 
-**Message for the committee:**
+<b>Message for the committee:<b>
 Expect a session, with a real world demo (Airport Self Service Kiosk), code to stream microphone audio output (WebRTC) to a back-end web application over websockets, and let your conversational AI speak out the answers.  A solution built with: Dialogflow for chatbots, Speech to Text, Text to Speech, Websockets, Angular, Node.js, Audio Streaming, WebRTC
 
 
 ### Topic 3: Raise your voice!
 
-**Type**: Breakout Talk 
-**Time**: 25min - 50min
-**Tags**: chatbots, speech to text, text to speech, webrtc, Dialogflow, Contact Centers, Voicebots
-**Level**: Advanced
-**Audience**: Conversational AI practitioners, Developers
+<b>Type</b>: Breakout Talk <br/>
+<b>Time</b>: 25min - 50min<br/>
+<b>Tags</b>: chatbots, speech to text, text to speech, webrtc, Dialogflow, Contact Centers, Voicebots<br/>
+<b>Level</b>: Advanced<br/>
+<b>Audience</b>: Conversational AI practitioners, Developers<br/>
 
 When people think of chatbots, they often think of that little support popup on a website, not understanding what you actually mean. It shouldn't be like that. With AI powered chatbots, it doesn't matter how you say or spell your questions, it will understand you. There are actually many types of chatbots; bots in social media, bots in advertising and bots specialized in understanding voice. The chatbots which live in smart speakers & assistant AI's and the chatbots running in phone reservation systems and contact centers!
 
@@ -60,11 +60,11 @@ Lee Boonstra, Developer Advocate at Google on Conversational AI, will show how d
 
 ### Topic 4: Work smarter with Chatbots & Hangouts Chatrooms
 
-**Type**: Breakout Talk 
-**Time**: 25min - 45min
-**Tags**: Chatbots, Google Hangouts Chat, Dialogflow, AI chatbots, Work smarter
-**Level**: Beginner
-**Audience**: Decision makers, Developers, Industry Analysts
+<b>Type</b>: Breakout Talk<br/> 
+<b>Time</b>: 25min - 45min<br/>
+<b>Tags</b>: Chatbots, Google Hangouts Chat, Dialogflow, AI chatbots, Work smarter<br/>
+<b>Level</b>: Beginner<br/>
+<b>Audience</b>: Decision makers, Developers, Industry Analysts<br/>
 
 Chatbots and Assistants, distractions or the next way to boost your employees' productivity? Do you wish you could make automating workflows as seamless as having a conversation? Complete tasks and work with data smarter by bringing AI into the office. Build rich, conversational experiences by leveraging Hangouts Chatbots. 
 
@@ -75,11 +75,11 @@ In this session we'll briefly introduce the technologies involved and then dive 
 
 ### Topic 5: Machine Learning Fairness
 
-**Type**: Keynote / Breakout Talk 
-**Time**: 25min - 45min
-**Tags**: Diversity, DEI, Machine Learning Fairness, Bias in ML
-**Level**: Beginner
-**Audience**: All
+<b>Type</b>: Keynote / Breakout Talk<br/> 
+<b>Time</b>: 25min - 45min<br/>
+<b>Tags</b>: Diversity, DEI, Machine Learning Fairness, Bias in ML<br/>
+<b>Level</b>: Beginner<br/>
+<b>Audience</b>: All<br/>
 
 As an AI-first company, Google aims to develop the benefits of machine learning for everyone.
 
@@ -91,11 +91,11 @@ This session will enable developers to proactively think about fairness in produ
 
 ### Workshop: Hands-on:  Create a TV guide action for the Google Assistant with Dialogflow and Actions on Google.
 
-**Type**: Workshop
-**Time**: 2 hours - 4 hours
-**Tags**: Voice Assistance, Google Assistant, Dialogflow, Chatbots
-**Level**: Beginner
-**Audience**: Engineers, Conversational AI practitioners
+<b>Type</b>: Workshop<br/>
+<b>Time</b>: 2 hours - 4 hours<br/>
+<b>Tags</b>: Voice Assistance, Google Assistant, Dialogflow, Chatbots<br/>
+<b>Level</b>: Beginner<br/>
+<b>Audience</b>: Engineers, Conversational AI practitioners<br/>
 
 Let's create a conversation between you and Google that helps you to retrieve information about what's on TV.
 
@@ -103,6 +103,6 @@ At Google we provide assistance to our products for years. With the Google Assis
 
 You don’t need to be a developer. With Dialogflow, it is possible to create natural conversations for chatbots and voice activated speakers. In this session, you will learn about machine learning and how to create custom conversation agents with Dialogflow.
 
-*Basic JavaScript knowledge is required.*
+<i>Basic JavaScript knowledge is required.</i>
 
-*Bring your laptop, a headset, or a proper microphone and headphones, in case you want to test the Google Assistant at the conference.*
+<i>Bring your laptop, a headset, or a proper microphone and headphones, in case you want to test the Google Assistant at the conference.</i>
