@@ -23,7 +23,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### OmniChannelX 2020
 
- 10 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform 
+ 10 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform | **Save 50 Euro; use discount code: 50GOOG**
 
 <script type='application/ld+json'> 
 {
@@ -56,7 +56,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### OmniChannelX 2020
 
- 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the google assistant with dialogflow and actions on Google 
+ 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the google assistant with dialogflow and actions on Google  | **Save 50 Euro; use discount code: 50GOOG**
 
 <script type='application/ld+json'> 
 {
