@@ -23,7 +23,40 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### OmniChannelX 2020
 
- 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/) | Improve your customer care by building an AI bot platform 
+ 10 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "OmniChannelX 2020",
+"url": "https://omnichannelx.digital/",
+"performer": "Lee Boonstra",
+"description":"Improve your customer care by building an AI bot platform ",
+"startDate": "2020-06-10T09:00+01:00",
+"endDate": "2020-06-10T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://omnichannelx.digital/",
+"price": "625.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Hotel Casa",
+"address": {
+"addressLocality": "Amsterdam",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+* ### OmniChannelX 2020
+
+ 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the google assistant with dialogflow and actions on Google 
 
 <script type='application/ld+json'> 
 {
