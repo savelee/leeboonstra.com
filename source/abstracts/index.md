@@ -15,7 +15,6 @@ Technical audience? I am not shy about sharing code or doing live coding.
 
 <a href="https://www.leeboonstra.com/about/">Here's my biography & speaker image.</a>
 
-
 ### Topic 1: Improve your customer care by building an AI bot platform
 
 <b>Type</b>: Keynote / Breakout Talk <br/>
@@ -27,6 +26,8 @@ Technical audience? I am not shy about sharing code or doing live coding.
 Did you know, you can trim your business cost massively, by implementing bots? According to Juniper Research, enterprises can trim their business cost by more than 8 billion! Does this sound like magic to you? The key is, to build an AI platform which can support bots for various channels, which includes voice assistance and contact centers!
 
 During this session, Developer Advocate, for Conversational AI; Lee Boonstra, will show you how you can integrate AI and bot technology. A session with live demos for websites, social media, Google Assistant; and Contact Centers. Learn how voice will impact the near future!
+
+<hr/>
 
 ### Topic 2: A best practice for streaming WebRTC audio from a browser microphone to Speech APIs
 
@@ -45,6 +46,7 @@ Lee Boonstra, developer advocate for Conversational AI, (and author of the ultim
 <b>Message for the committee:<b>
 Expect a session, with a real world demo (Airport Self Service Kiosk), code to stream microphone audio output (WebRTC) to a back-end web application over websockets, and let your conversational AI speak out the answers.  A solution built with: Dialogflow for chatbots, Speech to Text, Text to Speech, Websockets, Angular, Node.js, Audio Streaming, WebRTC
 
+<hr/>
 
 ### Topic 3: Raise your voice!
 
@@ -57,6 +59,8 @@ Expect a session, with a real world demo (Airport Self Service Kiosk), code to s
 When people think of chatbots, they often think of that little support popup on a website, not understanding what you actually mean. It shouldn't be like that. With AI powered chatbots, it doesn't matter how you say or spell your questions, it will understand you. There are actually many types of chatbots; bots in social media, bots in advertising and bots specialized in understanding voice. The chatbots which live in smart speakers & assistant AI's and the chatbots running in phone reservation systems and contact centers!
 
 Lee Boonstra, Developer Advocate at Google on Conversational AI, will show how developers can integrate their conversations for the Google Assistant & phone systems by using machine learning APIs. Learn how voice will impact the near future and expect live demos!
+
+<hr/>
 
 ### Topic 4: Work smarter with Chatbots & Hangouts Chatrooms
 
@@ -72,6 +76,7 @@ You can bring AI/ML to all your employees to enable their productivity with the 
 
 In this session we'll briefly introduce the technologies involved and then dive into some demos that show how to put it all together. By leveraging Google Cloud Platform and G Suite you can glue together your internal systems and 3rd party services. We'll show you examples like an HR system for searching information in employee files, fulfillment requests, and more!
 
+<hr/>
 
 ### Topic 5: Machine Learning Fairness
 
@@ -89,7 +94,9 @@ ML fairness is a critical consideration in machine learning development. This se
 
 This session will enable developers to proactively think about fairness in product development.
 
-### Workshop: Hands-on:  Create a TV guide action for the Google Assistant with Dialogflow and Actions on Google.
+<hr/>
+
+### Workshop: Hands-on: Create a TV guide action for the Google Assistant with Dialogflow and Actions on Google.
 
 <b>Type</b>: Workshop<br/>
 <b>Time</b>: 2 hours - 4 hours<br/>
