@@ -22,6 +22,8 @@ You can follow this guide for more information: [https://cloud.google.com/dialog
 
 But you are probably here, to figure out how you can integrate this with rich messages such as cards, formatted texts, images or custom payloads. Maybe you are even trying to enable this via your fulfillment code. Well I got you covered!
 
+<!--more-->
+
 ### Rich Messages
 
 When Hangouts Chat sends an event to a bot, it includes certain data in the event payload; the exact payload depends on the event type. This event and payload are contained in the HTTP call sent to the bot’s registered URL.

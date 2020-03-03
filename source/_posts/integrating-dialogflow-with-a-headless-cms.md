@@ -19,6 +19,8 @@ In [my Dialogflow, Django, Angular example](https://github.com/savelee/kube-djan
 
 In this tutorial I will make use of a headless CMS; [Sanity](https://www.sanity.io/).
 
+<!--more-->
+
 You can use any CMS, even Wordpress, but it makes things easier when there are (out of the box) REST APIs to use. This is what a headless CMS can do really well. It detaches the content from a webpage in order to reuse it in various contexts such as Mobile Apps or Chatbots.
 
 ### **Dialogflow**
