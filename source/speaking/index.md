@@ -87,6 +87,39 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
+* ### WeAreDevelopers Berlin 2020
+
+ 29 May | **Messedamm 26, Berlin** | [Website](https://www.wearedevelopers.com/events/world-congress/) | Dialogflow Chatbots
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "WeAreDevelopers 2020",
+"url": "https://www.wearedevelopers.com/events/world-congress/",
+"performer": "Lee Boonstra",
+"description":"Dialogflow Chatbots",
+"startDate": "2020-05-28T09:00+01:00",
+"endDate": "2020-05-29T22:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"offers": {
+"@type": "Offer",
+"url": "https://www.wearedevelopers.com/events/world-congress/",
+"price": "149.00",
+"priceCurrency": "EUR",
+"availability": "http://schema.org/SoldOut",
+"validFrom": "2019-11-01T09:30+01:00"
+},
+"location": {
+"@type": "Place",
+"name": "Messedamm 26",
+"address": {
+"addressLocality": "Berlin",
+"addressCountry": "DE"
+}
+}
+}</script>
+
 
 * ### Codemotion Amsterdam 2020
 
@@ -156,7 +189,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Google I/O 2020
 
- 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo 
+ 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo + Dialogflow Talk
 
 * ### Google Cloud Next 2020
 
