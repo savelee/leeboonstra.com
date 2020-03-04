@@ -123,7 +123,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Codemotion Amsterdam 2020
 
- 28 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | Dialogflow + ML Fairness
+ 27 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | Raise your Voice! & ML Fairness
 
 <script type='application/ld+json'> 
 {
@@ -189,40 +189,11 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### Google I/O 2020
 
- 12-14 May | **Google MTV, USA** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo + Dialogflow Talk
+ 12-14 May | **Online** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo + Dialogflow Talk
 
 * ### Google Cloud Next 2020
 
- 6-9 April | **Moscone Center, SFO, USA** | [Website](https://cloud.withgoogle.com/next/sf/) | Chatbots for G-Suite Hangouts 
-
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "Google Cloud Next 2020",
-"url": "https://cloud.withgoogle.com/next/sf/",
-"performer": "Lee Boonstra",
-"description":"Chatbots for G-Suite Hangouts ",
-"startDate": "2020-04-6T09:00+01:00",
-"endDate": "2020-04-9T22:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"offers": {
-"@type": "Offer",
-"url": "https://cloud.withgoogle.com/next/sf/",
-"price": "1699.00",
-"priceCurrency": "USD",
-"availability": "http://schema.org/SoldOut",
-"validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Moscone Center",
-"address": {
-"addressLocality": "San Francisco",
-"addressCountry": "USA"
-}
-}
-}</script>
+ 6-9 April | **Online** | [Website](https://cloud.withgoogle.com/next/sf/) | Chatbots for G-Suite Hangouts 
 
 * ### Room 63 Talk BigData 
 
