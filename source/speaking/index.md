@@ -187,11 +187,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
-* ### Google I/O 2020
-
- 12-14 May | **Online** | [Website](https://events.google.com/io/) | Self Service Kiosk Demo + Dialogflow Talk
-
-* ### Google Cloud Next 2020
+* ### Google Cloud Next - Digital
 
  6-9 April | **Online** | [Website](https://cloud.withgoogle.com/next/sf/) | Chatbots for G-Suite Hangouts 
 
@@ -215,57 +211,6 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "52DN",
 "address": {
 "addressLocality": "Enschede",
-"addressCountry": "NL"
-}
-}
-}</script>
-
-
-* ### AppDevCon 2020 
-
- 13 Mar | **Pathe Munt, Amsterdam** | [Website](https://appdevcon.nl/) | Raise your voice! 
-
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "AppDevCon 2020",
-"url": "https://appdevcon.nl/",
-"performer": "Lee Boonstra",
-"description":"Raise your voice!",
-"startDate": "2020-03-13T12:00+01:00",
-"endDate": "2020-03-13T12:30+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"location": {
-"@type": "Place",
-"name": "Pathe Munt",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
-}
-}</script>
-
-* ### AppDevCon 2020 Workshop
-
- 12 Mar | **Spaces, Amsterdam** | [Website](https://appdevcon.nl/session/hands-on-create-a-tv-guide-action-for-the-google-assistant-with-dialogflow-and-actions-on-google) | Hands-on Workshop Dialogflow & Google Assistant 
-
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "AppDevCon 2020",
-"url": "https://appdevcon.nl/",
-"performer": "Lee Boonstra",
-"description":"Hands-on Workshop Dialogflow & Google Assistant ",
-"startDate": "2020-03-12T13:00+01:00",
-"endDate": "2020-03-12T17:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"location": {
-"@type": "Place",
-"name": "Spaces",
-"address": {
-"addressLocality": "Amsterdam",
 "addressCountry": "NL"
 }
 }
