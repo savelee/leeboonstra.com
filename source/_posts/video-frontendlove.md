@@ -24,4 +24,4 @@ I recently spoke at the Front-end Love conference sharing a best practice for st
 <a href="https://speakerdeck.com/savelee/implementing-a-custom-ai-voice-assistant-by-streaming-webrtc-to-dialogflow-and-cloud-speech">Slidedeck</a>
 
 
-<iframe width="560" height="315" src="https://youtu.be/6JD8WC1LV7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6JD8WC1LV7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
