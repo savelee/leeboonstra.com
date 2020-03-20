@@ -21,9 +21,38 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 2020
 ----
 
+* ### Room 63 Talk BigData 
+
+ 24 Sept | **52DN, Enschede** | [Website](https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/) | BigData & Conversational AI 
+
+<script type='application/ld+json'> 
+{
+"@context": "http://www.schema.org",
+"@type": "Event",
+"name": "Room 63 Talk BigData",
+"url": "https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/",
+"performer": "Lee Boonstra",
+"description":"BigData & Conversational AI",
+"startDate": "2020-09-24T09:00+01:00",
+"endDate": "2020-09-24T18:00+01:00",
+"image": "https://www.leeboonstra.com/images/profile.jpg",
+"location": {
+"@type": "Place",
+"name": "52DN",
+"address": {
+"addressLocality": "Enschede",
+"addressCountry": "NL"
+}
+}
+}</script>
+
+* ### AppDevCon 2020
+
+ 15 Sept - 18 Sept | **Amsterdam** | [Website](https://appdevcon.nl/) | Raise your Voice & Workshop
+
 * ### OmniChannelX 2020
 
- 10 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform | **Save 50 Euro; use discount code: 50GOOG**
+ 10 June | **Online** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform | **Save 50 Euro; use discount code: 50GOOG**
 
 <script type='application/ld+json'> 
 {
@@ -39,24 +68,14 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "offers": {
 "@type": "Offer",
 "url": "https://omnichannelx.digital/",
-"price": "625.00",
-"priceCurrency": "EUR",
 "availability": "http://schema.org/SoldOut",
 "validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Hotel Casa",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
 }
 }</script>
 
 * ### OmniChannelX 2020
 
- 8 June | **Hotel Casa, Amsterdam** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the Google Assistant with Dialogflow and actions on Google  | **Save 50 Euro; use discount code: 50GOOG**
+ 8 June | **Online** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the Google Assistant with Dialogflow and actions on Google  | **Save 50 Euro; use discount code: 50GOOG**
 
 <script type='application/ld+json'> 
 {
@@ -72,54 +91,10 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "offers": {
 "@type": "Offer",
 "url": "https://omnichannelx.digital/",
-"price": "625.00",
-"priceCurrency": "EUR",
 "availability": "http://schema.org/SoldOut",
 "validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Hotel Casa",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
 }
 }</script>
-
-* ### WeAreDevelopers Berlin 2020
-
- 29 May | **Messedamm 26, Berlin** | [Website](https://www.wearedevelopers.com/events/world-congress/) | Dialogflow Chatbots
-
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "WeAreDevelopers 2020",
-"url": "https://www.wearedevelopers.com/events/world-congress/",
-"performer": "Lee Boonstra",
-"description":"Dialogflow Chatbots",
-"startDate": "2020-05-28T09:00+01:00",
-"endDate": "2020-05-29T22:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"offers": {
-"@type": "Offer",
-"url": "https://www.wearedevelopers.com/events/world-congress/",
-"price": "149.00",
-"priceCurrency": "EUR",
-"availability": "http://schema.org/SoldOut",
-"validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Messedamm 26",
-"address": {
-"addressLocality": "Berlin",
-"addressCountry": "DE"
-}
-}
-}</script>
-
 
 * ### Codemotion Amsterdam 2020
 
@@ -182,35 +157,6 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 "name": "Beurs van Berlage",
 "address": {
 "addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
-}
-}</script>
-
-* ### Google Cloud Next - Digital
-
- 6-9 April | **Online** | [Website](https://cloud.withgoogle.com/next/sf/) | Chatbots for G-Suite Hangouts 
-
-* ### Room 63 Talk BigData 
-
- 19 Mar | **52DN, Enschede** | [Website](https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/) | BigData & Conversational AI 
-
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "Room 63 Talk BigData",
-"url": "https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/",
-"performer": "Lee Boonstra",
-"description":"BigData & Conversational AI",
-"startDate": "2020-03-15T09:00+01:00",
-"endDate": "2020-03-19T18:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"location": {
-"@type": "Place",
-"name": "52DN",
-"address": {
-"addressLocality": "Enschede",
 "addressCountry": "NL"
 }
 }
