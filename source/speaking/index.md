@@ -21,30 +21,31 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 2020
 ----
 
-* ### Room 63 Talk BigData 
+* ### Conversational Conference by Frank Watching
 
- 24 Sept | **52DN, Enschede** | [Website](https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/) | BigData & Conversational AI 
+ 24 Sept | **Jaarbeurs, Utrecht** | [Website](https://www.frankwatching.com/conversationalconference/sprekers/) | Conversational 
 
 <script type='application/ld+json'> 
 {
 "@context": "http://www.schema.org",
 "@type": "Event",
-"name": "Room 63 Talk BigData",
-"url": "https://www.eventbrite.nl/e/tickets-room-talk-63-big-data-03-75674324943?aff=erelexpmlt/",
+"name": "Conversational Conference",
+"url": "https://www.frankwatching.com/conversationalconference/sprekers/",
 "performer": "Lee Boonstra",
-"description":"BigData & Conversational AI",
+"description":"Conversational Conference",
 "startDate": "2020-09-24T09:00+01:00",
 "endDate": "2020-09-24T18:00+01:00",
 "image": "https://www.leeboonstra.com/images/profile.jpg",
 "location": {
 "@type": "Place",
-"name": "52DN",
+"name": "Jaarbeurs",
 "address": {
-"addressLocality": "Enschede",
+"addressLocality": "Utrecht",
 "addressCountry": "NL"
 }
 }
 }</script>
+
 
 * ### AppDevCon 2020
 
@@ -52,7 +53,7 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### OmniChannelX 2020
 
- 10 June | **Online** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform | **Save 50 Euro; use discount code: 50GOOG**
+ 11 June | **Online** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Improve your customer care by building an AI bot platform | **Save 50 Euro; use discount code: 50GOOG**
 
 <script type='application/ld+json'> 
 {
@@ -96,71 +97,22 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
-* ### Codemotion Amsterdam 2020
 
- 27 May | **De Kromhouthal, Amsterdam** | [Website](https://events.codemotion.com/conferences/amsterdam/2020/) | Raise your Voice! & ML Fairness
+* ### WeAreDevelopers Live 2020
 
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "Codemotion Amsterdam 2020",
-"url": "https://events.codemotion.com/conferences/amsterdam/2020/",
-"performer": "Lee Boonstra",
-"description":"Dialogflow and ML Fairness",
-"startDate": "2020-05-28T09:00+01:00",
-"endDate": "2020-05-28T22:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"offers": {
-"@type": "Offer",
-"url": "https://events.codemotion.com/conferences/amsterdam/2020/",
-"price": "580.00",
-"priceCurrency": "EUR",
-"availability": "http://schema.org/SoldOut",
-"validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "De Kromhouthal",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
-}
-}</script>
+  29 May | **Online** | [Website](https://wearedevelopers.com/live) Future of Customer Care
 
 * ### Emerce Next 2020
 
-  26 May | **Beurs van Berlage, Amsterdam NL** | [Website](https://emerce.nl/event/emercenext/sprekers/) Future of Customer Care
+  27 May | **Online** | [Website](https://emerce.nl/event/emercenext/sprekers/) Future of Customer Care
 
-<script type='application/ld+json'> 
-{
-"@context": "http://www.schema.org",
-"@type": "Event",
-"name": "Emerce Next 2020",
-"url": "https://emerce.nl/event/emercenext/",
-"performer": "Lee Boonstra",
-"description":"Future of Customer Care",
-"startDate": "2020-05-26T09:00+01:00",
-"endDate": "2020-05-26T22:00+01:00",
-"image": "https://www.leeboonstra.com/images/profile.jpg",
-"offers": {
-"@type": "Offer",
-"url": "https://emerce.nl/event/emercenext/",
-"price": "129.00",
-"priceCurrency": "EUR",
-"availability": "http://schema.org/SoldOut",
-"validFrom": "2019-11-01T09:30+01:00"
-},
-"location": {
-"@type": "Place",
-"name": "Beurs van Berlage",
-"address": {
-"addressLocality": "Amsterdam",
-"addressCountry": "NL"
-}
-}
-}</script>
+* ### Google Cloud Talks
+
+  26 May | **Online** | Machine Learning for Applied AI engineers
+
+* ### Community Speedrun Challenge: Dialogflow
+
+  18 May | **Online** | [Website](https://events.withgoogle.com/communityspeedrunchallenge/) Dialogflow Introduction + Codelabs
 
 * ### Frontend Developer Love 2020
 
