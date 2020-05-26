@@ -74,6 +74,11 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 }
 }</script>
 
+
+* ### VOICE Global 2020 (VoiceSummit.ai)
+
+  9 June | **Online** | [Website](https://www.voicesummit.ai/global) 10PM EST, VG2 - Improve your customer care
+
 * ### OmniChannelX 2020
 
  8 June | **Online** | [Website](https://omnichannelx.digital/2020-programme-omnichannel-conference/) | Workshop: Hands-on: Create a TV guide action for the Google Assistant with Dialogflow and actions on Google  | **Save 50 Euro; use discount code: 50GOOG**
@@ -100,15 +105,15 @@ Topics I speak about: **Chatbots, Google Assistant, Dialogflow, Machine Learning
 
 * ### WeAreDevelopers Live 2020
 
-  29 May | **Online** | [Website](https://wearedevelopers.com/live) Future of Customer Care
+  29 May | **Online** | [Website](https://wearedevelopers.com/live) Raise your voice
 
 * ### Emerce Next 2020
 
-  27 May | **Online** | [Website](https://emerce.nl/event/emercenext/sprekers/) Future of Customer Care
+  27 May | **Online** | [Website](https://emerce.webinargeek.com/improve-your-customer-care-by-building-an-ai-bot-platform) Improve your customer care by building an AI platform
 
 * ### Google Cloud Talks
 
-  26 May | **Online** | Machine Learning for Applied AI engineers
+  26 May | **Online** | [Website](https://events.withgoogle.com/google-cloud-talks/)Cloud AI Talks, Practical AI. Conversational AI, Vision AI & Document AI.
 
 * ### Community Speedrun Challenge: Dialogflow
 
